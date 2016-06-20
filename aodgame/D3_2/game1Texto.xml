@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chronicle>
+	<cid>D3</cid>
+	
+	<picload id="2">game1Module.swf</picload>
+
+	<texto tid="100">
+		<txt mode="ru">следующий ход</txt>
+		<txt mode="en">next turn</txt>
+	</texto>
+
+	<texto tid="200">
+		<txt mode="ru">золото</txt>
+		<txt mode="en">gold</txt>
+	</texto>
+	<texto tid="201">
+		<txt mode="ru">описание реса золото</txt>
+		<txt mode="en">description of gold resource</txt>
+	</texto>
+	<texto tid="202">
+		<txt mode="ru">еда</txt>
+		<txt mode="en">food</txt>
+	</texto>
+	<texto tid="203">
+		<txt mode="ru">описание реса еда</txt>
+		<txt mode="en">description of food resource</txt>
+	</texto>
+	<texto tid="204">
+		<txt mode="ru">материалы</txt>
+		<txt mode="en">materials</txt>
+	</texto>
+	<texto tid="205">
+		<txt mode="ru">описание реса материалы</txt>
+		<txt mode="en">description of materials resource</txt>
+	</texto>
+	<texto tid="206">
+		<txt mode="ru">товары</txt>
+		<txt mode="en">goods</txt>
+	</texto>
+	<texto tid="207">
+		<txt mode="ru">описание реса товары</txt>
+		<txt mode="en">description of goods resource</txt>
+	</texto>
+
+	<texto tid="220">
+		<txt mode="ru">древесина</txt>
+		<txt mode="en">wood</txt>
+	</texto>
+	<texto tid="221">
+		<txt mode="ru">описание реса древесина</txt>
+		<txt mode="en">description of wood resource</txt>
+	</texto>
+	<texto tid="222">
+		<txt mode="ru">рыба</txt>
+		<txt mode="en">fish</txt>
+	</texto>
+	<texto tid="223">
+		<txt mode="ru">описание реса рыба</txt>
+		<txt mode="en">description of fish resource</txt>
+	</texto>
+	<texto tid="224">
+		<txt mode="ru">пшеница</txt>
+		<txt mode="en">wheat</txt>
+	</texto>
+	<texto tid="225">
+		<txt mode="ru">описание реса пшеница</txt>
+		<txt mode="en">description of wheat resource</txt>
+	</texto>
+	<texto tid="226">
+		<txt mode="ru">овцы</txt>
+		<txt mode="en">sheep</txt>
+	</texto>
+	<texto tid="227">
+		<txt mode="ru">описание реса овцы</txt>
+		<txt mode="en">description of sheep resource</txt>
+	</texto>
+	<texto tid="228">
+		<txt mode="ru">камень</txt>
+		<txt mode="en">stone</txt>
+	</texto>
+	<texto tid="229">
+		<txt mode="ru">описание реса камень</txt>
+		<txt mode="en">description of stone resource</txt>
+	</texto>
+	<texto tid="230">
+		<txt mode="ru">серебро</txt>
+		<txt mode="en">silver</txt>
+	</texto>
+	<texto tid="231">
+		<txt mode="ru">описание реса серебро</txt>
+		<txt mode="en">description of silver resource</txt>
+	</texto>
+	<texto tid="232">
+		<txt mode="ru">олени</txt>
+		<txt mode="en">deer</txt>
+	</texto>
+	<texto tid="233">
+		<txt mode="ru">описание реса олени</txt>
+		<txt mode="en">description of deer resource</txt>
+	</texto>
+	<texto tid="234">
+		<txt mode="ru">медь</txt>
+		<txt mode="en">copper</txt>
+	</texto>
+	<texto tid="235">
+		<txt mode="ru">описание реса медь</txt>
+		<txt mode="en">description of copper resource</txt>
+	</texto>
+	<texto tid="236">
+		<txt mode="ru">глина</txt>
+		<txt mode="en">clay</txt>
+	</texto>
+	<texto tid="237">
+		<txt mode="ru">описание реса глина</txt>
+		<txt mode="en">description of clay resource</txt>
+	</texto>
+	<texto tid="238">
+		<txt mode="ru">оливы</txt>
+		<txt mode="en">olive</txt>
+	</texto>
+	<texto tid="239">
+		<txt mode="ru">описание реса оливы</txt>
+		<txt mode="en">description of olive resource</txt>
+	</texto>
+
+	<texto tid="240">
+		<txt mode="ru">илоты</txt>
+		<txt mode="en">helot</txt>
+	</texto>
+	<texto tid="241">
+		<txt mode="ru">описание реса илоты</txt>
+		<txt mode="en">description of helot resource</txt>
+	</texto>
+	<texto tid="242">
+		<txt mode="ru">метэки</txt>
+		<txt mode="en">meteko</txt>
+	</texto>
+	<texto tid="243">
+		<txt mode="ru">описание реса метэки</txt>
+		<txt mode="en">description of meteko resource</txt>
+	</texto>
+	<texto tid="244">
+		<txt mode="ru">граждане</txt>
+		<txt mode="en">citizen</txt>
+	</texto>
+	<texto tid="245">
+		<txt mode="ru">описание реса граждане</txt>
+		<txt mode="en">description of citizen resource</txt>
+	</texto>
+
+	<texto tid="246">
+		<txt mode="ru">участок земли</txt>
+		<txt mode="en">holding</txt>
+	</texto>
+	<texto tid="247">
+		<txt mode="ru">описание локации</txt>
+		<txt mode="en">description of building</txt>
+	</texto>
+
+	<texto tid="248">
+		<txt mode="ru">/</txt>
+		<txt mode="en">/</txt>
+	</texto>
+
+	<texto tid="249">
+		<txt mode="ru">Постройки</txt>
+		<txt mode="en">Buildings</txt>
+	</texto>
+
+	<texto tid="250">
+		<txt mode="ru">Убрать постройку</txt>
+		<txt mode="en">Destroy building</txt>
+	</texto>
+
+	<texto tid="251">
+		<txt mode="ru"></txt>
+		<txt mode="en"></txt>
+	</texto>
+
+	<texto tid="252">
+		<txt mode="ru">Дом</txt>
+		<txt mode="en">House</txt>
+	</texto>
+
+	<texto tid="253">
+		<txt mode="ru">Место, где будут жить граждане города</txt>
+		<txt mode="en">The place, where will live citizens</txt>
+	</texto>
+
+	<texto tid="254">
+		<txt mode="ru">Эргастерия керамики</txt>
+		<txt mode="en">Pottery Ergasteria</txt>
+	</texto>
+
+	<texto tid="255">
+		<txt mode="ru">Мастерская, производящая керамику. Лучше всего работает, если рядом есть источник глины</txt>
+		<txt mode="en">The workshop that making pottery&ceramics. It better work if it have clay near the workshop.</txt>
+	</texto>
+
+	<texto tid="256">
+		<txt mode="ru">Эргастерия оружия</txt>
+		<txt mode="en">Weapon Ergasteria</txt>
+	</texto>
+	<texto tid="257">
+		<txt mode="ru">Мастерская, производящая оружие. Лучше всего работает, если рядом есть ресурсы железа или меди</txt>
+		<txt mode="en">>The workshop that making weapon. It better work if it have iron or copper near the workshop.</txt>
+	</texto>
+
+	<texto tid="258">
+		<txt mode="ru">Храм</txt>
+		<txt mode="en">Temple</txt>
+	</texto>
+	<texto tid="259">
+		<txt mode="ru">Место поклонения Богам</txt>
+		<txt mode="en">The place of worship of the Gods</txt>
+	</texto>
+
+	<texto tid="260">
+		<txt mode="ru">##########################</txt>
+		<txt mode="en">##########################</txt>
+	</texto>
+
+	<texto tid="261">
+		<txt mode="ru">опыт</txt>
+		<txt mode="en">experience</txt>
+	</texto>
+
+	<texto tid="262">
+		<txt mode="ru">благосклонность</txt>
+		<txt mode="en">favor</txt>
+	</texto>
+
+	<texto tid="263">
+		<txt mode="ru">Эргастерия мебели</txt>
+		<txt mode="en">Furniture Ergasteria</txt>
+	</texto>
+
+	<texto tid="264">
+		<txt mode="ru">Мастерская, производящая мебель. Лучше всего работает, если рядом есть источник древесины</txt>
+		<txt mode="en">The workshop that making furniture. It better work if it have wood near the workshop.</txt>
+	</texto>
+
+	<texto tid="265">
+		<txt mode="ru">Гавань</txt>
+		<txt mode="en">Harbor</txt>
+	</texto>
+
+	<texto tid="266">
+		<txt mode="ru">Гавань</txt>
+		<txt mode="en">Harbor</txt>
+	</texto>
+
+	<texto tid="265">
+		<txt mode="ru">Гавань</txt>
+		<txt mode="en">Harbor</txt>
+	</texto>
+
+	<texto tid="266">
+		<txt mode="ru">Гавань</txt>
+		<txt mode="en">Harbor</txt>
+	</texto>
+
+	<texto tid="267">
+		<txt mode="ru">Школа</txt>
+		<txt mode="en">School</txt>
+	</texto>
+
+	<texto tid="268">
+		<txt mode="ru">Школа</txt>
+		<txt mode="en">School</txt>
+	</texto>
+
+	<texto tid="269">
+		<txt mode="ru">Театр</txt>
+		<txt mode="en">Theatre</txt>
+	</texto>
+
+	<texto tid="270">
+		<txt mode="ru">Театр</txt>
+		<txt mode="en">Theatre</txt>
+	</texto>
+
+	<texto tid="271">
+		<txt mode="ru">Барак</txt>
+		<txt mode="en">Hut</txt>
+	</texto>
+
+	<texto tid="272">
+		<txt mode="ru">Место прибежища для илотов</txt>
+		<txt mode="en">Place for living of helots.</txt>
+	</texto>
+
+	<texto tid="273">
+		<txt mode="ru">исследовать</txt>
+		<txt mode="en">research</txt>
+	</texto>
+
+	<texto tid="274">
+		<txt mode="ru">Эргастерия оружия</txt>
+		<txt mode="en">Weapon ergasteria</txt>
+	</texto>
+	<texto tid="275">
+		<txt mode="ru">Эргастерия оружия. Открываем возможность строить мастерскую мебели.</txt>
+		<txt mode="en">Weapon ergasteria. Open ability to build furniture workshop. </txt>
+	</texto>
+
+	<texto tid="276">
+		<txt mode="ru">Эргастерия оружия. Увеличиваем производство товара на 2 единицы.</txt>
+		<txt mode="en">Weapon ergasteria. Increase goods production by 2 units.</txt>
+	</texto>
+
+	<texto tid="277">
+		<txt mode="ru">Доступные улучшения</txt>
+		<txt mode="en">Available upgrades</txt>
+	</texto>
+	<texto tid="278">
+		<txt mode="ru">Приобретено</txt>
+		<txt mode="en">Bought</txt>
+	</texto>
+
+	<texto tid="279">
+		<txt mode="ru">Вместительность домов</txt>
+		<txt mode="en">House capacity</txt>
+	</texto>
+	<texto tid="280">
+		<txt mode="ru">Вместительность домов. Теперь дома будут более вместительные и позволят увеличить число ваших граждан ещё на один род.</txt>
+		<txt mode="en">House capacity. Now your houses became more capacity and it is able you to increase number of your  citizens by 1 kin.</txt>
+	</texto>
+
+	<!-- армия:гоплиты-->
+	<texto tid="300">
+		<txt mode="ru">Гоплиты</txt>
+		<txt mode="en">Hoplites</txt>
+	</texto>
+	<texto tid="302">
+		<txt mode="ru">Гоплиты</txt>
+		<txt mode="en">Hoplites</txt>
+	</texto>
+
+	<!-- армия:стрелки-->
+	<texto tid="304">
+		<txt mode="ru">Гоплиты</txt>
+		<txt mode="en">Hoplites</txt>
+	</texto>
+	<texto tid="306">
+		<txt mode="ru">Стрелок</txt>
+		<txt mode="en">Archer</txt>
+	</texto>
+
+	<!-- армия:наёмники-->
+	<texto tid="308">
+		<txt mode="ru">Наёмники</txt>
+		<txt mode="en">Mercenaries</txt>
+	</texto>
+	<texto tid="310">
+		<txt mode="ru">Наёмники</txt>
+		<txt mode="en">Mercenaries</txt>
+	</texto>
+
+	<!-- армия:триремы-->
+	<texto tid="312">
+		<txt mode="ru">Триремы</txt>
+		<txt mode="en">Trireme</txt>
+	</texto>
+	<texto tid="314">
+		<txt mode="ru">Триремы</txt>
+		<txt mode="en">Trireme</txt>
+	</texto>
+
+	<!-- армия:триремы-->
+	<texto tid="316">
+		<txt mode="ru">Фивы</txt>
+		<txt mode="en">Thebes</txt>
+	</texto>
+	<texto tid="317">
+		<txt mode="ru">Дельфы</txt>
+		<txt mode="en">Delphi</txt>
+	</texto>
+	<texto tid="318">
+		<txt mode="ru">Фарсала</txt>
+		<txt mode="en">Farsala</txt>
+	</texto>
+	<texto tid="319">
+		<txt mode="ru">Афины</txt>
+		<txt mode="en">Athens</txt>
+	</texto>
+	<texto tid="320">
+		<txt mode="ru">Тиринф</txt>
+		<txt mode="en">Tiryns</txt>
+	</texto>
+	<texto tid="321">
+		<txt mode="ru">Амиклы</txt>
+		<txt mode="en">Amykles</txt>
+	</texto>
+	<texto tid="322">
+		<txt mode="ru">Калидон</txt>
+		<txt mode="en">Calydon</txt>
+	</texto>
+
+	<texto tid="324">
+		<txt mode="ru">покупка товара</txt>
+		<txt mode="en">purchase of goods</txt>
+	</texto>
+
+	<texto tid="326">
+		<txt mode="ru">продажа товара</txt>
+		<txt mode="en">selling goods</txt>
+	</texto>
+
+
+	<!-- набор имён для персонажей-->
+	<texto tid="500">
+		<txt mode="ru">Демокрит</txt>
+		<txt mode="en">Democritus</txt>
+	</texto>
+	<texto tid="501">
+		<txt mode="ru">Пифагор</txt>
+		<txt mode="en">Pythagoras</txt>
+	</texto>
+	<texto tid="502">
+		<txt mode="ru">Алкемид</txt>
+		<txt mode="en">Alkemidas</txt>
+	</texto>
+	<texto tid="503">
+		<txt mode="ru">Анаксемид</txt>
+		<txt mode="en">Anaximenes</txt>
+	</texto>
+	<texto tid="504">
+		<txt mode="ru">Атрей</txt>
+		<txt mode="en">Atreus</txt>
+	</texto>
+	<texto tid="505">
+		<txt mode="ru">Тевтам</txt>
+		<txt mode="en">Teuta</txt>
+	</texto>
+	<texto tid="506">
+		<txt mode="ru">Долон</txt>
+		<txt mode="en">Dolon</txt>
+	</texto>
+	<texto tid="507">
+		<txt mode="ru">Пеласг</txt>
+		<txt mode="en">Pelasgian</txt>
+	</texto>
+	<texto tid="508">
+		<txt mode="ru">Алкей</txt>
+		<txt mode="en">Alcaeus</txt>
+	</texto>
+	<texto tid="509">
+		<txt mode="ru">Геланник</txt>
+		<txt mode="en">Hellanicus</txt>
+	</texto>
+	<texto tid="510">
+		<txt mode="ru">Инах</txt>
+		<txt mode="en">Inachus</txt>
+	</texto>
+	<texto tid="511">
+		<txt mode="ru">Гекатей</txt>
+		<txt mode="en">Hecataeus</txt>
+	</texto>
+	<texto tid="512">
+		<txt mode="ru">Иас</txt>
+		<txt mode="en">Ias</txt>
+	</texto>
+	<texto tid="513">
+		<txt mode="ru">Нелей</txt>
+		<txt mode="en">Neleus</txt>
+	</texto>
+	<texto tid="514">
+		<txt mode="ru">Гипербий</txt>
+		<txt mode="en">Hiperbus</txt>
+	</texto>
+	<texto tid="515">
+		<txt mode="ru">Пелий</txt>
+		<txt mode="en">Pelias</txt>
+	</texto>
+	<texto tid="516">
+		<txt mode="ru">Девкалион</txt>
+		<txt mode="en">Deucalion</txt>
+	</texto>
+	<texto tid="517">
+		<txt mode="ru">Сарпедон</txt>
+		<txt mode="en">Sarpedon</txt>
+	</texto>
+
+
+
+	<texto tid="600">
+		<txt mode="ru">торговля</txt>
+		<txt mode="en">trading</txt>
+	</texto>
+	<texto tid="601">
+		<txt mode="ru">отношения</txt>
+		<txt mode="en">relations</txt>
+	</texto>
+	<texto tid="602">
+		<txt mode="ru">город</txt>
+		<txt mode="en">city</txt>
+	</texto>
+	<texto tid="603">
+		<txt mode="ru">ваш герой:</txt>
+		<txt mode="en">your hero:</txt>
+	</texto>
+
+	<!-- панель города: статус-->
+	<texto tid="604">
+		<txt mode="ru">статус:</txt>
+		<txt mode="en">status:</txt>
+	</texto>
+	<texto tid="605">
+		<txt mode="ru">паритет</txt>
+		<txt mode="en">parity</txt>
+	</texto>
+	<texto tid="606">
+		<txt mode="ru">колония</txt>
+		<txt mode="en">colony</txt>
+	</texto>
+	<texto tid="607">
+		<txt mode="ru">метрополия</txt>
+		<txt mode="en">metropolis</txt>
+	</texto>
+	<texto tid="608">
+		<txt mode="ru">зависим</txt>
+		<txt mode="en">depend</txt>
+	</texto>
+	<texto tid="609">
+		<txt mode="ru">владыка</txt>
+		<txt mode="en">overlord</txt>
+	</texto>
+
+	<texto tid="610">
+		<txt mode="ru">-лидерство</txt>
+		<txt mode="en">-leadership</txt>
+	</texto>
+	<texto tid="611">
+		<txt mode="ru">-сноровка</txt>
+		<txt mode="en">-dexterity</txt>
+	</texto>
+	<texto tid="612">
+		<txt mode="ru">-учёность</txt>
+		<txt mode="en">-learning</txt>
+	</texto>
+
+	<texto tid="614">
+		<txt mode="ru">Ведёт дела с городом</txt>
+		<txt mode="en">Oversee the city </txt>
+	</texto>
+
+
+
+
+</chronicle>

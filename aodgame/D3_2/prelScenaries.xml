@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chronicle>
+	<cid>D3</cid>
+
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1</qid>
+		<action>no</action>
+		<effect room="10">flyTo</effect>
+		<effect plane="1">flyToPlane</effect>
+		<effect sub="firstSubjects.xml" scen="firstScenaries.xml" texto="">load</effect>
+	</mmotion>
+
+
+	
+</chronicle>

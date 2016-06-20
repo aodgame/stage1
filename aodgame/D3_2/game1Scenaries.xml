@@ -1,0 +1,1061 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chronicle>
+	<cid>D3</cid>
+
+	<land xx="543" yy="602" id="1" subID="310" landID="330" res="clay">
+		<!-- стартовые состояния элементов: сначала ресы (3 поля), потом обозначение реса локации,
+		***	потом места под людей/здания, в конце - место под warning местности -->
+		<elem id="0" pic="4" income="1"/>
+		<elem id="1" pic="2" income="1"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="3" pic="10" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+	</land>
+	<land xx="615" yy="679" id="2" subID="311" landID="331" res="wheat">
+		<elem id="0" pic="3" income="2"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="4" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+	</land>
+	<land xx="792" yy="649" id="3" subID="312" landID="332" res="wood">
+		<elem id="0" pic="4" income="1"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="2" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="1"/>
+		<depends from="2"/>
+	</land>
+	<land xx="908" yy="549" id="4" subID="313" landID="333" res="deer">
+		<elem id="0" pic="3" income="1"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="8" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="3"/>
+		<depends from="5"/>
+	</land>
+	<land xx="775" yy="473" id="5" subID="314" landID="334" res="fish">
+		<elem id="0" pic="3" income="1"/>
+		<elem id="1" pic="4" income="1"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="3" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="1"/>
+		<depends from="3"/>
+	</land>
+	<land xx="367" yy="682" id="6" subID="315" landID="335" res="sheep">
+		<elem id="0" pic="3" income="2"/>
+		<elem id="1" pic="4" income="1"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="5" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+	</land>
+	<land xx="245" yy="568" id="7" subID="316" landID="336" res="wheat">
+		<elem id="0" pic="3" income="2"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="4" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+	</land>
+	<land xx="172" yy="684" id="8" subID="317" landID="337" res="olive">
+		<elem id="0" pic="3" income="1"/>
+		<elem id="1" pic="4" income="1"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="11" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+	</land>
+	<land xx="128" yy="461" id="9" subID="318" landID="338" res="copper">
+		<elem id="0" pic="4" income="2"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="9" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="7"/>
+		<depends from="8"/>
+	</land>
+	<land xx="179" yy="248" id="10" subID="319" landID="339" res="wood">
+		<elem id="0" pic="4" income="1"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="2" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="9"/>
+	</land>
+	<land xx="300" yy="182" id="11" subID="320" landID="340" res="silver">
+		<elem id="0" pic="2" income="1"/>
+		<elem id="1" pic="4" income="1"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="7" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="10"/>
+	</land>
+	<land xx="594" yy="175" id="12" subID="321" landID="341" res="stone">
+		<elem id="0" pic="4" income="1"/>
+		<elem id="1" pic="1" income="0"/>
+		<elem id="2" pic="1" income="0"/>
+
+		<elem id="0" pic="6" income="1"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+		<elem id="0" pic="1" income="0"/>
+
+		<elem id="0" pic="1" income="0"/>
+		<building iii="1" typpe="custom">
+			<des>yes</des>
+		</building>
+		<depends from="11"/>
+	</land>
+
+	<timmer id="1">
+		<elder date="3000" lag="-20" offText="BC"/>
+		<!--<younger offText="">
+			<date>jan</date>
+			<date>feb</date>
+			<date>mar</date>
+			<date>apr</date>
+			<date>may</date>
+			<date>jun</date>
+			<date>jul</date>
+			<date>aug</date>
+			<date>sep</date>
+			<date>oct</date>
+			<date>nov</date>
+			<date>dec</date>
+		</younger>-->
+	</timmer>
+
+	<globalRes iii="1" typpe="gold" pic="2" name="200" description="201" startAmount="4" isFree="0" min="0" max="10000" spec="0">1</globalRes> <!-- золото -->
+	<globalRes iii="2" typpe="food" pic="3" name="202" description="203" startAmount="50" isFree="0" min="0" max="10000" spec="0">2</globalRes> <!-- пиша -->
+	<globalRes iii="3" typpe="mine" pic="4" name="204" description="205" startAmount="8" isFree="0" min="0" max="10000" spec="0">3</globalRes> <!-- материалы -->
+	<globalRes iii="4" typpe="craft" pic="5" name="206" description="207" startAmount="7" isFree="0" min="0" max="10000" spec="0">4</globalRes> <!-- товары -->
+	<globalRes iii="5" typpe="ilot" pic="6" name="240" description="241" startAmount="0" isFree="1" min="0" max="10000" spec="need">
+		<need every="2" need="-1" from="food" income="decrease"/>
+	</globalRes> <!-- люди:илоты -->
+	<globalRes iii="6" typpe="metek" pic="7" name="242" description="243" startAmount="0" isFree="1" min="0" max="10000" spec="need">
+		<need every="2" need="-1" from="food" income="decrease"/>
+	</globalRes> <!-- люди:метэки -->
+	<globalRes iii="7" typpe="human" pic="8" name="244" description="245" startAmount="5" isFree="1" min="0" max="10000" spec="need">
+		<need every="1" need="-1" from="food" income="decrease"/>
+		<need every="1" need="1" from="house" income="grow"/>
+		<need every="1" need="1" from="food" income="grow"/>
+		<need every="3" need="1" from="food" income="wane"/>
+		<!--<need every="1" need="-1" from="house" income="presence"/>-->
+	</globalRes> <!-- товары:граждане -->
+	<globalRes iii="8" typpe="mind" pic="9" name="261" description="261" startAmount="20" isFree="0" min="0" max="10000" spec="0">8</globalRes> <!-- опыт -->
+	<globalRes iii="9" typpe="favor" pic="10" name="262" description="262" startAmount="2" isFree="0" min="0" max="10000" spec="0">9</globalRes> <!-- благосклонность -->
+	<globalRes iii="10" typpe="house" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">10</globalRes><!-- дома для горожан -->
+	<globalRes iii="11" typpe="house_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">11</globalRes><!-- дома для метеков -->
+	<globalRes iii="12" typpe="house_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">12</globalRes><!-- дома для илотов -->
+	<globalRes iii="13" typpe="respect" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">
+		<need every="1" need="-1" from="human" income="house"/>
+		<need every="1" need="0" from="human" income="food"/>
+	</globalRes><!-- отношение к вам горожан -->
+	<globalRes iii="14" typpe="respect_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">14</globalRes><!-- отношение к вам метеков -->
+	<globalRes iii="15" typpe="respect_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">15</globalRes><!-- отношение к вам илотов -->
+	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="200" isFree="0" min="0" max="10000" spec="0">16</globalRes><!-- армия: гоплиты -->
+	<globalRes iii="17" typpe="army_archer" pic="12" name="304" description="306" startAmount="0" isFree="0" min="0" max="10000" spec="0">17</globalRes><!-- армия: стрелки -->
+	<globalRes iii="18" typpe="army_mercenaries" pic="13" name="308" description="310" startAmount="0" isFree="0" min="0" max="10000" spec="0">18</globalRes><!-- армия: наёмники -->
+	<globalRes iii="19" typpe="army_trireme" pic="14" name="312" description="314" startAmount="0" isFree="0" min="0" max="10000" spec="0">19</globalRes><!-- армия: триремы -->
+
+
+	<landRes typpe="no" pic="0" name="220" description="221"> <!-- no -->
+	</landRes>
+	<landRes typpe="wood" pic="1" name="220" description="221"> <!-- древесина -->
+		<res typpe="mine" income="1"/>
+	</landRes>
+	<landRes typpe="fish" pic="2" name="222" description="223"> <!-- рыба -->
+		<res typpe="food" income="1"/>
+		<res typpe="mine" income="1"/>
+	</landRes>
+	<landRes typpe="wheat" pic="3" name="224" description="225"> <!-- пшеница -->
+		<res typpe="food" income="2"/>
+	</landRes>
+	<landRes typpe="sheep" pic="4" name="226" description="227"> <!-- овцы -->
+		<res typpe="food" income="2"/>
+		<res typpe="mine" income="1"/>
+	</landRes>
+	<landRes typpe="stone" pic="5" name="228" description="229"> <!-- камень -->
+		<res typpe="mine" income="1"/>
+	</landRes>
+	<landRes typpe="silver" pic="6" name="230" description="231"> <!-- серебро -->
+		<res typpe="gold" income="1"/>
+		<res typpe="mine" income="1"/>
+	</landRes>
+	<landRes typpe="deer" pic="7" name="232" description="233"> <!-- олени -->
+		<res typpe="food" income="1"/>
+	</landRes>
+	<landRes typpe="copper" pic="8" name="234" description="235"> <!-- медь -->
+		<res typpe="mine" income="2"/>
+	</landRes>
+	<landRes typpe="clay" pic="9" name="236" description="237"> <!-- глина -->
+		<res typpe="mine" income="1"/>
+		<res typpe="gold" income="1"/>
+	</landRes>
+	<landRes typpe="olive" pic="10" name="238" description="239"> <!-- оливы -->
+		<res typpe="food" income="1"/>
+		<res typpe="mine" income="1"/>
+	</landRes>
+
+	<landRes typpe="house" pic="1" name="252" description="253"> <!-- дом -->
+		<res typpe="house" income="1"/>
+	</landRes>
+	<landRes typpe="ergasteriaPotter" pic="12" name="254" description="255"> <!-- мастерская керамики -->
+		<res typpe="mine" income="-2"/>
+		<res typpe="craft" income="1"/>
+	</landRes>
+	<landRes typpe="ergasteriaFurniture" pic="13" name="263" description="264"> <!-- мастерская мебели -->
+		<res typpe="mine" income="-3"/>
+		<res typpe="craft" income="2"/>
+	</landRes>
+	<landRes typpe="ergasteriaWeapon" pic="14" name="254" description="255"> <!-- мастерская керамики -->
+		<res typpe="mine" income="-3"/>
+		<res typpe="craft" income="5"/>
+		<res typpe="favor" income="1"/>
+	</landRes>
+	<landRes typpe="harbor" pic="15" name="265" description="266"> <!-- гавань -->
+		<res typpe="mine" income="-1"/>
+		<res typpe="craft" income="-1"/>
+		<res typpe="gold" income="2"/>
+	</landRes>
+	<landRes typpe="temple" pic="16" name="254" description="255"> <!-- храм -->
+		<res typpe="gold" income="-2"/>
+		<res typpe="favor" income="2"/>
+	</landRes>
+	<landRes typpe="school" pic="17" name="267" description="268"> <!-- школа -->
+		<res typpe="gold" income="-1"/>
+		<res typpe="food" income="-1"/>
+		<res typpe="mind" income="2"/>
+	</landRes>
+	<landRes typpe="theatre" pic="18" name="269" description="270"> <!-- театр -->
+		<res typpe="food" income="-3"/>
+		<res typpe="mind" income="2"/>
+		<res typpe="favor" income="1"/>
+	</landRes>
+	<landRes typpe="hut" pic="19" name="271" description="272"> <!-- барак -->
+		<res typpe="house_ilot" income="1"/>
+	</landRes>
+
+	<building iii="0" landResType="destroy" name="250" description="251">
+		<param baseBuilding="1" canBuild="1" maxWorkplace="0" timeToBuild="0"/>
+		<build cost="0" res=""></build>
+	</building>
+	<building iii="1" landResType="custom" name="246" description="247">
+		<param baseBuilding="1" canBuild="1" maxWorkplace="2" timeToBuild="0"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="1">metek</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="0" res=""></build>
+	</building>
+	<building iii="2" landResType="house" name="252" description="253"> <!-- дом -->
+		<param baseBuilding="1" canBuild="1" maxWorkplace="0" timeToBuild="0"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="1">metek</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="2" res="mine"></build>
+	</building>
+	<building iii="3" landResType="ergasteriaPotter" name="254" description="255"> <!-- эргастерия керамики -->
+		<param baseBuilding="0" canBuild="1" maxWorkplace="1" timeToBuild="1"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="1">metek</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="2" res="mine"></build>
+	</building>
+	<building iii="4" landResType="ergasteriaFurniture" name="263" description="264"> <!-- эргастерия мебели -->
+		<param baseBuilding="0" canBuild="1" maxWorkplace="1" timeToBuild="1"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="1">metek</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="2" res="mine"></build>
+	</building>
+	<building iii="5" landResType="ergasteriaWeapon" name="256" description="257"> <!-- эргастерия оружия -->
+		<param baseBuilding="0" canBuild="0" maxWorkplace="1" timeToBuild="2"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="2" res="mine"></build>
+		<build cost="2" res="gold"></build>
+	</building>
+	<building iii="6" landResType="harbor" name="265" description="266"> <!-- гавань -->
+		<param baseBuilding="0" canBuild="0" maxWorkplace="1" timeToBuild="2"/>
+		<globalResNeedToWork cons="0">ilot</globalResNeedToWork>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="2" res="mine"></build>
+		<build cost="2" res="gold"></build>
+		<build cost="2" res="craft"></build>
+		<notBuildLand>2</notBuildLand> <!-- по id местности-->
+		<notBuildLand>3</notBuildLand>
+		<notBuildLand>4</notBuildLand>
+		<notBuildLand>6</notBuildLand>
+		<notBuildLand>8</notBuildLand>
+		<notBuildLand>12</notBuildLand>
+	</building>
+	<building iii="7" landResType="temple" name="258" description="259"> <!-- храм -->
+		<param baseBuilding="0" canBuild="1" maxWorkplace="1" timeToBuild="3"/>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="4" res="mine"></build>
+		<build cost="3" res="craft"></build>
+		<build cost="2" res="gold"></build>
+	</building>
+	<building iii="8" landResType="school" name="267" description="268"> <!-- школа -->
+		<param baseBuilding="0" canBuild="0" maxWorkplace="1" timeToBuild="2"/>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="3" res="mine"></build>
+		<build cost="1" res="craft"></build>
+	</building>
+	<building iii="9" landResType="theatre" name="269" description="270"> <!-- театр -->
+		<param baseBuilding="0" canBuild="0" maxWorkplace="1" timeToBuild="3"/>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="3" res="mine"></build>
+		<build cost="2" res="craft"></build>
+		<build cost="1" res="gold"></build>
+	</building>
+	<building iii="10" landResType="hut" name="271" description="272"> <!-- барак -->
+		<param baseBuilding="0" canBuild="1" maxWorkplace="0" timeToBuild="1"/>
+		<globalResNeedToWork cons="2">human</globalResNeedToWork>
+		<build cost="1" res="mine"></build>
+	</building>
+
+
+	<problemSituation typpe="no"/>
+	<problemSituation typpe="wait"/>
+	<problemSituation typpe="build"/>
+	<problemSituation typpe="rebelionCitizen"/>
+
+	<!-- исследование: возможность строить здания (ergasteriaWeapon)-->
+	<modification iii="0" name="275" description="275" isOpened="0" cost="1" res="mind">
+		<!--<needToOpen iii="0"/>-->
+		<typpe tip="openBuilding" id="5"/>
+		<typpe tip="increaseResource" id="5" res="craft" num="2"> <!-- id - номер по building-->
+			<upd name="gold" num="2"/>
+			<upd name="mind" num="2"/>
+			<upd name="favor" num="2"/>
+		</typpe>
+		<typpe tip="increaseResource" id="5" res="mine" num="1"/>
+		<typpe tip="addWorkerPlace" id="5"/>
+	</modification>
+
+	<!-- исследование: возможность строить здания (harbor)-->
+	<modification iii="1" name="265" description="266" isOpened="0" cost="4" res="mind">
+		<needToOpen iii="0"/>
+		<typpe tip="openBuilding" id="6"/>
+	</modification>
+
+	<!-- исследование: повышается возможность проживания жильцов в домах-->
+	<modification iii="2" name="279" description="280" isOpened="0" cost="3" res="mind">
+		<needToOpen iii="0"/>
+		<typpe tip="increaseResource" id="2" res="house" num="1">
+			<upd name="gold" num="2"/>
+			<upd name="mind" num="2"/>
+			<upd name="favor" num="2"/>
+		</typpe>
+	</modification>
+
+	<!-- исследование: возможность строить здания (school)-->
+	<modification iii="3" name="269" description="270" isOpened="0" cost="2" res="mind">
+		<needToOpen iii="0"/>
+		<typpe tip="openBuilding" id="8"/>
+	</modification>
+
+	<!-- исследование: возможность строить здания (theatre)-->
+	<modification iii="4" name="274" description="276" isOpened="0"  cost="5" res="mind">
+		<needToOpen iii="3"/>
+		<typpe tip="openBuilding" id="9"/>
+	</modification>
+
+	<!-- храним айдишники имён для персонажей-->
+	<name id="500"/>
+	<name id="501"/>
+	<name id="502"/>
+	<name id="503"/>
+	<name id="504"/>
+	<name id="505"/>
+	<name id="506"/>
+	<name id="507"/>
+	<name id="508"/>
+	<name id="509"/>
+	<name id="510"/>
+	<name id="511"/>
+	<name id="512"/>
+	<name id="513"/>
+	<name id="514"/>
+	<name id="515"/>
+	<name id="516"/>
+	<name id="517"/>
+
+	<heroRes typpe="leadership" txt="610"/>
+	<heroRes typpe="dexterity" txt="611"/>
+	<heroRes typpe="learning" txt="612"/>
+
+	<!-- типы героев-->
+	<hero typpe="no" iii="0"/>
+	<hero typpe="adventurer" iii="1" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="5" max="10"/>
+		<heroRes typpe="dexterity" min="2" max="7"/>
+		<heroRes typpe="learning" min="0" max="5"/>
+	</hero>
+	<hero typpe="artist" iii="2" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="0" max="5"/>
+		<heroRes typpe="dexterity" min="5" max="10"/>
+		<heroRes typpe="learning" min="2" max="7"/>
+	</hero>
+	<hero typpe="hero" iii="3" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="5" max="10"/>
+		<heroRes typpe="dexterity" min="0" max="5"/>
+		<heroRes typpe="learning" min="2" max="7"/>
+	</hero>
+	<hero typpe="philosoph" iii="4" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="0" max="5"/>
+		<heroRes typpe="dexterity" min="2" max="7"/>
+		<heroRes typpe="learning" min="5" max="10"/>
+	</hero>
+	<hero typpe="priest" iii="5" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="2" max="7"/>
+		<heroRes typpe="dexterity" min="0" max="5"/>
+		<heroRes typpe="learning" min="5" max="10"/>
+	</hero>
+	<hero typpe="trader" iii="6" ageMin="8" ageMax="15">
+		<need typpe="human" num="1"/>
+		<heroRes typpe="leadership" min="0" max="5"/>
+		<heroRes typpe="dexterity" min="5" max="10"/>
+		<heroRes typpe="learning" min="7" max="2"/>
+	</hero>
+
+	<params type="heroBuyPanel" iii="528"/>
+	<params type="hero" iii="526"/>
+	<params type="cityStart" iii="820"/>
+	<params type="playerIII" iii="1"/>
+	<params type="cityPanel" iii="850"/>
+	<params type="heroFramNumInCity" iii="9"/>
+	<params type="maxHeroNum" iii="5"/>
+	<params type="maxHeroActionsNum" iii="2"/>
+	<params type="heroScreenCloseShadow" iii="550"/>
+
+	<statu num="-2" txt="608"/>
+	<statu num="-1" txt="606"/>
+	<statu num="0" txt="605"/>
+	<statu num="1" txt="607"/>
+	<statu num="2" txt="609"/>
+
+	<city iii="1" name="322" sub="820" elem="1"> <!-- город игрока Калидон-->
+		<peacewar iii="2" war="1" relation="0" status="0"/> <!-- 1..100-->
+		<peacewar iii="3" war="0" relation="50" status="-1"/> <!-- 1..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- 1..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- 1..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- 1..100-->
+		<peacewar iii="7" war="0" relation="50" status="1"/> <!-- 1..100-->
+	</city>
+	<city iii="2" name="317" sub="820" elem="2"> <!-- Дельфы -->
+		<peacewar iii="1" war="1" relation="0" status="0"/> <!-- -100..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+	<city iii="3" name="318" sub="820" elem="3"> <!-- Фарсала -->
+		<peacewar iii="1" war="0" relation="50" status="2"/> <!-- -100..100-->
+		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+	<city iii="4" name="316" sub="820" elem="4"> <!-- Фивы -->
+		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+	<city iii="5" name="319" sub="820" elem="5"> <!-- Афины -->
+		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+	<city iii="6" name="320" sub="820" elem="6"> <!-- Тиринф -->
+		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+	<city iii="7" name="321" sub="820" elem="7"> <!-- Амиклы -->
+		<peacewar iii="1" war="0" relation="50" status="-1"/> <!-- -100..100-->
+		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
+	</city>
+
+	<trading city1="2" city2="3" isWork="1">
+		<from1 res="food" cost="gold" rNum="2" cNum="1"/>
+		<from1 res="gold" cost="craft" rNum="3" cNum="1"/>
+	</trading>
+
+
+	<costFrom1 res="food" cost="gold" rNum="2" cNum="1"/> <!-- за две меры пищи получим один талант-->
+	<costFrom1 res="mine" cost="gold" rNum="3" cNum="1"/>
+	<costFrom1 res="craft" cost="gold" rNum="2" cNum="1"/>
+	<costFrom1 res="ilot" cost="gold" rNum="2" cNum="1"/>
+	<costFrom1 res="gold" cost="food" rNum="5" cNum="1"/> <!-- за два таланта получим одну меру пищи-->
+	<costFrom1 res="gold" cost="mine" rNum="1" cNum="1"/>
+	<costFrom1 res="gold" cost="craft" rNum="3" cNum="1"/>
+	<costFrom1 res="gold" cost="ilot" rNum="4" cNum="1"/>
+
+	<heroActivity>
+		<activity act="city"/>
+		<relate txt="614"/>
+		<relate txt="$curCityName"/>
+		<cost typpe="dexterity" num="4"/>
+	</heroActivity>
+
+
+	<!--Перехват действия с переходом в локацию 1 из интро -->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="20" willSave="0">201</qid>
+		<action num="2">nextTurn</action>
+		<effect room="30">flyTo</effect>
+		<effect collect="1">craft</effect>
+		<effect collect="2">craft</effect>
+		<!--<effect collect="3" tip="stand">game1</effect>-->
+		<effect collect="4" tip="collect">game1</effect>
+		<effect iii="306">visOn</effect>
+		<effect iii="334">visOn</effect>
+		<effect iii="253">visOn</effect>
+		<!--<effect room="30" iii="202">reposition</effect>-->
+		<!--<effect tip="goTo" pos="30" iii="202">buttonRepos</effect>-->
+    	<effect>turnOut</effect>
+	</mmotion>
+
+	<!--необходимость спозиционировать предметы-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">210</qid>
+		<action>positionIt</action>
+		<effect>positionIt</effect>
+	</mmotion>
+
+	<!--необходимость визуализировать предметы-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">211</qid>
+		<action>visIt</action>
+		<effect>visIt</effect>
+	</mmotion>
+
+	<!--необходимость визуализировать предметы-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">212</qid>
+		<action>darken</action>
+		<effect iii="390">visOn</effect>
+		<effect iii="400">visOn</effect>
+		<effect iii="410">visOn</effect>
+		<effect iii="412">visOn</effect>
+		<effect iii="416">visOn</effect>
+		<effect iii="350">vis</effect>
+
+	</mmotion>
+
+	<!--необходимость визуализировать предметы-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">213</qid>
+		<action iii="350">tap</action>
+		<effect mode="off">darken</effect>
+		<effect iii="390">visOff</effect>
+		<effect iii="400">visOff</effect>
+		<effect iii="410">visOff</effect>
+		<effect iii="412">visOff</effect>
+		<effect iii="413">visOff</effect>
+		<effect iii="414">visOff</effect>
+		<effect iii="415">visOff</effect>
+		<effect iii="416">visOff</effect>
+		<effect iii="418">visOff</effect>
+		<effect iii="419">visOff</effect>
+		<effect iii="420">visOff</effect>
+		<effect iii="411">visOff</effect>
+		<effect res="1">updWaitReady</effect>
+	</mmotion>
+
+	<!--нажата кнопка нового хода-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">214</qid>
+		<action iii="360">tap</action>
+		<effect>nextTurn</effect>
+	</mmotion>
+
+	<!--выбран рес-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">215</qid>
+		<action  iii="386">tap</action>
+		<effect tip="ilot">resChoose</effect>
+	</mmotion>
+	<!--выбран рес-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">216</qid>
+		<action  iii="387">tap</action>
+		<effect tip="metek">resChoose</effect>
+	</mmotion>
+	<!--выбран рес-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">217</qid>
+		<action  iii="388">tap</action>
+		<effect tip="human">resChoose</effect>
+	</mmotion>
+
+	<!--передвинут человек-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">240</qid>
+		<action>workActivity</action>
+		<effect>workerChange</effect>
+	</mmotion>
+
+	<!--нажата кнопка строительства зданий-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">250</qid>
+		<action iii="400">tap</action>
+		<effect>buildTap</effect>
+	</mmotion>
+
+	<!--проведено строительство, надо создать препятствие build на земле-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">260</qid>
+		<action>madeBuild</action>
+		<effect tip="build">problemSituation</effect>
+	</mmotion>
+
+	<!--нажата или нет кнопка апдейта-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="40" willSave="0">264</qid>
+		<action iii="616">tap</action>
+		<effect>update</effect>
+	</mmotion>
+
+	<!-- отплата приобретения апдейта на землю/здание в виде золота-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">270</qid>
+		<action iii="413">tap</action>
+		<effect res="0">buyUpdate</effect>
+	</mmotion>
+	<!-- отплата приобретения апдейта на землю/здание в виде знаний-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">271</qid>
+		<action iii="414">tap</action>
+		<effect res="7">buyUpdate</effect>
+	</mmotion>
+	<!-- отплата приобретения апдейта на землю/здание в виде благосклонности-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">272</qid>
+		<action iii="415">tap</action>
+		<effect res="8">buyUpdate</effect>
+	</mmotion>
+
+	<!--показываем приобретённые апдейты на земле-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">274</qid>
+		<action iii="410">tap</action>
+		<effect iii="411">visOn</effect>
+		<effect iii="410">visOff</effect>
+		<effect iii="413">visOff</effect>
+		<effect iii="414">visOff</effect>
+		<effect iii="415">visOff</effect>
+		<effect iii="418">visOff</effect>
+		<effect iii="419">visOff</effect>
+		<effect iii="420">visOff</effect>
+		<effect res="0">updWaitReady</effect>
+	</mmotion>
+	<!--показываем возможные к приобретению апдейты на земле-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">276</qid>
+		<action iii="411">tap</action>
+		<effect iii="410">visOn</effect>
+		<effect iii="411">visOff</effect>
+		<effect res="1">updWaitReady</effect>
+	</mmotion>
+
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">278</qid>
+		<action iii="412">tap</action>
+		<action res="1">updWaitReady</action>
+		<effect iii="413">visOn</effect>
+		<effect iii="414">visOn</effect>
+		<effect iii="415">visOn</effect>
+		<effect iii="418">visOn</effect>
+		<effect iii="419">visOn</effect>
+		<effect iii="420">visOn</effect>
+	</mmotion>
+
+	<!--восстание граждан-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">280</qid>
+		<action>changeTurn</action>
+		<action tip="human" level="0" chance="1">resLevelMoreThan</action>
+		<action tip="respect" level="-4" chance="0.8">resLevelLowerThan</action>
+		<effect tip="rebelionCitizen" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-1">resChange</effect>
+	</mmotion>
+
+	<!--нажата кнопка перехода к панели героев
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">282</qid>
+		<action iii="520">tap</action>
+		<effect iii="520">visOff</effect>
+		<effect iii="522">visOn</effect>
+		<effect iii="521">visOn</effect>
+	</mmotion>-->
+
+	<!--нажата кнопка перехода к панели рабочих
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">283</qid>
+		<action iii="522">tap</action>
+		<effect iii="520">visOn</effect>
+		<effect iii="522">visOff</effect>
+		<effect iii="521">visOff</effect>
+		<effect iii="528">visOff</effect>
+	</mmotion>-->
+
+<!--нажата кнопка перехода к панели покупки героев-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">287</qid>
+		<action iii="521">tap</action>
+		<effect iii="528">simpleVis</effect>
+	</mmotion>
+
+	<!--нажата кнопка нового хода-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="40" willSave="0">400</qid>
+		<action iii="611">tap</action>
+		<effect>nextTurn</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect>cityClose</effect>
+	</mmotion>
+
+	<!--нажата кнопка возврата на карту города, зачищаем все окна с инфой о апдейтах-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">401</qid>
+		<action iii="504">tap</action>
+		<effect>clearUpdates</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect>cityClose</effect>
+	</mmotion>
+
+	<!--нажата кнопка перехода на карту мира, зачищаем все окна с инфой о апдейтах-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">401</qid>
+		<action iii="502">tap</action>
+		<effect>clearUpdates</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect>cityClose</effect>
+	</mmotion>
+
+	<!--нажата кнопка показа диалогового меню города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">405</qid>
+		<action iii="820">tap</action>
+		<effect iii="860">visOff</effect>
+		<effect iii="850">setNowCoords</effect>
+		<effect iii="850">visOn</effect>
+
+	</mmotion>
+
+	<!--нажата кнопка закрытия диалогового меню города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">407</qid>
+		<action iii="850">tap</action>
+		<action iii="8">numOfMany</action>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect>cityClose</effect>
+	</mmotion>
+
+	<!--нажата кнопка показа меню торговли города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">409</qid>
+		<action iii="850">tap</action>
+		<action iii="5">numOfMany</action>
+		<effect iii="860">visOn</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="850">getCoords</effect>
+		<effect iii="860">setCoords</effect>
+	</mmotion>
+
+	<!--нажата кнопка закрытия меню торговли города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">411</qid>
+		<action iii="860">tap</action>
+		<action iii="5">numOfMany</action>
+		<effect iii="860">getCoords</effect>
+		<effect iii="850">setCoords</effect>
+		<effect iii="860">visOff</effect>
+		<effect iii="850">visOn</effect>
+	</mmotion>
+
+	<!--нажата кнопка закрытия меню торговли города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">412</qid>
+		<action iii="860">tap</action>
+		<action iii="6">numOfMany</action>
+		<effect iii="860">getCoords</effect>
+		<effect iii="850">setCoords</effect>
+		<effect iii="860">visOff</effect>
+	</mmotion>
+
+
+	<!--зажата панель героя-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">415</qid>
+		<action iii="526">tapDown</action>
+		<effect iii="526">heroControl</effect>
+	</mmotion>
+
+	<!-- изменения торговли для клиента: нажата кнопка покупки пищи за золото-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">420</qid>
+		<action iii="860">tap</action>
+		<action iii="9">numOfMany</action>
+		<effect buy="food" sell="gold">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки добычи за золото-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">421</qid>
+		<action iii="860">tap</action>
+		<action iii="10">numOfMany</action>
+		<effect buy="mine" sell="gold">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки производства за золото-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">422</qid>
+		<action iii="860">tap</action>
+		<action iii="11">numOfMany</action>
+		<effect buy="craft" sell="gold">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки илотов за золото-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">423</qid>
+		<action iii="860">tap</action>
+		<action iii="12">numOfMany</action>
+		<effect buy="ilot" sell="gold">tradeOffer</effect>
+	</mmotion>
+
+	<!-- нажата кнопка покупки золота за пищу -->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">424</qid>
+		<action iii="860">tap</action>
+		<action iii="13">numOfMany</action>
+		<effect buy="gold" sell="food">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки золота за добычу-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">425</qid>
+		<action iii="860">tap</action>
+		<action iii="14">numOfMany</action>
+		<effect buy="gold" sell="mine">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки золота за производство-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">426</qid>
+		<action iii="860">tap</action>
+		<action iii="15">numOfMany</action>
+		<effect buy="gold" sell="craft">tradeOffer</effect>
+	</mmotion>
+	<!-- нажата кнопка покупки золота за илотов-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">427</qid>
+		<action iii="860">tap</action>
+		<action iii="16">numOfMany</action>
+		<effect buy="gold" sell="ilot">tradeOffer</effect>
+	</mmotion>
+
+
+	<!-- вызываем экран героя-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">430</qid>
+		<action iii="526">tap</action>
+		<action iii="526" num="1" tip="intro">outOfPosition</action>
+		<effect iii="550">visOn</effect>
+		<effect iii="552">visOn</effect>
+		<effect iii="554">visOn</effect>
+		<effect res="start">heroStartFinish</effect>
+	</mmotion>
+
+	<!-- закрываем экран героя-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">432</qid>
+		<action iii="550">tap</action>
+		<effect iii="550">visOff</effect>
+		<effect iii="552">visOff</effect>
+		<effect iii="554">visOff</effect>
+		<effect tip="close">heroOut</effect>
+		<effect res="finish">heroStartFinish</effect>
+	</mmotion>
+
+	<!-- закрываем экран героя-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">434</qid>
+		<action>heroPanelClose</action>
+		<effect iii="550">visOff</effect>
+		<effect iii="552">visOff</effect>
+		<effect iii="554">visOff</effect>
+		<effect tip="close">heroOut</effect>
+		<effect res="finish">heroStartFinish</effect>
+	</mmotion>
+
+
+	<!--снимаем героя с города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">440</qid>
+		<action iii="850">tap</action>
+		<action iii="9">numOfMany</action>
+		<action iii="850" num="2" tip="extro">outOfPosition</action>
+		<effect iii="850" eee="9" num="1">gotoFram</effect>
+		<effect iii="850">needFram</effect>
+		<effect tip="city">heroOut</effect>
+
+	</mmotion>
+
+
+	<!--нажата кнопка нового хода-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">500</qid>
+		<action iii="810">tap</action>
+		<effect>nextTurn</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect>cityClose</effect>
+	</mmotion>
+
+
+
+	<!--проверяем потребность одного глобального ресурса в другом
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">260</qid>
+		<action>res</action>
+		<effect>res_need</effect>
+	</mmotion>-->
+
+<!--пропускаем диалог
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">202</qid>
+		<action iii="202">tap</action>
+		<effect>makeSkip</effect>
+	</mmotion>-->
+
+
+
+
+
+
+
+</chronicle>
