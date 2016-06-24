@@ -3,6 +3,7 @@
  */
 package story.managers
 {
+import collections.common.Hero;
 import collections.inCity.Building;
 
 import story.*;
@@ -181,7 +182,167 @@ public class ResManager
 
     private function reTrade():void //обозначаем торговлю
     {
+        trace("reTrade=1");
+        var resUse:Vector.<int> = new Vector.<int>();
 
+        var cityActNum:int=-1;
+        //уточняем номер активности типа город
+        for (var k:int=0; k<dan.heroActivities.length; k++)
+        {
+            if (dan.heroActivities[k].act=="city")
+            {
+                cityActNum=k;
+                break;
+            }
+        }
+
+        for (i=0; i<dan.currentHeroes.length; i++) //проходим по каждому герою
+        {
+            var hero:Hero = dan.currentHeroes[i];
+            //trace("hero i="+i);
+
+            resUse = new Vector.<int>();
+            for(var k:int=0; k<dan.heroRes.length; k++)
+            {
+                resUse.push(hero.heroResMax[k]);
+            }
+
+            for (var j:int=0; j<hero.needTyppe.length; j++)//проходим по каждой активности каждого героя
+            {
+                var curActivity:int=0;
+                //и вначале делаем подсчёт очков, необходимых на эти активности
+                for (var k:int=0; k<dan.heroActivities.length; k++) //для этого находим связь каждой из активностей героя со списком активностей
+                {
+                    if (hero.needTyppe[j]==dan.heroActivities[k].act)
+                    {
+                        curActivity=k;
+                        break;
+                    }
+                }
+                for (var k:int=0; k<dan.heroActivities[curActivity].costTyppe.length; k++) //и подсчитываем, сколько очков игрок уже потратил бы, дойдя до этой активности
+                {
+                    for (var n:int=0; n<dan.heroRes.length; n++)
+                    {
+                        if (dan.heroActivities[curActivity].costTyppe[k]==dan.heroRes[n].typpe)
+                        {
+                            resUse[n]-=dan.heroActivities[curActivity].costNum[k];
+                            break;
+                        }
+                    }
+                }
+                if (hero.needTyppe[j]=="city") //теперь просчитываем торговлю
+                {
+                    //trace("hero city");
+                    var enought:Boolean=true;
+                    for (var k:int=0; k<dan.heroActivities[curActivity].costTyppe.length; k++) //уточняем, хватает ли нам запаса ресурсов на эту активность
+                    {
+                        for (var n:int=0; n<dan.heroRes.length; n++)
+                        {
+                            if (dan.heroActivities[curActivity].costTyppe[k]==dan.heroRes[n].typpe && resUse[n]<0)
+                            {
+                                enought=false;
+                                break;
+                            }
+                        }
+                    }
+                    if (!enought) //ресурсов героя не хватает, уходим к следующему герою
+                    {
+                        break;
+                    }
+
+                    var youhero:int=-1;
+                    var unhero:int=-1;
+                    var transNum:int=-1;
+                    //trace("curNum of hero="+dan.heroActivities[curActivity].act);
+                    //trace(">>"+hero.needTyppe[j]+":"+hero.needNum[j]);
+                    //ресурсов героя хватает, начинаем просчёт торговли
+                    for (var k:int=0; k<dan.tradeTransactions.length; k++)
+                    {
+                        if (dan.tradeTransactions[k].city1==hero.needNum[j] && dan.tradeTransactions[k].city2==dan.playerIII)
+                        {
+                            youhero=1;
+                            unhero=0;
+                            transNum=k+1;
+                            break;
+                        }
+                        if (dan.tradeTransactions[k].city2==hero.needNum[j] && dan.tradeTransactions[k].city1==dan.playerIII)
+                        {
+                            youhero=0;
+                            unhero=1;
+                            transNum=k+1;
+                            break;
+                        }
+                    }
+
+                    //trace("transNum="+transNum);
+                    //trace("dan.tradeTransactions[transNum].res.length="+dan.tradeTransactions[transNum].res.length);
+                    //trace("dan.tradeTransactions[transNum].cost.length="+dan.tradeTransactions[transNum].cost.length);
+                    for (var t:int=0; t<dan.tradeTransactions.length; t++)
+                    {
+                        //trace("t="+t+"; res.length="+dan.tradeTransactions[t].res.length+"::"+dan.tradeTransactions[t].cost.length);
+                    }
+                    for (var t:int=0; t<dan.globalRes.length; t++)
+                    {
+                        dan.globalRes[t].littleInt=dan.globalRes[t].amount;
+                        if (dan.globalRes[t].amount<0)
+                        {
+                            dan.globalRes[t].littleInt=0;
+                        }
+                    }
+
+                    //проверяем, а хватит ли ресурсов для сделки
+                    enought=true;
+
+                    for (var k:int=0; k<dan.tradeTransactions[transNum].res.length; k++)
+                    {
+                        var resTyppe:String="";
+                        var resNum:int=0;
+
+                        var costTyppe:String="";
+                        var costNum:int=0;
+                        //trace("res="+dan.tradeTransactions[transNum].res[k]+"; cost:"+dan.tradeTransactions[transNum].cost[k]);
+                        //trace("rNum="+dan.tradeTransactions[transNum].rNum[k]+"; cNum="+dan.tradeTransactions[transNum].cNum[k]);
+                        resTyppe=dan.tradeTransactions[transNum].res[k];
+                        resNum=dan.tradeTransactions[transNum].cNum[k];
+                        costTyppe=dan.tradeTransactions[transNum].cost[k];
+                        costNum=dan.tradeTransactions[transNum].rNum[k];
+
+                        for (var t:int=0; t<dan.globalRes.length; t++)
+                        {
+                            if (dan.globalRes[t].typpe==resTyppe)
+                            {
+                                //trace("before minus: dan.globalRes[t].littleInt="+dan.globalRes[t].littleInt+"("+dan.globalRes[t].typpe);
+                                dan.globalRes[t].littleInt+=resNum;
+                                //trace("minus: dan.globalRes[t].littleInt="+dan.globalRes[t].littleInt+"("+dan.globalRes[t].typpe)
+                            }
+                            if (dan.globalRes[t].typpe==costTyppe)
+                            {
+                                //trace("before plus: dan.globalRes[t].littleInt="+dan.globalRes[t].littleInt+"("+dan.globalRes[t].typpe);
+                                dan.globalRes[t].littleInt-=costNum;
+                                //trace("plus: dan.globalRes[t].littleInt="+dan.globalRes[t].littleInt+"("+dan.globalRes[t].typpe);
+                            }
+                        }
+                    }
+                    for (var t:int=0; t<dan.globalRes.length; t++) //определяем, будет ли после всех подсчётов ресурсов достаточно для сделки
+                    {
+                        if (dan.globalRes[t].littleInt<0)
+                        {
+                            //trace("typpe="+dan.globalRes[t].typpe+"::"+dan.globalRes[t].littleInt);
+                            enought=false;
+                            break;
+                        }
+                    }
+                    if (enought)
+                    {
+                        for (var t:int=0; t<dan.globalRes.length; t++)
+                        {
+                            //trace(dan.globalRes[t].typpe+"::"+dan.globalRes[t].amount+"<"+dan.globalRes[t].littleInt);
+                            dan.globalRes[t].amount=dan.globalRes[t].littleInt;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private function reResource():void
@@ -325,7 +486,13 @@ public class ResManager
                 if (res==sum && sum!=0)
                 {
                     //trace("true");
-                    dan.globalRes[i].amount++;
+                    if (dan.globalRes[i].amount*0.2<1)
+                    {
+                        dan.globalRes[i].amount++;
+                    } else
+                    {
+                        dan.globalRes[i].amount += dan.globalRes[i].amount * 0.2;
+                    }
                     dan.globalRes[i].freeAmount++;
                     dan.reIncome=true;
                     dan.lag=10;

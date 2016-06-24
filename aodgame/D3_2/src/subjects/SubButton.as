@@ -16,6 +16,9 @@ public class SubButton extends Parent2Subject
     public var sel:Vector.<int> = new Vector.<int>();
     public var unsel:Boolean=false;
 
+    private var modificator:String="";
+    private var taper:int=0;
+
     public function SubButton(myXML, pics, el, ii)
     {
         end_load(myXML, ii, pics, el);
@@ -129,6 +132,64 @@ public class SubButton extends Parent2Subject
     override public function model(el):void
     {
         super.model(el);
+
+        if (modificator=="btn" && bit.mouseParOver==iii && taper==0)
+        {
+            for (i = 0; i < numOfEl.length; i++)
+            {
+                if (el[numOfEl[i]].typeOfElement=="txt")
+                {
+                    //el[numOfEl[i]].pic.x-=el[numOfEl[i]].size*(1.1-1)/2;
+                    //el[numOfEl[i]].size *= 1.1;
+                    el[numOfEl[i]].makeFormat();
+                } else
+                {
+                    el[numOfEl[i]].pic.width *= 1.1;
+                    el[numOfEl[i]].pic.height *= 1.1;
+                }
+
+            }
+            taper=1;
+        }
+        if (modificator=="btn" && bit.mouseParClick==iii && taper==2)
+        {
+            for (i = 0; i < numOfEl.length; i++)
+            {
+                el[numOfEl[i]].pic.y-=3;
+            }
+            taper=1;
+        }
+        if (modificator=="btn" && bit.mouseParDown==iii && taper!=2)
+        {
+            for (i=0; i<numOfEl.length; i++)
+            {
+                el[numOfEl[i]].pic.y+=3;
+            }
+            taper=2;
+        }
+        if (modificator=="btn" && (bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
+        {
+            for (i=0; i<numOfEl.length; i++)
+            {
+                if (el[numOfEl[i]].typeOfElement=="txt")
+                {
+                   // el[numOfEl[i]].size/=1.1;
+                    //el[numOfEl[i]].pic.x+=el[numOfEl[i]].size*(1.1-1)/2;
+                    el[numOfEl[i]].makeFormat();
+                } else
+                {
+                    el[numOfEl[i]].pic.width/=1.1;
+                    el[numOfEl[i]].pic.height/=1.1;
+                }
+                if (taper==2)
+                {
+                    el[numOfEl[i]].pic.y-=3;
+                }
+            }
+
+            taper=0;
+        }
+
         if (neddFram)
         {
             neddFram=false;
@@ -154,6 +215,8 @@ public class SubButton extends Parent2Subject
         {
             cameraUse = 1;
         }
+
+        modificator=myXML.type.@modificator;
 
         subs.push("mc");
         visOne.push(1);

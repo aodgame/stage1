@@ -27,8 +27,9 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="543" ye="602">0</selectation>
-		<sel xx="420" yy="538" ww="245" hh="88">1</sel>
-		<sel xx="438" yy="626" ww="139" hh="34">2</sel>
+		<sel xx="476" yy="537" ww="195" hh="36">1</sel>
+		<sel xx="459" yy="573" ww="241" hh="38">2</sel>
+		<sel xx="503" yy="611" ww="176" hh="24">3</sel>
 		<pic picload="2">land1</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -37,10 +38,11 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="615" ye="679">0</selectation>
-		<sel xx="457" yy="689" ww="306" hh="80">1</sel>
-		<sel xx="500" yy="639" ww="248" hh="50">2</sel>
-		<sel xx="640" yy="591" ww="90" hh="48">3</sel>
-		<sel xx="569" yy="626" ww="72" hh="14">4</sel>
+		<sel xx="458" yy="689" ww="43" hh="60">1</sel>
+		<sel xx="497" yy="626" ww="39" hh="65">2</sel>
+		<sel xx="501" yy="689" ww="269" hh="81">3</sel>
+		<sel xx="536" yy="643" ww="213" hh="46">4</sel>
+		<sel xx="567" yy="622" ww="170" hh="21">5</sel>
 		<pic picload="2">land2</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -49,10 +51,11 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="792" ye="649">0</selectation>
-		<sel xx="685" yy="531" ww="188" hh="70">1</sel>
-		<sel xx="729" yy="600" ww="122" hh="32">2</sel>
-		<sel xx="731" yy="631" ww="154" hh="70">3</sel>
-		<sel xx="758" yy="700" ww="168" hh="68">4</sel>
+		<sel xx="683" yy="561" ww="254" hh="53">1</sel>
+		<sel xx="730" yy="614" ww="213" hh="27">2</sel>
+		<sel xx="748" yy="641" ww="204" hh="78">3</sel>
+		<sel xx="779" yy="719" ww="209" hh="49">4</sel>
+		<sel xx="790" yy="537" ww="76" hh="24">5</sel>
 		<pic picload="2">land3</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -61,8 +64,11 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="908" ye="549">0</selectation>
-		<sel xx="871" yy="371" ww="152" hh="358">1</sel>
-		<sel xx="843" yy="509" ww="28" hh="158">2</sel>
+		<sel xx="838" yy="348" ww="180" hh="52">1</sel>
+		<sel xx="939" yy="400" ww="87" hh="311">2</sel>
+		<sel xx="876" yy="400" ww="63" hh="27">3</sel>
+		<sel xx="887" yy="427" ww="52" hh="151">4</sel>
+		<sel xx="837" yy="501" ww="50" hh="60">5</sel>
 		<pic picload="2">land4</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -71,8 +77,9 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="775" ye="473">0</selectation>
-		<sel xx="677" yy="473" ww="168" hh="68">1</sel>
-		<sel xx="684" yy="414" ww="176" hh="60">2</sel>
+		<sel xx="620" yy="385" ww="199" hh="161">1</sel>
+		<sel xx="655" yy="546" ww="150" hh="23">2</sel>
+		<sel xx="819" yy="389" ww="69" hh="146">3</sel>
 		<pic picload="2">land5</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -81,10 +88,9 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="367" ye="682">0</selectation>
-		<sel xx="321" yy="702" ww="153" hh="63">1</sel>
-		<sel xx="297" yy="649" ww="203" hh="53">2</sel>
-		<sel xx="275" yy="597" ww="153" hh="52">3</sel>
-		<sel xx="230" yy="638" ww="67" hh="48">4</sel>
+		<sel xx="254" yy="595" ww="252" hh="59">1</sel>
+		<sel xx="312" yy="654" ww="190" hh="27">2</sel>
+		<sel xx="342" yy="681" ww="137" hh="74">3</sel>
 		<pic picload="2">land6</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -93,10 +99,10 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="245" ye="568">0</selectation>
-		<sel xx="204" yy="494" ww="112" hh="113">1</sel>
-		<sel xx="316" yy="518" ww="130" hh="90">2</sel>
-		<sel xx="38" yy="551" ww="166" hh="71">3</sel>
-		<sel xx="201" yy="607" ww="82" hh="43">4</sel>
+		<sel xx="317" yy="505" ww="178" hh="67">1</sel>
+		<sel xx="76" yy="572" ww="395" hh="38">2</sel>
+		<sel xx="185" yy="518" ww="132" hh="54">3</sel>
+		<sel xx="101" yy="545" ww="84" hh="27">4</sel>
 		<pic picload="2">land7</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -105,9 +111,10 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="172" ye="684">0</selectation>
-		<sel xx="0" yy="608" ww="129" hh="155">1</sel>
-		<sel xx="129" yy="632" ww="105" hh="134">2</sel>
-		<sel xx="234" yy="683" ww="99" hh="82">3</sel>
+		<sel xx="0" yy="586" ww="111" hh="178">1</sel>
+		<sel xx="110" yy="608" ww="157" hh="157">2</sel>
+		<sel xx="267" yy="632" ww="41" hh="135">3</sel>
+		<sel xx="308" yy="656" ww="35" hh="106">4</sel>
 		<pic picload="2">land8</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -116,9 +123,9 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="128" ye="461">0</selectation>
-		<sel xx="8" yy="329" ww="120" hh="263">1</sel>
-		<sel xx="128" yy="332" ww="66" hh="231">2</sel>
-		<sel xx="194" yy="364" ww="49" hh="162">3</sel>
+		<sel xx="5" yy="315" ww="83" hh="276">1</sel>
+		<sel xx="88" yy="329" ww="98" hh="233">2</sel>
+		<sel xx="186" yy="351" ww="141" hh="185">3</sel>
 		<pic picload="2">land9</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -128,10 +135,11 @@
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="179" ye="248">0</selectation>
 		<pic picload="2">land10</pic>
-		<sel xx="3" yy="164" ww="104" hh="171">1</sel>
-		<sel xx="107" yy="229" ww="155" hh="110">2</sel>
-		<sel xx="262" yy="250" ww="86" hh="70">3</sel>
-		<sel xx="107" yy="199" ww="45" hh="30">4</sel>
+		<sel xx="4" yy="140" ww="146" hh="199">1</sel>
+		<sel xx="150" yy="150" ww="48" hh="200">2</sel>
+		<sel xx="198" yy="256" ww="113" hh="97">3</sel>
+		<sel xx="198" yy="208" ww="38" hh="45">4</sel>
+		<sel xx="236" yy="231" ww="45" hh="22">5</sel>
 		<atChild>5</atChild>
 	</subject>
 	<subject>
@@ -139,10 +147,11 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="300" ye="182">0</selectation>
-		<sel xx="179" yy="83" ww="221" hh="165">1</sel>
-		<sel xx="95" yy="102" ww="84" hh="115">2</sel>
-		<sel xx="307" yy="248" ww="191" hh="39">3</sel>
-		<sel xx="400" yy="188" ww="59" hh="60">4</sel>
+		<sel xx="143" yy="74" ww="251" hh="89">1</sel>
+		<sel xx="187" yy="163" ww="239" hh="57">2</sel>
+		<sel xx="248" yy="220" ww="245" hh="41">3</sel>
+		<sel xx="306" yy="261" ww="227" hh="42">4</sel>
+		<sel xx="426" yy="192" ww="42" hh="28">5</sel>
 		<pic picload="2">land11</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -151,8 +160,10 @@
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<selectation xe="594" ye="175">0</selectation>
-		<sel xx="512" yy="92" ww="274" hh="184">1</sel>
-		<sel xx="410" yy="66" ww="102" hh="165">2</sel>
+		<sel xx="385" yy="86" ww="123" hh="106">1</sel>
+		<sel xx="508" yy="86" ww="287" hh="206">2</sel>
+		<sel xx="447" yy="192" ww="61" hh="34">3</sel>
+		<sel xx="476" yy="226" ww="33" hh="33">4</sel>
 		<pic picload="2">land12</pic>
 		<atChild>5</atChild>
 	</subject>
@@ -166,21 +177,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="8" yy="20" ww="30" hh="30" move="f"/>
-		<pos xx="32" yy="20" ww="30" hh="30" move="f"/>
-		<pos xx="56" yy="20" ww="30" hh="30" move="f"/>
+		<pos xx="31" yy="17" ww="30" hh="30" move="f"/>
+		<pos xx="55" yy="17" ww="30" hh="30" move="f"/>
+		<pos xx="79" yy="17" ww="30" hh="30" move="f"/>
 
-		<pos xx="-31" yy="11" ww="0" hh="0" move="f"/>
+		<pos xx="-8" yy="8" ww="0" hh="0" move="f"/>
 
-		<pos xx="-41" yy="-33" ww="0" hh="0" move="t"/>
-		<pos xx ="5" yy="-33" ww="0" hh="0" move="t"/>
-		<pos xx ="51" yy="-33" ww="0" hh="0" move="t"/>
+		<pos xx="-15" yy="-33" ww="0" hh="0" move="t"/>
+		<pos xx ="31" yy="-33" ww="0" hh="0" move="t"/>
+		<pos xx ="77" yy="-33" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-7" yy="-12" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="15" yy="-12" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="40" yy="-12" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="16" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="40" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="64" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land2-->
@@ -191,21 +202,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-26" yy="3" ww="30" hh="30" move="f"/>
-		<pos xx="-2" yy="3" ww="30" hh="30" move="f"/>
-		<pos xx="22" yy="3" ww="30" hh="30" move="f"/>
+		<pos xx="11" yy="24" ww="30" hh="30" move="f"/>
+		<pos xx="35" yy="24" ww="30" hh="30" move="f"/>
+		<pos xx="59" yy="24" ww="30" hh="30" move="f"/>
 
-		<pos xx="-65" yy="-6" ww="0" hh="0" move="f"/>
+		<pos xx="-28" yy="-10" ww="0" hh="0" move="f"/>
 
-		<pos xx="48" yy="-45" ww="0" hh="0" move="t"/>
-		<pos xx="93" yy="-45" ww="0" hh="0" move="t"/>
-		<pos xx="93" yy="-1" ww="0" hh="0" move="t"/>
+		<pos xx="15" yy="-27" ww="0" hh="0" move="t"/>
+		<pos xx="60" yy="-27" ww="0" hh="0" move="t"/>
+		<pos xx="105" yy="-27" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-41" yy="-29" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-17" yy="-29" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="7" yy="-29" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-4" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-20" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="44" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land3-->
@@ -216,21 +227,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="8" yy="-11" ww="30" hh="30" move="f"/>
-		<pos xx="32" yy="-11" ww="30" hh="30" move="f"/>
-		<pos xx="56" yy="-11" ww="30" hh="30" move="f"/>
+		<pos xx="84" yy="32" ww="30" hh="30" move="f"/>
+		<pos xx="60" yy="32" ww="30" hh="30" move="f"/>
+		<pos xx="36" yy="32" ww="30" hh="30" move="f"/>
 
-		<pos xx="-31" yy="-20" ww="0" hh="0" move="f"/>
+		<pos xx="119" yy="-1" ww="0" hh="0" move="f"/>
 
-		<pos xx="-81" yy="-79" ww="0" hh="0" move="t"/>
-		<pos xx="-35" yy="-79" ww="0" hh="0" move="t"/>
-		<pos xx="11" yy="-79" ww="0" hh="0" move="t"/>
+		<pos xx="-15" yy="-11" ww="0" hh="0" move="t"/>
+		<pos xx="32" yy="-37" ww="0" hh="0" move="t"/>
+		<pos xx="80" yy="-64" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="30" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-7" yy="-43" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="17" yy="-43" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="41" yy="-43" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="69" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="45" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="21" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land4-->
@@ -241,21 +252,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-1" yy="1" ww="30" hh="30" move="f"/>
-		<pos xx="23" yy="1" ww="30" hh="30" move="f"/>
-		<pos xx="47" yy="1" ww="30" hh="30" move="f"/>
+		<pos xx="31" yy="11" ww="30" hh="30" move="f"/>
+		<pos xx="55" yy="11" ww="30" hh="30" move="f"/>
+		<pos xx="79" yy="11" ww="30" hh="30" move="f"/>
 
-		<pos xx="-40" yy="-8" ww="0" hh="0" move="f"/>
+		<pos xx="-4" yy="-32" ww="0" hh="0" move="f"/>
 
-		<pos xx="-6" yy="-59" ww="0" hh="0" move="t"/>
-		<pos xx="40" yy="-59" ww="0" hh="0" move="t"/>
-		<pos xx="86" yy="-59" ww="0" hh="0" move="t"/>
+		<pos xx="69" yy="-44" ww="0" hh="0" move="t"/>
+		<pos xx="45" yy="-89" ww="0" hh="0" move="t"/>
+		<pos xx="28" yy="-134" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-16" yy="-31" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="8" yy="-31" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="32" yy="-31" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="16" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="40" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="64" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land5-->
@@ -266,21 +277,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="4" yy="36" ww="30" hh="30" move="f"/>
-		<pos xx="-20" yy="36" ww="30" hh="30" move="f"/>
-		<pos xx="-44" yy="36" ww="30" hh="30" move="f"/>
+		<pos xx="-59" yy="45" ww="30" hh="30" move="f"/>
+		<pos xx="-35" yy="45" ww="30" hh="30" move="f"/>
+		<pos xx="-11" yy="45" ww="30" hh="30" move="f"/>
 
-		<pos xx="48" yy="27" ww="0" hh="0" move="f"/>
+		<pos xx="39" yy="35" ww="0" hh="0" move="f"/>
 
-		<pos xx="-1" yy="-23" ww="0" hh="0" move="t"/>
-		<pos xx="45" yy="-23" ww="0" hh="0" move="t"/>
-		<pos xx="-47" yy="-23" ww="0" hh="0" move="t"/>
+		<pos xx="-2" yy="-23" ww="0" hh="0" move="t"/>
+		<pos xx="44" yy="-23" ww="0" hh="0" move="t"/>
+		<pos xx="90" yy="-23" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-11" yy="4" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-35" yy="4" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-59" yy="4" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-74" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-50" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-26" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land6-->
@@ -291,21 +302,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="18" yy="5" ww="30" hh="30" move="f"/>
-		<pos xx="42" yy="5" ww="30" hh="30" move="f"/>
-		<pos xx="66" yy="5" ww="30" hh="30" move="f"/>
+		<pos xx="38" yy="5" ww="30" hh="30" move="f"/>
+		<pos xx="62" yy="5" ww="30" hh="30" move="f"/>
+		<pos xx="86" yy="5" ww="30" hh="30" move="f"/>
 
-		<pos xx="-21" yy="-4" ww="0" hh="0" move="f"/>
+		<pos xx="-1" yy="-4" ww="0" hh="0" move="f"/>
 
-		<pos xx="32" yy="-47" ww="0" hh="0" move="t"/>
-		<pos xx="-14" yy="-47" ww="0" hh="0" move="t"/>
-		<pos xx="-60" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="6" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="52" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="98" yy="-47" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="3" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="27" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="51" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="23" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="47" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="71" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land7-->
@@ -316,21 +327,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="15" yy="21" ww="30" hh="30" move="f"/>
-		<pos xx="39" yy="21" ww="30" hh="30" move="f"/>
-		<pos xx="63" yy="21" ww="30" hh="30" move="f"/>
+		<pos xx="15" yy="30" ww="30" hh="30" move="f"/>
+		<pos xx="39" yy="30" ww="30" hh="30" move="f"/>
+		<pos xx="63" yy="30" ww="30" hh="30" move="f"/>
 
 		<pos xx="-24" yy="12" ww="0" hh="0" move="f"/>
 
-		<pos xx="48" yy="-31" ww="0" hh="0" move="t"/>
-		<pos xx="94" yy="-31" ww="0" hh="0" move="t"/>
-		<pos xx="140" yy="-31" ww="0" hh="0" move="t"/>
+		<pos xx="64" yy="-22" ww="0" hh="0" move="t"/>
+		<pos xx="110" yy="-22" ww="0" hh="0" move="t"/>
+		<pos xx="156" yy="-22" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="0" yy="-11" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="24" yy="-11" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="48" yy="-11" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="0" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="24" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="48" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land8-->
@@ -341,21 +352,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-31" yy="9" ww="30" hh="30" move="f"/>
-		<pos xx="-7" yy="9" ww="30" hh="30" move="f"/>
-		<pos xx="17" yy="9" ww="30" hh="30" move="f"/>
+		<pos xx="2" yy="9" ww="30" hh="30" move="f"/>
+		<pos xx="26" yy="9" ww="30" hh="30" move="f"/>
+		<pos xx="50" yy="9" ww="30" hh="30" move="f"/>
 
-		<pos xx="-70" yy="0" ww="0" hh="0" move="f"/>
+		<pos xx="-46" yy="0" ww="0" hh="0" move="f"/>
 
-		<pos xx="-32" yy="-47" ww="0" hh="0" move="t"/>
-		<pos xx="-78" yy="-47" ww="0" hh="0" move="t"/>
-		<pos xx="-124" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="-55" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="-9" yy="-47" ww="0" hh="0" move="t"/>
+		<pos xx="-37" yy="-47" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-46" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-22" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="2" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-13" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="11" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="35" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land9-->
@@ -366,21 +377,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-45" yy="45" ww="30" hh="30" move="f"/>
-		<pos xx="-21" yy="45" ww="30" hh="30" move="f"/>
-		<pos xx="3" yy="45" ww="30" hh="30" move="f"/>
+		<pos xx="19" yy="45" ww="30" hh="30" move="f"/>
+		<pos xx="43" yy="45" ww="30" hh="30" move="f"/>
+		<pos xx="67" yy="45" ww="30" hh="30" move="f"/>
 
-		<pos xx="-85" yy="36" ww="0" hh="0" move="f"/>
+		<pos xx="-30" yy="36" ww="0" hh="0" move="f"/>
 
-		<pos xx="-86" yy="-16" ww="0" hh="0" move="t"/>
 		<pos xx="-41" yy="-16" ww="0" hh="0" move="t"/>
-		<pos xx="-4" yy="-16" ww="0" hh="0" move="t"/>
+		<pos xx="4" yy="-16" ww="0" hh="0" move="t"/>
+		<pos xx="49" yy="-16" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-60" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-36" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-12" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="4" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="28" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="52" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land10-->
@@ -391,21 +402,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-57" yy="54" ww="30" hh="30" move="f"/>
-		<pos xx="-33" yy="54" ww="30" hh="30" move="f"/>
-		<pos xx="-9" yy="54" ww="30" hh="30" move="f"/>
+		<pos xx="-29" yy="25" ww="30" hh="30" move="f"/>
+		<pos xx="-5" yy="25" ww="30" hh="30" move="f"/>
+		<pos xx="19" yy="25" ww="30" hh="30" move="f"/>
 
-		<pos xx="-96" yy="48" ww="0" hh="0" move="f"/>
+		<pos xx="-68" yy="16" ww="0" hh="0" move="f"/>
 
-		<pos xx="-79" yy="-22" ww="0" hh="0" move="t"/>
-		<pos xx="-28" yy="1" ww="0" hh="0" move="t"/>
-		<pos xx="24" yy="18" ww="0" hh="0" move="t"/>
+		<pos xx="-51" yy="-43" ww="0" hh="0" move="t"/>
+		<pos xx="0" yy="-20" ww="0" hh="0" move="t"/>
+		<pos xx="52" yy="-1" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-72" yy="22" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-48" yy="22" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-24" yy="22" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-44" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-20" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="4" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land11-->
@@ -416,21 +427,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="-3" yy="30" ww="30" hh="30" move="f"/>
-		<pos xx="21" yy="30" ww="30" hh="30" move="f"/>
-		<pos xx="45" yy="30" ww="30" hh="30" move="f"/>
+		<pos xx="73" yy="61" ww="30" hh="30" move="f"/>
+		<pos xx="97" yy="61" ww="30" hh="30" move="f"/>
+		<pos xx="121" yy="61" ww="30" hh="30" move="f"/>
 
-		<pos xx="-42" yy="21" ww="0" hh="0" move="f"/>
+		<pos xx="34" yy="52" ww="0" hh="0" move="f"/>
 
-		<pos xx="-6" yy="-33" ww="0" hh="0" move="t"/>
-		<pos xx="-52" yy="-33" ww="0" hh="0" move="t"/>
-		<pos xx="40" yy="-33" ww="0" hh="0" move="t"/>
+		<pos xx="59" yy="8" ww="0" hh="0" move="t"/>
+		<pos xx="13" yy="8" ww="0" hh="0" move="t"/>
+		<pos xx="-33" yy="8" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-18" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="6" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="30" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="58" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="82" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="106" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land12-->
@@ -441,21 +452,21 @@
 		<pic picload="2">symb_thingArray</pic>
 		<pic picload="2" num="3">symb_buildArray</pic>
 		<pic picload="2">problemSituations</pic>
-		<pos xx="10" yy="-7" ww="30" hh="30" move="f"/>
-		<pos xx="34" yy="-7" ww="30" hh="30" move="f"/>
-		<pos xx="58" yy="-7" ww="30" hh="30" move="f"/>
+		<pos xx="10" yy="43" ww="30" hh="30" move="f"/>
+		<pos xx="34" yy="43" ww="30" hh="30" move="f"/>
+		<pos xx="58" yy="43" ww="30" hh="30" move="f"/>
 
-		<pos xx="-36" yy="-16" ww="0" hh="0" move="f"/>
+		<pos xx="-36" yy="34" ww="0" hh="0" move="f"/>
 
-		<pos xx="-30" yy="43" ww="0" hh="0" move="t"/>
-		<pos xx="16" yy="43" ww="0" hh="0" move="t"/>
-		<pos xx="62" yy="43" ww="0" hh="0" move="t"/>
+		<pos xx="-56" yy="-16" ww="0" hh="0" move="t"/>
+		<pos xx="-10" yy="-16" ww="0" hh="0" move="t"/>
+		<pos xx="36" yy="-16" ww="0" hh="0" move="t"/>
 
 		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-5" yy="-39" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="19" yy="-39" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="43" yy="-39" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-5" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="19" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="43" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
 		<atChild>6</atChild>
 	</subject>
 
@@ -466,18 +477,6 @@
 		<x>512</x><y>384</y><width>0</width><height>0</height>
 		<pic picload="2">landDark</pic>
 		<atChild>4</atChild>
-	</subject>
-
-	<!-- кнопка следующего хода с датой-->
-	<subject>
-		<id>360</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1">button</type>
-		<x>936</x><y>49</y><width>0</width><height>0</height>
-		<!--<btn>yes</btn>-->
-		<txt xx="-68" yy="-29" id="100:140:30:0xFFFFFF:c:f:18"/>
-		<txt xx="-68" yy="0" id="$timer:140:30:0xFFFFFF:c:f:20"/>
-		<pic picload="2">btn1</pic>
-		<atChild>9</atChild>
 	</subject>
 
 	<!-- Панель ресурсов-->
@@ -885,7 +884,7 @@
 		<id>502</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1">button</type>
 		<portal goTo="50" goPosition="1">1</portal>
-		<x>981</x><y>659</y><width>0</width><height>0</height>
+		<x>985</x><y>729</y><width>0</width><height>0</height>
 		<pic picload="2">btn_room5</pic>
 		<atChild>6</atChild>
 	</subject>
@@ -901,14 +900,6 @@
 	</subject>
 
 
-	<!--кнопка вызова панели героев
-	<subject>
-		<id>520</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1">button</type>
-		<x>40</x><y>680</y><width>0</width><height>0</height>
-		<pic picload="2">btn_building2</pic>
-		<atChild>6</atChild>
-	</subject>-->
 	<!--кнопка покупки героя-->
 	<subject>
 		<id>521</id>
@@ -917,14 +908,6 @@
 		<pic picload="2">btn_building_buy1</pic>
 		<atChild>8</atChild>
 	</subject>
-	<!--кнопка вызова панели рабочих
-	<subject>
-		<id>522</id>
-		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
-		<x>40</x><y>680</y><width>0</width><height>0</height>
-		<pic picload="2">btn_building3</pic>
-		<atChild>6</atChild>
-	</subject>-->
 
 	<!-- Меню существующих героев-->
 	<subject>
@@ -945,49 +928,64 @@
 
 	<!-- Меню покупки героя -->
 	<subject>
+		<id>527</id>
+		<type weAre="30" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>77</x><y>594</y><width>0</width><height>0</height>
+		<pic picload="2">fram_new44</pic>
+		<atChild>7</atChild>
+	</subject>
+	<!-- Меню покупки героя -->
+	<subject>
 		<id>528</id>
 		<type weAre="30" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
-		<x>152</x><y>651</y><width>0</width><height>0</height>
+		<x>77</x><y>594</y><width>0</width><height>0</height>
 		<pic picload="2" num="6">heroes2</pic>
 
-		<pos xx="29" yy="30" ww="0" hh="0" fram="1" spec="btn1"/>
-		<pos xx="92" yy="30" ww="0" hh="0" fram="2" spec="btn2"/>
-		<pos xx="157" yy="30" ww="0" hh="0" fram="3" spec="btn3"/>
-		<pos xx="222" yy="30" ww="0" hh="0" fram="4" spec="btn4"/>
-		<pos xx="288" yy="30" ww="0" hh="0" fram="5" spec="btn5"/>
-		<pos xx="355" yy="30" ww="0" hh="0" fram="6" spec="btn6"/>
+		<pos xx="62" yy="56" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="125" yy="56" ww="0" hh="0" fram="2" spec="btn2"/>
+		<pos xx="190" yy="56" ww="0" hh="0" fram="3" spec="btn3"/>
+		<pos xx="255" yy="56" ww="0" hh="0" fram="4" spec="btn4"/>
+		<pos xx="321" yy="56" ww="0" hh="0" fram="5" spec="btn5"/>
+		<pos xx="388" yy="56" ww="0" hh="0" fram="6" spec="btn6"/>
+
+		<txt xx="0" yy="2" id="618:120:25:0x000000:c:t:18"/>
+		<txt xx="131" yy="2" id="620:120:25:0x000000:c:t:18"/>
+		<txt xx="262" yy="2" id="622:120:25:0x000000:c:t:18"/>
+		<txt xx="63" yy="83" id="619:120:25:0x000000:c:t:18"/>
+		<txt xx="194" yy="83" id="621:120:25:0x000000:c:t:18"/>
+		<txt xx="328" yy="83" id="623:120:25:0x000000:c:t:18"/>
 		<atChild>7</atChild>
 	</subject>
 
 	<!-- Панель армии-->
 	<subject>
 		<id>540</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="11">mover</type>
-		<x>31</x><y>90</y><width>0</width><height>0</height>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="11">mover</type>
+		<x>644</x><y>26</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res15:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
 	</subject>
-	<subject>
+	<!--<subject>
 		<id>541</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="12">mover</type>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="12">mover</type>
 		<x>31</x><y>142</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-30" yy="2" id="$res16:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
-	</subject>
+	</subject>-->
 	<subject>
 		<id>542</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="13">mover</type>
-		<x>31</x><y>194</y><width>0</width><height>0</height>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="13">mover</type>
+		<x>721</x><y>26</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res17:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
 	</subject>
 	<subject>
 		<id>543</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="14">mover</type>
-		<x>31</x><y>246</y><width>0</width><height>0</height>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="14">mover</type>
+		<x>799</x><y>26</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res18:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
@@ -1067,7 +1065,7 @@
 	<!-- панель деятельности выбранного героя-->
 	<subject>
 		<id>554</id>
-		<type weAre="0" ourPosition="1" vis="0" willSave="1">texter</type>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1" modificator="changePosition">texter</type>
 		<x>294</x><y>492</y><width>0</width><height>0</height>
 		<stx>288</stx><sty>241</sty><wi>549</wi><he>450</he> <!-- границы области, которые следует учитывать -->
 		<pic picload="2" num="1">no</pic>
@@ -1102,17 +1100,16 @@
 		<atChild>1</atChild>
 	</subject>
 
-	<!-- кнопка следующего хода с датой 360-->
+	<!-- кнопка следующего хода с датой 360
 	<subject>
 		<id>611</id>
 		<type weAre="40" ourPosition="1" vis="1" willSave="1">button</type>
 		<x>936</x><y>49</y><width>0</width><height>0</height>
-		<!--<btn>yes</btn>-->
 		<txt xx="-68" yy="-27" id="100:140:30:0x000000:c:f:18"/>
 		<txt xx="-68" yy="0" id="$timer:140:30:0x000000:c:f:20"/>
 		<pic picload="2">btn2</pic>
 		<atChild>9</atChild>
-	</subject>
+	</subject>-->
 
 	<!-- Меню выбора апдейтов -->
 	<subject>
@@ -1203,21 +1200,22 @@
 	<!-- кнопка следующего хода с датой 360-->
 	<subject>
 		<id>810</id>
-		<type weAre="50" ourPosition="1" vis="1" willSave="1">button</type>
-		<x>936</x><y>49</y><width>0</width><height>0</height>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>935</x><y>50</y><width>0</width><height>0</height>
 		<!--<btn>yes</btn>-->
-		<txt xx="-68" yy="-28" id="100:140:30:0x000000:c:f:18"/>
-		<txt xx="-68" yy="0" id="$timer:140:30:0x000000:c:f:20"/>
+		<txt xx="-88" yy="-28" id="100:177:30:0x000000:c:f:18"/>
+		<txt xx="-88" yy="0" id="$timer:177:30:0x000000:c:f:20"/>
 		<pic picload="2">btn3</pic>
 		<atChild>9</atChild>
 	</subject>
 
-	<!-- Постройки на карте мира -->
+	<!-- Постройки на карте мира: города противников -->
 	<subject>
 		<id>820</id>
 		<type weAre="50" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
 		<x>0</x><y>0</y><width>0</width><height>0</height>
-		<pic picload="2" num="7">city1</pic>
+		<pic picload="2" num="1">no</pic>
+		<pic picload="2" num="6">city1</pic>
 
 		<pos xx="298" yy="323" ww="0" hh="0" fram="3" spec="btn1"/>
 		<pos xx="414" yy="328" ww="0" hh="0" fram="3" spec="btn2"/>
@@ -1229,39 +1227,15 @@
 		<atChild>4</atChild>
 	</subject>
 
+	<!-- Постройки на карте мира: город игрока -->
+	<subject>
+		<id>821</id>
+		<type weAre="50" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">city1</pic>
 
-	<!-- Панель армии (но стоит добавить эффект в фильм, чтобы панель переносилась из экрана города и назад-->
-	<subject>
-		<id>830</id>
-		<type weAre="50" ourPosition="1" vis="1" willSave="1" fram="11">mover</type>
-		<x>31</x><y>90</y><width>0</width><height>0</height>
-		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="0" id="$res15:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<atChild>7</atChild>
-	</subject>
-	<subject>
-		<id>832</id>
-		<type weAre="50" ourPosition="1" vis="1" willSave="1" fram="12">mover</type>
-		<x>31</x><y>142</y><width>0</width><height>0</height>
-		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-30" yy="2" id="$res16:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<atChild>7</atChild>
-	</subject>
-	<subject>
-		<id>834</id>
-		<type weAre="50" ourPosition="1" vis="1" willSave="1" fram="13">mover</type>
-		<x>31</x><y>194</y><width>0</width><height>0</height>
-		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="0" id="$res17:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<atChild>7</atChild>
-	</subject>
-	<subject>
-		<id>836</id>
-		<type weAre="50" ourPosition="1" vis="1" willSave="1" fram="14">mover</type>
-		<x>31</x><y>246</y><width>0</width><height>0</height>
-		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="0" id="$res18:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<atChild>7</atChild>
+		<pos xx="298" yy="323" ww="0" hh="0" fram="3" spec="btn1"/>
+		<atChild>4</atChild>
 	</subject>
 
 	<!-- названия городов, которые сразу будут видны-->
@@ -1326,6 +1300,24 @@
 		<txt xx="76" yy="166" id="$cityGovern:380:26:0x000000:l:t:20"/>
 		<txt xx="76" yy="195" id="$cityAlliance:400:26:0x000000:l:t:20"/>
 		<txt xx="238" yy="288" id="$hCityN:150:30:0x000000:r:t:20"/>
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- Меню окошка вашего города -->
+	<subject>
+		<id>852</id>
+		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>250</x><y>152</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">cityFront</pic>
+		<pic picload="2" num="1">city1</pic>
+		<pic picload="2" num="1">btn_backspec</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec="go"/>
+		<pos xx="133" yy="119" ww="150" hh="150" fram="3" spec="go"/>
+		<pos xx="141" yy="373" ww="0" hh="0" fram="3" spec="btn1"/>
+
+		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:f:28"/>
+		<txt xx="75" yy="200" id="615:400:26:0x000000:c:t:20"/>
 		<atChild>6</atChild>
 	</subject>
 

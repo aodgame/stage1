@@ -2,6 +2,8 @@ package subjects
 {
 public class SubPreloader extends Parent2Subject
 {
+    private var lag:int=0;
+
     public function SubPreloader(myXML, pics, el, ii)
     {
         end_load(myXML, ii, pics, el);
@@ -13,27 +15,25 @@ public class SubPreloader extends Parent2Subject
         {
             iid=ii;
         }
-        if (bit.wait_subjects)
+        if (bit.wait_subjects || bit.wait_scenario || bit.wait_texto)
         {
             if (vis==0)
             {
                 vis = 1;
+                lag=5;
             }
         }
-        if (!bit.wait_subjects)
+        if (!bit.wait_subjects && !bit.wait_scenario && !bit.wait_texto)
         {
-            if (vis==1)
+            if (vis==1 && lag>0)
+            {
+                lag--;
+            }
+            if (vis==1 && lag==0)
             {
                 vis = 0;
             }
         }
-       /* if (!bit.wait_texto)
-        {
-            if (vis==1)
-            {
-                vis = 0;
-            }
-        }*/
         resultVis=vis;
     }
 

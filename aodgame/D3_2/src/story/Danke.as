@@ -81,6 +81,10 @@ public class Danke
     public var heroStart:Boolean=false; //при нажатии на панель доступных героев
     public var outI:int=-1; //элемент вышел за границы области определения своего объекта
 
+    public var heroActChange:Boolean=false;
+    public var numActChange:int=0;
+    public var newPosActChange:int=0;
+
     public var heroPanelClose:Boolean=false;
     //public var heroScreenCloseShadow:int=0;
 

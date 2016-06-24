@@ -210,7 +210,7 @@ public class ScenLoader extends ParentLoader
 
             for (var j:int=0; j<myXML.land[i].depends.length(); j++)
             {
-                dan.lands[dan.lands.length - 1].depends.push((new int(myXML.land[i].depends.@from)));
+                dan.lands[dan.lands.length - 1].depends.push(myXML.land[i].depends[j].@from);
             }
         }
         //trace("dan.lands.length="+dan.lands.length);
@@ -292,11 +292,12 @@ public class ScenLoader extends ParentLoader
             dan.availableHeroes.push(new Hero());
             dan.availableHeroes[dan.availableHeroes.length-1].typpe = myXML.hero[i].@typpe;
             dan.availableHeroes[dan.availableHeroes.length-1].iii = myXML.hero[i].@iii;
+            dan.availableHeroes[dan.availableHeroes.length-1].txt = myXML.hero[i].@txt;
             dan.availableHeroes[dan.availableHeroes.length-1].n1=myXML.hero[i].@ageMin;
             dan.availableHeroes[dan.availableHeroes.length-1].n2=myXML.hero[i].@ageMax;
             dan.availableHeroes[dan.availableHeroes.length-1].makeAge(myXML.hero[i].@ageMin, myXML.hero[i].@ageMax);
             //<hero typpe="adventurer" iii="1" ageMin="10" ageMax="15"/>
-            //dan.availableHeroes[dan.availableHeroes.length-1].makeName(dan.names);
+            //dan.availableHeroes[dan.avaWilableHeroes.length-1].makeName(dan.names);
             for (var jj:int=0; jj<myXML.hero[i].need.length(); jj++)
             {
                 dan.availableHeroes[dan.availableHeroes.length-1].needTyppe.push(new String(myXML.hero[i].need[jj].@typpe));

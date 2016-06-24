@@ -95,7 +95,7 @@ public class ElemMC  extends ParentElement
     {
         scalaizing(1.3);
         Mouse.cursor = MouseCursor.BUTTON;
-        trace("downClick="+iii);
+        //trace("downClick="+iii);
         bit.mouseDown=iii;
         bit.mouseParDown=parnt;
     }
@@ -104,7 +104,7 @@ public class ElemMC  extends ParentElement
         //trace("timmmme");
         scalaizing(1.15);
         Mouse.cursor = MouseCursor.BUTTON;
-        trace("overClick="+iii);
+        //trace("overClick="+iii);
         bit.mouseOver=iii;
         bit.mouseParOver=parnt;
     }

@@ -544,6 +544,35 @@
 		<txt mode="ru">Ведёт дела с городом</txt>
 		<txt mode="en">Oversee the city </txt>
 	</texto>
+	<texto tid="615">
+		<txt mode="ru">Это Ваш город.</txt>
+		<txt mode="en">It's your city.</txt>
+	</texto>
+
+	<texto tid="618">
+		<txt mode="ru">искатель</txt>
+		<txt mode="en">adventurer</txt>
+	</texto>
+	<texto tid="619">
+		<txt mode="ru">сказитель</txt>
+		<txt mode="en">artist</txt>
+	</texto>
+	<texto tid="620">
+		<txt mode="ru">герой</txt>
+		<txt mode="en">hero</txt>
+	</texto>
+	<texto tid="621">
+		<txt mode="ru">философ</txt>
+		<txt mode="en">philosoph</txt>
+	</texto>
+	<texto tid="622">
+		<txt mode="ru">жрец</txt>
+		<txt mode="en">priest</txt>
+	</texto>
+	<texto tid="623">
+		<txt mode="ru">торговец</txt>
+		<txt mode="en">trader</txt>
+	</texto>
 
 
 

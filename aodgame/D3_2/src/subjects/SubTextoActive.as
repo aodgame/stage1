@@ -27,6 +27,8 @@ public class SubTextoActive extends Parent2Subject
 
     private var dan:Danke;
 
+    private var modificator:String="";
+
     public function SubTextoActive(myXML, pics, el, ii)
     {
         end_load(myXML, ii, pics, el);
@@ -130,6 +132,62 @@ public class SubTextoActive extends Parent2Subject
         }
     }
 
+    private function changePosition(el, currEl)
+    {
+        var s:int=0;
+        for (var g:int=0; g<currEl; g++)
+        {
+            if (el[numOfEl[g]].typeOfElement!="txt")
+            {
+                s = -1;
+            }
+            if (el[numOfEl[g]].typeOfElement=="txt")
+            {
+                if (s<0)
+                {
+                    s=0;
+                }
+                if (sy[g]>sy[currEl])
+                {
+                    dan.heroActChange=true;
+                    dan.numActChange=currEl-1;
+                    dan.newPosActChange=g-s-1;
+
+                    cli[currEl]=0;
+                    sx[currEl]=baseX[currEl];
+                    sy[currEl]=baseY[currEl];
+                    cli[g]=1;
+                    tx[g] = tx[currEl];
+                    ty[g] = ty[currEl];
+                    break;
+                }
+            }
+        }
+
+        s=0;
+        for (var g:int=currEl+1; g<numOfEl.length; g++)
+        {
+            if (el[numOfEl[g]].typeOfElement=="txt")
+            {
+
+                if (sy[g] < sy[currEl] && el[numOfEl[g]].pic.text!="")
+                {
+                    trace("currEl="+currEl+"; g="+g+":: numOfEl.length="+numOfEl.length);
+                    dan.heroActChange=true;
+                    dan.numActChange=g-s-1;
+                    dan.newPosActChange=currEl-1;
+
+                    cli[currEl]=0;
+                    sx[currEl]=baseX[currEl];
+                    sy[currEl]=baseY[currEl];
+                    cli[g]=1;
+                    tx[g] = tx[currEl];
+                    ty[g] = ty[currEl];
+                }
+            }
+        }
+    }
+
     private function outI(el, num)//определяем, покинул ли элемент большей своей частью область определения предмета
     {
         //trace("SubTextoActive: sx; sy = "+sx[num]+"; "+sy[num]);
@@ -162,6 +220,10 @@ public class SubTextoActive extends Parent2Subject
             {
                 sx[num]=bit.sx+tx[num];
                 sy[num]=bit.sy+ty[num];
+                if (modificator=="changePosition")
+                {
+                    changePosition(el, num);
+                }
             }
         }
         if (bit.mouseParDown==iii)
@@ -184,6 +246,8 @@ public class SubTextoActive extends Parent2Subject
         {
             cameraUse = 1;
         }
+
+        modificator=myXML.type.@modificator;
 
         stx=myXML.stx;
         sty=myXML.sty;

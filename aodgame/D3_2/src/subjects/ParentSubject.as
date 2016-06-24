@@ -202,22 +202,3 @@ public class ParentSubject
     }
 }
 }
-
- /* if (quest.action[j].typpe == "outOfPosition")  //элементы предмета сдвинуты с места
-     {
-     if (k == quest.action[j].num)
-     {
-         for (var g:int=0; g<subs.sub.length; g++)
-         {
-             if (subs.sub[i].iii==quest.action[j].iii)
-             {
-                 var sub:ParentSubject = subs.sub[i];
-                 if (sub.equalIt())
-                 {
-                    k += 1;
-                 }
-                 break;
-             }
-         }
-     }
- }*/

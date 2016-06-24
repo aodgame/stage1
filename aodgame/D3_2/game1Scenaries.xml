@@ -51,8 +51,8 @@
 		<building iii="1" typpe="custom">
 			<des>yes</des>
 		</building>
-		<depends from="1"/>
 		<depends from="2"/>
+		<depends from="1"/>
 	</land>
 	<land xx="908" yy="549" id="4" subID="313" landID="333" res="deer">
 		<elem id="0" pic="3" income="1"/>
@@ -254,7 +254,9 @@
 	</globalRes><!-- отношение к вам горожан -->
 	<globalRes iii="14" typpe="respect_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">14</globalRes><!-- отношение к вам метеков -->
 	<globalRes iii="15" typpe="respect_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">15</globalRes><!-- отношение к вам илотов -->
-	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="200" isFree="0" min="0" max="10000" spec="0">16</globalRes><!-- армия: гоплиты -->
+	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="3" isFree="0" min="0" max="10000" spec="need">
+		<need every="3" need="1" from="house" income="grow"/>
+	</globalRes><!-- армия: гоплиты -->
 	<globalRes iii="17" typpe="army_archer" pic="12" name="304" description="306" startAmount="0" isFree="0" min="0" max="10000" spec="0">17</globalRes><!-- армия: стрелки -->
 	<globalRes iii="18" typpe="army_mercenaries" pic="13" name="308" description="310" startAmount="0" isFree="0" min="0" max="10000" spec="0">18</globalRes><!-- армия: наёмники -->
 	<globalRes iii="19" typpe="army_trireme" pic="14" name="312" description="314" startAmount="0" isFree="0" min="0" max="10000" spec="0">19</globalRes><!-- армия: триремы -->
@@ -489,37 +491,37 @@
 
 	<!-- типы героев-->
 	<hero typpe="no" iii="0"/>
-	<hero typpe="adventurer" iii="1" ageMin="8" ageMax="15">
+	<hero typpe="adventurer" txt="618" iii="1" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="5" max="10"/>
 		<heroRes typpe="dexterity" min="2" max="7"/>
 		<heroRes typpe="learning" min="0" max="5"/>
 	</hero>
-	<hero typpe="artist" iii="2" ageMin="8" ageMax="15">
+	<hero typpe="artist" txt="619" iii="2" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="0" max="5"/>
 		<heroRes typpe="dexterity" min="5" max="10"/>
 		<heroRes typpe="learning" min="2" max="7"/>
 	</hero>
-	<hero typpe="hero" iii="3" ageMin="8" ageMax="15">
+	<hero typpe="hero" txt="620" iii="3" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="5" max="10"/>
 		<heroRes typpe="dexterity" min="0" max="5"/>
 		<heroRes typpe="learning" min="2" max="7"/>
 	</hero>
-	<hero typpe="philosoph" iii="4" ageMin="8" ageMax="15">
+	<hero typpe="philosoph" txt="621" iii="4" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="0" max="5"/>
 		<heroRes typpe="dexterity" min="2" max="7"/>
 		<heroRes typpe="learning" min="5" max="10"/>
 	</hero>
-	<hero typpe="priest" iii="5" ageMin="8" ageMax="15">
+	<hero typpe="priest" txt="622" iii="5" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="2" max="7"/>
 		<heroRes typpe="dexterity" min="0" max="5"/>
 		<heroRes typpe="learning" min="5" max="10"/>
 	</hero>
-	<hero typpe="trader" iii="6" ageMin="8" ageMax="15">
+	<hero typpe="trader" txt="623" iii="6" ageMin="8" ageMax="15">
 		<need typpe="human" num="1"/>
 		<heroRes typpe="leadership" min="0" max="5"/>
 		<heroRes typpe="dexterity" min="5" max="10"/>
@@ -542,13 +544,14 @@
 	<statu num="1" txt="607"/>
 	<statu num="2" txt="609"/>
 
-	<city iii="1" name="322" sub="820" elem="1"> <!-- город игрока Калидон-->
-		<peacewar iii="2" war="1" relation="0" status="0"/> <!-- 1..100-->
-		<peacewar iii="3" war="0" relation="50" status="-1"/> <!-- 1..100-->
-		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- 1..100-->
-		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- 1..100-->
-		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- 1..100-->
-		<peacewar iii="7" war="0" relation="50" status="1"/> <!-- 1..100-->
+	<!-- город игрока Калидон-->
+	<city iii="1" name="322" sub="820" elem="1">
+		<peacewar iii="2" war="1" relation="0" status="0"/>
+		<peacewar iii="3" war="0" relation="50" status="-1"/>
+		<peacewar iii="4" war="0" relation="50" status="0"/>
+		<peacewar iii="5" war="0" relation="50" status="0"/>
+		<peacewar iii="6" war="0" relation="50" status="0"/>
+		<peacewar iii="7" war="0" relation="50" status="1"/>
 	</city>
 	<city iii="2" name="317" sub="820" elem="2"> <!-- Дельфы -->
 		<peacewar iii="1" war="1" relation="0" status="0"/> <!-- -100..100-->
@@ -804,29 +807,11 @@
 		<effect tip="human" num="-1">resChange</effect>
 	</mmotion>
 
-	<!--нажата кнопка перехода к панели героев
-	<mmotion>
-		<qid activ="1" after_work="1" screenWork="30" willSave="0">282</qid>
-		<action iii="520">tap</action>
-		<effect iii="520">visOff</effect>
-		<effect iii="522">visOn</effect>
-		<effect iii="521">visOn</effect>
-	</mmotion>-->
-
-	<!--нажата кнопка перехода к панели рабочих
-	<mmotion>
-		<qid activ="1" after_work="1" screenWork="30" willSave="0">283</qid>
-		<action iii="522">tap</action>
-		<effect iii="520">visOn</effect>
-		<effect iii="522">visOff</effect>
-		<effect iii="521">visOff</effect>
-		<effect iii="528">visOff</effect>
-	</mmotion>-->
-
-<!--нажата кнопка перехода к панели покупки героев-->
+	<!--нажата кнопка перехода к панели покупки героев-->
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="30" willSave="0">287</qid>
 		<action iii="521">tap</action>
+		<effect iii="527">simpleVis</effect>
 		<effect iii="528">simpleVis</effect>
 	</mmotion>
 
@@ -842,11 +827,12 @@
 
 	<!--нажата кнопка возврата на карту города, зачищаем все окна с инфой о апдейтах-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="30" willSave="0">401</qid>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">401</qid>
 		<action iii="504">tap</action>
 		<effect>clearUpdates</effect>
 		<effect iii="850">visOff</effect>
 		<effect iii="860">visOff</effect>
+		<effect iii="852">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
 
@@ -857,6 +843,7 @@
 		<effect>clearUpdates</effect>
 		<effect iii="850">visOff</effect>
 		<effect iii="860">visOff</effect>
+		<effect iii="852">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
 
@@ -867,7 +854,7 @@
 		<effect iii="860">visOff</effect>
 		<effect iii="850">setNowCoords</effect>
 		<effect iii="850">visOn</effect>
-
+		<effect iii="852">visOff</effect>
 	</mmotion>
 
 	<!--нажата кнопка закрытия диалогового меню города-->
@@ -1022,17 +1009,37 @@
 		<effect iii="850" eee="9" num="1">gotoFram</effect>
 		<effect iii="850">needFram</effect>
 		<effect tip="city">heroOut</effect>
+	</mmotion>
 
+	<!--нажата кнопка показа диалогового меню вашего города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">442</qid>
+		<action iii="821">tap</action>
+		<effect iii="850">visOff</effect>
+		<effect iii="860">visOff</effect>
+		<effect iii="852">setNowCoords</effect>
+		<effect iii="852">visOn</effect>
+		<effect iii="820">clickLike</effect>
+	</mmotion>
+
+	<!--нажата кнопка закрытия диалогового меню вашего города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">444</qid>
+		<action iii="852">tap</action>
+		<action iii="3">numOfMany</action>
+		<effect iii="852">visOff</effect>
+		<effect>cityClose</effect>
 	</mmotion>
 
 
 	<!--нажата кнопка нового хода-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="50" willSave="0">500</qid>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">500</qid>
 		<action iii="810">tap</action>
 		<effect>nextTurn</effect>
 		<effect iii="850">visOff</effect>
 		<effect iii="860">visOff</effect>
+		<effect iii="852">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
 

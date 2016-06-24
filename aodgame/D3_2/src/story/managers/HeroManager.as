@@ -47,6 +47,39 @@ public class HeroManager
             clearWorkplace(dan.heroChoose-1); //нюанс в том, что dan.outI (т.е. текстовый элемент -1) по номеру должен соответствовать виду деятельности героя
         }
 
+        if (dan.heroActChange)
+        {
+            trace("before hero num="+(dan.heroChoose-1));
+            for (var z:int=0; z<dan.currentHeroes[dan.heroChoose-1].needTyppe.length; z++)
+            {
+                trace(z+": needTyppe="+dan.currentHeroes[dan.heroChoose-1].needTyppe[z]+"; needNum="+dan.currentHeroes[dan.heroChoose-1].needNum[z]);
+            }
+            trace("dan.newPosActChange="+dan.newPosActChange);
+            trace("dan.numActChange="+dan.numActChange);
+            dan.heroActChange=false;
+
+            var s:String= dan.currentHeroes[dan.heroChoose-1].needTyppe[dan.numActChange];
+            var n:int=dan.currentHeroes[dan.heroChoose-1].needNum[dan.numActChange];
+
+            dan.currentHeroes[dan.heroChoose-1].needTyppe.splice(dan.newPosActChange, 0, s);
+            dan.currentHeroes[dan.heroChoose-1].needNum.splice(dan.newPosActChange, 0, n);
+
+            trace("medium hero num="+(dan.heroChoose-1));
+            for (var z:int=0; z<dan.currentHeroes[dan.heroChoose-1].needTyppe.length; z++)
+            {
+                trace(z+": needTyppe="+dan.currentHeroes[dan.heroChoose-1].needTyppe[z]+"; needNum="+dan.currentHeroes[dan.heroChoose-1].needNum[z]);
+            }
+
+            dan.currentHeroes[dan.heroChoose-1].needTyppe.splice(dan.numActChange+1, 1);
+            dan.currentHeroes[dan.heroChoose-1].needNum.splice(dan.numActChange+1, 1);
+
+            trace("hero num="+(dan.heroChoose-1));
+            for (var z:int=0; z<dan.currentHeroes[dan.heroChoose-1].needTyppe.length; z++)
+            {
+                trace(z+": needTyppe="+dan.currentHeroes[dan.heroChoose-1].needTyppe[z]+"; needNum="+dan.currentHeroes[dan.heroChoose-1].needNum[z]);
+            }
+        }
+
         if (bit.sChangeTurn)
         {
             changeTurn(subs);
@@ -257,6 +290,7 @@ public class HeroManager
             dan.currentHeroes[dan.currentHeroes.length-1].makeAge(hero.n1, hero.n2);
             dan.currentHeroes[dan.currentHeroes.length-1].typpe=hero.typpe;
             dan.currentHeroes[dan.currentHeroes.length-1].iii=hero.iii;
+            dan.currentHeroes[dan.currentHeroes.length-1].txt=hero.txt;
             dan.currentHeroes[dan.currentHeroes.length-1].makeName(dan.names);
             for (var i:int=0; i<hero.heroResTyppe.length; i++)
             {

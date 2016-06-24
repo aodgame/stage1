@@ -170,21 +170,21 @@ public class ElemTxt extends ParentElement
     private function downClick(event:MouseEvent):void
     {
         Mouse.cursor = MouseCursor.BUTTON;
-        trace("downClick="+iii);
+        //trace("downClick="+iii);
         bit.mouseDown=iii;
         bit.mouseParDown=parnt;
     }
     private function overClick(event:MouseEvent):void
     {
         Mouse.cursor = MouseCursor.BUTTON;
-        trace("overClick="+iii);
+        //trace("overClick="+iii);
         bit.mouseOver=iii;
         bit.mouseParOver=parnt;
     }
     private function outClick(event:MouseEvent):void
     {
         Mouse.cursor = MouseCursor.AUTO;
-        trace("outClick="+iii);
+        //trace("outClick="+iii);
         bit.mouseOut=iii;
         bit.mouseParOut=parnt;
     }

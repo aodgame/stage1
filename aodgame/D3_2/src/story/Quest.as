@@ -347,6 +347,11 @@ public class Quest
                 effect[i].num = adv.effect[i].@num;
             }
 
+            if (adv.effect[i] == "clickLike")
+            { //меняем индекс нажатого родителя-элемента
+                effect[i].iii = adv.effect[i].@iii;
+            }
+
             if (adv.effect[i] == "nextTurn")
             {
                 //нажата кнопка нового хода

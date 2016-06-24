@@ -18,7 +18,9 @@ public class Bitte
     private static var ok2Create:Boolean=false;
 
     //переменные загрузки
-    public var addr:String = "J://work/gitrep/aodgame/D3_2/"; //путь к загружаемой папке
+    public var addr:String = "http://aodgame.16mb.com/game1/";
+            //"J://work/gitrep/aodgame/D3_2/";
+            //"E://1/D3_2/";//D://7_differ/1/D3/"; //путь к загружаемой папке
     public const scenPath0:String="prelScenaries.xml"; //путь к файлу сценария
     public const subPath0:String="prelSubjects.xml"; //путь к файлу граф.информации
     public const textoPath0:String=""; //путь к файлу текстовой информации

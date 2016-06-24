@@ -690,6 +690,11 @@ public class Movie
                 dan.sellOffer=quest[i].effect[j].sell;
             }
 
+            if (quest[i].effect[j].typpe=="clickLike") //меняем индекс нажатого родителя-элемента
+            {
+                bit.mouseParClick=quest[i].effect[j].iii;
+            }
+
             if (quest[i].effect[j].typpe == "nextTurn")
             {
                 //нажата кнопка нового хода

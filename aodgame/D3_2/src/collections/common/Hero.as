@@ -7,6 +7,7 @@ public class Hero
 {
     public var typpe:String;
     public var iii:int;
+    public var txt:int;
 
     public var currentAge:int;
     private var maxAge:int;
@@ -33,6 +34,7 @@ public class Hero
         nameID=-1;
         n1=0;
         n2=0;
+        txt=-1;
     }
 
     public function makeAge(n1:int, n2:int):void

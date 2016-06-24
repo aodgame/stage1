@@ -26,6 +26,8 @@ public class GlobalRes
     public var needAmount:int; //для расчёта как часть ресурса, вычитаемого в конце хода
     public var presenceAmount:int; //для расчёта как часть ресурса, учитываемого в конце хода
 
+    public var littleInt:int=0;
+
     public function GlobalRes()
     {
         typpe="";

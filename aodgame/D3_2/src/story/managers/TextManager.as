@@ -468,6 +468,30 @@ public class TextManager
                 }
             }
         }
+        if (el.tid.substr(0,6) == "$hRole")  //профессия текущего героя
+        {
+            if (dan.heroChoose>0)
+            {
+                var t:String="(";
+                for (var j:int = 0; j < bit.texto.length; j++)
+                {
+
+                    if (dan.currentHeroes[dan.heroChoose - 1].txt == bit.texto[j].tid)
+                    {
+                        t += harderChoiser(el, j);
+                        break;
+                    }
+                }
+                t+=")";
+                if (t!=el.txt)
+                {
+
+                    el.txt=t;
+                    el.pic.text=t;
+                    kd++;
+                }
+            }
+        }
         if (el.tid.substr(0,7) == "$hCityN")  //имя текущего героя
         {
             if (dan.currentCity<0)
