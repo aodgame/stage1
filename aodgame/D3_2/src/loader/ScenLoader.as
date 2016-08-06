@@ -3,14 +3,24 @@
  */
 package loader
 {
+import collections.behavior.BehActivity;
+import collections.behavior.BehMenu;
+import collections.behavior.BehPositioning;
+import collections.behavior.BehResult;
+import collections.inHistory.Category;
+import collections.inHistory.Collection;
+import collections.common.Equiler;
 import collections.common.HeroActivity;
 import collections.common.HeroRes;
+import collections.common.Message;
 import collections.inCity.Building;
+import collections.inWorld.Alliance;
 import collections.inWorld.City;
 import collections.common.GlobalRes;
 import collections.common.Hero;
 import collections.inCity.Land;
 import collections.inCity.LandRes;
+import collections.inWorld.Cloud;
 import collections.inWorld.Status;
 import collections.common.Modification;
 import collections.inCity.ProblemSituation;
@@ -330,6 +340,10 @@ public class ScenLoader extends ParentLoader
             {
                 dan.playerIII=int(myXML.params[i].@iii);
             }
+            if (String(myXML.params[i].@type)=="cityName")
+            {
+                dan.cityName=int(myXML.params[i].@iii);
+            }
             if (String(myXML.params[i].@type)=="cityPanel")
             {
                 dan.cityPanel=int(myXML.params[i].@iii);
@@ -345,6 +359,22 @@ public class ScenLoader extends ParentLoader
             if (String(myXML.params[i].@type)=="maxHeroActionsNum")
             {
                 dan.maxHeroActionsNum=int(myXML.params[i].@iii);
+            }
+            if (String(myXML.params[i].@type)=="messMenuPanel")
+            {
+                dan.messMenuPanel=int(myXML.params[i].@iii);
+            }
+            if (String(myXML.params[i].@type)=="shadowPlane")
+            {
+                dan.shadowPlane=int(myXML.params[i].@iii);
+            }
+            if (String(myXML.params[i].@type)=="specCityPanel")
+            {
+                dan.specCityPanel=int(myXML.params[i].@iii);
+            }
+            if (String(myXML.params[i].@type)=="cityDipPanel")
+            {
+                dan.cityDipPanel=int(myXML.params[i].@iii);
             }
             /*if (String(myXML.params[i].@type)=="heroScreenCloseShadow")
             {
@@ -368,6 +398,63 @@ public class ScenLoader extends ParentLoader
                 dan.cities[dan.cities.length-1].peacewar.push(new int(myXML.city[i].peacewar[jj].@war));
                 dan.cities[dan.cities.length-1].status.push(new int(myXML.city[i].peacewar[jj].@status));
             }
+            for (var jj:int=0; jj<myXML.city[i].params.length(); jj++)
+            {
+                dan.cities[dan.cities.length-1].character = int(myXML.city[i].params[jj].@character);
+                dan.cities[dan.cities.length-1].government = int(myXML.city[i].params[jj].@government);
+            }
+            dan.cities[dan.cities.length-1].army=int(myXML.city[i].troops.@army);
+            dan.cities[dan.cities.length-1].fleet=int(myXML.city[i].troops.@fleet);
+        }
+
+        for (i=0; i<myXML.alliance.length(); i++)
+        {
+            dan.alliances.push(new Alliance());
+            dan.alliances[dan.alliances.length-1].iii=int(myXML.alliance[i].@iii);
+            dan.alliances[dan.alliances.length-1].leader=int(myXML.alliance[i].leader.@iii);
+            for (var jj:int=0; jj<myXML.alliance[i].member.length(); jj++)
+            {
+                dan.alliances[dan.alliances.length-1].members.push(int(myXML.alliance[i].member[jj].@iii));
+            }
+        }
+
+        //ищем, в какой альянс входит герой
+        for (i=0; i<dan.cities.length; i++)
+        {
+            for (var jj:int=0; jj<dan.alliances.length; jj++)
+            {
+                if (dan.alliances[jj].leader==dan.cities[i].iii) //если герой лидер альянса, то дальнейший поиск не нужен
+                {
+                    dan.cities[i].leader=true;
+                    dan.cities[i].alliance=dan.alliances[jj].iii;
+                    continue;
+                }
+                for (var kk:int=0; kk<dan.alliances[jj].members.length; kk++) // иначе проходим по участникам альянса
+                {
+                    if (dan.alliances[jj].members[kk]==dan.cities[i].iii)
+                    {
+                        dan.cities[i].leader=false;
+                        dan.cities[i].alliance=dan.alliances[jj].iii;
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        //список соответствий правительство-текстовка
+        for (i=0; i<myXML.cityGovernment.length(); i++)
+        {
+            dan.governments.push(new Equiler());
+            dan.governments[dan.governments.length-1].fint=myXML.cityGovernment[i].@government;
+            dan.governments[dan.governments.length-1].sint=myXML.cityGovernment[i].@governmentTxt;
+        }
+        //список соответствий характер города-текстовка
+        for (i=0; i<myXML.character.length(); i++)
+        {
+            dan.characters.push(new Equiler());
+            dan.characters[dan.characters.length-1].fint=myXML.character[i].@char;
+            dan.characters[dan.characters.length-1].sint=myXML.character[i].@charTxt;
         }
 
         //вводим статусы взаимоотношений городов
@@ -453,13 +540,153 @@ public class ScenLoader extends ParentLoader
                 dan.heroActivities[dan.heroActivities.length-1].costTyppe.push(new String(myXML.heroActivity[i].cost[jj].@typpe));
                 dan.heroActivities[dan.heroActivities.length-1].costNum.push(new int(myXML.heroActivity[i].cost[jj].@num));
             }
-
+            dan.heroActivities[dan.heroActivities.length-1].timme=myXML.heroActivity[i].timme.@n;
         }
-        for (i=0; i<dan.heroActivities.length; i++)
+        /*for (i=0; i<dan.heroActivities.length; i++)
         {
             for (var jj:int=0; jj<dan.heroActivities[i].txt.length; jj++)
             {
                 trace("act="+dan.heroActivities[i].act+"; txt="+dan.heroActivities[i].txt[j]);
+            }
+        }*/
+
+        //смотриМ, куда можно спозиционировать героя
+        for (i=0; i<myXML.behPositioning.length(); i++)
+        {
+            dan.behPos.push(new BehPositioning());
+            dan.behPos[dan.behPos.length-1].iii=myXML.behPositioning[i].@iii;
+            dan.behPos[dan.behPos.length-1].weAre=myXML.behPositioning[i].@weAre;
+            dan.behPos[dan.behPos.length-1].where=myXML.behPositioning[i].where.@num;
+            dan.behPos[dan.behPos.length-1].warning=myXML.behPositioning[i].warning.@res;
+            dan.behPos[dan.behPos.length-1].empty=myXML.behPositioning[i].empty.@i;
+            dan.behPos[dan.behPos.length-1].resTyppe=myXML.behPositioning[i].res.@typpe;
+            dan.behPos[dan.behPos.length-1].resIII=myXML.behPositioning[i].res.@iii;
+        }
+        //смотрим, какие меню выбора действия героя возможно
+        for (i=0; i<myXML.behMenu.length(); i++)
+        {
+            dan.behMenu.push(new BehMenu());
+            dan.behMenu[dan.behMenu.length-1].iii=myXML.behMenu[i].@iii;
+            dan.behMenu[dan.behMenu.length-1].txt=myXML.behMenu[i].@txt;
+            for (var jj:int=0; jj<myXML.behMenu[i].choicer.length(); jj++)
+            {
+                dan.behMenu[dan.behMenu.length-1].choicerBehActivity.push(new int(myXML.behMenu[i].choicer[jj].@behActivity));
+                dan.behMenu[dan.behMenu.length-1].choicerTxt.push(new String(myXML.behMenu[i].choicer[jj].@txt));
+            }
+        }
+        //смотрим, какой результат возможен в зависимости от вбыора игрока
+        for (i=0; i<myXML.behActivity.length(); i++)
+        {
+            dan.behAct.push(new BehActivity());
+            dan.behAct[dan.behAct.length-1].iii=myXML.behActivity[i].@iii;
+            for (var jj:int=0; jj<myXML.behActivity[i].res.length(); jj++)
+            {
+                dan.behAct[dan.behAct.length - 1].resChance.push(new int(myXML.behActivity[i].res[jj].@chance));
+                dan.behAct[dan.behAct.length - 1].resBehRes.push(new int(myXML.behActivity[i].res[jj].@behRes));
+            }
+        }
+        //определяем, какие изменения произойдут из-за вбыора игрока
+        for (i=0; i<myXML.behResult.length(); i++)
+        {
+            dan.behRes.push(new BehResult());
+            dan.behRes[dan.behRes.length-1].iii=myXML.behResult[i].@iii;
+            for (var jj:int=0; jj<myXML.behResult[i].heroRes.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].heroResTyppe.push(new String(myXML.behResult[i].heroRes[jj].@typpe));
+                dan.behRes[dan.behRes.length-1].heroResNum.push(new int(myXML.behResult[i].heroRes[jj].@num));
+                dan.behRes[dan.behRes.length-1].heroResNumTyppe.push(new String(myXML.behResult[i].heroRes[jj].@numTyppe));
+                dan.behRes[dan.behRes.length-1].need=myXML.behResult[i].heroRes[jj].@need;
+                dan.behRes[dan.behRes.length-1].from=myXML.behResult[i].heroRes[jj].@from;
+            }
+
+            for (var jj:int=0; jj<myXML.behResult[i].resChange.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].resChangeTyppe.push(new String(myXML.behResult[i].resChange[jj].@typpe));
+                dan.behRes[dan.behRes.length-1].resChangeNum.push(new int(myXML.behResult[i].resChange[jj].@num));
+                dan.behRes[dan.behRes.length-1].resChangeNumTyppe.push(new String(myXML.behResult[i].resChange[jj].@numTyppe));
+            }
+
+           // <behResult iii="1">
+               // <resChange typpe="army_hoplite" num="10" numTyppe="abs"/>
+            for (var jj:int=0; jj<myXML.behResult[i].warning.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].warningTyppe.push(myXML.behResult[i].warning[jj].@typpe);
+                dan.behRes[dan.behRes.length-1].warningLand.push(myXML.behResult[i].warning[jj].@land);
+                dan.behRes[dan.behRes.length-1].timeToBuild.push(myXML.behResult[i].warning[jj].@timeToBuild);
+                dan.behRes[dan.behRes.length-1].canWork.push(myXML.behResult[i].warning[jj].@canWork);
+            }
+            dan.behRes[dan.behRes.length-1].message=myXML.behResult[i].message.@txt;
+            for (var jj:int=0; jj<myXML.behResult[i].change.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].changeTyppe.push(new String(myXML.behResult[i].change[jj].@typpe));
+            }
+            for (var jj:int=0; jj<myXML.behResult[i].cityRel.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].cityRelTyppe.push(new String(myXML.behResult[i].cityRel[jj].@typpe));
+                dan.behRes[dan.behRes.length-1].cityRelNum.push(new int(myXML.behResult[i].cityRel[jj].@num));
+                dan.behRes[dan.behRes.length-1].cityRelNumTyppe.push(new String(myXML.behResult[i].cityRel[jj].@numTyppe));
+            }
+        }
+
+        //подготавливаем сообщения
+        for (i=0; i<myXML.mess.length(); i++)
+        {
+            dan.mess.push (new Message());
+            dan.mess[dan.mess.length-1].behMenu=myXML.mess[i].@behMenu;
+            dan.mess[dan.mess.length-1].iii=myXML.mess[i].@iii;
+            if (int(myXML.mess[i].@activeShow)==1)
+            {
+                dan.mess[dan.mess.length - 1].activeShow=true;
+            } else
+            {
+                dan.mess[dan.mess.length - 1].activeShow=false;
+            }
+            if (int(myXML.mess[i].@out)==1)
+            {
+                dan.mess[dan.mess.length - 1].out=true;
+            } else
+            {
+                dan.mess[dan.mess.length - 1].out=false;
+            }
+        }
+
+        //разводим туман войны
+        for (i=0; i<myXML.cloud.length(); i++)
+        {
+            dan.clouds.push(new Cloud());
+            dan.clouds[dan.clouds.length-1].iii=myXML.cloud[i].@iii;
+            dan.clouds[dan.clouds.length-1].xx=myXML.cloud[i].@xx;
+            dan.clouds[dan.clouds.length-1].yy=myXML.cloud[i].@yy;
+            dan.clouds[dan.clouds.length-1].ww=myXML.cloud[i].@ww;
+            dan.clouds[dan.clouds.length-1].hh=myXML.cloud[i].@hh;
+        }
+
+        //определяем, что сохраним для истории
+        for (i=0; i<myXML.willSave.length(); i++)
+        {
+            dan.willSave.push(new Collection());
+            dan.willSave[dan.willSave.length-1].iii=myXML.willSave[i].@iii;
+            dan.willSave[dan.willSave.length-1].res=myXML.willSave[i].@res;
+            for (var jj:int=0; jj<dan.globalRes.length; jj++)
+            {
+                if (dan.globalRes[jj].typpe==dan.willSave[dan.willSave.length-1].res)
+                {
+                    dan.willSave[dan.willSave.length-1].num.push(new int(dan.globalRes[jj].amount));
+                    dan.willSave[dan.willSave.length-1].max=int(dan.globalRes[jj].amount);
+                }
+            }
+            dan.willSave[dan.willSave.length-1].category=int(myXML.willSave[i].@category);
+        }
+
+        //определяем, как сохраняемые значения должны показываться
+        for (i=0; i<myXML.category.length(); i++)
+        {
+            dan.category.push(new Category());
+            dan.category[dan.category.length-1].iii=myXML.category[i].@iii;
+            dan.category[dan.category.length-1].out=myXML.category[i].@out;
+            for (var jj:int=0; jj<myXML.category[i].col.length(); jj++)
+            {
+                dan.category[dan.category.length-1].col.push(new String(myXML.category[i].col[jj].@clr));
             }
         }
     }
@@ -469,7 +696,7 @@ public class ScenLoader extends ParentLoader
         //quest.push (new Object());
         for (i=0; i<myXML.mmotion.length(); i++)
         {
-            quest.push (new Quest(myXML.mmotion[i]));
+            quest.push (new Quest(myXML.mmotion[i], myXML.cid));
         }
         level_go+=Stats.ONE;
     }

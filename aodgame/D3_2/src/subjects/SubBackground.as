@@ -5,9 +5,9 @@ package subjects
 {
 public class SubBackground extends Parent2Subject
 {
-    public function SubBackground(myXML, pics, el, ii)
+    public function SubBackground(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -38,9 +38,9 @@ public class SubBackground extends Parent2Subject
         return s;
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
 
         subs.push("pic");
         visOne.push(1);

@@ -15,9 +15,9 @@ public class SubResFiller  extends Parent2Subject
 
     private var dan:Danke;
 
-    public function SubResFiller(myXML, pics, el, ii)
+    public function SubResFiller(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -28,8 +28,7 @@ public class SubResFiller  extends Parent2Subject
     override public function model(el):void
     {
         super.model(el);
-
-            makeFram(el);
+        makeFram(el);
     }
 
     private function makeFram(el):void
@@ -47,7 +46,13 @@ public class SubResFiller  extends Parent2Subject
         }
         if (previousResAmount!=dan.globalRes[numOfBaseRes].presenceAmount)
         {
+            trace("previousResAmount != presenceAmount");
             previousResAmount = dan.globalRes[numOfBaseRes].presenceAmount;
+
+            if (dan.globalRes[numOfBaseRes].presenceAmount>dan.globalRes[numOfBaseRes].max)
+            {
+                previousResAmount=dan.globalRes[numOfBaseRes].max;
+            }
             neddFram=true;
         }
         if (min==max)
@@ -88,9 +93,9 @@ public class SubResFiller  extends Parent2Subject
         return s;
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
         dan = Danke.getInstance();
 
         subs.push("pic");

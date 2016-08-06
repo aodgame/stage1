@@ -24,15 +24,18 @@ public class Quest
 
     public var  willSave:Boolean;
 
-    public function Quest(adv)
+    public var moduleName:String="";
+
+    public function Quest(adv, cid)
     {
-        main(adv);
+        main(adv, cid);
         act(adv);
         eff(adv);
     }
 
-    public function main(adv):void
+    public function main(adv, cid):void
     {
+        moduleName=cid;
         qid=adv.qid;
         //trace("!!qid="+qid);
         if (adv.qid.@activ==1)
@@ -83,6 +86,19 @@ public class Quest
                 action[i].num=adv.action[i].@num;
             }
 
+            if (adv.action[i]=="resEnd")
+            {//закончился ресурс
+                action[i].num=adv.action[i].@num;
+            }
+
+
+
+            if (adv.action[i]=="curDate")
+            {//точная дата, в которую должно произойти событие
+                action[i].first=adv.action[i].@first;
+                action[i].second=adv.action[i].@second;
+            }
+
             if (adv.action[i] == "positionIt")
             {
                 //спозиционировать предметы
@@ -126,6 +142,10 @@ public class Quest
                 action[i].tip=adv.action[i].@tip;
                 action[i].level=adv.action[i].@level;
                 action[i].chance=adv.action[i].@chance;
+            }
+            if (adv.action[i] == "heroMenuActivity") //данная переменная активна
+            {
+                action[i].iii=adv.action[i].@iii;
             }
 
             if (adv.action[i]=="numOfMany") //номер элемента в списке элементов
@@ -305,6 +325,8 @@ public class Quest
             if (adv.effect[i] == "setCoords")
             { //выставить координаты предмету
                 effect[i].iii = adv.effect[i].@iii;
+                effect[i].xx = adv.effect[i].@xx;
+                effect[i].yy = adv.effect[i].@yy;
             }
             if (adv.effect[i] == "setNowCoords")
             { //выставить текущие координаты предмету
@@ -352,9 +374,69 @@ public class Quest
                 effect[i].iii = adv.effect[i].@iii;
             }
 
+            if (adv.effect[i] == "deleteModule")
+            { //удаляем модуль
+                effect[i].moduleName = adv.effect[i].@txt;
+                effect[i].moduleParams = adv.effect[i].@cmd;
+            }
+
+            if (adv.effect[i] == "changeLanguage")
+            { //смена языка: английский
+                effect[i].txt = adv.effect[i].@txt;
+            }
+
+            if (adv.effect[i] == "behChoice")
+            { //переменная dan.behChoice!=0
+            }
+
+            if (adv.effect[i] == "behPosFromMess")
+            { //заминусовываем переменную, отвечающую за очистку мессенджера
+                effect[i].iii = adv.effect[i].@iii;
+            }
+
+            if (adv.effect[i] == "messWasTap")
+            { //номер элемента в предмете МенюСообщений, который был выбран игроком
+            }
+
+            if (adv.effect[i] == "makeMessage")
+            { //создаём сообщение в векторе сообщений
+                effect[i].iii = adv.effect[i].@iii;
+                effect[i].behMenu = adv.effect[i].@behMenu;
+                effect[i].activeShow = adv.effect[i].@activeShow;
+                effect[i].out = adv.effect[i].@out;
+                //<effect iii="1" behMenu="102" activeShow="0" out="0">makeMessage</effect>
+            }
+
+            if (adv.effect[i]=="cityAllianceArmy") //смена логической переменной, отвечающей за то, показывается город или целиком альянс
+            {
+                effect[i].res=adv.effect[i].@res;
+            }
+
+            if (adv.effect[i]=="dxKnown") //сдвиг, на который нужно перемещать панель, когда открыт новый город
+            {
+                effect[i].num=adv.effect[i].@num;
+            }
+
+            if (adv.effect[i]=="relationChange") //город: влиять на отношения, улучшить
+            {
+                effect[i].res=adv.effect[i].@res;
+            }
+
+
+            if (adv.effect[i]=="fromAdditionalCityPanel") //меняет состояние отображаемой панели города при выборе в доп.панели
+            {
+
+            }
+
+
             if (adv.effect[i] == "nextTurn")
             {
                 //нажата кнопка нового хода
+            }
+
+            if (adv.effect[i]=="categoryWillSave") //сменяем категорию показа истории
+            {
+                effect[i].num=adv.effect[i].@num;
             }
 
 

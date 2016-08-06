@@ -9,7 +9,7 @@
 	</mmotion>
 
 	<mmotion>
-		<qid activ="1" after_work="0" screenWork="30" willSave="0">20</qid>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">20</qid>
 		<action iii="105">tap</action>
 		<effect room="30">flyTo</effect>
 		<effect plane="1">flyToPlane</effect>

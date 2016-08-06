@@ -87,7 +87,7 @@ public class SubjLoader extends ParentLoader
         //здесь всё ок
         for (i=0; i<myXML.picload.length(); i++)
         {
-            pics.push (new PicUno(myXML.picload[i]));
+            pics.push (new PicUno(myXML.picload[i], myXML.cid));
         }
     }
     //проверяем, загрузились ли все изображения
@@ -119,9 +119,6 @@ public class SubjLoader extends ParentLoader
         {
             //trace("iii="+bit.room[i].iii+": xx="+bit.room[i].xx);
         }
-
-
-
     }
 
     //создаём предметы, явно указанные по игре
@@ -131,7 +128,7 @@ public class SubjLoader extends ParentLoader
         c=sub.length;
         for (i=0; i<myXML.subject.length(); i++) //создаём предметы
         {
-            plant.makeS(i, myXML.subject[i], sub, el, pics);
+            plant.makeS(i, myXML.subject[i], sub, el, pics, myXML.cid);
         }
         for (i=c; i<sub.length; i++) //создаём элементы графики под предметы
         {

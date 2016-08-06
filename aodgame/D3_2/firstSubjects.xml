@@ -17,14 +17,48 @@
 	<!--кнопка новой игры-->
 	<subject>
 		<id>105</id>
-		<type weAre="10" ourPosition="1" vis="1" willSave="1">button</type>
+		<type weAre="10" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
 		<portal goTo="30" goPosition="1">1</portal>
 		<x>512</x><y>300</y><width>0</width><height>0</height>
-		<pic picload="1">btnNewGame</pic>
+		<txt xx="-110" yy="-20" id="20:220:40:0x000000:c:t:28"/>
+		<pic picload="1">btnBegin</pic>
 		<atChild>10</atChild>
 	</subject>
 
-	<!--кнопка загрузить игру игры-->
+	<!--бэк полоска слева-->
+	<subject>
+		<id>110</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1">lineLeft</pic>
+		<atChild>18</atChild>
+	</subject>
+	<!--бэк полоска сверху-->
+	<subject>
+		<id>110</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1">lineTop</pic>
+		<atChild>18</atChild>
+	</subject>
+	<!--бэк полоска справа-->
+	<subject>
+		<id>110</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>1021</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1">lineRight</pic>
+		<atChild>18</atChild>
+	</subject>
+	<!--бэк полоска снизу-->
+	<subject>
+		<id>110</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>765</y><width>0</width><height>0</height>
+		<pic picload="1">lineBottom</pic>
+		<atChild>18</atChild>
+	</subject>
+
+	<!--кнопка загрузить игру игры
 	<subject>
 		<id>110</id>
 		<type weAre="10" ourPosition="1" vis="1" willSave="1">button</type>
@@ -32,7 +66,7 @@
 		<x>512</x><y>400</y><width>0</width><height>0</height>
 		<pic picload="1">btnLoadGame</pic>
 		<atChild>10</atChild>
-	</subject>
+	</subject>-->
 
 
 </chronicle>

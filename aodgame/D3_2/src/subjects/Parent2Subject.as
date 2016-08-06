@@ -3,14 +3,13 @@
  */
 package subjects
 {
-import story.Danke;
-
 public class Parent2Subject extends ParentSubject
 {
     public var curX:int;
     public var curY:int;
 
-    //protected var dan:Danke;
+    public var startX:Vector.<int> = new Vector.<int>();
+    public var startY:Vector.<int> = new Vector.<int>();
 
     override public function work(ii):void
     {
@@ -37,41 +36,68 @@ public class Parent2Subject extends ParentSubject
         return super.takeParam(str);
     }
 
-    override public function model(el):void
+    private function textPositioning():void
     {
-        for (i=0; i<numOfEl.length; i++)
+        if(startX.length!=sx.length)
         {
-            if (alph!=oldAlph)
+            for (i=0; i<sx.length; i++)
             {
-                if (alph>1)
-                {
-                    el[numOfEl[i]].pic.alpha=alph/1000;
-                } else
-                {
-                    el[numOfEl[i]].pic.alpha=100;
-                }
-                oldAlph=alph;
+                startX.push(sx[i]);
+                startY.push(sy[i]);
             }
-            if (resultVis==1 && el[numOfEl[i]].pic.visible!=visOne[i])
+        }
+    }
+    private function textPosIt(curEl):void
+    {
+        if (curEl.typeOfElement=="txt")
+        {
+            var lng:int=curEl.pic.numLines;
+            var pos:int=startY[i]-(lng-1)*(curEl.size+2)/2;
+            if (sy[i]!=pos)
             {
-                el[numOfEl[i]].pic.visible=visOne[i];
-            }
-            if (resultVis==0 && el[numOfEl[i]].pic.visible)
-            {
-                el[numOfEl[i]].pic.visible=false;
+                sy[i]=pos;
             }
         }
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //����������� ��������
+    private function visualisation(curEl):void
     {
-        super.end_load(myXML, ii, pics, el);
+        if (alph!=oldAlph)
+        {
+            if (alph>1)
+            {
+                curEl.pic.alpha=alph/1000;
+            } else
+            {
+                curEl.pic.alpha=100;
+            }
+            oldAlph=alph;
+        }
+        if (resultVis==1 && curEl.pic.visible!=visOne[i])
+        {
+            curEl.pic.visible=visOne[i];
+        }
+        if (resultVis==0 && curEl.pic.visible)
+        {
+            curEl.pic.visible=false;
+        }
+    }
 
+    override public function model(el):void
+    {
+        textPositioning();
+        for (i=0; i<numOfEl.length; i++)
+        {
+            visualisation(el[numOfEl[i]]);
+            textPosIt(el[numOfEl[i]]);
+        }
+    }
+
+    override protected function end_load(myXML, ii, pics, el, moduleName):void
+    {
+        super.end_load(myXML, ii, pics, el, moduleName);
         curX=subX;
         curY=subY;
-
-        //dan = Danke.getInstance();
     }
 }
 }
-

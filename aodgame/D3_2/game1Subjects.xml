@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <chronicle>
-	<cid>D3</cid>
+	<cid>game1module</cid>
 	
 	<picload id="2">game1Module.swf</picload>
 
@@ -19,6 +19,15 @@
 		<x>0</x><y>125</y><width>0</width><height>0</height>
 		<pic picload="2">land_border1</pic>
 		<atChild>1</atChild>
+	</subject>
+
+	<!--Фон для затемнения основной карты-->
+	<subject>
+		<id>350</id>
+		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
+		<x>512</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2">landDark</pic>
+		<atChild>5</atChild>
 	</subject>
 
 	<!-- выделенные земли-->
@@ -187,11 +196,11 @@
 		<pos xx ="31" yy="-33" ww="0" hh="0" move="t"/>
 		<pos xx ="77" yy="-33" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="69" yy="-23" ww="0" hh="0" move="f"/>
 
-		<txt xx="16" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="40" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="64" yy="-15" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="16" yy="-15" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="40" yy="-15" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="64" yy="-15" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land2-->
@@ -212,11 +221,11 @@
 		<pos xx="60" yy="-27" ww="0" hh="0" move="t"/>
 		<pos xx="105" yy="-27" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="91" yy="-32" ww="0" hh="0" move="f"/>
 
-		<txt xx="-4" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-20" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="44" yy="-8" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-4" yy="-8" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="-20" yy="-8" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="44" yy="-8" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land3-->
@@ -237,11 +246,11 @@
 		<pos xx="32" yy="-37" ww="0" hh="0" move="t"/>
 		<pos xx="80" yy="-64" ww="0" hh="0" move="t"/>
 
-		<pos xx="30" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="32" yy="-36" ww="0" hh="0" move="f"/>
 
-		<txt xx="69" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="45" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="21" yy="0" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="69" yy="0" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="45" yy="0" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="21" yy="0" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land4-->
@@ -262,11 +271,11 @@
 		<pos xx="45" yy="-89" ww="0" hh="0" move="t"/>
 		<pos xx="28" yy="-134" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="68" yy="-50" ww="0" hh="0" move="f"/>
 
-		<txt xx="16" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="40" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="64" yy="-21" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="16" yy="-21" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="40" yy="-21" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="64" yy="-21" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land5-->
@@ -287,11 +296,11 @@
 		<pos xx="44" yy="-23" ww="0" hh="0" move="t"/>
 		<pos xx="90" yy="-23" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="46" yy="-22" ww="0" hh="0" move="f"/>
 
-		<txt xx="-74" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-50" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-26" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-74" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="-50" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="-26" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land6-->
@@ -312,11 +321,11 @@
 		<pos xx="52" yy="-47" ww="0" hh="0" move="t"/>
 		<pos xx="98" yy="-47" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="99" yy="-46" ww="0" hh="0" move="f"/>
 
-		<txt xx="23" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="47" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="71" yy="-27" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="23" yy="-27" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="47" yy="-27" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="71" yy="-27" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land7-->
@@ -337,11 +346,11 @@
 		<pos xx="110" yy="-22" ww="0" hh="0" move="t"/>
 		<pos xx="156" yy="-22" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="65" yy="-20" ww="0" hh="0" move="f"/>
 
-		<txt xx="0" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="24" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="48" yy="-2" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="0" yy="-2" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="24" yy="-2" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="48" yy="-2" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land8-->
@@ -362,11 +371,11 @@
 		<pos xx="-9" yy="-47" ww="0" hh="0" move="t"/>
 		<pos xx="-37" yy="-47" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="25" yy="-46" ww="0" hh="0" move="f"/>
 
-		<txt xx="-13" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="11" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="35" yy="-23" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-13" yy="-23" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="11" yy="-23" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="35" yy="-23" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land9-->
@@ -387,11 +396,11 @@
 		<pos xx="4" yy="-16" ww="0" hh="0" move="t"/>
 		<pos xx="49" yy="-16" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="-25" yy="-20" ww="0" hh="0" move="f"/>
 
-		<txt xx="4" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="28" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="52" yy="13" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="4" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="28" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="52" yy="13" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land10-->
@@ -412,11 +421,11 @@
 		<pos xx="0" yy="-20" ww="0" hh="0" move="t"/>
 		<pos xx="52" yy="-1" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="-25" yy="-46" ww="0" hh="0" move="f"/>
 
-		<txt xx="-44" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="-20" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="4" yy="-7" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-44" yy="-7" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="-20" yy="-7" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="4" yy="-7" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land11-->
@@ -437,11 +446,11 @@
 		<pos xx="13" yy="8" ww="0" hh="0" move="t"/>
 		<pos xx="-33" yy="8" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="15" yy="0" ww="0" hh="0" move="f"/>
 
-		<txt xx="58" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="82" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="106" yy="29" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="58" yy="29" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="82" yy="29" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="106" yy="29" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 	<subject><!--land12-->
@@ -462,98 +471,123 @@
 		<pos xx="-10" yy="-16" ww="0" hh="0" move="t"/>
 		<pos xx="36" yy="-16" ww="0" hh="0" move="t"/>
 
-		<pos xx="15" yy="20" ww="0" hh="0" move="f"/>
+		<pos xx="-25" yy="-20" ww="0" hh="0" move="f"/>
 
-		<txt xx="-5" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="19" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
-		<txt xx="43" yy="11" id="$res:30:20:0xFFFFFF:c:t:16"/>
+		<txt xx="-5" yy="11" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="19" yy="11" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
+		<txt xx="43" yy="11" id="$res:30:20:0x888800:c:t:16:0xFFFFFF:"/>
 		<atChild>6</atChild>
 	</subject>
 
-	<!--Фон для затемнения основной карты-->
-	<subject>
-		<id>350</id>
-		<type weAre="30" ourPosition="1" vis="0" willSave="1">button</type>
-		<x>512</x><y>384</y><width>0</width><height>0</height>
-		<pic picload="2">landDark</pic>
-		<atChild>4</atChild>
-	</subject>
+
 
 	<!-- Панель ресурсов-->
 	<subject>
 		<id>370</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="2">mover</type>
-		<x>94</x><y>32</y><width>0</width><height>0</height>
+		<x>126</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res0:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc0:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res0:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc0:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>371</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="3">mover</type>
-		<x>173</x><y>32</y><width>0</width><height>0</height>
+		<x>203</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res1:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc1:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res1:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc1:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>372</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="4">mover</type>
-		<x>250</x><y>32</y><width>0</width><height>0</height>
+		<x>280</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res2:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc2:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res2:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc2:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>373</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="5">mover</type>
-		<x>327</x><y>32</y><width>0</width><height>0</height>
+		<x>357</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res3:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc3:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res3:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc3:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>374</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="9">mover</type>
-		<x>405</x><y>32</y><width>0</width><height>0</height>
+		<x>435</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res7:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc7:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res7:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc7:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>375</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="10">mover</type>
-		<x>483</x><y>32</y><width>0</width><height>0</height>
+		<x>513</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
-		<txt xx="-32" yy="-26" id="$res8:74:22:0xFFFFFF:c:t:20:0x000000:"/>
-		<txt xx="-32" yy="-3"  id="$inc8:74:22:0xFFFFFF:c:t:20:0x000000:"/>
+		<txt xx="-12" yy="-26" id="$res8:74:22:0xFFFFFF:l:t:20:0x000000:"/>
+		<txt xx="-22" yy="-3"  id="$inc8:74:22:0xFFFFFF:l:t:20:0x000000:"/>
 		<atChild>7</atChild>
+	</subject>
+
+	<!-- крайние рамки под ресурсы-->
+	<subject>
+		<id>376</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>86</x><y>1</y><width>0</width><height>0</height>
+		<pic picload="2">pergament1</pic>
+		<atChild>8</atChild>
+	</subject>
+	<subject>
+		<id>377</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>554</x><y>1</y><width>0</width><height>0</height>
+		<pic picload="2">pergament2</pic>
+		<atChild>8</atChild>
+	</subject>
+
+	<!-- крайние рамки под рабочих-->
+	<subject>
+		<id>377</id>
+		<type weAre="30" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>7</x><y>701</y><width>96</width><height>94</height>
+		<pic picload="2">pergament1</pic>
+		<atChild>8</atChild>
+	</subject>
+	<subject>
+		<id>378</id>
+		<type weAre="30" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>376</x><y>702</y><width>96</width><height>94</height>
+		<pic picload="2">pergament2</pic>
+		<atChild>8</atChild>
 	</subject>
 
 	<!-- бэк под иконки ресов-людей-->
 	<subject>
 		<id>380</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" spec="respect_ilot">resFiller</type>
-		<x>7</x><y>709</y><width>0</width><height>0</height>
+		<x>15</x><y>706</y><width>0</width><height>0</height>
 		<pic picload="2">res_fram3</pic>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>381</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" spec="respect_metek">resFiller</type>
-		<x>130</x><y>709</y><width>0</width><height>0</height>
+		<x>138</x><y>706</y><width>0</width><height>0</height>
 		<pic picload="2">res_fram3</pic>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>382</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" spec="respect">resFiller</type>
-		<x>253</x><y>709</y><width>0</width><height>0</height>
+		<x>261</x><y>706</y><width>0</width><height>0</height>
 		<pic picload="2">res_fram3</pic>
 		<atChild>7</atChild>
 	</subject>
@@ -561,7 +595,7 @@
 	<subject>
 		<id>383</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1">background</type>
-		<x>337</x><y>732</y><width>0</width><height>0</height>
+		<x>345</x><y>729</y><width>0</width><height>0</height>
 		<pic picload="2">symb_res14</pic>
 		<txt xx="-26" yy="-26" id="$pream10:60:26:0xFFFFFF:c:t:24:0x000000:"/>
 		<atChild>7</atChild>
@@ -569,7 +603,7 @@
 	<subject>
 		<id>384</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1">background</type>
-		<x>215</x><y>732</y><width>0</width><height>0</height>
+		<x>222</x><y>729</y><width>0</width><height>0</height>
 		<pic picload="2">symb_res14</pic>
 		<txt xx="-26" yy="-26" id="$pream11:60:26:0xFFFFFF:c:t:24:0x000000:"/>
 		<atChild>7</atChild>
@@ -577,7 +611,7 @@
 	<subject>
 		<id>385</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1">background</type>
-		<x>92</x><y>732</y><width>0</width><height>0</height>
+		<x>100</x><y>729</y><width>0</width><height>0</height>
 		<pic picload="2">symb_res14</pic>
 		<txt xx="-26" yy="-26" id="$pream12:60:26:0xFFFFFF:c:t:24:0x000000:"/>
 		<atChild>7</atChild>
@@ -587,34 +621,34 @@
 	<subject>
 		<id>386</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="6">mover</type>
-		<x>43</x><y>737</y><width>0</width><height>0</height>
+		<x>51</x><y>734</y><width>0</width><height>0</height>
 		<pic picload="2" move="true">symb_MenuResArray</pic>
 		<move>true</move>
-		<txt xx="-58" yy="6" id="$fre4:60:26:0x000000:r:t:24:0xFFFFFF:"/>
-		<txt xx="-28" yy="6" id="248:60:26:0x000000:c:t:24:0xFFFFFF:"/>
-		<txt xx="2" yy="6" id="$res4:60:26:0x000000:l:t:24:0xFFFFFF:"/>
+		<txt xx="-58" yy="3" id="$fre4:60:28:0x000000:r:t:24:0xFFFFFF:"/>
+		<txt xx="-28" yy="3" id="248:60:28:0x000000:c:t:24:0xFFFFFF:"/>
+		<txt xx="2" yy="3" id="$res4:60:28:0x000000:l:t:24:0xFFFFFF:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>387</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="7">mover</type>
-		<x>169</x><y>737</y><width>0</width><height>0</height>
+		<x>177</x><y>734</y><width>0</width><height>0</height>
 		<pic picload="2" move="true">symb_MenuResArray</pic>
 		<move>true</move>
-		<txt xx="-58" yy="6" id="$fre5:60:26:0x000000:r:t:24:0xFFFFFF:"/>
-		<txt xx="-28" yy="6" id="248:60:26:0x000000:c:t:24:0xFFFFFF:"/>
-		<txt xx="2" yy="6" id="$res5:60:26:0x000000:l:t:24:0xFFFFFF:"/>
+		<txt xx="-58" yy="3" id="$fre5:60:28:0x000000:r:t:24:0xFFFFFF:"/>
+		<txt xx="-28" yy="3" id="248:60:28:0x000000:c:t:24:0xFFFFFF:"/>
+		<txt xx="2" yy="3" id="$res5:60:28:0x000000:l:t:24:0xFFFFFF:"/>
 		<atChild>7</atChild>
 	</subject>
 	<subject>
 		<id>388</id>
 		<type weAre="30" ourPosition="1" vis="1" willSave="1" fram="8">mover</type>
-		<x>292</x><y>737</y><width>0</width><height>0</height>
+		<x>300</x><y>734</y><width>0</width><height>0</height>
 		<pic picload="2" move="true">symb_MenuResArray</pic>
 		<move>true</move>
-		<txt xx="-59" yy="6" id="$fre6:60:26:0x000000:r:t:24:0xFFFFFF:"/>
-		<txt xx="-29" yy="6" id="248:60:26:0x000000:c:t:24:0xFFFFFF:"/>
-		<txt xx="1" yy="6" id="$res6:60:26:0x000000:l:t:24:0xFFFFFF:"/>
+		<txt xx="-59" yy="3" id="$fre6:60:28:0x000000:r:t:24:0xFFFFFF:"/>
+		<txt xx="-29" yy="3" id="248:60:28:0x000000:c:t:24:0xFFFFFF:"/>
+		<txt xx="1" yy="3" id="$res6:60:28:0x000000:l:t:24:0xFFFFFF:"/>
 		<atChild>7</atChild>
 	</subject>
 
@@ -633,32 +667,28 @@
 		<id>400</id>
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">buildingMenu</type>
 		<x>713</x><y>143</y><width>0</width><height>0</height>
-		<pic picload="2" num="10">symb_buildingArray</pic>
-		<pic picload="2" num="10">res_fram2</pic>
-		<pic picload="2" num="30">symb_resArray</pic>
-		<pic picload="2" num="10">ic_timmer</pic>
+		<pic picload="2" num="8">symb_buildingArray</pic>
+		<pic picload="2" num="8">res_fram2</pic>
+		<pic picload="2" num="24">symb_resArray</pic>
+		<pic picload="2" num="8">ic_timmer</pic>
 
 		<pos xx="51" yy="62" ww="0" hh="0" fram="1"/>
 		<pos xx="205" yy="62" ww="0" hh="0" fram="2"/>
 		<pos xx="51" yy="163" ww="0" hh="0" fram="3"/>
-		<pos xx="205" yy="163" ww="0" hh="0" fram="4"/>
-		<pos xx="51" yy="263" ww="0" hh="0" fram="5"/>
+		<pos xx="205" yy="163" ww="0" hh="0" fram="5"/>
+		<pos xx="51" yy="263" ww="0" hh="0" fram="9"/>
 		<pos xx="205" yy="263" ww="0" hh="0" fram="6"/>
 		<pos xx="51" yy="363" ww="0" hh="0" fram="7"/>
 		<pos xx="205" yy="363" ww="0" hh="0" fram="8"/>
-		<pos xx="51" yy="463" ww="0" hh="0" fram="9"/>
-		<pos xx="205" yy="463" ww="0" hh="0" fram="10"/>
 
 		<pos xx="119" yy="50" ww="0" hh="0" fram="1" spec="btn1"/>
 		<pos xx="276" yy="50" ww="0" hh="0" fram="1" spec="btn2"/>
 		<pos xx="119" yy="151" ww="0" hh="0" fram="1" spec="btn3"/>
-		<pos xx="276" yy="151" ww="0" hh="0" fram="1" spec="btn4"/>
-		<pos xx="119" yy="250" ww="0" hh="0" fram="1" spec="btn5"/>
+		<pos xx="276" yy="151" ww="0" hh="0" fram="1" spec="btn5"/>
+		<pos xx="119" yy="250" ww="0" hh="0" fram="1" spec="btn9"/>
 		<pos xx="276" yy="250" ww="0" hh="0" fram="1" spec="btn6"/>
 		<pos xx="119" yy="350" ww="0" hh="0" fram="1" spec="btn7"/>
 		<pos xx="276" yy="350" ww="0" hh="0" fram="1" spec="btn8"/>
-		<pos xx="119" yy="450" ww="0" hh="0" fram="1" spec="btn9"/>
-		<pos xx="276" yy="450" ww="0" hh="0" fram="1" spec="btn10"/>
 
 		<pos xx="16" yy="84" ww="30" hh="30" fram="1"/>
 		<pos xx="44" yy="84" ww="30" hh="30" fram="1"/>
@@ -672,13 +702,13 @@
 		<pos xx="44" yy="183" ww="30" hh="30" fram="0"/>
 		<pos xx="72" yy="183" ww="30" hh="30" fram="0"/>
 
-		<pos xx="174" yy="183" ww="30" hh="30" fram="4"/> <!-- эргастерия мебели -->
-		<pos xx="202" yy="183" ww="30" hh="30" fram="0"/>
+		<pos xx="174" yy="183" ww="30" hh="30" fram="4"/> <!-- эргастерия оружия -->
+		<pos xx="202" yy="183" ww="30" hh="30" fram="2"/>
 		<pos xx="230" yy="183" ww="30" hh="30" fram="0"/>
 
-		<pos xx="16" yy="282" ww="30" hh="30" fram="4"/> <!-- эргастерия оружия -->
-		<pos xx="44" yy="282" ww="30" hh="30" fram="2"/>
-		<pos xx="72" yy="282" ww="30" hh="30" fram="0"/>
+		<pos xx="16" yy="282" ww="30" hh="30" fram="4"/> <!-- театр -->
+		<pos xx="44" yy="282" ww="30" hh="30" fram="5"/>
+		<pos xx="72" yy="282" ww="30" hh="30" fram="2"/>
 
 		<pos xx="174" yy="282" ww="30" hh="30" fram="4"/> <!-- гавань -->
 		<pos xx="202" yy="282" ww="30" hh="30" fram="2"/>
@@ -692,14 +722,6 @@
 		<pos xx="202" yy="381" ww="30" hh="30" fram="5"/>
 		<pos xx="230" yy="381" ww="30" hh="30" fram="0"/>
 
-		<pos xx="16" yy="480" ww="30" hh="30" fram="4"/> <!-- театр -->
-		<pos xx="44" yy="480" ww="30" hh="30" fram="5"/>
-		<pos xx="72" yy="480" ww="30" hh="30" fram="2"/>
-
-		<pos xx="174" yy="480" ww="30" hh="30" fram="4"/> <!-- барак -->
-		<pos xx="202" yy="480" ww="30" hh="30" fram="0"/>
-		<pos xx="230" yy="480" ww="30" hh="30" fram="0"/>
-
 		<pos xx="101" yy="84" ww="0" hh="0" fram="1"/>
 		<pos xx="256" yy="84" ww="0" hh="0" fram="1"/>
 		<pos xx="101" yy="184" ww="0" hh="0" fram="1"/>
@@ -708,19 +730,15 @@
 		<pos xx="256" yy="282" ww="0" hh="0" fram="1"/>
 		<pos xx="101" yy="382" ww="0" hh="0" fram="1"/>
 		<pos xx="256" yy="382" ww="0" hh="0" fram="1"/>
-		<pos xx="101" yy="482" ww="0" hh="0" fram="1"/>
-		<pos xx="256" yy="482" ww="0" hh="0" fram="1"/>
 
-		<txt xx="1" yy="2" id="250:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="157" yy="2" id="252:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="1" yy="102" id="254:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="157" yy="102" id="263:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="1" yy="202" id="256:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="157" yy="202" id="265:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="1" yy="302" id="258:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="157" yy="302" id="267:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="1" yy="402" id="269:100:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="157" yy="402" id="271:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="1" yy="6" id="250:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="157" yy="6" id="252:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="1" yy="106" id="254:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="157" yy="106" id="256:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="1" yy="206" id="269:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="157" yy="206" id="265:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="1" yy="306" id="258:100:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="157" yy="306" id="267:100:44:0x000000:l:t:16:0xFFFFFF:"/>
 
 		<txt xx="10" yy="53" id="$bui1_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 		<txt xx="38" yy="53" id="$bui1_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
@@ -734,13 +752,13 @@
 		<txt xx="38" yy="153" id="$bui3_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 		<txt xx="66" yy="153" id="$bui3_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 
-		<txt xx="168" yy="153" id="$bui4_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="196" yy="153" id="$bui4_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="224" yy="153" id="$bui4_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="168" yy="153" id="$bui5_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="196" yy="153" id="$bui5_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="224" yy="153" id="$bui5_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 
-		<txt xx="10" yy="251" id="$bui5_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="38" yy="251" id="$bui5_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="66" yy="251" id="$bui5_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="10" yy="251" id="$bui9_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="38" yy="251" id="$bui9_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
+		<txt xx="66" yy="251" id="$bui9_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 
 		<txt xx="168" yy="251" id="$bui6_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 		<txt xx="196" yy="251" id="$bui6_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
@@ -754,25 +772,26 @@
 		<txt xx="196" yy="351" id="$bui8_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 		<txt xx="224" yy="351" id="$bui8_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
 
-		<txt xx="10" yy="451" id="$bui9_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="38" yy="451" id="$bui9_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="66" yy="451" id="$bui9_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-
-		<txt xx="169" yy="451" id="$bui10_1:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="196" yy="451" id="$bui10_2:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-		<txt xx="224" yy="451" id="$bui10_3:140:44:0x000000:l:t:16:0xFFFFFF:"/>
-
 		<txt xx="89" yy="73" id="$btm1:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<txt xx="244" yy="73" id="$btm2:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<txt xx="89" yy="173" id="$btm3:24:20:0x000000:c:t:16:0xFFFFFF:"/>
-		<txt xx="244" yy="173" id="$btm4:24:20:0x000000:c:t:16:0xFFFFFF:"/>
-		<txt xx="89" yy="271" id="$btm5:24:20:0x000000:c:t:16:0xFFFFFF:"/>
+		<txt xx="244" yy="173" id="$btm5:24:20:0x000000:c:t:16:0xFFFFFF:"/>
+		<txt xx="89" yy="271" id="$btm9:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<txt xx="244" yy="271" id="$btm6:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<txt xx="89" yy="371" id="$btm7:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<txt xx="244" yy="371" id="$btm8:24:20:0x000000:c:t:16:0xFFFFFF:"/>
-		<txt xx="89" yy="471" id="$btm9:24:20:0x000000:c:t:16:0xFFFFFF:"/>
-		<txt xx="244" yy="471" id="$btm10:24:20:0x000000:c:t:16:0xFFFFFF:"/>
 		<atChild>7</atChild>
+	</subject>
+
+	<!-- кнопка перехода в меню-->
+	<subject>
+		<id>408</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<portal goTo="60" goPosition="1">1</portal>
+		<x>44</x><y>34</y><width>0</width><height>0</height>
+		<txt xx="-42" yy="6" id="630:84:30:0xFFFFFF:c:t:18:0x000000:"/>
+		<pic picload="2">btnMenu</pic>
+		<atChild>9</atChild>
 	</subject>
 
 
@@ -838,9 +857,9 @@
 		<id>416</id>
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">background</type>
 		<x>327</x><y>556</y><width>122</width><height>80</height>
-		<txt xx="-10" yy="16" id="$info:390:140:0x000000:c:f:18"/>
+		<txt xx="-10" yy="56" id="$info:376:140:0x000000:c:f:18"/>
 		<pic picload="2">modif_fram4</pic>
-		<atChild>4</atChild>
+		<atChild>7</atChild>
 	</subject>
 
 	<!--Требуемые ресы для покупки улучшения-->
@@ -869,12 +888,114 @@
 		<atChild>7</atChild>
 	</subject>
 
+	<!--Фон для затемнения основной карты-->
+	<subject>
+		<id>478</id>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1">button</type>
+		<x>512</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2">landDark</pic>
+		<atChild>9</atChild>
+	</subject>
+	<!-- Меню выбора действия героя 3 пункта-->
+	<subject>
+		<id>480</id>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>228</x><y>273</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">framLong1</pic>
+		<pic picload="2" num="3">btnFrame2</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="142" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="306" yy="180" ww="0" hh="0" fram="1" spec="btn2"/>
+		<pos xx="464" yy="180" ww="0" hh="0" fram="1" spec="btn3"/>
+
+		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<txt xx="72" yy="170" id="$abtn1:140:80:0x000000:c:t:18"/>
+		<txt xx="234" yy="166" id="$abtn2:140:80:0x000000:c:t:18"/>
+		<txt xx="392" yy="166" id="$abtn3:140:80:0x000000:c:t:18"/>
+
+		<check _with="1" _who="5"/>
+		<check _with="2" _who="6"/>
+		<check _with="3" _who="7"/>
+		<atChild>10</atChild>
+	</subject>
+
+	<!-- Меню выбора действия героя 2 пункта-->
+	<subject>
+		<id>481</id>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>228</x><y>273</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">framLong1</pic>
+		<pic picload="2" num="2">btnFrame2</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="194" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="410" yy="180" ww="0" hh="0" fram="1" spec="btn2"/>
+
+		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<txt xx="124" yy="166" id="$abtn1:140:80:0x000000:c:t:18"/>
+		<txt xx="340" yy="166" id="$abtn2:140:80:0x000000:c:t:18"/>
+
+		<check _with="1" _who="4"/>
+		<check _with="2" _who="5"/>
+		<atChild>10</atChild>
+	</subject>
+
+	<!-- Меню выбора действия героя 1 пункт-->
+	<subject>
+		<id>483</id>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>228</x><y>273</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">framLong1</pic>
+		<pic picload="2" num="1">btnFrame2</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="306" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
+
+		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<txt xx="234" yy="166" id="$abtn1:140:80:0x000000:c:t:18"/>
+
+		<check _with="1" _who="3"/>
+		<atChild>10</atChild>
+	</subject>
+
+	<!-- Меню выбора действия героя без пунктов-->
+	<subject>
+		<id>484</id>
+		<type weAre="0" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>228</x><y>273</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">framLong1</pic>
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
+		<txt xx="90" yy="80" id="$actInfo:414:160:0x000000:c:t:20"/>
+		<atChild>10</atChild>
+	</subject>
+
+	<!-- Меню сообщений-->
+	<subject>
+		<id>490</id>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>932</x><y>114</y><width>0</width><height>0</height>
+		<pic picload="2" num="9">scrollscript</pic>
+
+		<pos xx="42" yy="14" ww="0" hh="0" fram="2" spec="btn1"/>
+		<pos xx="42" yy="54" ww="0" hh="0" fram="2" spec="btn2"/>
+		<pos xx="42" yy="94" ww="0" hh="0" fram="2" spec="btn3"/>
+		<pos xx="42" yy="134" ww="0" hh="0" fram="2" spec="btn4"/>
+		<pos xx="42" yy="174" ww="0" hh="0" fram="2" spec="btn5"/>
+		<pos xx="42" yy="214" ww="0" hh="0" fram="2" spec="btn6"/>
+		<pos xx="42" yy="254" ww="0" hh="0" fram="2" spec="btn7"/>
+		<pos xx="42" yy="294" ww="0" hh="0" fram="2" spec="btn8"/>
+		<pos xx="42" yy="334" ww="0" hh="0" fram="2" spec="btn9"/>
+		<atChild>4</atChild>
+	</subject>
+
 	<!--кнопка перехода к экрану технологий-->
 	<subject>
 		<id>500</id>
-		<type weAre="0" ourPosition="1" vis="1" willSave="1">button</type>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
 		<portal goTo="40" goPosition="1">1</portal>
 		<x>810</x><y>730</y><width>0</width><height>0</height>
+		<txt xx="-44" yy="12" id="636:87:30:0xFFFFFF:c:t:18:0x000000:"/>
 		<pic picload="2">btn_room1</pic>
 		<atChild>6</atChild>
 	</subject>
@@ -882,9 +1003,10 @@
 	<!--кнопка перехода к экрану карты мира-->
 	<subject>
 		<id>502</id>
-		<type weAre="0" ourPosition="1" vis="1" willSave="1">button</type>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
 		<portal goTo="50" goPosition="1">1</portal>
 		<x>985</x><y>729</y><width>0</width><height>0</height>
+		<txt xx="-42" yy="12" id="634:84:30:0xFFFFFF:c:t:18:0x000000:"/>
 		<pic picload="2">btn_room5</pic>
 		<atChild>6</atChild>
 	</subject>
@@ -892,9 +1014,10 @@
 	<!--кнопка перехода к экрану города-->
 	<subject>
 		<id>504</id>
-		<type weAre="0" ourPosition="1" vis="1" willSave="1">button</type>
+		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
 		<portal goTo="30" goPosition="1">1</portal>
 		<x>900</x><y>733</y><width>0</width><height>0</height>
+		<txt xx="-42" yy="8" id="632:87:30:0xFFFFFF:c:t:18:0x000000:"/>
 		<pic picload="2">btn_room2</pic>
 		<atChild>6</atChild>
 	</subject>
@@ -903,9 +1026,10 @@
 	<!--кнопка покупки героя-->
 	<subject>
 		<id>521</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1">button</type>
-		<x>40</x><y>680</y><width>0</width><height>0</height>
-		<pic picload="2">btn_building_buy1</pic>
+		<type weAre="30" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>49</x><y>668</y><width>0</width><height>0</height>
+		<pic picload="2">btn_building2</pic>
+		<txt xx="-110" yy="2" id="652:220:60:0xFFFFFF:c:t:18:0x000000:"/>
 		<atChild>8</atChild>
 	</subject>
 
@@ -913,7 +1037,7 @@
 	<subject>
 		<id>526</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
-		<x>378</x><y>709</y><width>0</width><height>0</height>
+		<x>396</x><y>709</y><width>0</width><height>0</height>
 		<pic picload="2" num="6">hero_collection</pic>
 
 		<pos xx="29" yy="30" ww="0" hh="0" fram="1" spec="mov1"/>
@@ -930,7 +1054,7 @@
 	<subject>
 		<id>527</id>
 		<type weAre="30" ourPosition="1" vis="0" willSave="1">background</type>
-		<x>77</x><y>594</y><width>0</width><height>0</height>
+		<x>108</x><y>594</y><width>0</width><height>0</height>
 		<pic picload="2">fram_new44</pic>
 		<atChild>7</atChild>
 	</subject>
@@ -938,7 +1062,7 @@
 	<subject>
 		<id>528</id>
 		<type weAre="30" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
-		<x>77</x><y>594</y><width>0</width><height>0</height>
+		<x>108</x><y>594</y><width>0</width><height>0</height>
 		<pic picload="2" num="6">heroes2</pic>
 
 		<pos xx="62" yy="56" ww="0" hh="0" fram="1" spec="btn1"/>
@@ -961,7 +1085,7 @@
 	<subject>
 		<id>540</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="11">mover</type>
-		<x>644</x><y>26</y><width>0</width><height>0</height>
+		<x>721</x><y>32</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res15:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
@@ -973,7 +1097,7 @@
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-30" yy="2" id="$res16:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
-	</subject>-->
+	</subject>
 	<subject>
 		<id>542</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="13">mover</type>
@@ -981,11 +1105,11 @@
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res17:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
-	</subject>
+	</subject>-->
 	<subject>
 		<id>543</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" fram="14">mover</type>
-		<x>799</x><y>26</y><width>0</width><height>0</height>
+		<x>799</x><y>32</y><width>0</width><height>0</height>
 		<pic picload="2">symb_MenuResArray</pic>
 		<txt xx="-32" yy="0" id="$res18:74:22:0xFFFFFF:c:t:20:0x000000:"/>
 		<atChild>3</atChild>
@@ -1013,52 +1137,57 @@
 		<pic picload="2" num="2">symb_energy</pic>
 		<pic picload="2" num="2">sym_intellect</pic>
 		<pic picload="2" num="1">heroes2</pic>
+		<pic picload="2" num="1">symb_line</pic>
+		<pic picload="2" num="1">symb_line2</pic>
 
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
 		<pos xx="58" yy="398" ww="0" hh="0" fram="1" spec=""/>
 		<pos xx="350" yy="109" ww="0" hh="0" fram="1" spec=""/>
-			<pos xx="428" yy="234" ww="50" hh="50" fram="1" spec=""/>
+			<pos xx="428" yy="224" ww="50" hh="50" fram="1" spec=""/>
 		<pos xx="416" yy="127" ww="0" hh="0" fram="1" spec=""/>
-		<pos xx="472" yy="234" ww="50" hh="50" fram="1" spec=""/>
+			<pos xx="472" yy="224" ww="50" hh="50" fram="1" spec=""/>
 		<pos xx="482" yy="149" ww="0" hh="0" fram="1" spec=""/>
-			<pos xx="516" yy="234" ww="50" hh="50" fram="1" spec=""/>
+			<pos xx="516" yy="224" ww="50" hh="50" fram="1" spec=""/>
 
 		<pos xx="74" yy="108" ww="150" hh="180" fram="1" spec="currHero"/>
 
-		<txt xx="135" yy="32" id="$hName:200:29:0xFFFFFF:l:t:22:0x000000:"/>
-		<txt xx="135" yy="57" id="$hRole:200:29:0xFFFFFF:l:t:22:0x000000:"/>
-		<txt xx="130" yy="90" id="610:200:29:0xFFFFFF:l:t:22:0x000000:"/>
-		<txt xx="130" yy="118" id="611:200:29:0xFFFFFF:l:t:22:0x000000:"/>
-		<txt xx="130" yy="146" id="612:200:29:0xFFFFFF:l:t:22:0x000000:"/>
+		<pos xx="62" yy="246" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="408" yy="200" ww="0" hh="0" fram="1" spec=""/>
 
-		<txt xx="301" yy="113" id="$hAbil1:100:33:0xFFFFFF:c:t:26:0x000000:"/>
-		<txt xx="367" yy="128" id="$hAbil2:100:33:0xFFFFFF:c:t:26:0x000000:"/>
-		<txt xx="431" yy="153" id="$hAbil3:100:33:0xFFFFFF:c:t:26:0x000000:"/>
+		<txt xx="135" yy="32" id="$hName:200:29:0x000000:l:t:22"/>
+		<txt xx="135" yy="57" id="$hRole:200:29:0x000000:l:t:22"/>
+		<txt xx="130" yy="90" id="610:200:29:0x000000:l:t:22"/>
+		<txt xx="130" yy="118" id="611:200:29:0x000000:l:t:22"/>
+		<txt xx="130" yy="146" id="612:200:29:0x000000:l:t:22"/>
+
+		<txt xx="301" yy="113" id="$hAbil1:100:33:0x000000:c:t:26:0xFFFFFF:"/>
+		<txt xx="367" yy="128" id="$hAbil2:100:33:0x000000:c:t:26:0xFFFFFF:"/>
+		<txt xx="431" yy="153" id="$hAbil3:100:33:0x000000:c:t:26:0xFFFFFF:"/>
 
 
-		<txt xx="402" yy="250" id="$hCost1_1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="250" id="$hCost1_2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="250" id="$hCost1_3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="250" id="$hCost1_1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="250" id="$hCost1_2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="250" id="$hCost1_3:50:29:0x000000:c:t:22"/>
 
-		<txt xx="402" yy="278" id="$hCost2_1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="278" id="$hCost2_2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="278" id="$hCost2_3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="278" id="$hCost2_1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="278" id="$hCost2_2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="278" id="$hCost2_3:50:29:0x000000:c:t:22"/>
 
-		<txt xx="402" yy="306" id="$hCost3_1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="306" id="$hCost3_2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="306" id="$hCost3_3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="306" id="$hCost3_1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="306" id="$hCost3_2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="306" id="$hCost3_3:50:29:0x000000:c:t:22"/>
 
-		<txt xx="402" yy="334" id="$hCost4_1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="334" id="$hCost4_2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="334" id="$hCost4_3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="334" id="$hCost4_1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="334" id="$hCost4_2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="334" id="$hCost4_3:50:29:0x000000:c:t:22"/>
 
-		<txt xx="402" yy="362" id="$hCost5_1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="362" id="$hCost5_2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="362" id="$hCost5_3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="362" id="$hCost5_1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="362" id="$hCost5_2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="362" id="$hCost5_3:50:29:0x000000:c:t:22"/>
 
-		<txt xx="402" yy="402" id="$hSum1:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="446" yy="402" id="$hSum2:50:29:0xFFFFFF:c:t:22:0x000000:"/>
-		<txt xx="492" yy="402" id="$hSum3:50:29:0xFFFFFF:c:t:22:0x000000:"/>
+		<txt xx="402" yy="402" id="$hSum1:50:29:0x000000:c:t:22"/>
+		<txt xx="446" yy="402" id="$hSum2:50:29:0x000000:c:t:22"/>
+		<txt xx="492" yy="402" id="$hSum3:50:29:0x000000:c:t:22"/>
 		<atChild>8</atChild>
 	</subject>
 
@@ -1072,11 +1201,11 @@
 
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
 
-		<txt xx="0" yy="0"   id="#mov_hero1:400:29:0xFFFFFF:r:t:22:0x000000:"/>
-		<txt xx="0" yy="28"  id="#mov_hero2:400:29:0xFFFFFF:r:t:22:0x000000:"/>
-		<txt xx="0" yy="56"  id="#mov_hero3:400:29:0xFFFFFF:r:t:22:0x000000:"/>
-		<txt xx="0" yy="84"  id="#mov_hero4:400:29:0xFFFFFF:r:t:22:0x000000:"/>
-		<txt xx="0" yy="112" id="#mov_hero5:400:29:0xFFFFFF:r:t:22:0x000000:"/>
+		<txt xx="0" yy="0"   id="#mov_hero1:390:29:0xFFFFFF:r:t:22:0x000000:"/>
+		<txt xx="0" yy="28"  id="#mov_hero2:390:29:0xFFFFFF:r:t:22:0x000000:"/>
+		<txt xx="0" yy="56"  id="#mov_hero3:390:29:0xFFFFFF:r:t:22:0x000000:"/>
+		<txt xx="0" yy="84"  id="#mov_hero4:390:29:0xFFFFFF:r:t:22:0x000000:"/>
+		<txt xx="0" yy="112" id="#mov_hero5:390:29:0xFFFFFF:r:t:22:0x000000:"/>
 		<atChild>8</atChild>
 	</subject>
 
@@ -1100,16 +1229,6 @@
 		<atChild>1</atChild>
 	</subject>
 
-	<!-- кнопка следующего хода с датой 360
-	<subject>
-		<id>611</id>
-		<type weAre="40" ourPosition="1" vis="1" willSave="1">button</type>
-		<x>936</x><y>49</y><width>0</width><height>0</height>
-		<txt xx="-68" yy="-27" id="100:140:30:0x000000:c:f:18"/>
-		<txt xx="-68" yy="0" id="$timer:140:30:0x000000:c:f:20"/>
-		<pic picload="2">btn2</pic>
-		<atChild>9</atChild>
-	</subject>-->
 
 	<!-- Меню выбора апдейтов -->
 	<subject>
@@ -1141,7 +1260,7 @@
 		<id>617</id>
 		<type weAre="40" ourPosition="1" vis="1" willSave="1">background</type>
 		<x>262</x><y>545</y><width>0</width><height>0</height>
-		<txt xx="0" yy="6" id="$info:500:140:0x000000:c:f:18"/>
+		<txt xx="0" yy="46" id="$info:500:140:0x000000:c:f:18"/>
 		<pic picload="2">modif_fram2</pic>
 		<atChild>4</atChild>
 	</subject>
@@ -1166,6 +1285,83 @@
 	</subject>
 
 
+	<!-- бэк экрана меню-->
+	<subject>
+		<id>650</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<txt xx="362" yy="30" id="640:300:54:0x000000:c:t:45:0xFFFFFF:"/>
+		<pic picload="2">menuBack</pic>
+		<atChild>10</atChild>
+	</subject>
+	<!-- кнопка покинуть игру из меню-->
+	<subject>
+		<id>652</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<portal goTo="10" goPosition="1">1</portal>
+		<x>874</x><y>605</y><width>0</width><height>0</height>
+		<txt xx="-110" yy="-20" id="644:220:60:0x000000:c:t:28"/>
+		<pic picload="2">btnBackPergament</pic>
+		<atChild>10</atChild>
+	</subject>
+	<!-- кнопка вернуться к игре из меню-->
+	<subject>
+		<id>654</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<portal goTo="-1" goPosition="1">1</portal>
+		<x>874</x><y>690</y><width>0</width><height>0</height>
+		<txt xx="-110" yy="-20" id="642:220:90:0x000000:c:t:28"/>
+		<pic picload="2">btnBackPergament</pic>
+		<atChild>10</atChild>
+	</subject>
+
+	<!-- текстовка "выбрать язык"-->
+	<subject>
+		<id>654</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<txt xx="71" yy="108" id="646:259:30:0x000000:c:t:22:0xFFFFFF"/>
+		<pic picload="2">no</pic>
+		<atChild>11</atChild>
+	</subject>
+
+	<!-- флаг ру-->
+	<subject>
+		<id>656</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>54</x><y>138</y><width>0</width><height>0</height>
+		<pic picload="2">flag_ru</pic>
+		<atChild>11</atChild>
+	</subject>
+	<!-- флаг ен-->
+	<subject>
+		<id>657</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>54</x><y>182</y><width>0</width><height>0</height>
+		<pic picload="2">flag_en</pic>
+		<atChild>11</atChild>
+	</subject>
+
+	<!-- кнопка ру-->
+	<subject>
+		<id>658</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>200</x><y>158</y><width>0</width><height>0</height>
+		<txt xx="-100" yy="-14" id="648:200:90:0x000000:c:t:20"/>
+		<pic picload="2">btnBackPergamentNarrow</pic>
+		<atChild>10</atChild>
+	</subject>
+	<!-- кнопка ен-->
+	<subject>
+		<id>660</id>
+		<type weAre="60" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>200</x><y>202</y><width>0</width><height>0</height>
+		<txt xx="-100" yy="-14" id="650:200:90:0x000000:c:t:20"/>
+		<pic picload="2">btnBackPergamentNarrow</pic>
+		<atChild>10</atChild>
+	</subject>
+
+
 	<!-- фон локации -->
 	<subject>
 		<id>800</id>
@@ -1180,7 +1376,7 @@
 	<subject>
 		<id>806</id>
 		<type weAre="50" ourPosition="1" vis="1" willSave="1" fram="6">mover</type>
-		<x>567</x><y>32</y><width>0</width><height>0</height>
+		<x>597</x><y>34</y><width>0</width><height>0</height>
 		<pic picload="2" move="true">symb_MenuResArray</pic>
 		<txt xx="-60" yy="-3" id="$fre4:60:26:0xFFFFFF:r:t:20:0x000000:"/>
 		<txt xx="-28" yy="-3" id="248:60:26:0xFFFFFF:c:t:20:0x000000:"/>
@@ -1192,8 +1388,8 @@
 	<subject>
 		<id>808</id>
 		<type weAre="50" ourPosition="1" vis="1" willSave="1">background</type>
-		<x>562</x><y>32</y><width>0</width><height>0</height>
-		<pic picload="2">res_framSpec</pic>
+		<x>559</x><y>-1</y><width>0</width><height>0</height>
+		<pic picload="2">pergament0</pic>
 		<atChild>7</atChild>
 	</subject>
 
@@ -1201,7 +1397,7 @@
 	<subject>
 		<id>810</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
-		<x>935</x><y>50</y><width>0</width><height>0</height>
+		<x>935</x><y>54</y><width>0</width><height>0</height>
 		<!--<btn>yes</btn>-->
 		<txt xx="-88" yy="-28" id="100:177:30:0x000000:c:f:18"/>
 		<txt xx="-88" yy="0" id="$timer:177:30:0x000000:c:f:20"/>
@@ -1217,13 +1413,13 @@
 		<pic picload="2" num="1">no</pic>
 		<pic picload="2" num="6">city1</pic>
 
-		<pos xx="298" yy="323" ww="0" hh="0" fram="3" spec="btn1"/>
-		<pos xx="414" yy="328" ww="0" hh="0" fram="3" spec="btn2"/>
-		<pos xx="474" yy="206" ww="0" hh="0" fram="3" spec="btn3"/>
-		<pos xx="529" yy="359" ww="0" hh="0" fram="3" spec="btn4"/>
-		<pos xx="629" yy="419" ww="0" hh="0" fram="2" spec="btn5"/>
-		<pos xx="538" yy="469" ww="0" hh="0" fram="3" spec="btn6"/>
-		<pos xx="430" yy="537" ww="0" hh="0" fram="3" spec="btn7"/>
+		<pos xx="328" yy="420" ww="0" hh="0" fram="3" spec="btn1"/>
+		<pos xx="465" yy="420" ww="0" hh="0" fram="3" spec="btn2"/>
+		<pos xx="520" yy="302" ww="0" hh="0" fram="3" spec="btn3"/>
+		<pos xx="559" yy="414" ww="0" hh="0" fram="3" spec="btn4"/>
+		<pos xx="659" yy="470" ww="0" hh="0" fram="3" spec="btn5"/>
+		<pos xx="568" yy="538" ww="0" hh="0" fram="3" spec="btn6"/>
+		<pos xx="429" yy="577" ww="0" hh="0" fram="3" spec="btn7"/>
 		<atChild>4</atChild>
 	</subject>
 
@@ -1234,8 +1430,9 @@
 		<x>0</x><y>0</y><width>0</width><height>0</height>
 		<pic picload="2" num="1">city1</pic>
 
-		<pos xx="298" yy="323" ww="0" hh="0" fram="3" spec="btn1"/>
-		<atChild>4</atChild>
+		<pos xx="328" yy="420" ww="0" hh="0" fram="3" spec="btn1"/>
+		<txt xx="265" yy="365" id="322:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<atChild>5</atChild>
 	</subject>
 
 	<!-- названия городов, которые сразу будут видны-->
@@ -1244,16 +1441,18 @@
 		<type weAre="50" ourPosition="1" vis="1" willSave="1">background</type>
 		<x>0</x><y>0</y><width>0</width><height>0</height>
 		<pic picload="2">no</pic>
-		<txt xx="235" yy="275" id="322:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<txt xx="351" yy="279" id="317:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<txt xx="369" yy="489" id="321:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<txt xx="407" yy="156" id="318:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<txt xx="466" yy="309" id="316:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<txt xx="476" yy="417" id="320:116:30:0x000000:c:t:18:0xFFFFFF:"/>
-		<atChild>3</atChild>
+
+		<!--<txt xx="409" yy="366" id="$0:116:30:0x000000:c:t:18:0xFFFFFF:"/>-->
+		<txt xx="409" yy="366" id="317:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<txt xx="457" yy="242" id="318:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<txt xx="497" yy="358" id="316:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<txt xx="601" yy="413" id="319:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<txt xx="506" yy="482" id="320:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<txt xx="368" yy="520" id="321:116:30:0x000000:c:t:18:0xFFFFFF:"/>
+		<atChild>4</atChild>
 	</subject>
 
-	<!-- названия городов, которые сразу будут не видны-->
+	<!-- названия городов, которые сразу будут не видны
 	<subject>
 		<id>841</id>
 		<type weAre="50" ourPosition="1" vis="0" willSave="1">background</type>
@@ -1261,13 +1460,13 @@
 		<pic picload="2">no</pic>
 		<txt xx="564" yy="371" id="319:60:26:0xFFFFFF:c:t:24:0x000000:"/>
 		<atChild>3</atChild>
-	</subject>
+	</subject>-->
 
 	<!-- Меню окошка города -->
 	<subject>
 		<id>850</id>
 		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
-		<x>250</x><y>152</y><width>0</width><height>0</height>
+		<x>250</x><y>105</y><width>0</width><height>0</height>
 		<pic picload="2" num="1">cityFront</pic>
 		<pic picload="2" num="1">city1</pic>
 		<pic picload="2" num="1">res_fram9</pic>
@@ -1298,16 +1497,16 @@
 		<txt xx="362" yy="106" id="604:110:26:0x000000:l:t:20"/>
 		<txt xx="362" yy="130" id="$cityStatus:130:52:0x000000:l:t:20"/>
 		<txt xx="76" yy="166" id="$cityGovern:380:26:0x000000:l:t:20"/>
-		<txt xx="76" yy="195" id="$cityAlliance:400:26:0x000000:l:t:20"/>
+		<txt xx="76" yy="195" id="$cityAlliance,840,842,844:430:26:0x000000:l:t:20"/>
 		<txt xx="238" yy="288" id="$hCityN:150:30:0x000000:r:t:20"/>
 		<atChild>6</atChild>
 	</subject>
 
-	<!-- Меню окошка вашего города -->
+	<!-- Меню окошка ==вашего== города -->
 	<subject>
 		<id>852</id>
 		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
-		<x>250</x><y>152</y><width>0</width><height>0</height>
+		<x>250</x><y>105</y><width>0</width><height>0</height>
 		<pic picload="2" num="1">cityFront</pic>
 		<pic picload="2" num="1">city1</pic>
 		<pic picload="2" num="1">btn_backspec</pic>
@@ -1325,7 +1524,7 @@
 	<subject>
 		<id>860</id>
 		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
-		<x>250</x><y>152</y><width>0</width><height>0</height>
+		<x>250</x><y>105</y><width>0</width><height>0</height>
 		<pic picload="2" num="1">cityFront</pic>
 		<pic picload="2" num="1">libra_mc</pic>
 		<pic picload="2" num="1">res_fram9</pic>
@@ -1358,16 +1557,333 @@
 		<pos xx="262" yy="337" ww="0" hh="0" fram="2" spec="btn7"/>
 		<pos xx="262" yy="394" ww="0" hh="0" fram="2" spec="btn8"/>
 
-
-
 		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:f:28"/>
 		<txt xx="142" yy="209" id="$tra2_1:100:30:0x000000:c:t:24"/>
 		<txt xx="142" yy="264" id="$tra3_1:100:30:0x000000:c:t:24"/>
 		<txt xx="142" yy="319" id="$tra4_1:100:30:0x000000:c:t:24"/>
 		<txt xx="142" yy="376" id="$tra5_1:100:30:0x000000:c:t:24"/>
+
+		<txt xx="362" yy="106" id="604:110:26:0x000000:l:t:20"/>
+		<txt xx="362" yy="130" id="$cityStatus:130:52:0x000000:l:t:20"/>
 		<atChild>6</atChild>
 	</subject>
 
+	<!-- Туман войны-->
+	<subject>
+		<id>870</id>
+		<type weAre="50" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="2" num="16">cloud2</pic>
+
+		<pos xx="128" yy="260" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="314" yy="280" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="221" yy="317" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="415" yy="327" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="447" yy="409" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="557" yy="379" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="520" yy="188" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="514" yy="285" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="695" yy="386" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="656" yy="467" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="574" yy="503" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="451" yy="492" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="415" yy="569" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="314" yy="492" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="536" yy="597" ww="0" hh="0" fram="3" spec=""/>
+		<pos xx="656" yy="181" ww="0" hh="0" fram="3" spec=""/>
+		<atChild>3</atChild>
+	</subject>
+
+	<!-- вспомогательное меню для выбора городов -->
+	<subject>
+		<id>880</id>
+		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>535</x><y>612</y><width>0</width><height>0</height>
+		<pic picload="2" num="6">metalBack</pic>
+		<pic picload="2" num="6">fram18</pic>
+		<pic picload="2" num="6">city1</pic>
+
+
+		<pos xx="-5" yy="-4" ww="0" hh="0" fram="1" spec=""/> <!-- 1 бэк -->
+		<pos xx="108" yy="-4" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="220" yy="-4" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="332" yy="-4" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="444" yy="-4" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="556" yy="-4" ww="0" hh="0" fram="1" spec=""/>
+
+		<pos xx="1" yy="14" ww="0" hh="0" fram="49" spec=""/> <!-- 7 бэк с настроением-->
+		<pos xx="113" yy="14" ww="0" hh="0" fram="49" spec=""/>
+		<pos xx="225" yy="14" ww="0" hh="0" fram="49" spec=""/>
+		<pos xx="337" yy="14" ww="0" hh="0" fram="49" spec=""/>
+		<pos xx="449" yy="14" ww="0" hh="0" fram="49" spec=""/>
+		<pos xx="561" yy="14" ww="0" hh="0" fram="49" spec=""/>
+
+		<pos xx="26" yy="42" ww="60" hh="60" fram="49" spec=""/> <!-- 13 картинка города-->
+		<pos xx="138" yy="42" ww="60" hh="60" fram="49" spec=""/>
+		<pos xx="250" yy="42" ww="60" hh="60" fram="49" spec=""/>
+		<pos xx="362" yy="42" ww="60" hh="60" fram="49" spec=""/>
+		<pos xx="474" yy="42" ww="60" hh="60" fram="49" spec=""/>
+		<pos xx="586" yy="42" ww="60" hh="60" fram="49" spec=""/>
+
+		<txt xx="1"   yy="1" id="$cityName1:110:26:0x000000:l:t:20"/> <!-- 19 название города-->
+		<txt xx="113" yy="1" id="$cityName2:110:26:0x000000:l:t:20"/>
+		<txt xx="225" yy="1" id="$cityName3:110:26:0x000000:l:t:20"/>
+		<txt xx="337" yy="1" id="$cityName4:110:26:0x000000:l:t:20"/>
+		<txt xx="449" yy="1" id="$cityName5:110:26:0x000000:l:t:20"/>
+		<txt xx="561" yy="1" id="$cityName6:110:26:0x000000:l:t:20"/>
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- Меню окошка дипломатии города -->
+	<subject>
+		<id>890</id>
+		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>250</x><y>105</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">cityFront</pic>
+		<pic picload="2" num="1">dip_mc</pic>
+		<pic picload="2" num="1">res_fram9</pic>
+		<pic picload="2" num="1">peace_war</pic>
+
+		<pic picload="2" num="1">btn_backspec</pic>
+		<pic picload="2" num="1">btn_closeSpec</pic>
+		<pic picload="2" num="1">btn_trade2</pic>
+		<pic picload="2" num="1">btn_culture2</pic>
+
+		<pic picload="2" num="1">btn_onecity</pic>
+		<pic picload="2" num="1">btn_manycities</pic>
+
+		<pic picload="2" num="2">symb_MenuResArray</pic>
+
+		<pic picload="2" num="1">btn_dip1</pic>
+		<pic picload="2" num="1">btn_dip3</pic>
+		<pic picload="2" num="1">btn_dip4</pic>
+		<pic picload="2" num="1">btn_dip5</pic>
+		<pic picload="2" num="1">btn_dip6</pic>
+		<pic picload="2" num="1">btn_dip7</pic>
+		<pic picload="2" num="1">btn_dip8</pic>
+
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec="go"/>
+		<pos xx="100" yy="60" ww="0" hh="0" fram="3" spec="go"/>
+		<pos xx="184" yy="106" ww="0" hh="0" fram="49" spec="show:cRel"/>
+		<pos xx="335" yy="133" ww="0" hh="0" fram="49" spec="show:cPvW"/>
+
+		<pos xx="503" yy="398" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="501" yy="68" ww="0" hh="0" fram="1" spec="btn2"/>
+		<pos xx="41" yy="56" ww="0" hh="0" fram="1" spec="btn3"/>
+		<pos xx="40" yy="453" ww="0" hh="0" fram="1" spec="btn4"/>
+
+		<pos xx="86" yy="200" ww="100" hh="90" fram="1" spec="btn5"/> <!-- кнопки армия одного города/всех городов-->
+		<pos xx="86" yy="252" ww="100" hh="90" fram="1" spec="btn6"/>
+
+		<pos xx="135" yy="203" ww="100" hh="90" fram="11" spec=""/> <!-- собственно, армии-->
+		<pos xx="135" yy="251" ww="100" hh="90" fram="14" spec=""/>
+
+		<pos xx="153" yy="333" ww="0" hh="0" fram="1" spec="btn9"/> <!-- кнопки действий с альянсами-->
+		<pos xx="282" yy="333" ww="0" hh="0" fram="1" spec="btn10"/>
+		<pos xx="414" yy="333" ww="0" hh="0" fram="1" spec="btn11"/>
+
+		<pos xx="114" yy="378" ww="0" hh="0" fram="1" spec="btn12"/> <!-- мир/война-->
+		<pos xx="114" yy="425" ww="0" hh="0" fram="1" spec="btn13"/>
+
+		<pos xx="322" yy="378" ww="0" hh="0" fram="1" spec="btn14"/> <!-- влиять на отношения-->
+		<pos xx="322" yy="425" ww="0" hh="0" fram="1" spec="btn15"/>
+
+
+		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:f:28"/>
+		<txt xx="362" yy="106" id="604:110:26:0x000000:l:t:20"/>
+		<txt xx="362" yy="130" id="$cityStatus:130:52:0x000000:l:t:20"/>
+
+		<txt xx="57" yy="158" id="820:120:30:0x000000:c:t:20"/>
+		<txt xx="192" yy="158" id="822:260:30:0x000000:l:t:20"/>
+		<txt xx="83" yy="281" id="824:140:44:0x000000:c:f:18"/>
+		<txt xx="213" yy="281" id="826:140:44:0x000000:c:f:18"/>
+		<txt xx="341" yy="281" id="828:140:44:0x000000:c:f:18"/>
+		<txt xx="156" yy="364" id="830:110:44:0x000000:l:f:18"/>
+		<txt xx="156" yy="408" id="832:110:44:0x000000:l:f:18"/>
+		<txt xx="364" yy="364" id="834:110:44:0x000000:l:f:18"/>
+		<txt xx="364" yy="408" id="836:110:44:0x000000:l:f:18"/>
+
+		<txt xx="96" yy="204" id="$cityArmy:90:28:0x000000:c:t:20:0xFFFFFF:"/>
+		<txt xx="96" yy="255" id="$cityFleet:90:28:0x000000:c:t:20:0xFFFFFF:"/>
+		<txt xx="192" yy="178" id="$cityRel:290:178:0x000000:l:f:18"/>
+		<atChild>6</atChild>
+	</subject>
+
+
+	<!-- бэк экрана-завершения игры-->
+	<subject>
+		<id>1000</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="2">screen7</pic>
+		<atChild>11</atChild>
+	</subject>
+	<!-- бэк затемнение-->
+	<subject>
+		<id>1002</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>512</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2">landDark</pic>
+		<atChild>11</atChild>
+	</subject>
+	<!-- бэк затемнение-->
+	<subject>
+		<id>1004</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>108</x><y>26</y><width>0</width><height>0</height>
+		<pic picload="2">outScreen_mc</pic>
+		<atChild>11</atChild>
+	</subject>
+
+	<!-- картинка поражения -->
+	<subject>
+		<id>1006</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>126</x><y>54</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">picOfend_mc</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1"/>
+
+		<txt xx="370" yy="20" id="706:300:32:0x000000:c:t:24"/>
+		<txt xx="290" yy="120" id="708:460:130:0x000000:c:f:22"/>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- картинка победы -->
+	<subject>
+		<id>1008</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>126</x><y>54</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">picOfend_mc</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="2"/>
+
+		<txt xx="370" yy="20" id="710:300:32:0x000000:c:t:24"/>
+		<txt xx="290" yy="120" id="712:460:130:0x000000:c:f:22"/>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- кнопка покинуть игру из меню-->
+	<subject>
+		<id>1010</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<portal goTo="10" goPosition="1">1</portal>
+		<x>926</x><y>714</y><width>0</width><height>0</height>
+		<txt xx="-74" yy="-17" id="644:150:60:0x000000:c:t:20"/>
+		<pic picload="2">btn3</pic>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- графики ресурсов-->
+	<subject>
+		<id>1012</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1">graph</type>
+		<x>172</x><y>642</y><width>0</width><height>0</height>
+		<category cat="1" wid="524" heig="228"/>
+		<pic picload="2">no</pic>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- кнопка граждане-->
+	<subject>
+		<id>1014</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>490</x><y>334</y><width>0</width><height>0</height>
+		<txt xx="-70" yy="-16" id="714:150:60:0x000000:c:t:20"/>
+		<pic picload="2">btnFrame2</pic>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- кнопка ресурсы-->
+	<subject>
+		<id>1016</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>642</x><y>334</y><width>0</width><height>0</height>
+		<txt xx="-70" yy="-16" id="716:150:60:0x000000:c:t:20"/>
+		<pic picload="2">btnFrame2</pic>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- кнопка герои-->
+	<subject>
+		<id>1018</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>800</x><y>334</y><width>0</width><height>0</height>
+		<txt xx="-70" yy="-16" id="718:150:60:0x000000:c:t:20"/>
+		<pic picload="2">btnFrame2</pic>
+		<atChild>12</atChild>
+	</subject>
+
+
+	<!-- подложка графика под ресурсы -->
+	<subject>
+		<id>1020</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>127</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">grid1</pic>
+
+		<pic picload="2" num="1">symb_line4</pic>
+		<pic picload="2" num="1">symb_line3</pic>
+		<pic picload="2" num="1">symb_arrow1</pic>
+		<pic picload="2" num="1">symb_arrow2</pic>
+
+		<pic picload="2" num="1">btnFrame2</pic>
+
+		<pic picload="2" num="1">lineColor1</pic>
+		<pic picload="2" num="1">lineColor2</pic>
+		<pic picload="2" num="1">lineColor3</pic>
+		<pic picload="2" num="1">lineColor4</pic>
+
+		<pos xx="43" yy="29" ww="0" hh="0" fram="1"/>
+
+		<pos xx="61" yy="201" ww="0" hh="0" fram="1"/>
+		<pos xx="43" yy="36" ww="0" hh="0" fram="1"/>
+		<pos xx="43" yy="-6" ww="0" hh="0" fram="1"/>
+		<pos xx="629" yy="261" ww="0" hh="0" fram="1"/>
+
+		<pos xx="693" yy="93" ww="125" hh="164" fram="1"/>
+
+		<pos xx="611" yy="52" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="77" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="104" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="130" ww="0" hh="0" fram="1"/>
+
+		<txt xx="60" yy="-4" id="864:400:25:0x000000:l:t:18"/>
+		<txt xx="649" yy="40" id="866:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="66" id="868:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="92" id="870:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="118" id="872:120:25:0x000000:l:f:18"/>
+
+		<txt xx="617" yy="267" id="874:104:25:0x000000:l:f:18"/>
+
+		<txt xx="-26" yy="267" id="$timeTurn0:63:30:0x000000:r:f:18"/>
+		<txt xx="72" yy="267" id="$timeTurn1:42:30:0x000000:c:f:18"/>
+		<txt xx="132" yy="267" id="$timeTurn2:42:30:0x000000:c:f:18"/>
+		<txt xx="191" yy="267" id="$timeTurn3:42:30:0x000000:c:f:18"/>
+		<txt xx="251" yy="267" id="$timeTurn4:42:30:0x000000:c:f:18"/>
+		<txt xx="310" yy="267" id="$timeTurn5:42:30:0x000000:c:f:18"/>
+		<txt xx="368" yy="267" id="$timeTurn6:42:30:0x000000:c:f:18"/>
+		<txt xx="427" yy="267" id="$timeTurn7:42:30:0x000000:c:f:18"/>
+		<txt xx="488" yy="267" id="$timeTurn8:42:30:0x000000:c:f:18"/>
+		<txt xx="547" yy="267" id="$timeTurn9:42:30:0x000000:c:f:18"/>
+
+		<txt xx="-26" yy="16" id="$reuNum1_1:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="72" id="$reuNum2_1:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="131" id="$reuNum3_1:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="189" id="$reuNum4_1:63:30:0x000000:r:f:18"/>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- графики жителей-->
+	<subject>
+		<id>1022</id>
+		<type weAre="70" ourPosition="1" vis="0" willSave="1">graph</type>
+		<x>172</x><y>642</y><width>0</width><height>0</height>
+		<category cat="2" wid="524" heig="228"/>
+		<pic picload="2">no</pic>
+		<atChild>12</atChild>
+	</subject>
 
 
 	<!-- rooms

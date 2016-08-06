@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <chronicle>
-	<cid>D3</cid>
+	<cid>game1module</cid>
 	
 	<picload id="2">game1Module.swf</picload>
 
@@ -573,6 +573,290 @@
 		<txt mode="ru">торговец</txt>
 		<txt mode="en">trader</txt>
 	</texto>
+
+	<texto tid="625">
+		<txt mode="ru">Ваш герой может попробовать остановить восстание ваших сограждан различными способами:</txt>
+		<txt mode="en">You hero can try to stop the rebellion of your fellow citizens by different ways:</txt>
+	</texto>
+	<texto tid="626">
+		<txt mode="ru">атаковать восставших</txt>
+		<txt mode="en">attack the rebellions</txt>
+	</texto>
+	<texto tid="627">
+		<txt mode="ru">попробовать договориться</txt>
+		<txt mode="en">try to negotiate</txt>
+	</texto>
+	<texto tid="628">
+		<txt mode="ru">вопросить богов</txt>
+		<txt mode="en">ask the gods</txt>
+	</texto>
+
+	<texto tid="630">
+		<txt mode="ru">меню</txt>
+		<txt mode="en">menu</txt>
+	</texto>
+	<texto tid="632">
+		<txt mode="ru">город</txt>
+		<txt mode="en">city</txt>
+	</texto>
+	<texto tid="634">
+		<txt mode="ru">мир</txt>
+		<txt mode="en">world</txt>
+	</texto>
+	<texto tid="636">
+		<txt mode="ru">знания</txt>
+		<txt mode="en">research</txt>
+	</texto>
+
+	<texto tid="640">
+		<txt mode="ru">меню</txt>
+		<txt mode="en">menu</txt>
+	</texto>
+	<texto tid="642">
+		<txt mode="ru">вернуться к игре</txt>
+		<txt mode="en">return to game</txt>
+	</texto>
+	<texto tid="644">
+		<txt mode="ru">покинуть игру</txt>
+		<txt mode="en">leave the game</txt>
+	</texto>
+
+	<texto tid="646">
+		<txt mode="ru">выбрать язык</txt>
+		<txt mode="en">choose a language</txt>
+	</texto>
+
+	<texto tid="648">
+		<txt mode="ru">русский</txt>
+		<txt mode="en">русский</txt>
+	</texto>
+	<texto tid="650">
+		<txt mode="ru">english</txt>
+		<txt mode="en">english</txt>
+	</texto>
+
+	<texto tid="652">
+		<txt mode="ru">герои</txt>
+		<txt mode="en">heroes</txt>
+	</texto>
+
+
+	<texto tid="700">
+		<txt mode="ru">После яростного сражения, в котором и ваши гоплиты и воины повстанцев не жалели своих жизней, победа ваша. Мятеж подавлен.</txt>
+		<txt mode="en">After a fierce battle, in which your hoplites and rebel warriors spared their lives, you win. The rebellion is suppressed.</txt>
+	</texto>
+
+	<texto tid="702">
+		<txt mode="ru">Это ваше первое сообщение в игре.</txt>
+		<txt mode="en">It's your first message in the game.</txt>
+	</texto>
+
+	<texto tid="703">
+		<txt mode="ru">А это - второе.</txt>
+		<txt mode="en">And this is the second.</txt>
+	</texto>
+
+	<texto tid="704">
+		<txt mode="ru">Наступил 2980 год до нашей эры.</txt>
+		<txt mode="en">New 2980 BC come.</txt>
+	</texto>
+
+	<texto tid="706">
+		<txt mode="ru">Забвение</txt>
+		<txt mode="en">Oblivion</txt>
+	</texto>
+
+	<texto tid="708">
+		<txt mode="ru">Несмотря на все старания, этому городу не было суждено стать великим. В какой-то момент он просто вымер, не оставив о себе памяти в истории.</txt>
+		<txt mode="en">Despite all the efforts, the city was not destined to become great. At some point, it just died out without leaving itself in the memory of history.</txt>
+	</texto>
+
+	<texto tid="710">
+		<txt mode="ru">Мы в истории</txt>
+		<txt mode="en">We are in the History</txt>
+	</texto>
+
+	<texto tid="712">
+		<txt mode="ru">Ваши усилия и усилия жителей этого города будут вознаграждены. Теперь Калидон войдёт в историю как сильный полис, как один из главных центров развития эллинской культуры.</txt>
+		<txt mode="en">Your efforts and the efforts of the inhabitants of this city will be rewarded. Now Calydon go down in history as a strong city-state, as one of the main centers of Hellenic culture.</txt>
+	</texto>
+
+	<texto tid="714">
+		<txt mode="ru">граждане</txt>
+		<txt mode="en">citizens</txt>
+	</texto>
+
+	<texto tid="716">
+		<txt mode="ru">ресурсы</txt>
+		<txt mode="en">resources</txt>
+	</texto>
+
+	<texto tid="718">
+		<txt mode="ru">герои</txt>
+		<txt mode="en">heroes</txt>
+	</texto>
+
+	<texto tid="720">
+		<txt mode="ru">Ваш герой отправится открывать новые земли.</txt>
+		<txt mode="en">your hero will travel to discover new World.</txt>
+	</texto>
+
+	<texto tid="722">
+		<txt mode="ru">направить</txt>
+		<txt mode="en">direct</txt>
+	</texto>
+
+	<texto tid="730">
+		<txt mode="ru">Исследует мир</txt>
+		<txt mode="en">Explores the World </txt>
+	</texto>
+
+
+	<texto tid="800">
+		<txt mode="ru">царство</txt>
+		<txt mode="en">kingdom</txt>
+	</texto>
+	<texto tid="802">
+		<txt mode="ru">тирания</txt>
+		<txt mode="en">tyranny</txt>
+	</texto>
+	<texto tid="804">
+		<txt mode="ru">олигополия</txt>
+		<txt mode="en">oligopoly</txt>
+	</texto>
+	<texto tid="806">
+		<txt mode="ru">республика</txt>
+		<txt mode="en">republic</txt>
+	</texto>
+	<texto tid="810">
+		<txt mode="ru">дружелюбный характер</txt>
+		<txt mode="en">friendly character</txt>
+	</texto>
+	<texto tid="812">
+		<txt mode="ru">спокойный характер</txt>
+		<txt mode="en">even temper</txt>
+	</texto>
+	<texto tid="814">
+		<txt mode="ru">коварный характер</txt>
+		<txt mode="en">insidious nature</txt>
+	</texto>
+	<texto tid="816">
+		<txt mode="ru">вспыльчивый характер</txt>
+		<txt mode="en">short temper</txt>
+	</texto>
+	<texto tid="818">
+		<txt mode="ru">агрессивный характер</txt>
+		<txt mode="en">aggressive nature</txt>
+	</texto>
+
+	<texto tid="820">
+		<txt mode="ru">войска</txt>
+		<txt mode="en">troops</txt>
+	</texto>
+	<texto tid="822">
+		<txt mode="ru">отношения:</txt>
+		<txt mode="en">relations:</txt>
+	</texto>
+	<texto tid="824">
+		<txt mode="ru">потребовать покинуть союз</txt>
+		<txt mode="en">require leave the alliance</txt>
+	</texto>
+	<texto tid="826">
+		<txt mode="ru">попроситься в союз</txt>
+		<txt mode="en">ask in alliance</txt>
+	</texto>
+	<texto tid="828">
+		<txt mode="ru">предложить войти в союз</txt>
+		<txt mode="en">offer to enter into alliance</txt>
+	</texto>
+	<texto tid="830">
+		<txt mode="ru">объявить войну</txt>
+		<txt mode="en">declare a war</txt>
+	</texto>
+	<texto tid="832">
+		<txt mode="ru">предложить мир</txt>
+		<txt mode="en">offer a peace</txt>
+	</texto>
+	<texto tid="834">
+		<txt mode="ru">послать дары</txt>
+		<txt mode="en">send gifts</txt>
+	</texto>
+	<texto tid="836">
+		<txt mode="ru">оскорбить</txt>
+		<txt mode="en">give offense</txt>
+	</texto>
+
+	<texto tid="840">
+		<txt mode="ru">союз города</txt>
+		<txt mode="en">alliance of</txt>
+	</texto>
+
+	<texto tid="842">
+		<txt mode="ru">участников -</txt>
+		<txt mode="en">participants -</txt>
+	</texto>
+
+	<texto tid="844">
+		<txt mode="ru">лидер</txt>
+		<txt mode="en">leader</txt>
+	</texto>
+
+	<texto tid="850">
+		<txt mode="ru">Улучшить отношения? Это будет стоить большого количества ресурсов.</txt>
+		<txt mode="en">Improve the relationship? It will cost a large number of resources.</txt>
+	</texto>
+	<texto tid="852">
+		<txt mode="ru">попробуем сэкономить</txt>
+		<txt mode="en">try to save</txt>
+	</texto>
+	<texto tid="854">
+		<txt mode="ru">нам нужно их расположение</txt>
+		<txt mode="en">we need their goodwill</txt>
+	</texto>
+
+	<texto tid="856">
+		<txt mode="ru">Испортить отношения легче, чем восстановить их. Вы действительно хотите оскорбить жителей этого города?</txt>
+		<txt mode="en">Spoil relationship is easier than to restore them. Do you really want to injure the people of this city?</txt>
+	</texto>
+	<texto tid="858">
+		<txt mode="ru">да, так нужно</txt>
+		<txt mode="en">yes, it's necessary</txt>
+	</texto>
+
+	<texto tid="860">
+		<txt mode="ru">Война объявляется всем городам союза, а вот мириться придётся с каждым городом в отдельности. Объявить войну?</txt>
+		<txt mode="en">The War declare to all the cities of the alliance, but will have to make peace with each city individually. Declare a war?</txt>
+	</texto>
+	<texto tid="862">
+		<txt mode="ru">я говорю - атакуйте!</txt>
+		<txt mode="en">i say - fight!</txt>
+	</texto>
+
+	<texto tid="864">
+		<txt mode="ru">график ресурсов</txt>
+		<txt mode="en">resource graph</txt>
+	</texto>
+	<texto tid="866">
+		<txt mode="ru">таланты</txt>
+		<txt mode="en">talents</txt>
+	</texto>
+	<texto tid="868">
+		<txt mode="ru">пища</txt>
+		<txt mode="en">food</txt>
+	</texto>
+	<texto tid="870">
+		<txt mode="ru">добыча</txt>
+		<txt mode="en">extraction</txt>
+	</texto>
+	<texto tid="872">
+		<txt mode="ru">производство</txt>
+		<txt mode="en">production</txt>
+	</texto>
+	<texto tid="874">
+		<txt mode="ru">ход</txt>
+		<txt mode="en">turn</txt>
+	</texto>
+
 
 
 

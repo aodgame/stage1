@@ -7,7 +7,7 @@ import collections.inCity.Building;
 
 import story.Danke;
 
-public class SubBuldingMenu extends Parent2Subject
+public class SubElementsMenu extends Parent2Subject
 {
     public var fram:Vector.<int> = new Vector.<int>(); //������� ��� ������� �������
     //public var neddFram:Boolean=false;
@@ -23,17 +23,21 @@ public class SubBuldingMenu extends Parent2Subject
     public var move:Vector.<Boolean> = new Vector.<Boolean>(); //элемент предмета может передвигаться под мышкой
     public var baseX:Vector.<int> = new Vector.<int>();
     public var baseY:Vector.<int> = new Vector.<int>();
+    public var wayCount:Vector.<int> = new Vector.<int>(); //на сколько пикселей сдвинут объект
     private var cli:Vector.<int> = new Vector.<int>();
     private var tx:Vector.<int> = new Vector.<int>();
     private var ty:Vector.<int> = new Vector.<int>();
 
     private var tap:Vector.<int> = new Vector.<int>(); //определяем, был ли нажат элемент
+    private var checkWho:Vector.<int> = new Vector.<int>();
+    private var checkWith:Vector.<int> = new Vector.<int>();
+    private var checkControl:Vector.<int> = new Vector.<int>();
 
     private var dan:Danke;
 
-    public function SubBuldingMenu(myXML, pics, el, ii)
+    public function SubElementsMenu(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -109,14 +113,118 @@ public class SubBuldingMenu extends Parent2Subject
 
         if (modificator=="standy")
         {
-            standartBehavior(el);
+            standardBehavior(el);
         }
     }
 
-    private function standartBehavior(el):void
+    private function controlling(el):void
+    {
+        var curEl:int=-1;
+        var tip:int=0;
+        //trace("checkWho.length="+checkWho.length);
+        if (checkWho.length==0)
+        {
+            return;
+        }
+        //trace("bit.mouseOver="+bit.mouseOver+"; bit.mouseOut="+bit.mouseOut+"; bit.mouseClick="+bit.mouseClick);
+       // trace("numOfEl.length="+numOfEl.length);
+        for (i = 0; i < numOfEl.length; i++)
+        {
+            if (bit.mouseClick==numOfEl[i])
+            {
+                //trace("mouseClick 1="+bit.mouseOver+":i="+i+"; numOfEl="+numOfEl[i]);
+                tip=3;
+                curEl=i;
+                break;
+            }
+            if (bit.mouseOver==numOfEl[i])
+            {
+                //trace("mouseOver 1="+bit.mouseOver+":i="+i+"; numOfEl="+numOfEl[i]);
+                tip=1;
+                curEl=i;
+                break;
+            }
+            if (bit.mouseOut==numOfEl[i] && el[numOfEl[i]].typeOfElement=="txt")
+            {
+                //trace("mouseOut 1="+bit.mouseOver+":i="+i+"; numOfEl="+numOfEl[i]);
+                tip=2;
+                curEl=i;
+                break;
+            }
+
+        }
+        if (curEl!=-1)
+        {
+            //trace("curEl="+curEl);
+            for (i=0; i<checkWho.length; i++)
+            {
+                if (checkWho[i]==curEl && tip==1 && checkControl[i]==0)
+                {
+                    //trace("checkWho[i]="+checkWho[i]);
+                    trace(el[numOfEl[curEl]].typeOfElement+"::"+el[numOfEl[curEl]].iii);
+                    checkControl[i]=1;
+                    for (var j:int=0; j<checkWho.length; j++)
+                    {
+                        if (j!=i && checkControl[j]!=0)
+                        {
+                            checkControl[j]=0;
+                            el[numOfEl[checkWith[j]]].pic.width /= 1.15;
+                            el[numOfEl[checkWith[j]]].pic.height /= 1.15;
+                        }
+                    }
+                    if (el[numOfEl[curEl]].typeOfElement=="txt")
+                    {
+                        //trace("txt");
+                        el[numOfEl[checkWith[i]]].pic.width *= 1.15;
+                        el[numOfEl[checkWith[i]]].pic.height *= 1.15;
+                    } else
+                    {
+                        //trace("pic");
+                    }
+                    break;
+                }
+                if (checkWho[i]==curEl && tip==2 && checkControl[i]==1)
+                {
+                    if (el[numOfEl[curEl]].typeOfElement=="txt")
+                    {
+                        checkControl[i]=0;
+                        el[numOfEl[checkWith[i]]].pic.width /= 1.15;
+                        el[numOfEl[checkWith[i]]].pic.height /= 1.15;
+                    } else
+                    {
+                        //el[numOfEl[checkWith[i]]].pic.width /= 1.15;
+                    }
+                    break;
+                }
+                if (checkWho[i]==curEl && tip==3)
+                {
+                    bit.mouseClick=numOfEl[checkWith[i]];
+                    for (j=0; j<numOfEl.length; j++)
+                    {
+                        if (bit.mouseClick==numOfEl[j])
+                        {
+                            trace("j= dan.behChoice = "+j);
+                            dan.behChoice = j;
+                            break;
+                        }
+                    }
+                    //trace("bit.mouseClick="+bit.mouseClick);
+                    break;
+                }
+            }
+        }
+    }
+
+    private function standardBehavior(el):void
     {
         if (vis==1)
         {
+            if (iii==483)
+            {
+                //trace("controlling iii=" + iii);
+            }
+            controlling(el);
+
             for (i = 0; i < numOfEl.length; i++)
             {
                 if (el[numOfEl[i]].typeOfElement!="txt")
@@ -133,6 +241,24 @@ public class SubBuldingMenu extends Parent2Subject
                     dan.downOfMany = i+1; //ид никогда не начинаются с нуля
                    // dan.numOfSub=iii;
                 }
+
+                /*if (sx[i]!=baseX[i] || sy[i]!=baseY[i])
+                {
+                    wayCount[i]++;
+                    if (wayCount[i]>500)
+                    {
+                        wayCount[i]=100;
+                    }
+                } else
+                {
+                    if (wayCount[i]>10)
+                    {
+                        wayCount[i]=10;
+                    } else
+                    {
+                        wayCount[i]=0;
+                    }
+                }*/
             }
 
             //для движимых предметов
@@ -243,6 +369,8 @@ public class SubBuldingMenu extends Parent2Subject
             {
                 sx[num]=bit.sx+tx[num];
                 sy[num]=bit.sy+ty[num];
+
+                wayCount[num]++;
             }
         }
         if (bit.mouseParDown==iii)
@@ -252,8 +380,29 @@ public class SubBuldingMenu extends Parent2Subject
                 cli[num] = 1;
                 tx[num] = sx[num] - bit.sx;
                 ty[num] = sy[num] - bit.sy;
+                wayCount[num]=0;
             }
         }
+
+
+
+        /*if (sx[i]!=baseX[i] || sy[i]!=baseY[i])
+        {
+            wayCount[i]++;
+            if (wayCount[i]>500)
+            {
+                wayCount[i]=100;
+            }
+        } else
+        {
+            if (wayCount[i]>10)
+            {
+                wayCount[i]=10;
+            } else
+            {
+                wayCount[i]=0;
+            }
+        }*/
     }
 
     private function parentUpd(el):void
@@ -510,9 +659,9 @@ public class SubBuldingMenu extends Parent2Subject
 
     }
 
-    override protected function end_load(myXML, ii, pics, el):void
+    override protected function end_load(myXML, ii, pics, el, moduleName):void
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
         dan = Danke.getInstance();
 
         if (myXML.camera=="1")
@@ -557,6 +706,7 @@ public class SubBuldingMenu extends Parent2Subject
             }
             baseX.push(sx[sx.length-1]);
             baseY.push(sy[sy.length-1]);
+            wayCount.push(0);
             cli.push(0);
             tx.push(0);
             ty.push(0);
@@ -572,6 +722,7 @@ public class SubBuldingMenu extends Parent2Subject
             sy.push(myXML.txt[i].@yy);
             sw.push(0);
             sh.push(0);
+            wayCount.push(0);
             var str:String=myXML.txt[i].@id;
             specID.push(str);
             picAddr.push(new String(""));
@@ -584,6 +735,18 @@ public class SubBuldingMenu extends Parent2Subject
             ty.push(0);
             tap.push(0);
         }
+
+        for (i=0; i<myXML.check.length(); i++)
+        {
+            checkWho.push(new int(myXML.check[i].@_who));
+            checkWith.push(new int(myXML.check[i].@_with));
+            checkControl.push(0);
+        }
+        for (i=0; i<checkWho.length; i++)
+        {
+            trace(i+"; checkWho="+checkWho[i]+"; checkWith="+checkWith[i]);
+        }
+
         ready=true;
     }
 }

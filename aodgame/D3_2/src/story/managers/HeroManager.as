@@ -32,13 +32,14 @@ public class HeroManager
             }
             dan.numOfSub=-1;
         }
-        if (dan.heroIIIbuyPanel==dan.numOfSub && dan.currentHeroes.length==dan.maxHeroNum) //зачищаем, чтобы не было  покупки постфактум
+        if (dan.heroIIIbuyPanel==dan.numOfSub && dan.currentHeroes.length==dan.maxHeroNum) //зачищаем, чтобы не было покупки постфактум
         {
             dan.numOfSub=-1;
         }
 
         if (dan.heroChoose>0 && dan.heroOnTyppe!="" && !dan.heroStart)//если герой выбран и его на что-то перекинули
         {
+            trace("heroCityRelation");
             heroCityRelation(subs);
         }
 
@@ -63,6 +64,8 @@ public class HeroManager
 
             dan.currentHeroes[dan.heroChoose-1].needTyppe.splice(dan.newPosActChange, 0, s);
             dan.currentHeroes[dan.heroChoose-1].needNum.splice(dan.newPosActChange, 0, n);
+            dan.currentHeroes[dan.heroChoose-1].needX.splice(dan.newPosActChange, 0, n);
+            dan.currentHeroes[dan.heroChoose-1].needY.splice(dan.newPosActChange, 0, n);
 
             trace("medium hero num="+(dan.heroChoose-1));
             for (var z:int=0; z<dan.currentHeroes[dan.heroChoose-1].needTyppe.length; z++)
@@ -72,6 +75,8 @@ public class HeroManager
 
             dan.currentHeroes[dan.heroChoose-1].needTyppe.splice(dan.numActChange+1, 1);
             dan.currentHeroes[dan.heroChoose-1].needNum.splice(dan.numActChange+1, 1);
+            dan.currentHeroes[dan.heroChoose-1].needX.splice(dan.numActChange+1, 1);
+            dan.currentHeroes[dan.heroChoose-1].needY.splice(dan.numActChange+1, 1);
 
             trace("hero num="+(dan.heroChoose-1));
             for (var z:int=0; z<dan.currentHeroes[dan.heroChoose-1].needTyppe.length; z++)
@@ -89,12 +94,17 @@ public class HeroManager
     private function clearWorkplace(num):void
     {
         trace("dan.outI="+dan.outI);
+        trace("num="+num);
+        trace(" dan.currentHeroes[num].needTyppe="+ dan.currentHeroes[num].needTyppe);
         dan.currentHeroes[num].needTyppe.splice(dan.outI,1);
         dan.currentHeroes[num].needNum.splice(dan.outI,1);
+        dan.currentHeroes[num].needX.splice(dan.outI,1);
+        dan.currentHeroes[num].needY.splice(dan.outI,1);
         //dan.outI=-1;
     }
 
     private function heroCityRelation(subs):void
+
     {
         //кто-то хочет заставить героя что-то сделать. Но что именно?
         if (dan.heroOnTyppe=="city") //ответственность за город
@@ -121,6 +131,8 @@ public class HeroManager
                     {//радуйся, герой, эта ноша больше не твоя
                         dan.currentHeroes[i].needTyppe.splice(j,1);
                         dan.currentHeroes[i].needNum.splice(j,1);
+                        dan.currentHeroes[i].needX.splice(j,1);
+                        dan.currentHeroes[i].needY.splice(j,1);
                         j=-1;
                         break;
                     }
@@ -134,6 +146,8 @@ public class HeroManager
             trace("dan.heroChoose="+dan.heroChoose);
             dan.currentHeroes[dan.heroChoose-1].needTyppe.push("city"); //теперь это твоя ноша
             dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.heroOnNum);
+            dan.currentHeroes[dan.heroChoose-1].needX.push(dan.heroMoveX);
+            dan.currentHeroes[dan.heroChoose-1].needY.push(dan.heroMoveY);
 
 
             trace("after");
@@ -145,9 +159,19 @@ public class HeroManager
                     trace("j="+j+"; "+dan.currentHeroes[i].needTyppe[j]+":"+dan.currentHeroes[i].needNum[j]);
                 }
             }
-            dan.heroOnTyppe="";
-            dan.heroChoose=-1;
+
         }
+        if(dan.heroOnTyppe=="shadow") //ответственность за исследование мира
+        {
+            trace("We are in shadow");
+            dan.currentHeroes[dan.heroChoose-1].needTyppe.push("shadow"); //теперь это твоя ноша
+            dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.heroOnNum);
+            dan.currentHeroes[dan.heroChoose-1].needX.push(dan.heroMoveX);
+            dan.currentHeroes[dan.heroChoose-1].needY.push(dan.heroMoveY);
+            trace("dan.heroMoveX="+dan.heroMoveX+"; dan.heroMoveY="+dan.heroMoveY);
+        }
+        dan.heroOnTyppe="";
+        dan.heroChoose=-1;
     }
 
     private function changeTurn(subs):void
@@ -177,10 +201,9 @@ public class HeroManager
                 i--;
             } else
             {
-                makeActivity(dan.currentHeroes[i]);
+                makeActivity(dan.currentHeroes[i], i);
                 for (var k:int=0; k<dan.currentHeroes[i].heroResMax.length; k++)
                 {
-
                     dan.currentHeroes[i].heroResMax[k]+=1;
                 }
             }
@@ -188,28 +211,40 @@ public class HeroManager
         }
     }
 
-    private function makeActivity(hero):void //снимаем очки во время смены даты за выполнение активности персонажа
+    private function makeActivity(hero, ii):void //снимаем очки во время смены даты за выполнение активности персонажа
     {
         for (var j:int=0; j<hero.needTyppe.length; j++)
         {
-            for (var k:int = 0; k < dan.heroActivities.length; k++)
+            var k:int = 0;
+
+            while (k < dan.heroActivities.length)
             {
                 if (hero.needTyppe[j] == dan.heroActivities[k].act)
                 {
-                    var typp:int=0;
-                    while (typp<hero.heroResTyppe.length)
+                    var typp:int = 0;
+                    while (typp < hero.heroResTyppe.length)
                     {
-                        for (var n:int = 0; n < dan.heroActivities[k].costTyppe.length; n++)
-                        {
-                            if (dan.heroActivities[k].costTyppe[n] == hero.heroResTyppe[typp] && hero.heroResMax[typp]-dan.heroActivities[k].costNum[n]>=0)
+                            for (var n:int = 0; n < dan.heroActivities[k].costTyppe.length; n++)
                             {
-                                hero.heroResMax[typp]-=dan.heroActivities[k].costNum[n];
-                                break;
+                                if (dan.heroActivities[k].costTyppe[n] == hero.heroResTyppe[typp] &&
+                                        hero.heroResMax[typp] - dan.heroActivities[k].costNum[n] >= 0)
+                                {
+                                    hero.heroResMax[typp] -= dan.heroActivities[k].costNum[n];
+                                    break;
+                                }
                             }
-                        }
-                        typp++;
+                            typp++;
+                    }
+
+                    if (dan.heroActivities[k].timme==1)
+                    {
+                        trace("dan.out");
+                        dan.outI=j;
+                        clearWorkplace(ii);
                     }
                 }
+
+                k++;
             }
         }
     }
@@ -240,7 +275,7 @@ public class HeroManager
     private function buyHero():Boolean
     {
         //trace("dan.numOfMany="+dan.numOfMany);
-        if (dan.numOfMany<0)
+        if (dan.numOfMany<0 || dan.numOfMany>=dan.availableHeroes.length)
         {
            return false;
         }

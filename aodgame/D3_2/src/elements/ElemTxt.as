@@ -9,7 +9,6 @@ import flash.text.TextField;
 import flash.text.TextFormat;
 import flash.ui.Mouse;
 import flash.ui.MouseCursor;
-import flash.display.MovieClip;
 
 public class ElemTxt extends ParentElement
 {
@@ -30,19 +29,18 @@ public class ElemTxt extends ParentElement
 
     public var format:TextFormat = new TextFormat();
 
-    public function ElemTxt(pics, picAddr, ii, typpe)
+    public function ElemTxt(pics, picAddr, ii, typpe, moduleName, i)
     {
-        creation(pics, picAddr, ii, typpe);
+        creation(pics, picAddr, ii, typpe, moduleName, i);
     }
 
-    override public function parse()
+    override public function parse():void
     {
         var temp:String=tid;
         tid="";
         var currType:int=0;
         var color:String="";
 
-        //trace("temp="+temp);
         for (var i:int=0; i<temp.length; i++)
         {
             if (temp.charAt(i)!=":")
@@ -130,13 +128,22 @@ public class ElemTxt extends ParentElement
 
     override public function fate(i):int
     {
-        //trace("f");
-        //pic.buttonMode = pic.mouseEnabled = pic.useHandCursor = true;
-        //pic.mouseChildren = false;
-        pic.addEventListener(MouseEvent.CLICK, clickClick);
-        pic.addEventListener(MouseEvent.MOUSE_DOWN, downClick);
-        pic.addEventListener(MouseEvent.MOUSE_OVER, overClick);
-        pic.addEventListener(MouseEvent.MOUSE_OUT, outClick);
+        if (i==1)
+        {
+            //pic.buttonMode = pic.mouseEnabled = pic.useHandCursor = true;
+            pic.addEventListener(MouseEvent.CLICK, clickClick);
+            pic.addEventListener(MouseEvent.MOUSE_DOWN, downClick);
+            pic.addEventListener(MouseEvent.MOUSE_OVER, overClick);
+            pic.addEventListener(MouseEvent.MOUSE_OUT, outClick);
+        }
+        if (i==0)
+        {
+            pic.removeEventListener(MouseEvent.CLICK, clickClick);
+            pic.removeEventListener(MouseEvent.MOUSE_DOWN, downClick);
+            pic.removeEventListener(MouseEvent.MOUSE_OVER, overClick);
+            pic.removeEventListener(MouseEvent.MOUSE_OUT, outClick);
+            removeChild(pic);
+        }
 
         return i;
     }
@@ -176,10 +183,13 @@ public class ElemTxt extends ParentElement
     }
     private function overClick(event:MouseEvent):void
     {
-        Mouse.cursor = MouseCursor.BUTTON;
-        //trace("overClick="+iii);
-        bit.mouseOver=iii;
-        bit.mouseParOver=parnt;
+        if (pic.visible)
+        {
+            Mouse.cursor = MouseCursor.BUTTON;
+            trace("txt overClick=" + iii);
+            bit.mouseOver = iii;
+            bit.mouseParOver = parnt;
+        }
     }
     private function outClick(event:MouseEvent):void
     {
@@ -189,9 +199,9 @@ public class ElemTxt extends ParentElement
         bit.mouseParOut=parnt;
     }
 
-    override public function creation(pics, picAddr, ii, typpe):void
+    override public function creation(pics, picAddr, ii, typpe, moduleName, i):void
     {
-        super.creation(pics, picAddr, ii, typpe);
+        super.creation(pics, picAddr, ii, typpe, moduleName, i);
         //trace("picAddr="+picAddr);
         pic = new TextField();
         pic.x=0;
@@ -202,7 +212,6 @@ public class ElemTxt extends ParentElement
         pic.text=txt;
         pic.selectable=false;
         addChild(pic);
-        //trace("vis txt!");
 
         pic.multiline=true;
         pic.wordWrap=true;
@@ -214,13 +223,8 @@ public class ElemTxt extends ParentElement
         glowFilter.strength=4;
 
         makeFormat();
-
         fate(1);
-
         ready=true;
-
-
-
     }
 }
 }

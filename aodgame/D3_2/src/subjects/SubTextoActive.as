@@ -29,9 +29,9 @@ public class SubTextoActive extends Parent2Subject
 
     private var modificator:String="";
 
-    public function SubTextoActive(myXML, pics, el, ii)
+    public function SubTextoActive(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -149,6 +149,7 @@ public class SubTextoActive extends Parent2Subject
                 }
                 if (sy[g]>sy[currEl])
                 {
+                    trace("sgc");
                     dan.heroActChange=true;
                     dan.numActChange=currEl-1;
                     dan.newPosActChange=g-s-1;
@@ -237,9 +238,9 @@ public class SubTextoActive extends Parent2Subject
         }
     }
 
-    override protected function end_load(myXML, ii, pics, el):void
+    override protected function end_load(myXML, ii, pics, el, moduleName):void
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
         dan = Danke.getInstance();
 
         if (myXML.camera=="1")

@@ -10,6 +10,7 @@ public class ParentElement extends MovieClip
 
     public var ready:Boolean=false;
     public var parnt:int; //индекс предмета-владельца
+    public var parntID:int; //индекс предмета-владельца
     public var iii:int; //мой индекс
 
     public var tid:String;
@@ -21,11 +22,13 @@ public class ParentElement extends MovieClip
 
     protected var bit:Bitte;
 
+    public var moduleName:String="";
+
     public function ParentElement()
     {
     }
 
-    public function parse()
+    public function parse():void
     {
 
     }
@@ -35,8 +38,17 @@ public class ParentElement extends MovieClip
         return 0;
     }
 
-    public function creation(pics, picAddr, ii, typpe):void
+    public function correctScoreNum(nu:int):void
     {
+        scoreNum=nu;
+    }
+
+
+    public function creation(pics, picAddr, ii, typpe, moduleName, i):void
+    {
+        this.moduleName=moduleName;
+        parntID=i;
+
         iii=scoreNum;
         scoreNum++;
         parnt=ii;

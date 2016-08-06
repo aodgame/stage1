@@ -62,5 +62,19 @@ public class Timmer
         }
         return show();
     }
+
+    public function curElder():int
+    {
+        return elderStart;
+    }
+
+    public function curYounger():String
+    {
+        if (younger==null || younger.length==0)
+        {
+            return "";
+        }
+        return younger[curYoung];
+    }
 }
 }

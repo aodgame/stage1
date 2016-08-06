@@ -7,7 +7,7 @@
 		<action>no</action>
 		<effect room="10">flyTo</effect>
 		<effect plane="1">flyToPlane</effect>
-		<effect sub="firstSubjects.xml" scen="firstScenaries.xml" texto="">load</effect>
+		<effect sub="firstSubjects.xml" scen="firstScenaries.xml"  texto="firstTexto.xml">load</effect>
 	</mmotion>
 
 

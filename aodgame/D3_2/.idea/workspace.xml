@@ -38,10 +38,56 @@
       <file leaf-file-name="Bitte.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/D3/Bitte.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41078067">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.5371747">
+              <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
               <folding>
                 <element signature="e#13#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Subjects.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/D3/Subjects.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+              <folding>
+                <element signature="n#!!block;n#getSave#0;n#Subjects#0;n#D3#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game1Subjects.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game1Subjects.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1054" column="20" selection-start-line="1054" selection-start-column="20" selection-end-line="1054" selection-end-column="20" />
+              <folding>
+                <element signature="n#subject#2;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#3;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#4;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#6;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#7;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#8;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#9;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#10;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#11;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#12;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#13;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#15;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#16;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#17;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#18;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#19;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#20;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#21;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#22;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#23;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#24;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#25;n#chronicle#0;n#!!top" expanded="false" />
+                <element signature="n#subject#44;n#chronicle#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -149,9 +195,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,32 +272,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="D3_2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D3_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D3_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D3_2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Main.swf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -638,21 +658,23 @@
       <workItem from="1466543145114" duration="108000" />
       <workItem from="1466610437998" duration="1127000" />
       <workItem from="1466630332920" duration="299000" />
+      <workItem from="1470516985452" duration="61000" />
+      <workItem from="1470517135562" duration="250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="595997000" />
+    <option name="totallyTimeSpent" value="596308000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.4854369" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.47572815" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34792626" sideWeight="0.5177994" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34792626" sideWeight="0.52427185" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -665,7 +687,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34792626" sideWeight="0.48220065" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34792626" sideWeight="0.47572815" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -711,13 +733,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/collections/inWorld/Status.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1539855">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/collections/inWorld/City.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -823,16 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/D3/Subjects.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!block;n#getSave#0;n#Subjects#0;n#D3#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/D3/Control.as">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -872,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,38 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game1Subjects.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1054" column="46" selection-start-line="1054" selection-start-column="46" selection-end-line="1054" selection-end-column="46" />
-          <folding>
-            <element signature="n#subject#2;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#3;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#4;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#6;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#7;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#8;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#9;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#10;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#11;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#12;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#13;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#15;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#16;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#17;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#18;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#19;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#20;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#21;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#22;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#23;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#24;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#25;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="n#subject#44;n#chronicle#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/game1Scenaries.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1050,7 +1022,6 @@
             <element signature="n#land#9;n#chronicle#0;n#!!top" expanded="false" />
             <element signature="n#land#10;n#chronicle#0;n#!!top" expanded="false" />
             <element signature="n#land#11;n#chronicle#0;n#!!top" expanded="false" />
-            <element signature="e#5806#6086#0" expanded="false" />
             <element signature="n#landRes#0;n#chronicle#0;n#!!top" expanded="false" />
             <element signature="n#landRes#1;n#chronicle#0;n#!!top" expanded="false" />
             <element signature="n#landRes#2;n#chronicle#0;n#!!top" expanded="false" />
@@ -1166,10 +1137,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/game1Subjects.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1054" column="20" selection-start-line="1054" selection-start-column="20" selection-end-line="1054" selection-end-column="20" />
+          <folding>
+            <element signature="n#subject#2;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#3;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#4;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#6;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#7;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#8;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#9;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#10;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#11;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#12;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#13;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#15;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#16;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#17;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#18;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#19;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#20;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#21;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#22;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#23;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#24;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#25;n#chronicle#0;n#!!top" expanded="false" />
+            <element signature="n#subject#44;n#chronicle#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/D3/Subjects.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#getSave#0;n#Subjects#0;n#D3#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../D3_2_12_0/D3_2/src/D3/Bitte.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="96" selection-end-column="43" />
+          <folding>
+            <element signature="e#13#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/D3/Bitte.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41078067">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.5371747">
+          <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
           <folding>
             <element signature="e#13#37#0" expanded="true" />
           </folding>

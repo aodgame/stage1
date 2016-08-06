@@ -8,6 +8,7 @@ public class Texto
     public var tid:int;
     public var txt:Vector.<String> = new Vector.<String>();
     public var mode:Vector.<String> = new Vector.<String>();
+    public var moduleName:String="";
 
     public function Texto()
     {

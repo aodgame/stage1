@@ -3,6 +3,7 @@
  */
 package story.managers
 {
+import D3.Bitte;
 import story.Danke;
 
 public class CheafManager
@@ -13,8 +14,14 @@ public class CheafManager
     private var updManager:UpdatesManager;
     private var heroManager:HeroManager;
     private var cityManager:CityManager;
+    private var activityManager:ActivityManager;
+
+    private var messanger:Messanger;
+
+    private var infoStory:InfoStoryManager;
 
     private var dan:Danke;
+    private var bit:Bitte;
 
     public function CheafManager()
     {
@@ -24,8 +31,12 @@ public class CheafManager
         updManager = new UpdatesManager();
         heroManager = new HeroManager();
         cityManager = new CityManager();
+        activityManager = new ActivityManager();
+        messanger = new Messanger();
+        infoStory = new InfoStoryManager();
 
         dan = Danke.getInstance();
+        bit=Bitte.getInstance();
     }
 
     public function work(sub):void
@@ -35,9 +46,14 @@ public class CheafManager
         resManager.work();
         updManager.work();
         cityManager.work(sub);
+        activityManager.work(sub);
         heroManager.work(sub);
+        messanger.work(sub);
+
+        infoStory.work(sub);
 
         dan.outI=-1;
+        bit.underOne=-1;
     }
 
     public function unwork(sub):void

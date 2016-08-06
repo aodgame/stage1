@@ -3,14 +3,25 @@
  */
 package story
 {
+import collections.behavior.BehActivity;
+import collections.behavior.BehMenu;
+import collections.behavior.BehPositioning;
+import collections.behavior.BehResult;
+import collections.inHistory.Category;
+import collections.inHistory.Collection;
+import collections.common.Equiler;
 import collections.common.HeroActivity;
 import collections.common.HeroRes;
+import collections.inHistory.MatrixView;
+import collections.common.Message;
 import collections.inCity.Building;
+import collections.inWorld.Alliance;
 import collections.inWorld.City;
 import collections.common.GlobalRes;
 import collections.common.Hero;
 import collections.inCity.Land;
 import collections.inCity.LandRes;
+import collections.inWorld.Cloud;
 import collections.inWorld.Status;
 import collections.common.Modification;
 import collections.inCity.ProblemSituation;
@@ -95,12 +106,14 @@ public class Danke
     public var getsetX:int=-1; //координаты, которые можно брать у одного предмета, чтобы выставить их другому
     public var getsetY:int=-1;
     public var getsetNowX:int=250; //координаты, которые можно брать у одного предмета, чтобы выставить их другому
-    public var getsetNowY:int=152;
+    public var getsetNowY:int=105;
 
     public var cityStart:int=-1;
     public var currentCity:int=-1; //номер в векторе
     public var cityClose:Boolean=false;
+    public var cityName:int=-1; //номер в векторе предмета с названиями городов
     public var cityPanel:int=-1;
+    public var cityDipPanel:int=-1; //панель дипломатии города
     public var heroFramNumInCity:int=-1;
 
     public var playerIII:int=-1; //iii города игрока данного клиента
@@ -113,9 +126,161 @@ public class Danke
     public var sellOffer:String="";
     public var tradeCost:Vector.<TradeCost> = new Vector.<TradeCost>();
 
+    //набор возможных действий игрока при перетягивании героя
+    public var behAct:Vector.<BehActivity> = new Vector.<BehActivity>();
+    public var behMenu:Vector.<BehMenu> = new Vector.<BehMenu>();
+    public var behPos:Vector.<BehPositioning> = new Vector.<BehPositioning>();
+    public var behRes:Vector.<BehResult> = new Vector.<BehResult>();
+    public var heroMenuActivity:int=-1; //необходимость вывести меню для выбора действия героя
+    public var heroMenuNum:int=-1; //количество пунктов в меню, два или три
+    public var behChoice:int=-1; //номер пункта, выбранного пользователем меню выбора
+
+    public var mess:Vector.<Message> = new Vector.<Message>(); //сообщения для игрока
+    public var needToMakeMenu:Boolean=false;
+    public var behPosFromMess:int=-1;
+    public var messMenuPanel:int=-1; // номер в векторе списка сообщений
+    public var messWasTap:int=-1; //номер элемента в предмете МенюСообщений, который был выбран игроком
+    //dan.heroMenuActivity=dan.behPos[numOfRes].resIII; numOfRes???
+
+    public var clouds:Vector.<Cloud> = new Vector.<Cloud>(); //туман войны
+    public var cloudsOut:int=-1; //показатель, что одно из олак было удалено с карты мира
+
+    public var shadowPlane:int=-1; //номер элемента с туманом войны
+
+    public var heroMoveX:int=0; ///координаты, куда передвинули героя
+    public var heroMoveY:int=0;
+
+    public var governments:Vector.<Equiler> = new Vector.<Equiler>(); //соотношения номера типа правления города к номеру текстовки
+    public var characters:Vector.<Equiler> = new Vector.<Equiler>();//соотношения номера типа характера города к номеру текстовки
+    public var alliances:Vector.<Alliance> = new Vector.<Alliance>();//вектор текущих союзов городов
+    public var cityAllianceArmy:Boolean=false; //переменная true -показывает армию альянса, false - армию города
+
+    public var knownCities:Vector.<int> = new Vector.<int>(); //айдишники в векторе городов, которые мы знаем
+    public var known:int=0;//число известных городов
+    public var dxKnown:int=-57; //сдвиг, на который нужно перемещать панель, когда открыт новый город
+    public var specCityPanel:int=-1; //специальная панель для выбора городов
+    public var numOfElemsCityPanel:int=0;//количество элементов на панели города
+
+    public var heroChooseMemory:int=-1;
+
+    public var willSave:Vector.<Collection> = new Vector.<Collection>(); //сохраняемые ресурсы
+    public var categoryWillSave:int=0; //все цифры кроме 0 показывает, какой график должен построить менеджер по истории
+    public var category:Vector.<Category> = new Vector.<Category>(); //параметры вывода категорий сохраняемых значений
+    public var currMatrix:MatrixView = new MatrixView();
+
+
     public function Danke()
     {
-        if(!ok2Create) throw new Error(this+" is a Singleton. access using getInstance()");
+        if(!ok2Create) throw new Error(this+" is a Singleton. Access using getInstance()");
+    }
+
+    public function unDanke():void
+    {
+        nextTurn=0; //передача хода следующему (2 - передача)
+        smallSkip=0; //скипнуть текущую сценку
+        landSituation=-1; //текущее состояние земель, -1 не обработано, 0 - ожидает нажатия, 1 - что-то показано
+        darkScreen=-1;
+        lands = new Vector.<Land>(); //хранилище инфы о землях
+        globalRes = new Vector.<GlobalRes>(); //перечисление типов существующих ресурсов
+        landRes = new Vector.<LandRes>(); //перечисление типов существующих ресурсов
+        problemSituation = new Vector.<ProblemSituation>();
+        buildings = new Vector.<Building>();
+        updates = new Vector.<Modification>();
+        updChange=false; //показатель, что надо заново проверить вид элементов/доступно/недоступно/открыто
+        updInfo=""; //подсказка о том, что должно быть отражено в окошке подсказки $info
+        updIII=-1;
+        updCost=""; //стоимость апдейта
+        update=false; //нажата или нет кнопка апдейта
+        reIncome=false;
+        lag=10;
+        buildTap=-1; //переменная контроля, какое из зданий нажато
+        buildIII=-1;
+        landTap=-1;
+        landInWork=-1; //контроль, какая земля выделена
+        updWaitReady=true;
+        updReShow=false;
+        madeBuilding=-1; //номер IID в векторе subs, здания/земли, где было проведено строительство
+        globalResChange=true;//контролируем, что тип здания на локации был заменён, чтобы очистить список апгрейдов
+        localResChange=true;
+        updateTap=-1;  //сохраняем, какой апдейт выделен игроком в окне покупке апдейта на землю
+        updateMoney=-1;
+        typeOfUpdatePay=-1;
+        availableHeroes = new Vector.<Hero>(); //доступные типы героев
+        currentHeroes = new Vector.<Hero>(); //уже имеющиеся персонажи
+        names = new Vector.<int>(); //храним айдишники имён
+        heroActivities = new Vector.<HeroActivity>();
+        heroRes = new Vector.<HeroRes>();
+        numOfMany=-1; //порядковый номер в SubBuildingMenu, который был нажат
+        numOfSub=-1; //спец параметр, если надо
+        downOfMany=-1; //порядковый номер в SubBuildingMenu, который был зажат
+        heroIIIbuyPanel=-1; //спец переменная, обозначающая, что по этого III будет храниться панель покупки героев
+        heroIII=-1; //спец переменная, обозначающая, что по этого III будет храниться список панель с героями
+        heroChoose=-1; //номер героя который был выделен
+        heroOnTyppe=""; //над каким из игровых объектов отпустили героя
+        heroOnNum=-1;
+        heroStart=false; //при нажатии на панель доступных героев
+        outI=-1; //элемент вышел за границы области определения своего объекта
+        heroActChange=false;
+        numActChange=0;
+        newPosActChange=0;
+        heroPanelClose=false;
+        maxHeroNum=-1; //максимальное количество героев
+        maxHeroActionsNum=-1; //максимальное количество действий для героя
+        cities = new Vector.<City>();
+        getsetX=-1; //координаты, которые можно брать у одного предмета, чтобы выставить их другому
+        getsetY=-1;
+        getsetNowX=250; //координаты, которые можно брать у одного предмета, чтобы выставить их другому
+        getsetNowY=152;
+        cityStart=-1;
+        currentCity=-1; //номер в векторе
+        cityClose=false;
+        cityName=-1;
+        cityPanel=-1;
+        heroFramNumInCity=-1;
+        playerIII=-1; //iii города игрока данного клиента
+        currRelations=0;
+        currPeaceWar=0;
+        status = new Vector.<Status>();
+        tradeTransactions = new Vector.<TradeTransaction>();
+        buyOffer="";
+        sellOffer="";
+        tradeCost = new Vector.<TradeCost>();
+        behAct = new Vector.<BehActivity>();
+        behMenu = new Vector.<BehMenu>();
+        behPos = new Vector.<BehPositioning>();
+        behRes = new Vector.<BehResult>();
+        heroMenuActivity=-1; //необходимость вывести меню для выбора действия героя
+        heroMenuNum=-1;
+        behChoice=0;
+        mess = new Vector.<Message>();
+        needToMakeMenu=false;
+        behPosFromMess=-1;
+        messMenuPanel=-1;
+        messWasTap=-1;
+        clouds = new Vector.<Cloud>();
+        cloudsOut=-1
+        shadowPlane=-1;
+        heroMoveX=0;
+        heroMoveY=0;
+
+        governments = new Vector.<Equiler>();
+        characters = new Vector.<Equiler>();
+        alliances = new Vector.<Alliance>();
+        cityAllianceArmy = false;
+
+        knownCities = new Vector.<int>();
+        known=0;//число известных городов
+        dxKnown=0;
+        specCityPanel=0;
+
+        cityDipPanel=-1;
+
+        heroChooseMemory=-1;
+
+        willSave = new Vector.<Collection>();
+        categoryWillSave=0;
+        currMatrix = new MatrixView();
+
     }
 
     public static function getInstance():Danke

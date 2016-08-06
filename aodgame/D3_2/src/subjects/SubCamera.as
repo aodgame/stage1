@@ -16,9 +16,9 @@ public class SubCamera extends ParentSubject
     private var mx:int=0;
     private var my:int=0;
 
-    public function SubCamera(myXML, pics, el, ii)
+    public function SubCamera(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -126,13 +126,13 @@ public class SubCamera extends ParentSubject
         bit.vertic=0;
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
         weWorkNow=false;
         xx=0;
         yy=0;
 
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
 
         ready=true;
     }

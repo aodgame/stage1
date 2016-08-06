@@ -11,6 +11,8 @@ public class HeroActivity
     public var costTyppe:Vector.<String> = new Vector.<String>();
     public var costNum:Vector.<int> = new Vector.<int>();
 
+    public var timme:int=0;
+
     public function HeroActivity()
     {
     }

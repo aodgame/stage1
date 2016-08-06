@@ -53,6 +53,8 @@ public class ParentSubject
 
     public var neddFram:Boolean=false;
 
+    public var moduleName:String=""; //название модуля, из которого подгружается предмет
+
    /* public function ParentSubject(myXML, pics, i)
     {
 
@@ -139,8 +141,10 @@ public class ParentSubject
         return s;
     }
 
-    protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
+        this.moduleName=moduleName;
+
         bit = Bitte.getInstance();
         atChild=myXML.atChild;
         typpe=myXML.type;

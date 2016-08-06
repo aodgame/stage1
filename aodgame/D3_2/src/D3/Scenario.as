@@ -14,6 +14,7 @@ public class Scenario
     private static var ok2Create:Boolean=false;
 
     private var bit:Bitte;
+    private var dan:Danke;
     private var sub:Subjects;
     private var levering:ScenLoader;
 
@@ -31,6 +32,7 @@ public class Scenario
         if(!ok2Create) throw new Error(this+" is a Singleton. access using getInstance()");
 
         bit = Bitte.getInstance();
+        dan = Danke.getInstance();
         sub=Subjects.getInstance(stage);
 
         levering = new ScenLoader();
@@ -61,9 +63,19 @@ public class Scenario
             levering.levelGo(quest, timmer);
             cheafManager.unwork(sub.sub);
         }
+        if  (bit.delCommand && bit.delScenario)
+        {
+            deleting();
+            bit.delScenario=false;
+        }
+        if  (bit.delCommand && bit.delParameters)
+        {
+            dan.unDanke();
+            bit.delParameters=false;
+        }
         if (bit.nextLevel == 0) //снимаем фильм
         {
-            movie.work(quest);
+            movie.work(quest, timmer);
             cheafManager.work(sub.sub);
             saver.work(sub);
             upDate();
@@ -90,6 +102,23 @@ public class Scenario
             bit.sCurrentTurn++;
             bit.sTimmer=timmer.changeDate();
         }
+    }
+
+    private function deleting():void
+    {
+        var j:int=0;
+        trace("before quest.length="+quest.length);
+        while (j < quest.length)
+        {
+            //trace("sub[j].moduleName="+sub[j].moduleName+"; bit.delModuleName="+bit.delModuleName);
+            if (quest[j].moduleName == bit.delModuleName)
+            {
+                quest.splice(j, 1);
+                j--;
+            }
+            j++;
+        }
+        trace("after quest.length="+quest.length);
     }
 }
 }

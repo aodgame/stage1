@@ -29,10 +29,13 @@
 						
 		private var inReady1:Boolean=false; //переменная, показывающая, что загрузка всех нужных элементов завершена.
 		private var problemInLoad:uint=Stats.ZERO; //переменная, показывающая, была ли загрузка завершена нормально (0) или с ошибками (1)
+
+		public var moduleName:String="";
 		
-		public function PicUno(bio)
+		public function PicUno(bio, cid)
 		{
 			bit = Bitte.getInstance();
+			moduleName=cid;
 			//trace(bio);
 			id=bio.@id; //присваиваем индекс изображения
 			picName=bio;
@@ -58,7 +61,12 @@
 			{
 				// получаем ApplicationDomain у загруженной флешки
 				appDomain = ldr1.contentLoaderInfo.applicationDomain;
-				inReady1=true; //подтверждаем, что базовая обработка предмета так или иначе завершена				
+				inReady1=true; //подтверждаем, что базовая обработка предмета так или иначе завершена
+				ldr1.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded1);
+				ldr1.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS, progress1);
+				ldr1.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
+				ldr1.contentLoaderInfo.removeEventListener (IOErrorEvent.IO_ERROR, onError);
+
 			}
 			function progress1(event:Event):void
 			{
@@ -67,6 +75,10 @@
 			function onError(event:Event):void
 			{
 				forced_end_load();
+				ldr1.contentLoaderInfo.removeEventListener(Event.COMPLETE, loaded1);
+				ldr1.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS, progress1);
+				ldr1.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, onError);
+				ldr1.contentLoaderInfo.removeEventListener (IOErrorEvent.IO_ERROR, onError);
 			}
 		}
 		

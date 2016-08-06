@@ -17,6 +17,8 @@ public class Hero
 
     public var needTyppe:Vector.<String> = new Vector.<String>();
     public var needNum:Vector.<int> = new Vector.<int>();
+    public var needX:Vector.<int> = new Vector.<int>(); //сохраняем координаты места, над которыми было произведено событие
+    public var needY:Vector.<int> = new Vector.<int>();
 
     public var heroResTyppe:Vector.<String> = new Vector.<String>();
     public var heroResMin:Vector.<int> = new Vector.<int>();

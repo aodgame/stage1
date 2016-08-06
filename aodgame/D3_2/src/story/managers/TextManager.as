@@ -5,8 +5,10 @@ package story.managers
 {
 import collections.common.Hero;
 import collections.inWorld.TradeTransaction;
-
 import D3.Bitte;
+
+import org.osmf.utils.OSMFStrings;
+
 import story.Danke;
 
 public class TextManager
@@ -23,13 +25,13 @@ public class TextManager
         i=0;
     }
 
-    public function work(el)
+    public function work(el, sub)
     {
         for (i=0; i<el.length; i++)
         {
             if (el[i].typeOfElement=="txt")
             {
-                texter(el[i], i);
+                texter(el[i], i, sub);
             }
         }
     }
@@ -42,11 +44,31 @@ public class TextManager
             {
                 el.txt=bit.texto[j].txt[k];
                 el.pic.text=bit.texto[j].txt[k];
-                //kd++;
                 return 1;
             }
         }
         return 0;
+    }
+
+    private function mediumChoicer(el, num):String
+    {
+        var s:String="";
+        for (var k:int=0; k<bit.texto.length; k++)
+        {
+            if (bit.texto[k].tid==num)
+            {
+                for (var m:int=0; m<bit.texto[k].mode.length; m++)
+                {
+                    if (bit.textMode==bit.texto[k].mode[m])
+                    {
+                        s=bit.texto[k].txt[m];
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        return s;
     }
 
     private function harderChoiser(el, j):String
@@ -61,7 +83,34 @@ public class TextManager
         return "";
     }
 
-    private function texter(el, num):void
+    private function findBehMenu():int
+    {
+        var z:int=0;
+        for (var j:int = 0; j < dan.behMenu.length; j++)
+        {
+            if (dan.behMenu[j].iii==dan.heroMenuActivity)
+            {
+                trace(dan.behMenu[j].iii);
+                z=j;
+                trace("beh menu z=="+z);
+                break;
+            }
+        }
+        return z;
+    }
+
+    private function letCheck(el, t):int
+    {
+        if (t!=el.txt)
+        {
+            el.txt=t;
+            el.pic.text=t;
+            return 1;
+        }
+        return 0;
+    }
+
+    private function texter(el, num, sub):void
     {
         var kd:int=0;
 
@@ -123,6 +172,44 @@ public class TextManager
             }
         }
 
+        if (el.tid=="$actInfo" && dan.heroMenuActivity!=-1)
+        {
+            var num:int=0;
+            var t:String="";
+            num=findBehMenu();
+            for (var j:int = 0; j < bit.texto.length; j++)
+            {
+                if (dan.behMenu[num].txt == String(bit.texto[j].tid))
+                {
+                    t += harderChoiser(el, j);
+                    break;
+                }
+            }
+            kd+=letCheck(el, t);
+        }
+        if (el.tid.substr(0,5)=="$abtn" && dan.heroMenuActivity!=-1)
+        {
+            var num:int=0;
+            var t:String="";
+            var n:int=int(el.tid.substr(5,1))-1;
+            trace("n="+n);
+            if (n>=dan.heroMenuNum)
+            {
+                return;
+            }
+            num=findBehMenu();
+            //trace("dan.behMenu.length="+dan.behMenu.length);
+            for (var j:int = 0; j < bit.texto.length; j++)
+            {
+                if (dan.behMenu[num].choicerTxt.length>0 && dan.behMenu[num].choicerTxt[n] == String(bit.texto[j].tid))
+                {
+                    t += harderChoiser(el, j);
+                    break;
+                }
+            }
+            kd+=letCheck(el, t);
+        }
+
         if (el.tid=="$timer" && el.txt!=String(bit.sTimmer))
         {
             el.txt=bit.sTimmer;
@@ -139,12 +226,7 @@ public class TextManager
                 v = v*10 + int(el.tid.charAt(d));
                 d++;
             }
-            if (el.txt != String(dan.globalRes[v].amount))
-            {
-                el.txt = dan.globalRes[v].amount;
-                el.pic.text=el.txt;
-                kd++;
-            }
+            kd+=letCheck(el, String(dan.globalRes[v].amount));
         }
 
         if (dan.heroChoose>0 && el.tid.length>6 && el.tid.substr(0, 6) == "$hAbil") //скилы игрока
@@ -183,17 +265,13 @@ public class TextManager
                     }
                 }
             }
-            if (sum!=0 && String(sum)!=el.txt)
+            if (sum!=0)
             {
-                el.txt=sum;
-                el.pic.text=el.txt;
-                kd++;
+                kd+=letCheck(el, String(sum));
             }
-            if (sum==0 && el.txt!="")
+            if (sum==0)
             {
-                el.txt="";
-                el.pic.text="";
-                kd++;
+                kd+=letCheck(el, "");
             }
         }
         //$hCost1_1 //номер действия, номер требуемого ресурса
@@ -226,20 +304,13 @@ public class TextManager
                         break;
                     }
                 }
-                if (c==0 && el.txt!="")
+                if (c==0)
                 {
-                    el.txt="";
-                    el.pic.text=el.txt;
-                    kd++;
+                    kd+=letCheck(el, "");
                 }
             } else
             {
-                if (el.txt!="")
-                {
-                    el.txt="";
-                    el.pic.text=el.txt;
-                    kd++;
-                }
+                kd+=letCheck(el, "");
             }
         }
 
@@ -304,6 +375,216 @@ public class TextManager
                         }
                     }
                     break;
+                }
+            }
+        }
+
+        if (el.tid == "$cityGovern") //тип правления в городе и характер его граждан
+        {
+            if (dan.currentCity!=-1)
+            {
+                /*trace("name="+dan.cities[dan.currentCity].name);
+                trace("dan.cities[dan.currentCity].characterTxt="+dan.cities[dan.currentCity].characterTxt);
+                trace("dan.cities[dan.currentCity].governmentTxt="+dan.cities[dan.currentCity].governmentTxt);*/
+                var car:int=-1;
+                var gov:int=-1;
+                for (var m:int = 0; m < bit.texto.length; m++)
+                {
+                    if (bit.texto[m].tid==dan.cities[dan.currentCity].characterTxt)
+                    {
+                        car=m;
+                    }
+                    if (bit.texto[m].tid==dan.cities[dan.currentCity].governmentTxt)
+                    {
+                        gov=m;
+                    }
+                    if (car!=-1 && gov!=-1)
+                    {
+                        break;
+                    }
+                }
+                if (car!=-1 && gov!=-1)
+                {
+                    el.txt = harderChoiser(el, gov);
+                    el.txt += " (" + harderChoiser(el, car) + ")";
+                    if (el.pic.text != el.txt)
+                    {
+                        el.pic.text = el.txt;
+                        kd++;
+                    }
+                }
+            }
+        }
+        if (el.tid.substr(0, 13) == "$cityAlliance") //альянс, в который входит текущий город
+        {
+            /*trace("==city==");
+            trace("dan.cityName="+dan.cityName);
+            trace("dan.currentCity="+dan.currentCity);*/
+            if (dan.currentCity>=0)
+            {
+                var s:Vector.<String> = new Vector.<String>();
+                var n:int=-1;
+                for (var m:int=13; m<el.tid.length; m++)
+                {
+                    if (el.tid.substr(m, 1)==":")
+                    {
+                        break;
+                    }
+                    if (el.tid.substr(m, 1)==",")
+                    {
+                        s.push(new String());
+                        n++;
+                    } else
+                    {
+                        s[n]+=el.tid.substr(m, 1);
+                    }
+                }
+
+                var lid:Boolean=false;
+                var cityNum:int=dan.cities[dan.currentCity].iii;
+                var city:String=dan.cities[dan.currentCity].name;
+                if (dan.cities[dan.currentCity].alliance==-1)
+                {
+                    lid = true;
+                    city=dan.cities[dan.currentCity].name;
+                    cityNum=1;//int(dan.cities[dan.currentCity].name);
+                } else
+                {
+                    for (var jj:int = 0; jj < dan.alliances.length; jj++)
+                    {
+                        if (dan.alliances[jj].iii == dan.cities[dan.currentCity].alliance)
+                        {
+                            if (dan.alliances[jj].leader == cityNum) //если герой лидер альянса, то дальнейший поиск не нужен
+                            {
+                                lid = true;
+                            }
+                             else
+                            {
+                                for (var g:int=0; g<dan.cities.length; g++)
+                                {
+                                    if (dan.cities[g].iii==dan.alliances[jj].leader)
+                                    {
+                                        city=String(dan.cities[g].name);
+                                        break;
+                                    }
+                                }
+                            }
+                            cityNum = dan.alliances[jj].members.length;
+                            break;
+                        }
+                    }
+                }
+                el.txt = mediumChoicer(el, s[0]) +" "; //союз города
+                el.txt+= mediumChoicer(el, city) +" "; //имя города
+                el.txt+= " (" + mediumChoicer(el, s[1]); //участник
+                el.txt+= " " + String(cityNum); //число участников
+                if (s.length>2 && lid)
+                {
+                    el.txt+=", "+mediumChoicer(el, s[2]); //лидер
+                }
+                el.txt+=")";
+                if (el.txt!=el.pic.text)
+                {
+                    el.pic.text = el.txt;
+                    kd++;
+                }
+            }
+        }
+        if (el.tid == "$cityArmy") //сухопутная армия города
+        {
+            if (dan.currentCity==-1)
+            {
+                return;
+            }
+            if (!dan.cityAllianceArmy || dan.cities[dan.currentCity].alliance==-1)
+            {
+                el.txt=dan.cities[dan.currentCity].army;
+            } else
+            {
+                trace("alliance="+dan.cities[dan.currentCity].alliance);
+                var n:int=0;
+                var allNum:int=-1;
+                for (var m:int=0; m<dan.alliances.length; m++)
+                {
+                    if (dan.alliances[m].iii==dan.cities[dan.currentCity].alliance)
+                    {
+                        allNum=m;
+                        trace("allNum="+allNum);
+                        break;
+                    }
+                }
+                for (var k:int=0; k<dan.cities.length; k++)
+                {
+                    if (dan.cities[k].alliance==dan.alliances[allNum].iii)
+                    {
+                        n+=dan.cities[k].army;
+                    }
+                }
+                el.txt=n;
+            }
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+        if (el.tid == "$cityFleet") //флот города
+        {
+            if (dan.currentCity==-1)
+            {
+                return;
+            }
+            if (!dan.cityAllianceArmy || dan.cities[dan.currentCity].alliance==-1)
+            {
+                el.txt=dan.cities[dan.currentCity].fleet;
+            } else
+            {
+                var n:int=0;
+                var allNum:int=-1;
+                for (var m:int=0; m<dan.alliances.length; m++)
+                {
+                    if (dan.alliances[m].iii==dan.cities[dan.currentCity].alliance)
+                    {
+                        allNum=m;
+                        break;
+                    }
+                }
+                for (var k:int=0; k<dan.cities.length; k++)
+                {
+                    if (dan.cities[k].alliance==dan.alliances[allNum].iii)
+                    {
+                        n+=dan.cities[k].fleet;
+                    }
+                }
+                el.txt=n;
+            }
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
+        if (el.tid.substr(0, 9) == "$cityName") //альянс, в который входит текущий город
+        {
+            var n:int=int(el.tid.substr(9, 1));
+            if (el.tid.length==11)
+            {
+                n = n*10 + int(el.tid.substr(10, 1));
+            }
+            n-=1
+            if (n<dan.knownCities.length)
+            {
+                var cnum:int = int(dan.cities[dan.knownCities[n]].name);
+                el.txt = mediumChoicer(el, cnum);
+                if (el.pic.text != el.txt)
+                {
+                   /* for (var z:int=0; z<dan.cities[dan.knownCities[n]].peacewarRelations.length; z++)
+                    {
+                        trace("peacewarRelations=" + dan.cities[dan.knownCities[n]].peacewarRelations[z]);
+                    }*/
+                    el.pic.text = el.txt;
+                    kd++;
                 }
             }
         }
@@ -392,23 +673,13 @@ public class TextManager
                 v=v*10+int(el.tid.charAt(7));
             }
             v--;
-            if (el.txt!=String(dan.globalRes[v].presenceAmount))
-            {
-                el.txt=dan.globalRes[v].presenceAmount;
-                el.pic.text=el.txt;
-                kd++;
-            }
+            kd+=letCheck(el, String(dan.globalRes[v].presenceAmount));
         }
 
         if (el.tid.length>4 && el.tid.substr(0,4) == "$fre") //наличие ресурса для использования
         {
             var v:int=int(el.tid.charAt(4));
-            if (el.txt!=String(dan.globalRes[v].freeAmount))
-            {
-                el.txt=dan.globalRes[v].freeAmount;
-                el.pic.text=el.txt;
-                kd++;
-            }
+            kd+=letCheck(el, String(dan.globalRes[v].freeAmount));
         }
 
         if (el.tid.length>4 && el.tid.substr(0,4) == "$bui")  //рес для строительства !! не учитывает числа>10!!!
@@ -452,11 +723,7 @@ public class TextManager
             }
             if (nm==-1)
             {
-                if (el.txt!="")
-                {
-                    el.txt="";
-                    el.pic.text="";
-                }
+                kd+=letCheck(el, "");
                 return;
             }
             for (var j:int=0; j<bit.texto.length; j++)
@@ -475,7 +742,6 @@ public class TextManager
                 var t:String="(";
                 for (var j:int = 0; j < bit.texto.length; j++)
                 {
-
                     if (dan.currentHeroes[dan.heroChoose - 1].txt == bit.texto[j].tid)
                     {
                         t += harderChoiser(el, j);
@@ -483,13 +749,7 @@ public class TextManager
                     }
                 }
                 t+=")";
-                if (t!=el.txt)
-                {
-
-                    el.txt=t;
-                    el.pic.text=t;
-                    kd++;
-                }
+                kd+=letCheck(el, t);
             }
         }
         if (el.tid.substr(0,7) == "$hCityN")  //имя текущего героя
@@ -521,11 +781,7 @@ public class TextManager
             }
             if (nm==-1)
             {
-                if (el.txt!="")
-                {
-                    el.txt="";
-                    el.pic.text="";
-                }
+                kd+=letCheck(el, "");
                 return;
             }
             for (var j:int=0; j<bit.texto.length; j++)
@@ -547,6 +803,7 @@ public class TextManager
                 buildingNum = buildingNum*10 + int(el.tid.charAt(d));
                 d++;
             }
+            //kd+=letCheck(el, dan.buildings[buildingNum].timeToBuild);
             el.txt = dan.buildings[buildingNum].timeToBuild;
             el.pic.text = el.txt;
             kd++;
@@ -622,6 +879,51 @@ public class TextManager
             kd++;
         }
 
+        if (el.tid.substr(0, 9) == "$timeTurn") //количество ходов, прошедших с начала игры
+        {
+            var nn:int=el.tid.substr(9, 1);
+            if (nn==0)
+            {
+                el.txt="0";
+                if (el.txt!=el.pic.text)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            } else
+            {
+                var tt:int=(dan.willSave[0].num.length-1)/9*(nn);
+                el.txt=tt;
+                if (el.txt!=el.pic.text)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            }
+        }
+
+        if (el.tid.substr(0, 7) == "$reuNum") //количество ресурса относительно максимального значения
+        {
+            var nn:int=el.tid.substr(7, 1);
+            var category:int=el.tid.substr(9, 1);
+            var mx:int=0;
+            for (var jj:int=0; jj<dan.willSave.length; jj++)
+            {
+                if (dan.willSave[jj].category==category && dan.willSave[jj].max>mx)
+                {
+                    mx=dan.willSave[jj].max;
+                }
+            }
+            var tt:int=mx/4*(5-nn);
+            el.txt=tt;
+            if (el.txt!=el.pic.text)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+
+        }
+
         if (kd==0)
         {
             for (var j:int=0; j<bit.texto.length; j++)
@@ -638,6 +940,7 @@ public class TextManager
             el.makeFormat();
             kd=0;
         }
+
     }
 }
 }

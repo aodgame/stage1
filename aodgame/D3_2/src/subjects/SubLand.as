@@ -32,9 +32,9 @@ public class SubLand extends Parent2Subject
 
     private var dan:Danke;
 
-    public function SubLand(myXML, pics, el, ii)
+    public function SubLand(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -197,9 +197,9 @@ public class SubLand extends Parent2Subject
         }
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
         dan = Danke.getInstance();
         land=-1;
 

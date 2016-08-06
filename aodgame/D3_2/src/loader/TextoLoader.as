@@ -81,6 +81,7 @@ public class TextoLoader extends ParentLoader
             {
                 bit.texto[bit.texto.length - 1].txt.push(new String(myXML.texto[i].txt[j]));
                 bit.texto[bit.texto.length - 1].mode.push(new String(myXML.texto[i].txt[j].@mode));
+                bit.texto[bit.texto.length - 1].moduleName=myXML.cid;
             }
         }
         level_go+=Stats.ONE;

@@ -19,6 +19,10 @@ public class CityManager
 
     private var cityPanelIdii:int=-1;
 
+    private var cont:int=-1;//переменная проверяет, были ли установлены соотношения правительств/характеров граждан к городам
+
+    private var additionalCityPanel:int=-1; //номер вспомогательной панели города
+
     public function CityManager()
     {
         bit = Bitte.getInstance();
@@ -27,6 +31,8 @@ public class CityManager
 
     public function work(sub):void
     {
+        contentIt();
+
         if (bit.mouseParClick == dan.cityStart)// город запущен
         {
             if (cityIDII==-1)
@@ -41,6 +47,7 @@ public class CityManager
                 }
             }
             cityStart(sub);
+            cityAdditionalPanel(sub);
         }
 
         if (dan.cityClose) //город закрыт
@@ -64,6 +71,105 @@ public class CityManager
         {
             sub[cityPanelIdii].fram[dan.heroFramNumInCity-1]=1;
             sub[cityPanelIdii].neddFram=true;
+        }
+    }
+
+    private function cityAdditionalPanel(sub) //проверяем вспомогательную панель для быстрого перехода между городами
+    {
+        if (dan.knownCities.length>dan.known) //был добавлен новый город в список
+        {
+            if (additionalCityPanel==-1) //мы не знаем, где находится предмет со вспомогательной панелью
+            {
+                for (i = 0; i < sub.length; i++)
+                {
+                    if (sub[i].iii==dan.specCityPanel)
+                    {
+                        additionalCityPanel=i;
+
+                        dan.numOfElemsCityPanel=sub[i].numOfEl.length/4; //количество логических блоков - 4
+                        break;
+                    }
+                }
+                for (i=0; i<sub[additionalCityPanel].visOne.length; i++)
+                {
+                    sub[additionalCityPanel].visOne[i]=0;
+                    sub[additionalCityPanel].neddFram=true;
+                }
+            }
+            //trace("dan.dxKnown="+dan.dxKnown)
+            while (dan.known<dan.knownCities.length)
+            {
+                sub[additionalCityPanel].subX += dan.dxKnown;
+                sub[additionalCityPanel].neddFram=true;
+                dan.known++;
+            }
+            /*trace(" sub[additionalCityPanel].subX="+ sub[additionalCityPanel].subX);
+            trace("additionalCityPanel="+additionalCityPanel);
+            trace("dan.numOfElemsCityPanel="+dan.numOfElemsCityPanel);
+            trace("dan.known="+dan.known);*/
+            for (i=0; i<sub[additionalCityPanel].visOne.length; i++)
+            {
+                if (i>=0 && i<dan.numOfElemsCityPanel && i<dan.known)
+                {
+                    sub[additionalCityPanel].visOne[i]=1;
+                }
+                if (i-dan.numOfElemsCityPanel>=0 && i<dan.numOfElemsCityPanel*2 && i-dan.numOfElemsCityPanel<dan.known)
+                {
+                    sub[additionalCityPanel].visOne[i]=1;
+                }
+                if (i-dan.numOfElemsCityPanel*2>=0 && i<dan.numOfElemsCityPanel*3 && i-dan.numOfElemsCityPanel*2<dan.known)
+                {
+                    sub[additionalCityPanel].visOne[i]=1;
+                }
+                if (i-dan.numOfElemsCityPanel*3>=0 && i<dan.numOfElemsCityPanel*4 && i-dan.numOfElemsCityPanel*3<dan.known)
+                {
+                    sub[additionalCityPanel].visOne[i]=1;
+                }
+            }
+        }
+
+        if (bit.mouseParClick == dan.cityStart && dan.known>0)
+        {
+            trace("here in additional panel");
+            for (i=0; i<dan.knownCities.length; i++)
+            {
+                var ii:int=dan.cities[dan.knownCities[i]].iii;
+                var rel:int=0;
+                for (var j:int=0;j<dan.cities.length; j++)
+                {
+                    if (dan.cities[j].iii==ii)
+                    {
+                        sub[additionalCityPanel].fram[dan.numOfElemsCityPanel + i] = dan.cities[j].peacewarRelations[0];
+                        break;
+                    }
+                }
+            }
+            sub[additionalCityPanel].neddFram=true;
+        }
+    }
+
+    private function contentIt():void
+    {
+        if (cont==-1 && dan.characters.length>0 && dan.governments.length>0)
+        {
+            cont=0;
+            for (i=0; i<dan.cities.length; i++)
+            {
+                for (var j:int=0; j<dan.characters.length; j++)
+                {
+                    if (dan.cities[i].character==dan.characters[j].fint)
+                    {
+                        dan.cities[i].characterTxt=dan.characters[j].sint;
+                    }
+                }
+                for (var j:int=0; j<dan.governments.length; j++)
+                {
+                    if (dan.cities[i].government==dan.governments[j].fint)
+                    {
+                        dan.cities[i].governmentTxt=dan.governments[j].sint;
+                    }
+                }
+            }
         }
     }
 
@@ -142,8 +248,11 @@ public class CityManager
                     {
                         for (var j:int=0; j<dan.cities[i].peacewarIII.length; j++) //проходим по отношениям этого города
                         {
-                            if (dan.cities[i].peacewarIII[j]== dan.cities[dan.currentCity].iii) //пока не нашли
+                            if (dan.cities[i].peacewarIII[j] == dan.cities[dan.currentCity].iii) //пока не нашли
                             {
+                                trace("dan.cities[i].name="+dan.cities[i].name);
+                                trace("dan.cities[i].peacewarIII[j]="+dan.cities[i].peacewarIII[j]);
+                                trace("dan.cities[i].peacewarRelations[j]="+dan.cities[i].peacewarRelations[j]);
                                 dan.currPeaceWar = dan.cities[i].peacewar[j]; //устанавливаем, мир между ними или война
                                 dan.currRelations=dan.cities[i].peacewarRelations[j]; //а также уровень отношений
                             }

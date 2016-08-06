@@ -13,9 +13,9 @@ public class SubViewGround extends ParentSubject
 
     private var dan:Danke;
 
-    public function SubViewGround(myXML, pics, el, ii)
+    public function SubViewGround(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -60,9 +60,9 @@ public class SubViewGround extends ParentSubject
         }
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
-        super.end_load(myXML, ii, pics, el);
+        super.end_load(myXML, ii, pics, el, moduleName);
 
         dan = Danke.getInstance();
 

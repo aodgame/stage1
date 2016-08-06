@@ -12,12 +12,12 @@ public class ElemMC  extends ParentElement
     private var ww:int;
     private var hh:int;
 
-    public function ElemMC(pics, picAddr, ii, typpe)
+    public function ElemMC(pics, picAddr, ii, typpe, moduleName, i)
     {
-        creation(pics, picAddr, ii, typpe);
+        creation(pics, picAddr, ii, typpe, moduleName, i);
     }
 
-    override public function parse()
+    override public function parse():void
     {
         if (tid=="unselect")
         {
@@ -47,22 +47,33 @@ public class ElemMC  extends ParentElement
 
     override public function fate(i):int
     {
-        //trace("f");
-        //pic.buttonMode = pic.mouseEnabled = pic.useHandCursor = true;
-        pic.mouseChildren = false;
-        pic.addEventListener(MouseEvent.CLICK, clickClick);
-        pic.addEventListener(MouseEvent.MOUSE_DOWN, downClick);
-        pic.addEventListener(MouseEvent.MOUSE_OVER, overClick);
-        pic.addEventListener(MouseEvent.MOUSE_OUT, outClick);
-        pic.addEventListener(MouseEvent.MOUSE_UP, upClick);
-
+        if (i==1)
+        {
+            //trace("f");
+            //pic.buttonMode = pic.mouseEnabled = pic.useHandCursor = true;
+            pic.mouseChildren = false;
+            pic.addEventListener(MouseEvent.CLICK, clickClick);
+            pic.addEventListener(MouseEvent.MOUSE_DOWN, downClick);
+            pic.addEventListener(MouseEvent.MOUSE_OVER, overClick);
+            pic.addEventListener(MouseEvent.MOUSE_OUT, outClick);
+            pic.addEventListener(MouseEvent.MOUSE_UP, upClick);
+        }
+        if (i==0)
+        {
+            pic.removeEventListener(MouseEvent.CLICK, clickClick);
+            pic.removeEventListener(MouseEvent.MOUSE_DOWN, downClick);
+            pic.removeEventListener(MouseEvent.MOUSE_OVER, overClick);
+            pic.removeEventListener(MouseEvent.MOUSE_OUT, outClick);
+            pic.removeEventListener(MouseEvent.MOUSE_UP, upClick);
+            removeChild(pic);
+        }
         return i;
     }
 
     private function scalaizing(z):void
     {
-        /*trace("scalazing="+parnt);
-        trace("specInfo.length="+specInfo.length);
+        trace("scalazing="+parnt);
+        /*trace("specInfo.length="+specInfo.length);
         trace("specInfo.substr(0,3)="+specInfo.substr(0,3));
         trace(ww+":"+hh+":"+z);*/
         if (specInfo.length>=3 && specInfo.substr(0,3)=="btn")
@@ -101,12 +112,15 @@ public class ElemMC  extends ParentElement
     }
     private function overClick(event:MouseEvent):void
     {
-        //trace("timmmme");
-        scalaizing(1.15);
-        Mouse.cursor = MouseCursor.BUTTON;
-        //trace("overClick="+iii);
-        bit.mouseOver=iii;
-        bit.mouseParOver=parnt;
+        if (pic.visible)
+        {
+            //trace("timmmme");
+            scalaizing(1.15);
+            Mouse.cursor = MouseCursor.BUTTON;
+            //trace("overClick="+iii);
+            bit.mouseOver = iii;
+            bit.mouseParOver = parnt;
+        }
     }
     private function outClick(event:MouseEvent):void
     {
@@ -117,9 +131,9 @@ public class ElemMC  extends ParentElement
         bit.mouseParOut=parnt;
     }
 
-    override public function creation(pics, picAddr, ii, typpe):void
+    override public function creation(pics, picAddr, ii, typpe, moduleName, i):void
     {
-        super.creation(pics, picAddr, ii, typpe);
+        super.creation(pics, picAddr, ii, typpe, moduleName, i);
         pic=pics.takeYourMovie(picAddr);
         //trace("picAddr="+picAddr);
         pic.x=0;

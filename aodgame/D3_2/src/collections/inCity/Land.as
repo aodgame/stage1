@@ -75,7 +75,7 @@ public class Land
                 }
             }
         }
-        if (depends.length>0 && num==depends.length)
+        if (depends.length>0 && num==depends.length && (building.workStopProblem=="" || building.workStopProblem=="build" || building.workStopProblem=="no" || building.workStopProblem=="wait"))
         {
             building.canWork=false;
             building.timeToBuild=-1;
@@ -84,6 +84,7 @@ public class Land
         {
             if (building.workStopProblem=="wait")
             {
+                trace("building.workStopProblem==wait");
                 building.canWork=true;
                 building.timeToBuild=0;
                 building.workStopProblem="no";

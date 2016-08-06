@@ -4,6 +4,9 @@
 package story
 {
 import D3.*;
+
+import collections.common.Message;
+
 import subjects.*;
 import collections.Stats;
 
@@ -25,7 +28,7 @@ public class Movie
         subs = Subjects.getInstance(stage);
     }
 
-    public function work (quest):void
+    public function work (quest, timmer):void
     {
         //проверяем все квесты
         for (i=0; i<quest.length; i++)
@@ -37,7 +40,7 @@ public class Movie
                    // trace("qid="+quest[i].qid);
                     if (!quest[i].rready)
                     {
-                       action (quest[i]); //процедура проверки выполнения квестов
+                       action (quest[i], timmer); //процедура проверки выполнения квестов
                     }
                     if (quest[i].rready)
                     {
@@ -48,7 +51,7 @@ public class Movie
         }
     }
 
-    private function action (quest):void //процедура проверки выполнения квестов
+    private function action (quest, timmer):void //процедура проверки выполнения квестов
     {
         k=0;
         j=0;
@@ -70,7 +73,7 @@ public class Movie
             }
             if (quest.action[j].typpe=="weAre") //мы ва нужной комнате
             {
-                if (bit.curRoom==quest.action[j].room || quest.action[j].room==0)
+                if (bit.curRoom==int(quest.action[j].room) || int(quest.action[j].room)==0)
                 {
                     k+=1;
                 }
@@ -80,6 +83,35 @@ public class Movie
                 if (dan.nextTurn==quest.action[j].num)
                 {
                     k+=1;
+                }
+            }
+
+            if (quest.action[j].typpe=="resEnd") //закончился ресурс
+            {
+                for (var y:int=0; y<dan.globalRes.length; y++)
+                {
+                    if (dan.globalRes[y].typpe==quest.action[j].num)
+                    {
+                        if (dan.globalRes[y].amount==dan.globalRes[y].min)
+                        {
+                            k += 1;
+                        }
+                        break;
+                    }
+                }
+            }
+
+            if (quest.action[j].typpe=="curDate") //точная дата, в которую должно произойти событие
+            {
+                //trace("timmer.curElder()="+timmer.curElder());
+                //trace("timmer.curYounger()="+timmer.curYounger());
+                if (
+                        timmer.curElder()==int(quest.action[j].first)
+                        &&
+                        (String(quest.action[j].second)=="no" || String(quest.action[j].second)==timmer.curYounger())
+                    )
+                {
+                    k += 1;
                 }
             }
 
@@ -150,7 +182,7 @@ public class Movie
             {
                 for (var y:int=0; y<dan.globalRes.length; y++)
                 {
-                    if (dan.globalRes[y].typpe==quest.action[j].tip)
+                    if (dan.globalRes[y].typpe==String(quest.action[j].tip))
                     {
                         if (dan.globalRes[y].amount<quest.action[j].level)
                         {
@@ -169,7 +201,7 @@ public class Movie
 
                 for (var y:int=0; y<dan.globalRes.length; y++)
                 {
-                    if (dan.globalRes[y].typpe==quest.action[j].tip)
+                    if (dan.globalRes[y].typpe==String(quest.action[j].tip))
                     {
                         if (dan.globalRes[y].amount>quest.action[j].level)
                         {
@@ -188,6 +220,7 @@ public class Movie
             {
                 if (dan.numOfMany==quest.action[j].iii)
                 {
+                    //trace("dan.numOfMany="+dan.numOfMany);
                     k += 1;
                 }
             }
@@ -197,6 +230,21 @@ public class Movie
                 if (bit.mouseParDown==quest.action[j].iii)
                 {
                     k += 1;
+                }
+            }
+
+            if (quest.action[j].typpe == "heroMenuActivity")  //данная переменная активна
+            {
+                if (dan.heroMenuActivity!=-1 && dan.heroMenuNum!=-1)
+                {
+                    trace("dan.heroMenuActivity should act");
+                    trace(dan.heroMenuNum+"P:P:"+quest.action[j].iii);
+                    if (dan.heroMenuNum==quest.action[j].iii)
+                    {
+                        trace("true="+quest.qid);
+                        dan.heroMenuNum=-1;
+                        k += 1;
+                    }
                 }
             }
 
@@ -218,6 +266,14 @@ public class Movie
                             break;
                         }
                     }
+                }
+            }
+
+            if (quest.action[j].typpe == "behChoice")  //переменная dan.behChoice!=0
+            {
+                if (dan.behChoice!=0)
+                {
+                    k += 1;
                 }
             }
 
@@ -269,7 +325,7 @@ public class Movie
             if (quest[i].effect[j].typpe=="flyTo") ////переходим в комнату
             {
                 bit.prevRoom=bit.curRoom;
-                bit.curRoom=quest[i].effect[j].room;
+                bit.curRoom=int(quest[i].effect[j].room);
             }
             if (quest[i].effect[j].typpe=="flyToPlane") ////переходим на слой
             {
@@ -280,8 +336,8 @@ public class Movie
             {
                 trace("begin load");
                 bit.scenPath=quest[i].effect[j].scen;// prelScenaries.xml";
-                bit.subPath=quest[i].effect[j].sub;//prelSubjects.xml";
-                bit.textoPath=quest[i].effect[j].texto;//textoSubjects.xml";
+                bit.subPath=String(quest[i].effect[j].sub);//prelSubjects.xml";
+                bit.textoPath=String(quest[i].effect[j].texto);//textoSubjects.xml";
                 bit.nextLevel=Stats.THREE;
                 bit.wait_scenario=true;
                 bit.wait_subjects=true;
@@ -298,7 +354,7 @@ public class Movie
                 t = findSub(quest[i].effect[j].iii);
                 if (t!=-1)
                 {
-                    subs.sub[t].weAre = quest[i].effect[j].room;
+                    subs.sub[t].weAre = int(quest[i].effect[j].room);
                 }
             }
             if (quest[i].effect[j].typpe=="buttonRepos")
@@ -314,7 +370,7 @@ public class Movie
             if (quest[i].effect[j].typpe=="resChoose") //выбран рес
             {
                 trace("resChoose effect");
-                bit.underRes=quest[i].effect[j].tip;
+                bit.underRes=String(quest[i].effect[j].tip);
                 trace("pre bit.underRes="+bit.underRes);
             }
 
@@ -348,7 +404,7 @@ public class Movie
                     dan.lands[land].changePics(magicNumber);
                 }
                 trace("now close");
-                bit.underOne=-1;
+
                 bit.whatUnderOne=-1;
                 bit.underRes="";
             }
@@ -397,7 +453,7 @@ public class Movie
 
             if (quest[i].effect[j].typpe == "darken")
             {
-                if (quest[i].effect[j].mode=="off")
+                if (String(quest[i].effect[j].mode)=="off")
                 {
                     dan.darkScreen=4;
                 }
@@ -410,7 +466,7 @@ public class Movie
                 {
                     if (subs.sub[find_id].iii==quest[i].effect[j].iii)
                     {
-                        //trace("vis on="+quest[i].effect[j].iii);
+                        trace("vis on="+quest[i].effect[j].iii);
                         //trace("dan.darkScreen="+dan.darkScreen);
                         subs.sub[find_id].vis = 1;
                         break;
@@ -460,10 +516,12 @@ public class Movie
 
             if (quest[i].effect[j].typpe == "simpleVis")
             {
+
                 for (k=0; k<subs.sub.length; k++ )
                 {
                     if (subs.sub[k].iii == quest[i].effect[j].iii)
                     {
+                        trace("subs.sub[k].vis="+subs.sub[k].vis);
                         if (subs.sub[k].vis == 1)
                         {
                             subs.sub[k].vis = 0;
@@ -503,7 +561,7 @@ public class Movie
                             nn = Math.random() * dan.lands.length;
                             if (dan.lands[nn].building.workStopProblem=="")
                             {
-                                dan.lands[nn].building.workStopProblem=quest[i].effect[j].tip;
+                                dan.lands[nn].building.workStopProblem=String(quest[i].effect[j].tip);
                             } else
                             {
                                 nn=-1;
@@ -520,7 +578,7 @@ public class Movie
                         dan.lands[nn].building.timeToBuild=int(quest[i].effect[j].timme);
                     }
                     dan.lands[nn].building.canWork = false;
-                    dan.lands[nn].building.workStopProblem = quest[i].effect[j].tip;
+                    dan.lands[nn].building.workStopProblem = String(quest[i].effect[j].tip);
                     dan.madeBuilding = -1;
                 }
             }
@@ -541,7 +599,7 @@ public class Movie
             }
             if (quest[i].effect[j].typpe == "buyUpdate")
             { //отплата приобретения апдейта на землю/здание в виде ресурса по его номеру в массиве
-                dan.typeOfUpdatePay=quest[i].effect[j].res;
+                dan.typeOfUpdatePay=int(quest[i].effect[j].res);
                 dan.reIncome=true;
                 dan.lag=10;
             }
@@ -563,11 +621,44 @@ public class Movie
             {
                 for (var zz:int = 0; zz < dan.globalRes.length; zz++)
                 {
-                    if (dan.globalRes[zz].typpe == quest[i].effect[j].tip && dan.globalRes[zz].amount > dan.globalRes[zz].min + int(quest[i].effect[j].num))
+                    if (
+                            dan.globalRes[zz].typpe == String(quest[i].effect[j].tip) &&
+                            dan.globalRes[zz].amount > dan.globalRes[zz].min + int(quest[i].effect[j].num))
                     {
                         dan.globalRes[zz].amount += int(quest[i].effect[j].num);
                     }
                 }
+            }
+
+            if (quest[i].effect[j].typpe=="dxKnown") //сдвиг, на который нужно перемещать панель, когда открыт новый город
+            {
+                dan.dxKnown=int(quest[i].effect[j].num);
+            }
+
+            if (quest[i].effect[j].typpe=="fromAdditionalCityPanel")
+            { //меняет состояние отображаемой панели города при выборе в доп.панели
+                //bit.mouseParClick == dan.cityStart
+                //dan.numOfMany
+                var putNum:int=dan.numOfMany;
+                trace("fromAdditionalCityPanel");
+                trace("dan.numOfMany="+dan.numOfMany);
+                while (putNum>=dan.numOfElemsCityPanel)
+                {
+                    putNum-=dan.numOfElemsCityPanel;
+                }
+                trace("putNum="+putNum);
+                bit.mouseParClick = dan.cityStart;
+                trace("dan.knownCities[putNum-1]="+dan.knownCities[putNum-1]);
+                dan.numOfMany = dan.cities[dan.knownCities[putNum-1]].elem;
+            }
+
+            if (quest[i].effect[j].typpe=="relationChange") //город: влиять на отношения, улучшить
+            {
+                if (int(quest[i].effect[j].res)==1)//результат положительный
+                {
+                    //ничего не делаем
+                }
+
             }
 
             if (quest[i].effect[j].typpe=="getCoords")   //взять координаты предмета
@@ -587,8 +678,15 @@ public class Movie
                 {
                     if (subs.sub[zz].iii==quest[i].effect[j].iii)
                     {
-                        subs.sub[zz].subX=dan.getsetX;
-                        subs.sub[zz].subY=dan.getsetY;
+                        if (quest[i].effect[j].xx==0 && quest[i].effect[j].yy==0)
+                        {
+                            subs.sub[zz].subX = dan.getsetX;
+                            subs.sub[zz].subY = dan.getsetY;
+                        } else
+                        {
+                            subs.sub[zz].subX = quest[i].effect[j].xx;
+                            subs.sub[zz].subY = quest[i].effect[j].yy;
+                        }
                     }
                 }
             }
@@ -643,7 +741,10 @@ public class Movie
                 }
                 if (String(quest[i].effect[j].tip)=="close") //убрать выделение героя
                 {
+                    trace("hero close");
+                    dan.heroChooseMemory=dan.heroChoose;
                     dan.heroChoose=-1;
+
                 }
             }
 
@@ -695,10 +796,77 @@ public class Movie
                 bit.mouseParClick=quest[i].effect[j].iii;
             }
 
+            if (quest[i].effect[j].typpe=="changeLanguage") //смена языка: английский
+            {
+                bit.textMode=quest[i].effect[j].txt;
+            }
+
+            if (quest[i].effect[j].typpe=="deleteModule") //удаляем модуль
+            {
+                bit.delCommand=true;
+                bit.delSubjects=true;
+                bit.delScenario=true;
+                bit.delModuleName=quest[i].effect[j].moduleName;
+                if (quest[i].effect[j].moduleParams=="game")
+                {
+                    bit.delParameters=true;
+                }
+            }
+
+            if (quest[i].effect[j].typpe=="behPosFromMess") //заминусовываем переменную, отвечающую за очистку мессенджера
+            {
+                dan.behPosFromMess=quest[i].effect[j].iii;
+            }
+
+            if (quest[i].effect[j].typpe=="messWasTap") //номер элемента в предмете МенюСообщений, который был выбран игроком
+            {
+                dan.messWasTap=bit.mouseClick;
+            }
+
+            if (quest[i].effect[j].typpe=="makeMessage") //точная дата, в которую должно произойти событие
+            {
+                trace("makeMessage");
+                dan.mess.push(new Message());
+                dan.mess[dan.mess.length-1].behMenu=quest[i].effect[j].behMenu;
+                dan.mess[dan.mess.length-1].iii=quest[i].effect[j].iii;
+                if (int(quest[i].effect[j].activeShow)==1)
+                {
+                    dan.mess[dan.mess.length - 1].activeShow=true;
+                } else
+                {
+                    dan.mess[dan.mess.length - 1].activeShow=false;
+                }
+                if (int(quest[i].effect[j].out)==1)
+                {
+                    dan.mess[dan.mess.length - 1].out=true;
+                } else
+                {
+                    dan.mess[dan.mess.length - 1].out=false;
+                }
+            }
+
+            if (quest[i].effect[j].typpe=="cityAllianceArmy") //смена логической переменной, отвечающей за то, показывается город или целиком альянс
+            {
+                trace("quest[i].effect[j].res="+quest[i].effect[j].res);
+                if (int(quest[i].effect[j].res)==1)
+                {
+                    dan.cityAllianceArmy=true;
+                } else
+                {
+                    dan.cityAllianceArmy=false;
+                }
+                trace("dan.cityAllianceArmy="+dan.cityAllianceArmy);
+            }
+
             if (quest[i].effect[j].typpe == "nextTurn")
             {
                 //нажата кнопка нового хода
                 bit.sChangeTurn=true;
+            }
+
+            if (quest[i].effect[j].typpe == "categoryWillSave") //сменяем категорию показа истории
+            {
+                dan.categoryWillSave=quest[i].effect[j].num;
             }
         }
     }

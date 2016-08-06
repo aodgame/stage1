@@ -19,9 +19,9 @@ public class SubButton extends Parent2Subject
     private var modificator:String="";
     private var taper:int=0;
 
-    public function SubButton(myXML, pics, el, ii)
+    public function SubButton(myXML, pics, el, ii, moduleName)
     {
-        end_load(myXML, ii, pics, el);
+        end_load(myXML, ii, pics, el, moduleName);
     }
 
     override public function work(ii):void
@@ -55,6 +55,10 @@ public class SubButton extends Parent2Subject
             {
                 bit.prevRoom=bit.curRoom;
                 bit.curRoom=goTo;
+            }
+            if (goTo==-1)
+            {
+                bit.curRoom=bit.prevRoom;
             }
             if (goPosition>0)
             {
@@ -133,61 +137,9 @@ public class SubButton extends Parent2Subject
     {
         super.model(el);
 
-        if (modificator=="btn" && bit.mouseParOver==iii && taper==0)
+        if (modificator=="btn")
         {
-            for (i = 0; i < numOfEl.length; i++)
-            {
-                if (el[numOfEl[i]].typeOfElement=="txt")
-                {
-                    //el[numOfEl[i]].pic.x-=el[numOfEl[i]].size*(1.1-1)/2;
-                    //el[numOfEl[i]].size *= 1.1;
-                    el[numOfEl[i]].makeFormat();
-                } else
-                {
-                    el[numOfEl[i]].pic.width *= 1.1;
-                    el[numOfEl[i]].pic.height *= 1.1;
-                }
-
-            }
-            taper=1;
-        }
-        if (modificator=="btn" && bit.mouseParClick==iii && taper==2)
-        {
-            for (i = 0; i < numOfEl.length; i++)
-            {
-                el[numOfEl[i]].pic.y-=3;
-            }
-            taper=1;
-        }
-        if (modificator=="btn" && bit.mouseParDown==iii && taper!=2)
-        {
-            for (i=0; i<numOfEl.length; i++)
-            {
-                el[numOfEl[i]].pic.y+=3;
-            }
-            taper=2;
-        }
-        if (modificator=="btn" && (bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
-        {
-            for (i=0; i<numOfEl.length; i++)
-            {
-                if (el[numOfEl[i]].typeOfElement=="txt")
-                {
-                   // el[numOfEl[i]].size/=1.1;
-                    //el[numOfEl[i]].pic.x+=el[numOfEl[i]].size*(1.1-1)/2;
-                    el[numOfEl[i]].makeFormat();
-                } else
-                {
-                    el[numOfEl[i]].pic.width/=1.1;
-                    el[numOfEl[i]].pic.height/=1.1;
-                }
-                if (taper==2)
-                {
-                    el[numOfEl[i]].pic.y-=3;
-                }
-            }
-
-            taper=0;
+            btnModificztor(el);
         }
 
         if (neddFram)
@@ -203,9 +155,69 @@ public class SubButton extends Parent2Subject
         }
     }
 
-    override protected function end_load(myXML, ii, pics, el):void //заканчиваем загрузку
+    private function btnModificztor(el)
     {
-        super.end_load(myXML, ii, pics, el);
+        if (bit.mouseParOver==iii && taper==0)
+        {
+            for (i = 0; i < numOfEl.length; i++)
+            {
+                if (el[numOfEl[i]].typeOfElement=="txt")
+                {
+                   // el[numOfEl[i]].pic.x-=1;
+                    el[numOfEl[i]].size += 2;
+                    el[numOfEl[i]].makeFormat();
+                } else
+                {
+                    el[numOfEl[i]].pic.width *= 1.1;
+                    el[numOfEl[i]].pic.height *= 1.1;
+                }
+            }
+            taper=1;
+        }
+        if (bit.mouseParClick==iii && taper==2)
+        {
+            for (i = 0; i < numOfEl.length; i++)
+            {
+                el[numOfEl[i]].pic.y-=3;
+            }
+            taper=1;
+        }
+        if (bit.mouseParDown==iii && taper!=2)
+        {
+            for (i=0; i<numOfEl.length; i++)
+            {
+                el[numOfEl[i]].pic.y+=3;
+            }
+            taper=2;
+        }
+        //if ((bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
+        if ((bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
+        {
+            for (i=0; i<numOfEl.length; i++)
+            {
+                if (el[numOfEl[i]].typeOfElement=="txt")
+                {
+                    el[numOfEl[i]].size-=2;
+                    //el[numOfEl[i]].pic.x+=1;
+                    el[numOfEl[i]].makeFormat();
+                } else
+                {
+                    el[numOfEl[i]].pic.width/=1.1;
+                    el[numOfEl[i]].pic.height/=1.1;
+                }
+                if (taper==2)
+                {
+                    el[numOfEl[i]].pic.y-=3;
+                }
+            }
+            taper=0;
+        }
+    }
+
+
+    override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
+    {
+        super.end_load(myXML, ii, pics, el, moduleName);
 
         fram=1;
 

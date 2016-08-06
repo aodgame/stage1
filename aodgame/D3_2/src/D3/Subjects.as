@@ -69,20 +69,29 @@ public class Subjects extends MovieClip
         {
             texting.levelGo(); //грузим тексты
             levering.levelGo(sub, el, pics, add);
+            length = sub.length;
             for (i=0; i<length; i++)
             {
                 sub[i].extremalWork(i, el); //обрабатываем логику предметов
             }
+            trace("new sub.length="+sub.length+"; el.length="+el.length);
+        }
+        if  (bit.delCommand && bit.delSubjects)
+        {
+            deleting();
+            length = sub.length;
+            bit.delSubjects=false;
         }
         if (bit.nextLevel==0) //общий игровой таймер
         {
+            textManager.work(el, sub);
             for (i=0; i<length; i++)
             {
                 sub[i].work(i); //обрабатываем логику предметов
                 sub[i].model(el); //производим изменения внешности элементов
                 publicum(i); //ставим все элементы предметов в нужные координаты
             }
-            textManager.work(el);
+
             if (add.length>0)
             {
                 elemeiting.addManager(add, el);
@@ -105,6 +114,64 @@ public class Subjects extends MovieClip
             }
         }
         return s;
+    }
+
+    private function deleting():void
+    {
+        trace("sub.length="+sub.length+"; el.length="+el.length);
+        j=0;
+        while (j<sub.length)
+        {
+            //trace("sub[j].moduleName="+sub[j].moduleName+"; bit.delModuleName="+bit.delModuleName);
+            if(sub[j].moduleName==bit.delModuleName)
+            {
+                sub.splice(j,1);
+                j--;
+            }
+            j++;
+        }
+        j=0;
+        while (j<el.length)
+        {
+            if(el[j].moduleName==bit.delModuleName)
+            {
+                el[j].fate(0);
+                el.splice(j,1);
+                j--;
+            }
+            j++;
+        }
+        if (el.length>0)
+        {
+            el[el.length - 1].correctScoreNum(el[el.length - 1].iii+1);
+        } else
+        {
+            el.push(new ParentElement());
+            el[el.length-1].correctScoreNum(0);
+            el.pop();
+        }
+        j=0;
+        while (j<bit.texto.length)
+        {
+            if(bit.texto[j].moduleName==bit.delModuleName)
+            {
+                bit.texto.splice(j,1);
+                j--;
+            }
+            j++;
+        }
+        j=0;
+        while (j<pics.length)
+        {
+            if(pics[j].moduleName==bit.delModuleName)
+            {
+                pics.splice(j,1);
+                j--;
+            }
+            j++;
+        }
+        trace("after sub.length="+sub.length+"; el.length="+el.length);
+        bit.delSubjects=false;
     }
 
     private function publicum(ii):void //ставим все элементы предметов в нужные координаты
