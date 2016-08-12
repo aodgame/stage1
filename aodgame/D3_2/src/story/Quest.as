@@ -98,6 +98,10 @@ public class Quest
                 action[i].first=adv.action[i].@first;
                 action[i].second=adv.action[i].@second;
             }
+            if (adv.action[i]=="timeMoreThan")
+            {//в игре прошло ходов больше, чем...
+                action[i].iii=adv.action[i].@iii;
+            }
 
             if (adv.action[i] == "positionIt")
             {
@@ -165,6 +169,15 @@ public class Quest
             }
             if (adv.action[i] == "heroPanelClose") //директивное закрытие панели героя
             {
+            }
+
+            if (adv.action[i] == "noBuilding")
+            {   //ни на одной из земель нет строения
+                action[i].tip = adv.action[i].@tip;
+            }
+            if (adv.action[i] == "randi") //процент от числа, который будет считаться успешным
+            {
+                action[i].num = adv.action[i].@num;
             }
         }
     }
@@ -286,6 +299,7 @@ public class Quest
                 effect[i].timme = adv.effect[i].@timme;
             }
 
+
             if (adv.effect[i] == "res_need")
             {
                 //проверяем потребность одного глобального ресурса в другом
@@ -404,6 +418,7 @@ public class Quest
                 effect[i].behMenu = adv.effect[i].@behMenu;
                 effect[i].activeShow = adv.effect[i].@activeShow;
                 effect[i].out = adv.effect[i].@out;
+                effect[i].stil = adv.effect[i].@stil;
                 //<effect iii="1" behMenu="102" activeShow="0" out="0">makeMessage</effect>
             }
 
@@ -434,9 +449,14 @@ public class Quest
                 //нажата кнопка нового хода
             }
 
-            if (adv.effect[i]=="categoryWillSave") //сменяем категорию показа истории
+            if (adv.effect[i]=="categoryWillSave") //сменяем категорию показа истории//сменяем категорию показа истории
             {
                 effect[i].num=adv.effect[i].@num;
+            }
+
+            if (adv.effect[i]=="heroHistoryChange") //меняем героя при показе истории
+            {
+                effect[i].iii=adv.effect[i].@iii;
             }
 
 

@@ -336,7 +336,7 @@ public class HeroManager
                         hero.heroResMax[i]
                 );
             }
-
+            dan.historyTheHeroIsCome=true;
 
             return true;
         }

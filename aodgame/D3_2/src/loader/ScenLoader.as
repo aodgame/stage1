@@ -402,9 +402,18 @@ public class ScenLoader extends ParentLoader
             {
                 dan.cities[dan.cities.length-1].character = int(myXML.city[i].params[jj].@character);
                 dan.cities[dan.cities.length-1].government = int(myXML.city[i].params[jj].@government);
+                dan.cities[dan.cities.length-1].patron = int(myXML.city[i].params[jj].@patron);
+                dan.cities[dan.cities.length-1].techLevel = int(myXML.city[i].params[jj].@techLevel);
+                trace((dan.cities.length-1)+"techLevel="+dan.cities[dan.cities.length-1].techLevel);
             }
             dan.cities[dan.cities.length-1].army=int(myXML.city[i].troops.@army);
             dan.cities[dan.cities.length-1].fleet=int(myXML.city[i].troops.@fleet);
+            for (var jj:int=0; jj<myXML.city[i].citizen.length(); jj++)
+            {
+                dan.cities[dan.cities.length-1].citizenTyppe.push(String(myXML.city[i].citizen[jj].@typpe));
+                dan.cities[dan.cities.length-1].citizenNum.push(String(myXML.city[i].citizen[jj].@num));
+                dan.cities[dan.cities.length-1].citizenRel.push(String(myXML.city[i].citizen[jj].@rel));
+            }
         }
 
         for (i=0; i<myXML.alliance.length(); i++)
@@ -457,12 +466,25 @@ public class ScenLoader extends ParentLoader
             dan.characters[dan.characters.length-1].sint=myXML.character[i].@charTxt;
         }
 
+        //список соответствий покровителя города-текстовка
+        for (i=0; i<myXML.patron.length(); i++)
+        {
+            dan.patrons.push(new Equiler());
+            dan.patrons[dan.patrons.length-1].fint=myXML.patron[i].@pat;
+            dan.patrons[dan.patrons.length-1].sint=myXML.patron[i].@patTxt;
+        }
+
         //вводим статусы взаимоотношений городов
         for (i=0; i<myXML.statu.length(); i++)
         {
             dan.status.push((new Status()));
             dan.status[dan.status.length-1].num=myXML.statu[i].@num;
             dan.status[dan.status.length-1].txt=myXML.statu[i].@txt;
+        }
+        //вводим текстовые сообщения для сравнения уровня технологий в других городах
+        for (i=0; i<myXML.technology.length(); i++)
+        {
+            dan.techLevelTxt.push(new String(myXML.technology[i].@txt));
         }
 
         //воссоздаём торговые связи
@@ -572,6 +594,11 @@ public class ScenLoader extends ParentLoader
             {
                 dan.behMenu[dan.behMenu.length-1].choicerBehActivity.push(new int(myXML.behMenu[i].choicer[jj].@behActivity));
                 dan.behMenu[dan.behMenu.length-1].choicerTxt.push(new String(myXML.behMenu[i].choicer[jj].@txt));
+                for (var dr:int=0; dr<myXML.behMenu[i].choicer[jj].fram.length(); dr++)
+                {
+                    dan.behMenu[dan.behMenu.length-1].fram.push(new int(myXML.behMenu[i].choicer[jj].fram[dr].@fr));
+                    dan.behMenu[dan.behMenu.length-1].framNum.push(new int(myXML.behMenu[i].choicer[jj].fram[dr].@num));
+                }
             }
         }
         //смотрим, какой результат возможен в зависимости от вбыора игрока
@@ -626,6 +653,12 @@ public class ScenLoader extends ParentLoader
                 dan.behRes[dan.behRes.length-1].cityRelNum.push(new int(myXML.behResult[i].cityRel[jj].@num));
                 dan.behRes[dan.behRes.length-1].cityRelNumTyppe.push(new String(myXML.behResult[i].cityRel[jj].@numTyppe));
             }
+            for (var jj:int=0; jj<myXML.behResult[i].needRel.length(); jj++)
+            {
+                dan.behRes[dan.behRes.length-1].needRelTyppe.push(new String(myXML.behResult[i].needRel[jj].@typpe));
+                dan.behRes[dan.behRes.length-1].needRelNumTyppe.push(new String(myXML.behResult[i].needRel[jj].@numTyppe));
+                dan.behRes[dan.behRes.length-1].needRelRes.push(new String(myXML.behResult[i].needRel[jj].@res));
+            }
         }
 
         //подготавливаем сообщения
@@ -648,6 +681,7 @@ public class ScenLoader extends ParentLoader
             {
                 dan.mess[dan.mess.length - 1].out=false;
             }
+            dan.mess[dan.mess.length-1].stil=myXML.mess[i].@stil;
         }
 
         //разводим туман войны

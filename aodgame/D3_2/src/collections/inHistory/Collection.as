@@ -3,6 +3,8 @@
  */
 package collections.inHistory
 {
+import collections.common.Hero;
+
 public class Collection
 {
     public var num:Vector.<int>; //списк значений
@@ -11,6 +13,8 @@ public class Collection
     public var max:int; //максимальное значение
     public var category:int; //категория, позволяет сводить параметры в danke в группу
 
+    public var heroStory:Vector.<Hero>; //для хранения действий героев. needTyppe - потрачено, heroResTyppe - заработано
+
     public function Collection()
     {
         num = new Vector.<int>();
@@ -18,6 +22,7 @@ public class Collection
         res="";
         max=-1;
         category=0;
+        heroStory = new Vector.<Hero>();
     }
 }
 }

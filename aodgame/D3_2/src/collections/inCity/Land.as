@@ -119,15 +119,36 @@ public class Land
         //проверяем необходимость перерисовки объектов
         if (building.canWork && elemPic[elemPic.length-1]>1)
         {
+            //trace("i1");
             elemPic[elemPic.length-1]=1;
         }
+        //trace(subID+":"+landID+"; "+ elemPic[elemPic.length-1]);
         if (!building.canWork && elemPic[elemPic.length-1]==1)
         {
+            //trace("i2="+subID+":"+landID+"; "+ elemPic[elemPic.length-1]);
+            //trace()
             for (var j:int=0; j<dan.problemSituation.length; j++)
             {
                 if (building.workStopProblem==dan.problemSituation[j].typpe)
                 {
                     elemPic[elemPic.length - 1] = j+1;
+                    //trace("elemPic[elemPic.length - 1]="+elemPic[elemPic.length - 1]);
+                    break;
+                }
+            }
+        }
+        //проверяем, не сменилась ли картинка
+        if (!building.canWork && elemPic[elemPic.length-1]>1)
+        {
+            //trace(subID + "; building.workStopProblem="+building.workStopProblem);
+            for (var j:int=0; j<dan.problemSituation.length; j++)
+            {
+                //trace("dan.problemSituation[j].typpe="+dan.problemSituation[j].typpe);
+                if (building.workStopProblem==dan.problemSituation[j].typpe)
+                {
+                    //trace("j)");
+                    elemPic[elemPic.length - 1] = j+1;
+                    //trace("elemPic[elemPic.length - 1]="+elemPic[elemPic.length - 1]);
                     break;
                 }
             }

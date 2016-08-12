@@ -18,7 +18,7 @@ public class Bitte
     private static var ok2Create:Boolean=false;
 
     //переменные загрузки
-    public var addr:String = "J://work/gitrep/aodgame/D3_2/";
+    public var addr:String = "http://aodgame.16mb.com/game1/";
             //"http://aodgame.16mb.com/game1/";
             //"J://work/gitrep/aodgame/D3_2/";
             //"E://1/D3_2/";//D://7_differ/1/D3/"; //путь к загружаемой папке
@@ -103,6 +103,8 @@ public class Bitte
     public var delSubjects:Boolean=false;
     public var delScenario:Boolean=false;
     public var delParameters:Boolean=false;
+
+    public var userName:String=""; //ник пользователя
 
     public function Bitte()
     {

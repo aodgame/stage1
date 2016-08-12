@@ -32,11 +32,15 @@ public class BuildingManager
 
     private function analyzeTap(subs):void
     {
+        trace("analyzeTap=");
         bTyppeControl(subs);
+
         for (i=0;i<subs[bTyppe].idOfEl.length; i++)
         {
+            trace(i+"; "+subs[bTyppe].idOfEl[i]+"::bit.mouseClick="+bit.mouseClick+";; subs[bTyppe].specID[i].substr(0, 3)="+subs[bTyppe].specID[i].substr(0, 3));
             if (subs[bTyppe].idOfEl[i]==bit.mouseClick && subs[bTyppe].specID[i].substr(0, 3)=="btn")
             {
+                trace("btnclick");
                 //нашли, что нажата кнопка постройки здания
                 var yy:int = 3;
                 var z:int = 0;
@@ -64,9 +68,10 @@ public class BuildingManager
         {
             for (i = 0; i < subs.length; i++)
             {
-                if (subs[i].typpe=="buildingMenu")
+                if (subs[i].typpe=="buildingMenu" && subs[i].modificator=="")
                 {
                     bTyppe=i;
+                    trace("bTyppe="+bTyppe);
                     break;
                 }
             }

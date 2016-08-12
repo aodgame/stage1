@@ -14,15 +14,70 @@
 		<atChild>1</atChild>
 	</subject>
 
+	<!--бэк картинка1-->
+	<subject>
+		<id>101</id>
+		<type weAre="10" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>763</x><y>261</y><width>0</width><height>0</height>
+		<pic picload="1">elem1_mc</pic>
+		<atChild>1</atChild>
+	</subject>
+
+	<!--бэк картинка2-->
+	<subject>
+		<id>102</id>
+		<type weAre="10" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>378</x><y>226</y><width>0</width><height>0</height>
+		<pic picload="1">elem2_mc</pic>
+		<atChild>1</atChild>
+	</subject>
+
+	<!--кнопка запуска первой игры-->
+	<subject>
+		<id>103</id>
+		<type weAre="10" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<x>264</x><y>533</y><width>0</width><height>0</height>
+		<pic picload="1">game1</pic>
+		<atChild>3</atChild>
+	</subject>
+
+	<!--затемнение окошка вопроса проо старт игры-->
+	<subject>
+		<id>104</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">button</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1">balp2_mc</pic>
+		<atChild>4</atChild>
+	</subject>
+
+	<!--бэк окошка вопроса про старт игры-->
+	<subject>
+		<id>106</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>106</x><y>119</y><width>0</width><height>0</height>
+		<pic picload="1">frame1_mc</pic>
+		<atChild>5</atChild>
+	</subject>
+	<!--элементы окошка вопроса про старт игры-->
+	<subject>
+		<id>107</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>132</x><y>206</y><width>0</width><height>0</height>
+		<pic picload="1">game1map_mc</pic>
+		<txt xx="246" yy="-54" id="22:297:40:0x000000:c:t:28"/>
+		<txt xx="408" yy="130" id="24:354:300:0x000000:l:t:20"/>
+		<atChild>5</atChild>
+	</subject>
+
 	<!--кнопка новой игры-->
 	<subject>
 		<id>105</id>
-		<type weAre="10" ourPosition="1" vis="1" willSave="1" modificator="btn">button</type>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1" modificator="btn">button</type>
 		<portal goTo="30" goPosition="1">1</portal>
-		<x>512</x><y>300</y><width>0</width><height>0</height>
+		<x>326</x><y>558</y><width>0</width><height>0</height>
 		<txt xx="-110" yy="-20" id="20:220:40:0x000000:c:t:28"/>
 		<pic picload="1">btnBegin</pic>
-		<atChild>10</atChild>
+		<atChild>6</atChild>
 	</subject>
 
 	<!--бэк полоска слева-->
@@ -35,7 +90,7 @@
 	</subject>
 	<!--бэк полоска сверху-->
 	<subject>
-		<id>110</id>
+		<id>111</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
 		<x>0</x><y>0</y><width>0</width><height>0</height>
 		<pic picload="1">lineTop</pic>
@@ -43,7 +98,7 @@
 	</subject>
 	<!--бэк полоска справа-->
 	<subject>
-		<id>110</id>
+		<id>112</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
 		<x>1021</x><y>0</y><width>0</width><height>0</height>
 		<pic picload="1">lineRight</pic>
@@ -51,22 +106,95 @@
 	</subject>
 	<!--бэк полоска снизу-->
 	<subject>
-		<id>110</id>
+		<id>113</id>
 		<type weAre="0" ourPosition="1" vis="1" willSave="1">background</type>
 		<x>0</x><y>765</y><width>0</width><height>0</height>
 		<pic picload="1">lineBottom</pic>
 		<atChild>18</atChild>
 	</subject>
 
-	<!--кнопка загрузить игру игры
+
+	<!--кнопка панели меню-->
 	<subject>
-		<id>110</id>
-		<type weAre="10" ourPosition="1" vis="1" willSave="1">button</type>
-		<portal goTo="12" goPosition="0">1</portal>
-		<x>512</x><y>400</y><width>0</width><height>0</height>
-		<pic picload="1">btnLoadGame</pic>
+		<id>120</id>
+		<type weAre="10" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1" num="1">panel12</pic>
+		<pic picload="1" num="1">fram4</pic>
+		<pic picload="1" num="1">picAvatar</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
+		<pos xx="12" yy="7" ww="0" hh="0" fram="1"/>
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1"/>
+
+		<txt xx="136" yy="42" id="$username,26:166:70:0x000000:l:t:28"/>
+		<atChild>3</atChild>
+	</subject>
+
+	<!--затемнение окошка меню игрока-->
+	<subject>
+		<id>122</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">button</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<pic picload="1">balp2_mc</pic>
+		<atChild>4</atChild>
+	</subject>
+
+	<!--бэк окошка меню игрока-->
+	<subject>
+		<id>123</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>106</x><y>119</y><width>0</width><height>0</height>
+		<pic picload="1">frame1_mc</pic>
+		<txt xx="254" yy="30" id="28:273:50:0x000000:c:t:40"/>
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- текстовка "выбрать язык"-->
+	<subject>
+		<id>124</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>0</x><y>0</y><width>0</width><height>0</height>
+		<txt xx="567" yy="211" id="30:259:25:0x000000:c:t:18:0xFFFFFF"/>
+		<pic picload="1">nothing</pic>
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- флаг ру-->
+	<subject>
+		<id>125</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>578</x><y>241</y><width>0</width><height>0</height>
+		<pic picload="1">flag_ru</pic>
+		<atChild>6</atChild>
+	</subject>
+	<!-- флаг ен-->
+	<subject>
+		<id>126</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1">background</type>
+		<x>578</x><y>285</y><width>0</width><height>0</height>
+		<pic picload="1">flag_en</pic>
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- кнопка ру-->
+	<subject>
+		<id>127</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1" modificator="btn">button</type>
+		<x>724</x><y>261</y><width>0</width><height>0</height>
+		<txt xx="-100" yy="-14" id="32:200:90:0x000000:c:t:20"/>
+		<pic picload="1">bb</pic>
 		<atChild>10</atChild>
-	</subject>-->
+	</subject>
+	<!-- кнопка ен-->
+	<subject>
+		<id>128</id>
+		<type weAre="10" ourPosition="1" vis="0" willSave="1" modificator="btn">button</type>
+		<x>724</x><y>305</y><width>0</width><height>0</height>
+		<txt xx="-100" yy="-14" id="34:200:90:0x000000:c:t:20"/>
+		<pic picload="1">bb</pic>
+		<atChild>10</atChild>
+	</subject>
 
 
 </chronicle>

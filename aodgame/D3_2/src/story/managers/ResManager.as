@@ -466,21 +466,37 @@ public class ResManager
                             {
                                 while (dan.globalRes[z].presenceAmount>0 && dan.globalRes[i].amount>dan.globalRes[i].min)  //и пока у него есть долг или пока есть с кого этот долг требовать
                                 {
-                                    //trace("previous "+dan.globalRes[i].amount+" lll "+dan.globalRes[i].freeAmount);
                                     dan.globalRes[z].presenceAmount-=int(dan.globalRes[i].paramsOfNeed[j-3]); //уменьшаем долг согласно установленной таксе
                                     if (dan.globalRes[i].amount > dan.globalRes[i].min) //снижаем число ресурса, с которым не рассчитался должник
                                     {
                                         dan.globalRes[i].amount--;
                                     }
-                                    //trace("====");
-                                    //trace(dan.globalRes[i].amount+" lll "+dan.globalRes[i].freeAmount);
-
                                 }
                                 break;
                             }
                         }
                         dan.reIncome=true;
                         dan.lag=10;
+                    }
+                    if (dan.globalRes[i].paramsOfNeed[j]=="control") //определяет макс значение за каждую единицу плюс рост за ход
+                    {
+                        trace("Res typpe="+dan.globalRes[i].paramsOfNeed[j-1]);
+                        for (var z:int=0; z<dan.globalRes.length; z++)
+                        {
+                            if (dan.globalRes[i].paramsOfNeed[j-1] == dan.globalRes[z].typpe) //нашли тип должника
+                            {
+                                trace("equal type="+dan.globalRes[z].typpe);
+                                //перерасчитываем максимальное возможное значение
+                                dan.globalRes[i].max=dan.globalRes[z].amount*int(dan.globalRes[i].paramsOfNeed[j - 3]);
+                                //и даём доход за ход
+                                dan.globalRes[i].amount+=int(dan.globalRes[z].amount*Number(dan.globalRes[i].paramsOfNeed[j - 2]));
+                                if (dan.globalRes[i].amount>dan.globalRes[i].max)
+                                {
+                                    dan.globalRes[i].amount=dan.globalRes[i].max;
+                                }
+                                break;
+                            }
+                        }
                     }
                 }
                 if (res==sum && sum!=0)

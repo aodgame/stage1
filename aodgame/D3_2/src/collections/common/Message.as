@@ -10,6 +10,7 @@ public class Message
     public var out:Boolean; //удаляется после просмотра
     public var wasShowed:Boolean; //был показан игроку
     public var iii:int;
+    public var stil:int; //номер фрейма, который определяет, какого рода отобразится свиток сообщения
 
     public function Message()
     {
@@ -18,6 +19,7 @@ public class Message
         wasShowed = false;
         out=true;
         iii=-1;
+        stil=1;
     }
 }
 }

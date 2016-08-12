@@ -26,9 +26,13 @@ public class BehResult
 
     public var changeTyppe:Vector.<String>;
 
-    public var cityRelTyppe:Vector.<String>;
+    public var cityRelTyppe:Vector.<String>; //отношения с городами
     public var cityRelNum:Vector.<int>;
     public var cityRelNumTyppe:Vector.<String>;
+
+    public var needRelTyppe:Vector.<String>; //требования, чтобы завязать отношения с городами
+    public var needRelNumTyppe:Vector.<String>;
+    public var needRelRes:Vector.<String>;
 
     //<cityRel typpe="current" num="10" numTyppe="perc"/>
 
@@ -63,6 +67,9 @@ public class BehResult
         cityRelTyppe = new Vector.<String>();
         cityRelNum = new Vector.<int>();
         cityRelNumTyppe = new Vector.<String>();
+        needRelTyppe = new Vector.<String>();
+        needRelNumTyppe = new Vector.<String>();
+        needRelRes = new Vector.<String>();
     }
 }
 }

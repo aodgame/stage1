@@ -31,6 +31,10 @@ public class CityManager
 
     public function work(sub):void
     {
+        if (dan.specCityPanel==-1 && additionalCityPanel!=-1) //чистим переменную, чтобы на дополнительной панели не отображались все города
+        {
+            additionalCityPanel=-1;
+        }
         contentIt();
 
         if (bit.mouseParClick == dan.cityStart)// город запущен
@@ -167,6 +171,13 @@ public class CityManager
                     if (dan.cities[i].government==dan.governments[j].fint)
                     {
                         dan.cities[i].governmentTxt=dan.governments[j].sint;
+                    }
+                }
+                for (var j:int=0; j<dan.patrons.length; j++)
+                {
+                    if (dan.cities[i].patron==dan.patrons[j].fint)
+                    {
+                        dan.cities[i].patronTxt=dan.patrons[j].sint;
                     }
                 }
             }

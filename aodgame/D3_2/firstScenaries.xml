@@ -13,7 +13,70 @@
 		<action iii="105">tap</action>
 		<effect room="30">flyTo</effect>
 		<effect plane="1">flyToPlane</effect>
+		<effect iii="104">visOff</effect>
+		<effect iii="105">visOff</effect>
+		<effect iii="106">visOff</effect>
+		<effect iii="107">visOff</effect>
 		<effect sub="game1Subjects.xml" scen="game1Scenaries.xml" texto="game1Texto.xml">load</effect>
+	</mmotion>
+
+	<!-- показать панель первой игры-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">22</qid>
+		<action iii="103">tap</action>
+		<effect iii="104">visOn</effect>
+		<effect iii="105">visOn</effect>
+		<effect iii="106">visOn</effect>
+		<effect iii="107">visOn</effect>
+	</mmotion>
+
+	<!-- назад к летописи-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">24</qid>
+		<action iii="104">tap</action>
+		<effect iii="104">visOff</effect>
+		<effect iii="105">visOff</effect>
+		<effect iii="106">visOff</effect>
+		<effect iii="107">visOff</effect>
+	</mmotion>
+
+	<!-- показать панель профиля героя-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">26</qid>
+		<action iii="120">tap</action>
+		<effect iii="122">visOn</effect>
+		<effect iii="123">visOn</effect>
+		<effect iii="124">visOn</effect>
+		<effect iii="125">visOn</effect>
+		<effect iii="126">visOn</effect>
+		<effect iii="127">visOn</effect>
+		<effect iii="128">visOn</effect>
+	</mmotion>
+
+	<!-- назад к летописи-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">28</qid>
+		<action iii="122">tap</action>
+		<effect iii="122">visOff</effect>
+		<effect iii="123">visOff</effect>
+		<effect iii="124">visOff</effect>
+		<effect iii="125">visOff</effect>
+		<effect iii="126">visOff</effect>
+		<effect iii="127">visOff</effect>
+		<effect iii="128">visOff</effect>
+	</mmotion>
+
+	<!--смена языка: русский-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">30</qid>
+		<action iii="127">tap</action>
+		<effect txt="ru">changeLanguage</effect>
+	</mmotion>
+	<!--смена языка: английский-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">32</qid>
+		<action iii="128">tap</action>
+		<effect txt="en">changeLanguage</effect>
 	</mmotion>
 
 

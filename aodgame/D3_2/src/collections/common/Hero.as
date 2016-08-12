@@ -27,6 +27,9 @@ public class Hero
     public var n1:int;
     public var n2:int;
 
+    public var s1:String;
+    public var s2:String;
+
     public function Hero()
     {
         typpe="";
@@ -37,6 +40,8 @@ public class Hero
         n1=0;
         n2=0;
         txt=-1;
+        s1="";
+        s2="";
     }
 
     public function makeAge(n1:int, n2:int):void
@@ -65,6 +70,7 @@ public class Hero
     {
         if (currentAge>=maxAge)
         {
+            currentAge=-1;
             return true;
         }
         return false;

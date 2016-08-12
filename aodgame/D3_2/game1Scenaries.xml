@@ -254,8 +254,8 @@
 	</globalRes><!-- отношение к вам горожан -->
 	<globalRes iii="14" typpe="respect_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">14</globalRes><!-- отношение к вам метеков -->
 	<globalRes iii="15" typpe="respect_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">15</globalRes><!-- отношение к вам илотов -->
-	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="3" isFree="0" min="0" max="10000" spec="need">
-		<need every="3" need="1" from="house" income="grow"/>
+	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="3" isFree="0" min="0" max="3" spec="need">
+		<need every="3" need="0.5" from="human" income="control"/>
 	</globalRes><!-- армия: гоплиты -->
 	<globalRes iii="17" typpe="army_archer" pic="12" name="304" description="306" startAmount="0" isFree="0" min="0" max="10000" spec="0">17</globalRes><!-- армия: стрелки -->
 	<globalRes iii="18" typpe="army_mercenaries" pic="13" name="308" description="310" startAmount="0" isFree="0" min="0" max="10000" spec="0">18</globalRes><!-- армия: наёмники -->
@@ -423,6 +423,10 @@
 	<problemSituation typpe="wait"/>
 	<problemSituation typpe="build"/>
 	<problemSituation typpe="rebelionCitizen"/>
+	<problemSituation typpe="wildLion"/>
+	<problemSituation typpe="wildMonster"/>
+	<problemSituation typpe="wildPeople"/>
+
 
 	<!-- исследование: возможность строить здания (ergasteriaWeapon)-->
 	<modification iii="0" name="275" description="275" isOpened="0" cost="1" res="mind">
@@ -551,24 +555,30 @@
 
 	<!-- город игрока Калидон-->
 	<city iii="1" name="322" sub="820" elem="1">
-		<peacewar iii="2" war="1" relation="0" status="0"/>
+		<peacewar iii="2" war="0" relation="50" status="0"/>
 		<peacewar iii="3" war="0" relation="50" status="-1"/>
 		<peacewar iii="4" war="0" relation="50" status="0"/>
-		<peacewar iii="5" war="0" relation="50" status="0"/>
+		<peacewar iii="5" war="0" relation="100" status="0"/>
 		<peacewar iii="6" war="0" relation="50" status="0"/>
 		<peacewar iii="7" war="0" relation="50" status="1"/>
-		<params government="2" character="1"/>
+		<params government="2" character="1" patron="0"/>
 		<troops army="30" fleet="2"/>
+		<citizen typpe="human" num="3" rel="50"/>
+		<citizen typpe="metek" num="0" rel="50"/>
+		<citizen typpe="ilot" num="0" rel="50"/>
 	</city>
 	<city iii="2" name="317" sub="820" elem="2"> <!-- Дельфы -->
-		<peacewar iii="1" war="1" relation="0" status="0"/> <!-- -100..100-->
-		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="3" character="3"/>
-		<troops army="15" fleet="7"/>
+		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- 0..100-->
+		<params government="3" character="3" patron="1" techLevel="20"/>
+		<troops army="0" fleet="7"/>
+		<citizen typpe="human" num="5" rel="80"/>
+		<citizen typpe="metek" num="2" rel="50"/>
+		<citizen typpe="ilot" num="4" rel="50"/>
 	</city>
 	<city iii="3" name="318" sub="820" elem="3"> <!-- Фарсала -->
 		<peacewar iii="1" war="0" relation="50" status="2"/> <!-- -100..100-->
@@ -577,8 +587,11 @@
 		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="2" character="1"/>
-		<troops army="30" fleet="2"/>
+		<params government="2" character="1" patron="3" techLevel="5"/>
+		<troops army="0" fleet="2"/>
+		<citizen typpe="human" num="3" rel="10"/>
+		<citizen typpe="metek" num="1" rel="50"/>
+		<citizen typpe="ilot" num="1" rel="50"/>
 	</city>
 	<city iii="4" name="316" sub="820" elem="4"> <!-- Фивы -->
 		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -587,18 +600,24 @@
 		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="3" character="1"/>
-		<troops army="12" fleet="5"/>
+		<params government="3" character="1"  patron="2" techLevel="12"/>
+		<troops army="0" fleet="5"/>
+		<citizen typpe="human" num="5" rel="50"/>
+		<citizen typpe="metek" num="3" rel="10"/>
+		<citizen typpe="ilot" num="1" rel="10"/>
 	</city>
 	<city iii="5" name="319" sub="820" elem="5"> <!-- Афины -->
-		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
+		<peacewar iii="1" war="0" relation="100" status="0"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="3" character="3"/>
-		<troops army="15" fleet="15"/>
+		<params government="3" character="3"  patron="2" techLevel="18"/>
+		<troops army="2" fleet="0"/>
+		<citizen typpe="human" num="3" rel="50"/>
+		<citizen typpe="metek" num="3" rel="80"/>
+		<citizen typpe="ilot" num="3" rel="80"/>
 	</city>
 	<city iii="6" name="320" sub="820" elem="6"> <!-- Тиринф -->
 		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -607,8 +626,11 @@
 		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="7" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="2" character="4"/>
+		<params government="2" character="4"  patron="0" techLevel="11"/>
 		<troops army="24" fleet="5"/>
+		<citizen typpe="human" num="5" rel="50"/>
+		<citizen typpe="metek" num="0" rel="80"/>
+		<citizen typpe="ilot" num="2" rel="10"/>
 	</city>
 	<city iii="7" name="321" sub="820" elem="7"> <!-- Амиклы -->
 		<peacewar iii="1" war="0" relation="50" status="-1"/> <!-- -100..100-->
@@ -617,8 +639,11 @@
 		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="5" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="6" war="0" relation="50" status="0"/> <!-- -100..100-->
-		<params government="0" character="1"/>
+		<params government="0" character="1" patron="0" techLevel="8"/>
 		<troops army="40" fleet="7"/>
+		<citizen typpe="human" num="4" rel="65"/>
+		<citizen typpe="metek" num="1" rel="10"/>
+		<citizen typpe="ilot" num="1" rel="80"/>
 	</city>
 
 	<alliance iii="1">
@@ -669,6 +694,10 @@
 
 
 
+
+
+
+	<!--герой над гражданами-повстанцами на карте города -->
 	<behPositioning iii="1" weAre="30">
 		<!-- Позиционирование героя: пложение на картах weAre - 3,
 			где - на земле,
@@ -680,58 +709,33 @@
 		<warning res="rebelionCitizen"/>
 		<res typpe="menu" iii="1"/>
 	</behPositioning>
-
-	<behPositioning iii="2" weAre="30">
-		<where num="land"/>
-		<warning res="no"/>
-		<empty i="no"/>
-		<res typpe="menu" iii="2"/>
-	</behPositioning>
-
-	<behPositioning iii="3" weAre="50"> <!-- герой над облаком на карте мира-->
-		<where num="cloud"/>
-		<warning res="870"/> <!-- подсказка для where, номер в векторе массива с облаками-->
-		<res typpe="menu" iii="3"/>
-	</behPositioning>
-
-
 	<behMenu iii="1" txt="625">
 		<!-- пункты меню, которые может выбрать игрок,
 		с указанием на последующую активность,
 		а также с текстовкой, которую надо отобрюазить по каждому пункту.
 		 В самом behMebu общая текстовка на меню для пояснения окошка игроку-->
-		<choicer behActivity="5" txt="626"/>
-		<choicer behActivity="6" txt="627"/>
-		<choicer behActivity="7" txt="628"/>
+		<choicer behActivity="5" txt="626">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="6" txt="627">
+			<fram fr="1" num="0"/>
+			<fram fr="3" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="7" txt="628">
+			<fram fr="1" num="0"/>
+			<fram fr="4" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
 	</behMenu>
-
-	<behMenu iii="3" txt="720">
-		<choicer behActivity="8" txt="722"/>
-	</behMenu>
-
-
-	<behMenu iii="100" txt="702">
-		<!-- пункты меню, которые может выбрать игрок,
-		с указанием на последующую активность,
-		а также с текстовкой, которую надо отобрюазить по каждому пункту.
-		 В самом behMebu общая текстовка на меню для пояснения окошка игроку-->
-	</behMenu>
-	<behMenu iii="101" txt="703">
-	</behMenu>
-	<behMenu iii="102" txt="704">
-	</behMenu>
-
 	<behActivity iii="5"> <!-- активность, с вероятностями выпадения того или иного результата -->
 		<res chance="100" behRes="1"/>
 	</behActivity>
 	<behActivity iii="6"> <!-- активность, с вероятностями выпадения того или иного результата -->
 		<res chance="100" behRes="2"/>
 	</behActivity>
-
-	<behActivity iii="8"> <!-- -->
-		<res chance="100" behRes="3"/>
-	</behActivity>
-
 	<behResult iii="1">
 		<!-- треб рес героя,
 		изменяется глобальный ресурс,
@@ -742,7 +746,6 @@
 		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
 		<message txt=""/>
 	</behResult>
-
 	<behResult iii="2">
 		<!-- треб рес героя,
 		изменяется глобальный ресурс,
@@ -754,18 +757,82 @@
 		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
 		<message txt=""/>
 	</behResult>
+	<behActivity iii="7"> <!-- активность, с вероятностями выпадения того или иного результата -->
+		<res chance="35" behRes="21"/>
+		<res chance="35" behRes="22"/>
+		<res chance="100" behRes="23"/>
+	</behActivity>
+	<behResult iii="21">
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="human" num="1" numTyppe="abs"/>
+		<resChange typpe="respect" num="5" numTyppe="abs"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="22">
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="23">
+	<behResult typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="respect" num="-4" numTyppe="abs"/>
+		<warning typpe="wildMonster" land="currland" timeToBuild="-2" canWork="0"/>
+	</behResult>
 
+	<!--<effect tip="rebelionCitizen" where="any" timme="-1">problemSituation</effect> -->
 
+	<!-- герой над землёй в городе, на которой нет работников-->
+	<behPositioning iii="2" weAre="30">
+		<where num="land"/>
+		<warning res="no"/>
+		<empty i="no"/>
+		<res typpe="menu" iii="2"/>
+	</behPositioning>
+
+	<!-- герой над облаком на карте мира-->
+	<behPositioning iii="3" weAre="50">
+		<where num="cloud"/>
+		<warning res="870"/> <!-- подсказка для where, номер в векторе массива с облаками-->
+		<res typpe="menu" iii="3"/>
+	</behPositioning>
+	<behMenu iii="3" txt="720">
+		<choicer behActivity="8" txt="722">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="3"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="8"> <!-- -->
+		<res chance="100" behRes="3"/>
+	</behActivity>
 	<behResult iii="3">
 		<!--<heroRes typpe="leadership" num="0" numTyppe="abs" need="1" from="1"/>-->
 		<change typpe="cloud"/>
 	</behResult>
 
+	<!-- тестовые сообщения-->
+	<behMenu iii="100" txt="702">
+		<!-- пункты меню, которые может выбрать игрок,
+		с указанием на последующую активность,
+		а также с текстовкой, которую надо отобрюазить по каждому пункту.
+		 В самом behMebu общая текстовка на меню для пояснения окошка игроку-->
+	</behMenu>
+	<behMenu iii="101" txt="703">
+	</behMenu>
+	<behMenu iii="102" txt="704">
+	</behMenu>
 
 	<!-- хотим улучшить отношения с городом-->
 	<behMenu iii="103" txt="850">
-		<choicer behActivity="9"  txt="852"/>
-		<choicer behActivity="10" txt="854"/>
+		<choicer behActivity="9"  txt="852">
+			<fram fr="1" num="0"/>
+			<fram fr="3" num="1"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="10" txt="854">
+			<fram fr="1" num="0"/>
+			<fram fr="3" num="1"/>
+			<fram fr="1" num="0"/>
+		</choicer>
 	</behMenu>
 	<behActivity iii="9">
 		<res chance="66" behRes="4"/>
@@ -779,7 +846,6 @@
 		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
 		<cityRel typpe="current" num="5" numTyppe="abs"/>
 	</behResult>
-
 	<behActivity iii="10">
 		<res chance="30" behRes="6"/>
 		<res chance="30" behRes="7"/>
@@ -812,7 +878,11 @@
 
 	<!-- хотим ухудшить отношения с городом-->
 	<behMenu iii="104" txt="856">
-		<choicer behActivity="11"  txt="858"/>
+		<choicer behActivity="11"  txt="858">
+			<fram fr="1" num="0"/>
+			<fram fr="3" num="1"/>
+			<fram fr="1" num="0"/>
+		</choicer>
 	</behMenu>
 	<behActivity iii="11">
 		<res chance="85" behRes="9"/>
@@ -829,7 +899,11 @@
 
 	<!-- хотим объявить войну-->
 	<behMenu iii="105" txt="860">
-		<choicer behActivity="12" txt="862"/>
+		<choicer behActivity="12" txt="862">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
 	</behMenu>
 	<behActivity iii="12">
 		<res chance="100" behRes="11"/>
@@ -839,8 +913,190 @@
 		<cityRel typpe="war" num="0" numTyppe="abs"/>
 	</behResult>
 
-	<mess iii="1" behMenu="100" activeShow="0" out="0"/>
-	<mess iii="2" behMenu="101" activeShow="0" out="0"/>
+	<!-- хотим предложить войти в союз-->
+	<behMenu iii="106" txt="904">
+		<choicer behActivity="13" txt="906">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="13">
+		<res chance="100" behRes="12"/>
+	</behActivity>
+	<behResult iii="12">
+		<needRel typpe="noAlliance" numTyppe="abs" res=""/>
+		<needRel typpe="power" numTyppe="both" res="army_hoplite"/>
+		<needRel typpe="relations" numTyppe="high" res=""/>
+		<needRel typpe="noWar" numTyppe="" res=""/>
+		<cityRel typpe="alliance" num="0" numTyppe="you"/>
+	</behResult>
+
+	<!-- хотим попроситься войти в союз-->
+	<behMenu iii="107" txt="908">
+		<choicer behActivity="14" txt="910">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="14">
+		<res chance="100" behRes="13"/>
+	</behActivity>
+	<behResult iii="13">
+		<needRel typpe="firstAlliance" numTyppe="" res=""/>
+		<needRel typpe="relations" numTyppe="good" res=""/>
+		<needRel typpe="noWar" numTyppe="" res=""/>
+		<cityRel typpe="alliance" num="0" numTyppe="they"/>
+	</behResult>
+
+	<!-- хотим потребовать покинуть союз-->
+	<behMenu iii="108" txt="912">
+		<choicer behActivity="15" txt="914">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="15">
+		<res chance="100" behRes="14"/>
+	</behActivity>
+	<behResult iii="14">
+		<needRel typpe="relations" numTyppe="good" res=""/>
+		<needRel typpe="noWar" numTyppe="" res=""/>
+		<needRel typpe="power" numTyppe="you" res="army_hoplite"/>
+		<cityRel typpe="alliance" num="0" numTyppe="out"/>
+	</behResult>
+
+	<!-- хотим предложить мир-->
+	<behMenu iii="109" txt="916">
+		<choicer behActivity="16" txt="918">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="17" txt="920">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="18" txt="922">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+
+
+
+	<!-- сообщение о том, что в городе появился монстр-->
+	<behMenu iii="110" txt="924">
+	</behMenu>
+
+	<!-- выбор: покинуть союз-->
+	<behMenu iii="111" txt="928">
+		<choicer behActivity="19" txt="930">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="19">
+		<res chance="100" behRes="15"/>
+	</behActivity>
+	<behResult iii="15">
+		<cityRel typpe="alliance" num="0" numTyppe="meOut"/>
+	</behResult>
+
+
+	<!--герой над монстром на карте города -->
+	<behPositioning iii="4" weAre="30">
+		<where num="land"/>
+		<warning res="wildMonster"/>
+		<res typpe="menu" iii="112"/>
+	</behPositioning>
+	<behMenu iii="112" txt="932">
+		<choicer behActivity="20" txt="934">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="4"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="21" txt="936">
+			<fram fr="2" num="2"/>
+			<fram fr="3" num="2"/>
+			<fram fr="4" num="2"/>
+		</choicer>
+		<choicer behActivity="22" txt="938">
+			<fram fr="1" num="0"/>
+			<fram fr="4" num="4"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="20">
+		<res chance="70" behRes="100"/>
+		<res chance="30" behRes="101"/>
+	</behActivity>
+	<behResult iii="100">
+		<heroRes typpe="leadership" num="4" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-100" numTyppe="perc"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="101">
+		<heroRes typpe="leadership" num="4" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-30" numTyppe="perc"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behActivity iii="21">
+		<res chance="50" behRes="102"/>
+		<res chance="50" behRes="103"/>
+	</behActivity>
+	<behResult iii="102">
+		<heroRes typpe="leadership" num="2" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="103">
+		<heroRes typpe="leadership" num="2" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="2" numTyppe="abs" need="1" from="1"/>
+	</behResult>
+	<behActivity iii="22">
+		<res chance="50" behRes="104"/>
+		<res chance="50" behRes="105"/>
+	</behActivity>
+	<behResult iii="104">
+		<heroRes typpe="learning" num="4" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="105">
+		<heroRes typpe="learning" num="4" numTyppe="abs" need="1" from="1"/>
+	</behResult>
+
+
+	<!-- герой над городом на карте мира, готовится совершить набег-->
+	<behPositioning iii="5" weAre="50">
+		<where num="city"/>
+		<res typpe="menu" iii="120"/>
+		<dip status="peace"/>
+	</behPositioning>
+	<behMenu iii="120" txt="942">
+		<choicer behActivity="23" txt="944">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="24" txt="946">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+
+
+
+	<mess iii="1" behMenu="100" activeShow="0" out="0" stil="1"/>
+	<mess iii="2" behMenu="101" activeShow="0" out="0" stil="1"/>
 
 	<cloud iii="1" xx="128" yy="260" ww="142" hh="129"/>
 	<cloud iii="2" xx="314" yy="280" ww="142" hh="129"/>
@@ -871,26 +1127,48 @@
 	<character char="3" charTxt="816"/>
 	<character char="4" charTxt="818"/>
 
+	<!-- покровители городов-->
+	<patron pat="0" patTxt="886"/>
+	<patron pat="1" patTxt="888"/>
+	<patron pat="2" patTxt="890"/>
+	<patron pat="3" patTxt="892"/>
+
+
 	<!-- какие параметры будет сохранять менеджер истории-->
 	<willSave iii="1" res="gold"  category="1"/>
-	<willSave iii="1" res="food"  category="1"/>
-	<willSave iii="1" res="mine"  category="1"/>
-	<willSave iii="1" res="craft" category="1"/>
-	<willSave iii="1" res="ilot"  category="2"/>
-	<willSave iii="1" res="metek" category="2"/>
-	<willSave iii="1" res="human" category="2"/>
+	<willSave iii="2" res="food"  category="1"/>
+	<willSave iii="3" res="mine"  category="1"/>
+	<willSave iii="4" res="craft" category="1"/>
+	<willSave iii="5" res="human" category="2"/>
+	<willSave iii="6" res="metek" category="2"/>
+	<willSave iii="7" res="ilot"  category="2"/>
+	<willSave iii="8" res="hero"  category="3"/>
+
 	<!-- параметры категорий, показывающие способ отображения-->
 	<category iii="1" out="lineGraphic">
 		<col clr="0xFFCC00"/>
 		<col clr="0x00FF00"/>
-		<col clr="0x993300"/>
+		<col clr="0x330000"/>
 		<col clr="0x0000FF"/>
 	</category>
 	<category iii="2" out="lineGraphic">
-		<col clr="0xFFCC00"/>
+		<col clr="0xCC3300"/>
 		<col clr="0x00FF00"/>
-		<col clr="0x993300"/>
+		<col clr="0x330000"/>
 	</category>
+	<category iii="3" out="bandGraphic">
+		<col clr="0x330000"/>
+		<col clr="0x9900FF"/>
+		<col clr="0xCC3300"/>
+		<col clr="0x0000FF"/>
+		<col clr="0x00FF00"/>
+		<col clr="0xFFCC00"/>
+	</category>
+
+	<!-- текстовки для уровня технологии, низкий, средний, высокий-->
+	<technology txt="900"/>
+	<technology txt="896"/>
+	<technology txt="898"/>
 
 
 	<!--перенос края папируса при переходе на экран мира-->
@@ -1134,6 +1412,7 @@
 		<effect iii="860">visOff</effect>
 		<effect iii="852">visOff</effect>
 		<effect iii="890">visOff</effect>
+		<effect iii="896">visOff</effect>
 		<effect iii="527">visOff</effect>
 		<effect iii="528">visOff</effect>
 		<effect>cityClose</effect>
@@ -1148,6 +1427,7 @@
 		<effect iii="860">visOff</effect>
 		<effect iii="880">visOff</effect>
 		<effect iii="890">visOff</effect>
+		<effect iii="896">visOff</effect>
 		<effect iii="852">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
@@ -1162,6 +1442,7 @@
 		<effect iii="880">visOn</effect>
 		<effect iii="852">visOff</effect>
 		<effect iii="890">visOff</effect>
+		<effect iii="896">visOff</effect>
 	</mmotion>
 
 	<!--нажата кнопка закрытия диалогового меню города-->
@@ -1173,6 +1454,7 @@
 		<effect iii="860">visOff</effect>
 		<effect iii="880">visOff</effect>
 		<effect iii="890">visOff</effect>
+		<effect iii="896">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
 
@@ -1278,18 +1560,93 @@
 		<effect iii="890">visOn</effect>
 	</mmotion>
 
+	<!--нажата кнопка показа меню культуры города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4161</qid>
+		<action iii="850">tap</action>
+		<action iii="7">numOfMany</action>
+		<effect iii="896">visOn</effect>
+		<effect iii="850">visOff</effect>
+		<effect iii="850">getCoords</effect>
+		<effect iii="896" xx="0" yy="0">setCoords</effect>
+	</mmotion>
+
+	<!--нажата кнопка перейти на экран торговли с экрана КУЛЬТУРЫ города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4162</qid>
+		<action iii="896">tap</action>
+		<action iii="8">numOfMany</action>
+		<effect iii="896">getCoords</effect>
+		<effect iii="860" xx="0" yy="0">setCoords</effect>
+		<effect iii="896">visOff</effect>
+		<effect iii="860">visOn</effect>
+	</mmotion>
+
+	<!--нажата кнопка перейти на экран КУЛЬТУРЫ с экрана торговли города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4163</qid>
+		<action iii="860">tap</action>
+		<action iii="8">numOfMany</action>
+		<effect iii="860">getCoords</effect>
+		<effect iii="896" xx="0" yy="0">setCoords</effect>
+		<effect iii="860">visOff</effect>
+		<effect iii="896">visOn</effect>
+	</mmotion>
+
+
+	<!--нажата кнопка перейти на экран дипломатии с экрана КУЛЬТУРЫ города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4164</qid>
+		<action iii="896">tap</action>
+		<action iii="7">numOfMany</action>
+		<effect iii="896">getCoords</effect>
+		<effect iii="890" xx="0" yy="0">setCoords</effect>
+		<effect iii="896">visOff</effect>
+		<effect iii="890">visOn</effect>
+	</mmotion>
+
+	<!--нажата кнопка перейти на экран КУЛЬТУРЫ с экрана дипломатии города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4165</qid>
+		<action iii="890">tap</action>
+		<action iii="8">numOfMany</action>
+		<effect iii="890">getCoords</effect>
+		<effect iii="896" xx="0" yy="0">setCoords</effect>
+		<effect iii="890">visOff</effect>
+		<effect iii="896">visOn</effect>
+	</mmotion>
+
+	<!--нажата кнопка закрытия меню культуры города с переходом на общий экран города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4166</qid>
+		<action iii="896">tap</action>
+		<action iii="5">numOfMany</action>
+		<effect iii="896">getCoords</effect>
+		<effect iii="896" xx="0" yy="0">setCoords</effect>
+		<effect iii="896">visOff</effect>
+		<effect iii="850">visOn</effect>
+	</mmotion>
+	<!--нажата кнопка закрытия меню культуры города-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">4167</qid>
+		<action iii="896">tap</action>
+		<action iii="6">numOfMany</action>
+		<effect iii="896">getCoords</effect>
+		<effect iii="850" xx="0" yy="0">setCoords</effect>
+		<effect iii="880">visOff</effect>
+		<effect iii="896">visOff</effect>
+	</mmotion>
+
+
+
+
 
 	<!--нажата кнопка на дополнительной панели города-->
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="50" willSave="0">418</qid>
 		<action iii="880">tap</action>
-		<effect iii="860">visOff</effect>
-		<effect iii="890">visOff</effect>
-		<effect iii="850">setNowCoords</effect>
-		<effect iii="850">visOn</effect>
 		<effect>fromAdditionalCityPanel</effect>
 	</mmotion>
-
 
 
 
@@ -1495,6 +1852,7 @@
 		<effect iii="860">visOff</effect>
 		<effect iii="880">visOff</effect>
 		<effect iii="890">visOff</effect>
+		<effect iii="896">visOff</effect>
 		<effect iii="852">visOff</effect>
 		<effect>cityClose</effect>
 	</mmotion>
@@ -1524,7 +1882,7 @@
 		<qid activ="1" after_work="1" screenWork="50" willSave="0">608</qid>
 		<action iii="890">tap</action>
 		<action iii="18">numOfMany</action>
-		<effect iii="4" behMenu="103" activeShow="1" out="1">makeMessage</effect>
+		<effect iii="4" behMenu="103" activeShow="1" out="1" stil="2">makeMessage</effect>
 		<!--<effect res="1">relationChange</effect>-->
 	</mmotion>
 
@@ -1533,7 +1891,7 @@
 		<qid activ="1" after_work="1" screenWork="50" willSave="0">609</qid>
 		<action iii="890">tap</action>
 		<action iii="19">numOfMany</action>
-		<effect iii="5" behMenu="104" activeShow="1" out="1">makeMessage</effect>
+		<effect iii="5" behMenu="104" activeShow="1" out="1" stil="2">makeMessage</effect>
 		<!--<effect res="1">relationChange</effect>-->
 	</mmotion>
 
@@ -1542,7 +1900,7 @@
 		<qid activ="1" after_work="1" screenWork="50" willSave="0">610</qid>
 		<action iii="890">tap</action>
 		<action iii="16">numOfMany</action>
-		<effect iii="6" behMenu="105" activeShow="1" out="1">makeMessage</effect>
+		<effect iii="6" behMenu="105" activeShow="1" out="1" stil="2">makeMessage</effect>
 		<!--<effect res="1">relationChange</effect>-->
 	</mmotion>
 
@@ -1559,8 +1917,13 @@
 		<action iii="1014">tap</action>
 		<effect num="2">categoryWillSave</effect>
 		<effect iii="1012">visOff</effect>
-		<effect iii="1020">visOff</effect>
+		<effect iii="1021">visOff</effect>
+		<effect iii="1024">visOff</effect>
+		<effect iii="1025">visOff</effect>
+		<effect iii="1026">visOff</effect>
 		<effect iii="1022">visOn</effect>
+		<effect iii="1023">visOn</effect>
+
 	</mmotion>
 	<!--показ графика ресурсов-->
 	<mmotion>
@@ -1569,7 +1932,86 @@
 		<effect num="1">categoryWillSave</effect>
 		<effect iii="1012">visOn</effect>
 		<effect iii="1020">visOn</effect>
+		<effect iii="1021">visOn</effect>
 		<effect iii="1022">visOff</effect>
+		<effect iii="1023">visOff</effect>
+		<effect iii="1024">visOff</effect>
+		<effect iii="1025">visOff</effect>
+		<effect iii="1026">visOff</effect>
+	</mmotion>
+
+	<!--показ графика ресурсов-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="70" willSave="0">618</qid>
+		<action iii="1018">tap</action>
+		<effect num="3">categoryWillSave</effect>
+		<effect iii="1012">visOff</effect>
+		<effect iii="1020">visOff</effect>
+		<effect iii="1021">visOff</effect>
+		<effect iii="1022">visOff</effect>
+		<effect iii="1023">visOff</effect>
+		<effect iii="1024">visOn</effect>
+		<effect iii="1025">visOn</effect>
+		<effect iii="1026">visOn</effect>
+	</mmotion>
+
+
+	<!--следующий герой в списке истории-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="70" willSave="0">619</qid>
+		<action iii="1026">tap</action>
+		<action iii="6">numOfMany</action>
+		<effect iii="1">heroHistoryChange</effect>
+		<!--<effect res="1">relationChange</effect>-->
+	</mmotion>
+	<!--предыдущий герой в списке истории-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="70" willSave="0">620</qid>
+		<action iii="1026">tap</action>
+		<action iii="5">numOfMany</action>
+		<effect iii="0">heroHistoryChange</effect>
+		<!--<effect res="1">relationChange</effect>-->
+	</mmotion>
+
+
+	<!--город: нажата кнопка предложить войти в альянс-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">624</qid>
+		<action iii="890">tap</action>
+		<action iii="15">numOfMany</action>
+		<effect iii="7" behMenu="106" activeShow="1" out="1" stil="2">makeMessage</effect>
+	</mmotion>
+	<!--город: нажата кнопка попроситься войти в альянс-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">625</qid>
+		<action iii="890">tap</action>
+		<action iii="14">numOfMany</action>
+		<effect iii="8" behMenu="107" activeShow="1" out="1" stil="2">makeMessage</effect>
+	</mmotion>
+	<!--город: нажата кнопка потребовать покинуть альянс-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">626</qid>
+		<action iii="890">tap</action>
+		<action iii="13">numOfMany</action>
+		<effect iii="9" behMenu="108" activeShow="1" out="1" stil="2">makeMessage</effect>
+	</mmotion>
+
+	<!--город: нажата кнопка предложить мир-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">628</qid>
+		<action iii="890">tap</action>
+		<action iii="17">numOfMany</action>
+		<effect iii="10" behMenu="109" activeShow="1" out="1" stil="2">makeMessage</effect>
+		<!--<effect res="1">relationChange</effect>-->
+	</mmotion>
+
+	<!--ваш город: нажата кнопка покинуть союз-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="50" willSave="0">630</qid>
+		<action iii="852">tap</action>
+		<action iii="4">numOfMany</action>
+		<effect iii="12" behMenu="111" activeShow="1" out="1" stil="2">makeMessage</effect>
+		<!--<effect res="1">relationChange</effect>-->
 	</mmotion>
 
 
@@ -1578,7 +2020,7 @@
 	<mmotion>
 		<qid activ="1" after_work="0" screenWork="0" willSave="0">800</qid>
 		<action first="2980" second="no">curDate</action>
-		<effect iii="3" behMenu="102" activeShow="0" out="0">makeMessage</effect>
+		<effect iii="3" behMenu="102" activeShow="1" out="0" stil="1">makeMessage</effect>
 	</mmotion>
 
 
@@ -1600,20 +2042,34 @@
 		<effect iii="1006">visOn</effect>
 	</mmotion>
 
+	<!-- конец игры, если из неё выйти-->
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="0" willSave="0">1204</qid>
 		<action iii="1010">tap</action>
 		<effect txt="game1module" cmd="game">deleteModule</effect>
 	</mmotion>
 
-
-
-	<!--проверяем потребность одного глобального ресурса в другом
+	<!--появление монстров, если в городе отсутствует храм-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="30" willSave="0">260</qid>
-		<action>res</action>
-		<effect>res_need</effect>
-	</mmotion>-->
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1210</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="3">timeMoreThan</action>
+		<action tip="temple">noBuilding</action>
+		<action num="30">randi</action>
+		<effect tip="wildMonster" where="any" timme="-1">problemSituation</effect>
+		<effect qid="1212">activate</effect>
+		<effect iii="14" behMenu="110" activeShow="1" out="1" stil="3">makeMessage</effect>
+	</mmotion>
+
+	<!--появление монстров, если в городе отсутствует храм-->
+	<mmotion>
+		<qid activ="0" after_work="1" screenWork="0" willSave="0">1212</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="3">timeMoreThan</action>
+		<action tip="temple">noBuilding</action>
+		<action num="30">randi</action>
+		<effect tip="wildMonster" where="any" timme="-1">problemSituation</effect>
+	</mmotion>
 
 <!--пропускаем диалог
 	<mmotion>
@@ -1621,11 +2077,5 @@
 		<action iii="202">tap</action>
 		<effect>makeSkip</effect>
 	</mmotion>-->
-
-
-
-
-
-
 
 </chronicle>

@@ -46,6 +46,11 @@ public class SubGraph extends Parent2Subject
 
         var xstep:Number=wid/dan.currMatrix.maxx;
         var ystep:Number=heig/dan.currMatrix.maxy;
+        if (dan.currMatrix.maxy==0)
+        {
+            ystep=0;
+        }
+        trace("xstep="+xstep+"; ystep="+ystep);
 
         trace("dan.currMatrix.tip.length="+dan.currMatrix.tip.length);
         trace("dan.currMatrix.first.length="+dan.currMatrix.first.length);
@@ -57,18 +62,31 @@ public class SubGraph extends Parent2Subject
         for (var i:int=0; i<dan.currMatrix.tip.length; i++)
         {
             trace(dan.currMatrix.tip[i]+"::"+dan.currMatrix.first[i]+"::"+dan.currMatrix.second[i]);
-            if (dan.currMatrix.tip[i]==0)
+            if (dan.currMatrix.tip[i]==0) //задаём стиль линии
             {
                 var tColor:uint=uint(dan.currMatrix.first[i]);
                 el.pic.graphics.lineStyle(5, tColor, 1);
             }
-            if (dan.currMatrix.tip[i]==1)
+            if (dan.currMatrix.tip[i]==1) //переводим позицию в точку
             {
                 el.pic.graphics.moveTo(int(dan.currMatrix.first[i])*xstep, dan.currMatrix.second[i]*ystep);
             }
-            if (dan.currMatrix.tip[i]==2)
+            if (dan.currMatrix.tip[i]==2) //рисуем линию из позиции в новую позицию
             {
                 el.pic.graphics.lineTo(int(dan.currMatrix.first[i])*xstep, dan.currMatrix.second[i]*ystep);
+            }
+            if (dan.currMatrix.tip[i]==3) //объявляем начало заливки
+            {
+                el.pic.graphics.beginFill(uint(dan.currMatrix.first[i]), dan.currMatrix.second[i]);
+            }
+            if (dan.currMatrix.tip[i]==4) //рисуем прямоугольник
+            {
+                el.pic.graphics.drawRect(int(dan.currMatrix.first[i-1])*xstep+(i-1), dan.currMatrix.second[i-1]*ystep,
+                                        int(dan.currMatrix.first[i])*xstep, dan.currMatrix.second[i]*ystep);
+            }
+            if (dan.currMatrix.tip[i]==5) //объявляем завершение заливки
+            {
+                el.pic.graphics.endFill();
             }
         }
     }

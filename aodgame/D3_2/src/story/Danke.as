@@ -152,6 +152,7 @@ public class Danke
 
     public var governments:Vector.<Equiler> = new Vector.<Equiler>(); //соотношения номера типа правления города к номеру текстовки
     public var characters:Vector.<Equiler> = new Vector.<Equiler>();//соотношения номера типа характера города к номеру текстовки
+    public var patrons:Vector.<Equiler> = new Vector.<Equiler>();//соотношения номера типа покровителя города к номеру текстовки
     public var alliances:Vector.<Alliance> = new Vector.<Alliance>();//вектор текущих союзов городов
     public var cityAllianceArmy:Boolean=false; //переменная true -показывает армию альянса, false - армию города
 
@@ -167,6 +168,17 @@ public class Danke
     public var categoryWillSave:int=0; //все цифры кроме 0 показывает, какой график должен построить менеджер по истории
     public var category:Vector.<Category> = new Vector.<Category>(); //параметры вывода категорий сохраняемых значений
     public var currMatrix:MatrixView = new MatrixView();
+    public var historyTheHeroIsCome:Boolean=false;
+
+    public var historyHeroChoose:int=-1;
+    public var heroHistoryCategory:int=-1;
+
+    public var techLevelTxt:Vector.<String> = new Vector.<String>(); // текстовки для уровня технологии, низкий, средний, высокий
+
+    public var messFramsOfFramCost:Vector.<int> = new Vector.<int>(); //номер фрейма, на котороый должна перейти картинка
+    public var messFramsOfNumCost:Vector.<int> = new Vector.<int>(); //цифра, которую должно принять текстовое поле
+
+    public var cityOver:int=-1;//над каким городом отпустили героя
 
 
     public function Danke()
@@ -265,13 +277,14 @@ public class Danke
 
         governments = new Vector.<Equiler>();
         characters = new Vector.<Equiler>();
+        patrons = new Vector.<Equiler>();
         alliances = new Vector.<Alliance>();
         cityAllianceArmy = false;
 
         knownCities = new Vector.<int>();
         known=0;//число известных городов
         dxKnown=0;
-        specCityPanel=0;
+        specCityPanel=-1;
 
         cityDipPanel=-1;
 
@@ -280,7 +293,14 @@ public class Danke
         willSave = new Vector.<Collection>();
         categoryWillSave=0;
         currMatrix = new MatrixView();
+        historyTheHeroIsCome=true;
+        historyHeroChoose=-1;
+        heroHistoryCategory=-1;
 
+        techLevelTxt = new Vector.<String>();
+        messFramsOfFramCost = new Vector.<int>();
+        messFramsOfNumCost = new Vector.<int>();
+        cityOver=-1;
     }
 
     public static function getInstance():Danke

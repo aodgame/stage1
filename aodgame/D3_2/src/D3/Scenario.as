@@ -101,6 +101,7 @@ public class Scenario
             bit.sChangeTurn=false;
             bit.sCurrentTurn++;
             bit.sTimmer=timmer.changeDate();
+            timmer.numOfMoves++;
         }
     }
 

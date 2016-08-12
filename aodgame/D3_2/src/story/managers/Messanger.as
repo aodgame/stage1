@@ -82,12 +82,15 @@ public class Messanger
                 if (dan.mess.length>i)
                 {
                     visual.push(1);
+                    var t=(dan.mess[i].stil-1)*2; //показываем картинку, соответствующую типу сообщения
+                    trace(dan.mess[i].stil+"; message stil="+t);
+                    trace(dan.mess[i].iii);
                     if (dan.mess[i].wasShowed)
                     {
-                        sub[iidi].fram[i] = 4;
+                        sub[iidi].fram[i] = t+4;
                     } else
                     {
-                        sub[iidi].fram[i] = 3;
+                        sub[iidi].fram[i] = t+3;
                     }
                 } else
                 {
@@ -158,7 +161,7 @@ public class Messanger
         }
         //анализируем, а не надо ли данное сообщение удалить
         //trace("curShow="+curShow+"; dan.needToMakeMenu="+dan.needToMakeMenu);
-        if (curShow!=-1 && !dan.needToMakeMenu && dan.behPosFromMess==-1)
+        if (curShow!=-1 && dan.mess.length>0 && !dan.needToMakeMenu && dan.behPosFromMess==-1)
         {
             //trace("it out);");
             if (!dan.mess[curShow].out)
@@ -174,5 +177,6 @@ public class Messanger
             curShow=-1;
         }
     }
+
 }
 }

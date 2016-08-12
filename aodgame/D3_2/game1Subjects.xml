@@ -904,19 +904,42 @@
 		<pic picload="2" num="1">framLong1</pic>
 		<pic picload="2" num="3">btnFrame2</pic>
 
+		<pic picload="2" num="9">heroNeedRes</pic>
+
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
 		<pos xx="142" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
 		<pos xx="306" yy="180" ww="0" hh="0" fram="1" spec="btn2"/>
 		<pos xx="464" yy="180" ww="0" hh="0" fram="1" spec="btn3"/>
 
-		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<pos xx="100" yy="236" ww="0" hh="0" fram="1" spec="show:m1"/>
+		<pos xx="143" yy="236" ww="0" hh="0" fram="1" spec="show:m2"/>
+		<pos xx="185" yy="236" ww="0" hh="0" fram="1" spec="show:m3"/>
+		<pos xx="265" yy="236" ww="0" hh="0" fram="1" spec="show:m4"/>
+		<pos xx="308" yy="236" ww="0" hh="0" fram="1" spec="show:m5"/>
+		<pos xx="350" yy="236" ww="0" hh="0" fram="1" spec="show:m6"/>
+		<pos xx="423" yy="236" ww="0" hh="0" fram="1" spec="show:m7"/>
+		<pos xx="466" yy="236" ww="0" hh="0" fram="1" spec="show:m8"/>
+		<pos xx="508" yy="236" ww="0" hh="0" fram="1" spec="show:m9"/>
+
+
+		<txt xx="60" yy="60" id="$actInfo:464:100:0x000000:c:t:19"/>
 		<txt xx="72" yy="170" id="$abtn1:140:80:0x000000:c:t:18"/>
 		<txt xx="234" yy="166" id="$abtn2:140:80:0x000000:c:t:18"/>
 		<txt xx="392" yy="166" id="$abtn3:140:80:0x000000:c:t:18"/>
 
-		<check _with="1" _who="5"/>
-		<check _with="2" _who="6"/>
-		<check _with="3" _who="7"/>
+		<txt xx="78" yy="238" id="$hresneed1:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="121" yy="238" id="$hresneed2:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="165" yy="238" id="$hresneed3:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="243" yy="238" id="$hresneed4:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="286" yy="238" id="$hresneed5:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="330" yy="238" id="$hresneed6:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="401" yy="238" id="$hresneed7:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="444" yy="238" id="$hresneed8:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="488" yy="238" id="$hresneed9:40:28:0x000000:c:t:20:0xFFFFFF"/>
+
+		<check _with="1" _who="14"/>
+		<check _with="2" _who="15"/>
+		<check _with="3" _who="16"/>
 		<atChild>10</atChild>
 	</subject>
 
@@ -928,16 +951,32 @@
 		<pic picload="2" num="1">framLong1</pic>
 		<pic picload="2" num="2">btnFrame2</pic>
 
+		<pic picload="2" num="6">heroNeedRes</pic>
+
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
 		<pos xx="194" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
 		<pos xx="410" yy="180" ww="0" hh="0" fram="1" spec="btn2"/>
 
-		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<pos xx="152" yy="239" ww="0" hh="0" fram="1" spec="show:m1"/>
+		<pos xx="195" yy="239" ww="0" hh="0" fram="1" spec="show:m2"/>
+		<pos xx="237" yy="239" ww="0" hh="0" fram="1" spec="show:m3"/>
+		<pos xx="369" yy="239" ww="0" hh="0" fram="1" spec="show:m4"/>
+		<pos xx="412" yy="239" ww="0" hh="0" fram="1" spec="show:m5"/>
+		<pos xx="454" yy="239" ww="0" hh="0" fram="1" spec="show:m6"/>
+
+		<txt xx="60" yy="60" id="$actInfo:464:100:0x000000:c:t:19"/>
 		<txt xx="124" yy="166" id="$abtn1:140:80:0x000000:c:t:18"/>
 		<txt xx="340" yy="166" id="$abtn2:140:80:0x000000:c:t:18"/>
 
-		<check _with="1" _who="4"/>
-		<check _with="2" _who="5"/>
+		<txt xx="130" yy="242" id="$hresneed1:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="176" yy="242" id="$hresneed2:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="217" yy="242" id="$hresneed3:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="347" yy="242" id="$hresneed4:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="390" yy="242" id="$hresneed5:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="434" yy="242" id="$hresneed6:40:28:0x000000:c:t:20:0xFFFFFF"/>
+
+		<check _with="1" _who="10"/>
+		<check _with="2" _who="11"/>
 		<atChild>10</atChild>
 	</subject>
 
@@ -949,13 +988,23 @@
 		<pic picload="2" num="1">framLong1</pic>
 		<pic picload="2" num="1">btnFrame2</pic>
 
+		<pic picload="2" num="3">heroNeedRes</pic>
+
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
 		<pos xx="306" yy="180" ww="0" hh="0" fram="1" spec="btn1"/>
 
-		<txt xx="90" yy="80" id="$actInfo:414:80:0x000000:c:t:20"/>
+		<pos xx="265" yy="236" ww="0" hh="0" fram="1" spec="show:m1"/>
+		<pos xx="308" yy="236" ww="0" hh="0" fram="1" spec="show:m2"/>
+		<pos xx="350" yy="236" ww="0" hh="0" fram="1" spec="show:m3"/>
+
+		<txt xx="60" yy="60" id="$actInfo:464:100:0x000000:c:t:19"/>
 		<txt xx="234" yy="166" id="$abtn1:140:80:0x000000:c:t:18"/>
 
-		<check _with="1" _who="3"/>
+		<txt xx="243" yy="238" id="$hresneed1:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="286" yy="238" id="$hresneed2:40:28:0x000000:c:t:20:0xFFFFFF"/>
+		<txt xx="330" yy="238" id="$hresneed3:40:28:0x000000:c:t:20:0xFFFFFF"/>
+
+		<check _with="1" _who="6"/>
 		<atChild>10</atChild>
 	</subject>
 
@@ -966,7 +1015,7 @@
 		<x>228</x><y>273</y><width>0</width><height>0</height>
 		<pic picload="2" num="1">framLong1</pic>
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec=""/>
-		<txt xx="90" yy="80" id="$actInfo:414:160:0x000000:c:t:20"/>
+		<txt xx="60" yy="90" id="$actInfo:464:160:0x000000:c:t:20"/>
 		<atChild>10</atChild>
 	</subject>
 
@@ -1452,16 +1501,6 @@
 		<atChild>4</atChild>
 	</subject>
 
-	<!-- названия городов, которые сразу будут не видны
-	<subject>
-		<id>841</id>
-		<type weAre="50" ourPosition="1" vis="0" willSave="1">background</type>
-		<x>0</x><y>0</y><width>0</width><height>0</height>
-		<pic picload="2">no</pic>
-		<txt xx="564" yy="371" id="319:60:26:0xFFFFFF:c:t:24:0x000000:"/>
-		<atChild>3</atChild>
-	</subject>-->
-
 	<!-- Меню окошка города -->
 	<subject>
 		<id>850</id>
@@ -1511,12 +1550,21 @@
 		<pic picload="2" num="1">city1</pic>
 		<pic picload="2" num="1">btn_backspec</pic>
 
+		<pic picload="2" num="1">btn_dip4</pic>
+
 		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec="go"/>
 		<pos xx="133" yy="119" ww="150" hh="150" fram="3" spec="go"/>
-		<pos xx="141" yy="373" ww="0" hh="0" fram="3" spec="btn1"/>
+		<pos xx="503" yy="428" ww="0" hh="0" fram="3" spec="btn1"/>
 
-		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:f:28"/>
-		<txt xx="75" yy="200" id="615:400:26:0x000000:c:t:20"/>
+		<pos xx="124" yy="227" ww="0" hh="0" fram="1" spec="btn2"/>
+
+		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:t:28"/>
+		<txt xx="202" yy="118" id="615:180:26:0x000000:l:t:18"/>
+		<txt xx="77" yy="176" id="$cityAlliance,840,842,844:430:26:0x000000:l:t:18"/>
+		<txt xx="171" yy="213" id="926:180:26:0x000000:l:t:18"/>
+
+		<txt xx="80" yy="256" id="940:300:26:0x000000:l:t:18"/>
+		<txt xx="80" yy="280" id="886:300:26:0x000000:l:f:18"/>
 		<atChild>6</atChild>
 	</subject>
 
@@ -1657,8 +1705,10 @@
 		<pic picload="2" num="1">btn_dip1</pic>
 		<pic picload="2" num="1">btn_dip3</pic>
 		<pic picload="2" num="1">btn_dip4</pic>
+
 		<pic picload="2" num="1">btn_dip5</pic>
 		<pic picload="2" num="1">btn_dip6</pic>
+
 		<pic picload="2" num="1">btn_dip7</pic>
 		<pic picload="2" num="1">btn_dip8</pic>
 
@@ -1696,9 +1746,11 @@
 
 		<txt xx="57" yy="158" id="820:120:30:0x000000:c:t:20"/>
 		<txt xx="192" yy="158" id="822:260:30:0x000000:l:t:20"/>
-		<txt xx="83" yy="281" id="824:140:44:0x000000:c:f:18"/>
+
+		<txt xx="83"  yy="281" id="824:140:44:0x000000:c:f:18"/>
 		<txt xx="213" yy="281" id="826:140:44:0x000000:c:f:18"/>
 		<txt xx="341" yy="281" id="828:140:44:0x000000:c:f:18"/>
+
 		<txt xx="156" yy="364" id="830:110:44:0x000000:l:f:18"/>
 		<txt xx="156" yy="408" id="832:110:44:0x000000:l:f:18"/>
 		<txt xx="364" yy="364" id="834:110:44:0x000000:l:f:18"/>
@@ -1706,7 +1758,64 @@
 
 		<txt xx="96" yy="204" id="$cityArmy:90:28:0x000000:c:t:20:0xFFFFFF:"/>
 		<txt xx="96" yy="255" id="$cityFleet:90:28:0x000000:c:t:20:0xFFFFFF:"/>
-		<txt xx="192" yy="178" id="$cityRel:290:178:0x000000:l:f:18"/>
+		<!--<txt xx="192" yy="168" id="$cityRel:290:150:0x000000:l:f:18"/>-->
+		<atChild>6</atChild>
+	</subject>
+
+	<!-- Меню окошка социума города -->
+	<subject>
+		<id>896</id>
+		<type weAre="50" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>250</x><y>105</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">cityFront</pic>
+		<pic picload="2" num="1">women_mc</pic>
+		<pic picload="2" num="1">res_fram9</pic>
+		<pic picload="2" num="1">peace_war</pic>
+
+		<pic picload="2" num="1">btn_backspec</pic>
+		<pic picload="2" num="1">btn_closeSpec</pic>
+		<pic picload="2" num="1">btn_dip2</pic>
+		<pic picload="2" num="1">btn_trade2</pic>
+
+		<pic picload="2" num="3">res_fram3</pic>
+		<pic picload="2" num="3">symb_MenuResArray</pic>
+
+		<pos xx="0" yy="0" ww="0" hh="0" fram="1" spec="go"/>
+		<pos xx="100" yy="60" ww="0" hh="0" fram="3" spec="go"/>
+		<pos xx="184" yy="106" ww="0" hh="0" fram="49" spec="show:cRel"/>
+		<pos xx="335" yy="133" ww="0" hh="0" fram="49" spec="show:cPvW"/>
+
+		<pos xx="503" yy="398" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="501" yy="68" ww="0" hh="0" fram="1" spec="btn2"/>
+		<pos xx="41" yy="56" ww="0" hh="0" fram="1" spec="btn3"/>
+		<pos xx="40" yy="453" ww="0" hh="0" fram="1" spec="btn4"/>
+
+
+		<pos xx="239" yy="214" ww="60" hh="100" fram="50" spec="show:ci1"/>
+		<pos xx="318" yy="214" ww="60" hh="100" fram="50" spec="show:ci2"/>
+		<pos xx="396" yy="214" ww="60" hh="100" fram="50" spec="show:ci3"/>
+
+		<pos xx="271" yy="240" ww="90" hh="90" fram="8" spec=""/>
+		<pos xx="358" yy="240" ww="90" hh="90" fram="6" spec=""/>
+		<pos xx="432" yy="240" ww="90" hh="90" fram="7" spec=""/>
+
+
+		<txt xx="202" yy="79" id="$city:254:35:0x000000:l:f:28"/>
+		<txt xx="362" yy="106" id="604:110:26:0x000000:l:t:20"/>
+		<txt xx="362" yy="130" id="$cityStatus:130:52:0x000000:l:t:20"/>
+
+		<txt xx="76" yy="166" id="$cityGovern:380:26:0x000000:l:t:20"/>
+
+		<txt xx="69" yy="192" id="884:170:27:0x000000:l:t:20"/>
+		<txt xx="69" yy="216" id="$patron:170:27:0x000000:l:f:20"/>
+		<txt xx="226" yy="192" id="902:250:27:0x000000:c:t:20"/>
+		<txt xx="69" yy="252" id="894:170:50:0x000000:l:t:20"/>
+		<txt xx="69" yy="286" id="$technology:170:26:0x000000:l:f:20"/>
+
+		<txt xx="240" yy="244" id="$citizen1:70:28:0x000000:c:t:24:0xFFFFFF:"/>
+		<txt xx="318" yy="244" id="$citizen3:70:28:0x000000:c:t:24:0xFFFFFF:"/>
+		<txt xx="398" yy="244" id="$citizen2:70:28:0x000000:c:t:24:0xFFFFFF:"/>
+
 		<atChild>6</atChild>
 	</subject>
 
@@ -1828,32 +1937,12 @@
 		<pic picload="2" num="1">symb_arrow1</pic>
 		<pic picload="2" num="1">symb_arrow2</pic>
 
-		<pic picload="2" num="1">btnFrame2</pic>
-
-		<pic picload="2" num="1">lineColor1</pic>
-		<pic picload="2" num="1">lineColor2</pic>
-		<pic picload="2" num="1">lineColor3</pic>
-		<pic picload="2" num="1">lineColor4</pic>
-
 		<pos xx="43" yy="29" ww="0" hh="0" fram="1"/>
 
 		<pos xx="61" yy="201" ww="0" hh="0" fram="1"/>
 		<pos xx="43" yy="36" ww="0" hh="0" fram="1"/>
 		<pos xx="43" yy="-6" ww="0" hh="0" fram="1"/>
 		<pos xx="629" yy="261" ww="0" hh="0" fram="1"/>
-
-		<pos xx="693" yy="93" ww="125" hh="164" fram="1"/>
-
-		<pos xx="611" yy="52" ww="0" hh="0" fram="1"/>
-		<pos xx="611" yy="77" ww="0" hh="0" fram="1"/>
-		<pos xx="611" yy="104" ww="0" hh="0" fram="1"/>
-		<pos xx="611" yy="130" ww="0" hh="0" fram="1"/>
-
-		<txt xx="60" yy="-4" id="864:400:25:0x000000:l:t:18"/>
-		<txt xx="649" yy="40" id="866:120:25:0x000000:l:f:18"/>
-		<txt xx="649" yy="66" id="868:120:25:0x000000:l:f:18"/>
-		<txt xx="649" yy="92" id="870:120:25:0x000000:l:f:18"/>
-		<txt xx="649" yy="118" id="872:120:25:0x000000:l:f:18"/>
 
 		<txt xx="617" yy="267" id="874:104:25:0x000000:l:f:18"/>
 
@@ -1867,6 +1956,33 @@
 		<txt xx="427" yy="267" id="$timeTurn7:42:30:0x000000:c:f:18"/>
 		<txt xx="488" yy="267" id="$timeTurn8:42:30:0x000000:c:f:18"/>
 		<txt xx="547" yy="267" id="$timeTurn9:42:30:0x000000:c:f:18"/>
+		<atChild>13</atChild>
+	</subject>
+
+	<!-- подложка графика под ресурсы -->
+	<subject>
+		<id>1021</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1" modificator="standy">buildingMenu</type>
+		<x>127</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">btnFrame2</pic>
+
+		<pic picload="2" num="1">lineColor1</pic>
+		<pic picload="2" num="1">lineColor2</pic>
+		<pic picload="2" num="1">lineColor3</pic>
+		<pic picload="2" num="1">lineColor4</pic>
+
+		<pos xx="693" yy="93" ww="125" hh="164" fram="1"/>
+
+		<pos xx="611" yy="52" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="77" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="104" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="130" ww="0" hh="0" fram="1"/>
+
+		<txt xx="60" yy="-4" id="864:400:25:0x000000:l:t:18"/>
+		<txt xx="649" yy="40" id="866:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="66" id="868:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="92" id="870:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="118" id="872:120:25:0x000000:l:f:18"/>
 
 		<txt xx="-26" yy="16" id="$reuNum1_1:63:30:0x000000:r:f:18"/>
 		<txt xx="-26" yy="72" id="$reuNum2_1:63:30:0x000000:r:f:18"/>
@@ -1885,60 +2001,148 @@
 		<atChild>12</atChild>
 	</subject>
 
+	<!-- подложка графика под жителей -->
+	<subject>
+		<id>1023</id>
+		<type weAre="70" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>127</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">btnFrame2</pic>
+
+		<pic picload="2" num="1">lineColor5</pic>
+		<pic picload="2" num="1">lineColor2</pic>
+		<pic picload="2" num="1">lineColor3</pic>
+
+		<pos xx="693" yy="93" ww="125" hh="164" fram="1"/>
+
+		<pos xx="611" yy="66" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="91" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="118" ww="0" hh="0" fram="1"/>
+
+		<txt xx="60" yy="-4" id="876:400:25:0x000000:l:t:18"/>
+		<txt xx="649" yy="54" id="244:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="80" id="240:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="106" id="242:120:25:0x000000:l:f:18"/>
+
+		<txt xx="-26" yy="16" id="$reuNum1_2:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="72" id="$reuNum2_2:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="131" id="$reuNum3_2:63:30:0x000000:r:f:18"/>
+		<txt xx="-26" yy="189" id="$reuNum4_2:63:30:0x000000:r:f:18"/>
+		<atChild>12</atChild>
+	</subject>
+
+
+	<!-- графики героев-->
+	<subject>
+		<id>1024</id>
+		<type weAre="70" ourPosition="1" vis="0" willSave="1">graph</type>
+		<x>173</x><y>643</y><width>0</width><height>0</height>
+		<category cat="3" wid="240" heig="168"/>
+		<pic picload="2">no</pic>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- подложка графика под героев -->
+	<subject>
+		<id>1025</id>
+		<type weAre="70" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>127</x><y>384</y><width>0</width><height>0</height>
+		<pic picload="2" num="1">btnFrame2</pic>
+
+		<pic picload="2" num="1">lineColor3</pic>
+		<pic picload="2" num="1">lineColor6</pic>
+		<pic picload="2" num="1">lineColor5</pic>
+		<pic picload="2" num="1">lineColor4</pic>
+		<pic picload="2" num="1">lineColor2</pic>
+		<pic picload="2" num="1">lineColor1</pic>
+
+		<pic picload="2" num="1">symb_line4</pic>
+		<pic picload="2" num="1">symb_line3</pic>
+		<pic picload="2" num="1">symb_arrow1</pic>
+		<pic picload="2" num="1">symb_arrow2</pic>
+
+		<pos xx="693" yy="93" ww="125" hh="164" fram="1"/>
+
+		<pos xx="611" yy="44" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="63" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="82" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="101" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="120" ww="0" hh="0" fram="1"/>
+		<pos xx="611" yy="139" ww="0" hh="0" fram="1"/>
+
+		<pos xx="52" yy="201" ww="45" hh="0" fram="1"/>
+		<pos xx="43" yy="36" ww="0" hh="0" fram="1"/>
+		<pos xx="43" yy="-6" ww="0" hh="0" fram="1"/>
+		<pos xx="321" yy="261" ww="0" hh="0" fram="1"/>
+
+		<txt xx="60" yy="-4" id="652:400:25:0x000000:l:t:18"/>
+
+		<txt xx="649" yy="34" id="618:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="53" id="619:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="72" id="620:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="91" id="621:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="110" id="622:120:25:0x000000:l:f:18"/>
+		<txt xx="649" yy="129" id="623:120:25:0x000000:l:f:18"/>
+
+		<txt xx="32" yy="267" id="$heuNum1:63:30:0x000000:c:f:18"/>
+		<txt xx="74" yy="267" id="$heuNum2:63:30:0x000000:c:f:18"/>
+		<txt xx="114" yy="267" id="$heuNum3:63:30:0x000000:c:f:18"/>
+		<txt xx="152" yy="267" id="$heuNum4:63:30:0x000000:c:f:18"/>
+		<txt xx="194" yy="267" id="$heuNum5:63:30:0x000000:c:f:18"/>
+		<txt xx="234" yy="267" id="$heuNum6:63:30:0x000000:c:f:18"/>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- список героев -->
+	<subject>
+		<id>1026</id>
+		<type weAre="70" ourPosition="1" vis="0" willSave="1" modificator="standy">buildingMenu</type>
+		<x>127</x><y>384</y><width>0</width><height>0</height>
+
+		<pic picload="2" num="1">heroes2</pic>
+		<pic picload="2" num="1">symb_lider</pic>
+		<pic picload="2" num="1">symb_energy</pic>
+		<pic picload="2" num="1">sym_intellect</pic>
+
+		<pic picload="2" num="1">btnUp</pic>
+		<pic picload="2" num="1">btnDown</pic>
+
+		<pos xx="360" yy="58" ww="0" hh="0" fram="1" spec="show:chh"/>
+		<pos xx="468" yy="170" ww="50" hh="50" fram="1"/>
+		<pos xx="512" yy="170" ww="50" hh="50" fram="1"/>
+		<pos xx="556" yy="170" ww="50" hh="50" fram="1"/>
+
+		<pos xx="415" yy="283" ww="0" hh="0" fram="1" spec="btn1"/>
+		<pos xx="521" yy="283" ww="0" hh="0" fram="1" spec="btn2"/>
+
+		<txt xx="405" yy="29" id="$hisName:166:27:0x000000:l:f:18"/>
+		<txt xx="405" yy="58" id="$hisRole:166:27:0x000000:l:f:18"/>
+		<txt xx="302" yy="89" id="878:300:36:0x000000:c:f:18"/>
+		<txt xx="302" yy="114" id="$hisDate:300:36:0x000000:c:f:18"/>
+		<txt xx="295" yy="184" id="880:150:27:0x000000:r:f:18"/>
+		<txt xx="295" yy="218" id="882:150:27:0x000000:r:f:18"/>
+		<txt xx="442" yy="184" id="$hisResu_1_0:50:27:0x000000:c:f:18"/>
+		<txt xx="487" yy="184" id="$hisResu_1_1:50:27:0x000000:c:f:18"/>
+		<txt xx="530" yy="184" id="$hisResu_1_2:50:27:0x000000:c:f:18"/>
+		<txt xx="442" yy="218" id="$hisResu_0_0:50:27:0x000000:c:f:18"/>
+		<txt xx="487" yy="218" id="$hisResu_0_1:50:27:0x000000:c:f:18"/>
+		<txt xx="530" yy="218" id="$hisResu_0_2:50:27:0x000000:c:f:18"/>
+		<atChild>12</atChild>
+	</subject>
+
+	<!-- фон,перекрывающий историю героев
+	<subject>
+		<id>1028</id>
+		<type weAre="70" ourPosition="1" vis="1" willSave="1">background</type>
+		<x>450</x><y>395</y><width>0</width><height>0</height>
+		<pic picload="2">btnFrameNoLines</pic>
+		<atChild>13</atChild>
+	</subject>-->
+
+
 
 	<!-- rooms
 	<room xx="2048" yy="1200">30</room>
 	<room xx="1024" yy="900">40</room>-->
-
-	<!--intro1
-	<subject>
-		<id>201</id>
-		<type weAre="20" ourPosition="1" vis="1">viewGround</type>
-		<x>1</x><y>1</y><width>0</width><height>0</height>
-		<pic picload="2">intro1</pic>
-		<atChild>9</atChild>
-	</subject>-->
-
-	<!--btn1
-	<subject>
-		<id>202</id>
-		<type weAre="20" ourPosition="1" vis="1">button</type>
-		<portal goTo="20" goPosition="1">1</portal>
-		<x>800</x><y>690</y><width>0</width><height>0</height>
-		<pic picload="2">btn1</pic>
-		<atChild>10</atChild>
-	</subject>-->
-
-	<!--
-	<subject>
-		<id>301</id>
-		<type weAre="30" ourPosition="1" vis="1" willSave="1">activeBackground</type>
-		<x>1</x><y>1</y><width>0</width><height>0</height>
-		<pic picload="2">back11</pic>
-		<atChild>1</atChild>
-	</subject>-->
-
-	<!-- бэк для предметов
-	<subject>
-		<id>306</id>
-		<type weAre="0" ourPosition="1" vis="0" willSave="1">background</type>
-		<x>300</x><y>668</y><width>200</width><height>90</height>
-		<pic picload="2">fram2</pic>
-		<atChild>3</atChild>
-	</subject>-->
-
-	<!--
-        <subject>
-            <id>330</id>
-            <type weAre="30" ourPosition="1" vis="1" willSave="1">button</type>
-            <portal goTo="31" goPosition="1">1</portal>
-            <camera>1</camera>
-            <x>100</x><y>600</y><width>0</width><height>0</height>
-            <pic picload="2">door1</pic>
-            <atChild>8</atChild>
-        </subject>-->
-
-
 
 </chronicle>
 

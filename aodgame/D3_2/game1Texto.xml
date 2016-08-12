@@ -194,7 +194,7 @@
 
 	<texto tid="255">
 		<txt mode="ru">Мастерская, производящая керамику. Лучше всего работает, если рядом есть источник глины</txt>
-		<txt mode="en">The workshop that making pottery&ceramics. It better work if it have clay near the workshop.</txt>
+		<txt mode="en">The workshop that making pottery and ceramics. It better work if it have clay near the workshop.</txt>
 	</texto>
 
 	<texto tid="256">
@@ -855,6 +855,170 @@
 	<texto tid="874">
 		<txt mode="ru">ход</txt>
 		<txt mode="en">turn</txt>
+	</texto>
+
+	<texto tid="876">
+		<txt mode="ru">демография</txt>
+		<txt mode="en">demography</txt>
+	</texto>
+
+	<texto tid="878">
+		<txt mode="ru">упоминается в период</txt>
+		<txt mode="en">mentioned in period</txt>
+	</texto>
+	<texto tid="880">
+		<txt mode="ru">заработал</txt>
+		<txt mode="en">earned</txt>
+	</texto>
+	<texto tid="882">
+		<txt mode="ru">использовал</txt>
+		<txt mode="en">used</txt>
+	</texto>
+
+	<texto tid="884">
+		<txt mode="ru">Покровитель:</txt>
+		<txt mode="en">Patron:</txt>
+	</texto>
+
+	<texto tid="886">
+		<txt mode="ru">Зевс</txt>
+		<txt mode="en">Zeus</txt>
+	</texto>
+	<texto tid="888">
+		<txt mode="ru">Посейдон</txt>
+		<txt mode="en">Poseidon</txt>
+	</texto>
+	<texto tid="890">
+		<txt mode="ru">Афина</txt>
+		<txt mode="en">Athena</txt>
+	</texto>
+	<texto tid="892">
+		<txt mode="ru">Арес</txt>
+		<txt mode="en">Ares</txt>
+	</texto>
+	<texto tid="894">
+		<txt mode="ru">Уровень технологий:</txt>
+		<txt mode="en">Technology level:</txt>
+	</texto>
+	<texto tid="896">
+		<txt mode="ru">паритет</txt>
+		<txt mode="en">parity</txt>
+	</texto>
+	<texto tid="898">
+		<txt mode="ru">высокий уровень</txt>
+		<txt mode="en">high level</txt>
+	</texto>
+	<texto tid="900">
+		<txt mode="ru">низкий уровень</txt>
+		<txt mode="en">low level</txt>
+	</texto>
+	<texto tid="902">
+		<txt mode="ru">настроение людей</txt>
+		<txt mode="en">people mood</txt>
+	</texto>
+
+	<texto tid="904">
+		<txt mode="ru">Только город, свободный от других обязательств, может согласиться на союз. Кроме того, у вас должны быть хорошие отношения и вы должны быть достаточно сильны, чтобы заинтересовать их.</txt>
+		<txt mode="en">Only the city free from other sences of duty may agree to it. In addition, you must have a good relationship, and you have to be strong enough to get them interested.</txt>
+	</texto>
+	<texto tid="906">
+		<txt mode="ru">послать предложение</txt>
+		<txt mode="en">send offer</txt>
+	</texto>
+
+	<texto tid="908">
+		<txt mode="ru">Хотя формально любой из городов союза может пригласить вас присоединиться, однако в действительности только лидер союза решает судьбу нового участника.</txt>
+		<txt mode="en">Although technically any of the cities of the Union may invite you to join, but in reality only the leader of the union decides the fate of a new member.</txt>
+	</texto>
+
+	<texto tid="910">
+		<txt mode="ru">послать просьбу</txt>
+		<txt mode="en">send request</txt>
+	</texto>
+
+	<texto tid="912">
+		<txt mode="ru">Лишить город поддержки непросто. Для этого вы должны быть дружны с ним и достаточно сильны, чтобы к вам прислушались.</txt>
+		<txt mode="en">Denying city support is not easy. To do this, you should to be friends with them, and to be strong enough to listen to you.</txt>
+	</texto>
+
+	<texto tid="914">
+		<txt mode="ru">послать требование</txt>
+		<txt mode="en">send claim</txt>
+	</texto>
+
+	<texto tid="916">
+		<txt mode="ru">Эту войну пора заканчивать, так или иначе.</txt>
+		<txt mode="en">This war is time to end one way or another.</txt>
+	</texto>
+
+	<texto tid="918">
+		<txt mode="ru">с позиции силы</txt>
+		<txt mode="en">from a position of strength</txt>
+	</texto>
+
+	<texto tid="920">
+		<txt mode="ru">без условий</txt>
+		<txt mode="en">unconditionally</txt>
+	</texto>
+
+	<texto tid="922">
+		<txt mode="ru">приняв условия противника</txt>
+		<txt mode="en">having enemy conditions</txt>
+	</texto>
+
+	<texto tid="924">
+		<txt mode="ru">Ужасный монстр будто из ниоткуда появился в наших землях. Кажется, это только начало.</txt>
+		<txt mode="en">Terrible monster if from nowhere appeared in our lands. It seems that this is only the beginning.</txt>
+	</texto>
+
+	<texto tid="926">
+		<txt mode="ru">покинуть союз</txt>
+		<txt mode="en">leave the Union</txt>
+	</texto>
+
+	<texto tid="928">
+		<txt mode="ru">Они слабые союзники и связывают нас своими проблемами по рукам и ногам. Отказаться от союза с ними?</txt>
+		<txt mode="en">They are weak allies and bind us their problems on the hands and feet. To refuse an alliance with them?</txt>
+	</texto>
+
+	<texto tid="930">
+		<txt mode="ru">мы больше не в союзе</txt>
+		<txt mode="en">we are no longer in alliance</txt>
+	</texto>
+
+	<texto tid="932">
+		<txt mode="ru">Пожалуй, самый страшный противник в древности. Не всякому герою достанет мужества сразиться с ним.</txt>
+		<txt mode="en">Perhaps the most frightening enemy in antiquity. Not every hero would get the courage to fight with him.</txt>
+	</texto>
+	<texto tid="934">
+		<txt mode="ru">призвать войска</txt>
+		<txt mode="en">encourage the troops</txt>
+	</texto>
+	<texto tid="936">
+		<txt mode="ru">герой сам справится</txt>
+		<txt mode="en">hero handle himself</txt>
+	</texto>
+	<texto tid="938">
+		<txt mode="ru">молить богов о помощи</txt>
+		<txt mode="en">pray to the gods for help</txt>
+	</texto>
+
+	<texto tid="940">
+		<txt mode="ru">Покровитель города:</txt>
+		<txt mode="en">Patron of the City:</txt>
+	</texto>
+
+	<texto tid="942">
+		<txt mode="ru">Набег на земли противника весьма выгодное, но и крайне опасное дело. Кроме того, как они поступят, если узнают, что это наших рук дело?</txt>
+		<txt mode="en">The raid on the enemy land is very favorable, but also extremely dangerous thing. In addition, what they will do if they find out that it is our own doing?</txt>
+	</texto>
+	<texto tid="944">
+		<txt mode="ru">быстрый набег</txt>
+		<txt mode="en">quick foray</txt>
+	</texto>
+	<texto tid="946">
+		<txt mode="ru">подготовиться получше</txt>
+		<txt mode="en">prepare better</txt>
 	</texto>
 
 

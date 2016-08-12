@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<chronicle>
+	<cid>D3</cid>
+	
+	<picload id="2">baseModule.swf</picload>
+
+	<texto tid="20">
+		<txt mode="ru">играть</txt>
+		<txt mode="en">play</txt>
+	</texto>
+
+	<texto tid="22">
+		<txt mode="ru">Калидон</txt>
+		<txt mode="en">Calydon</txt>
+	</texto>
+
+	<texto tid="24">
+		<txt mode="ru">Цивилизации не возникают из пустоты. Вокруг них всегда кипит жизнь, дикая, порой древняя и неорганизованная, способная разом уничтожить все усилия, но из которой и возникают первые культуры, первые народы, первые цивилизации. Ваш город - одним из первых в Греции вышел из мрака истории, и теперь в ваших руках, станет ли он настоящим городом или сгинет, не оставив по себе памяти.</txt>
+		<txt mode="en">Civilizations did not arise out of nothing. Around them is always full of life, a wild and sometimes early and disorganized, capable of destroying all the efforts of time, but of which arise the first cultures, the first nations, the first civilizations. Your city - one of the first in Greece emerged from the darkness of history, and is now in your hands, whether it will be a real city, or disappear, leaving no memory itself.</txt>
+	</texto>
+
+	<texto tid="26">
+		<txt mode="ru">гость</txt>
+		<txt mode="en">guest</txt>
+	</texto>
+
+	<texto tid="28">
+		<txt mode="ru">профиль</txt>
+		<txt mode="en">profile</txt>
+	</texto>
+
+	<texto tid="30">
+		<txt mode="ru">выбрать язык</txt>
+		<txt mode="en">choose a language</txt>
+	</texto>
+
+	<texto tid="32">
+		<txt mode="ru">русский</txt>
+		<txt mode="en">русский</txt>
+	</texto>
+	<texto tid="34">
+		<txt mode="ru">english</txt>
+		<txt mode="en">english</txt>
+	</texto>
+
+
+
+</chronicle>

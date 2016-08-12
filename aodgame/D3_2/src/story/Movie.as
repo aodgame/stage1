@@ -80,7 +80,42 @@ public class Movie
             }
             if (quest.action[j].typpe=="nextTurn") //следующий ход
             {
-                if (dan.nextTurn==quest.action[j].num)
+                if (quest.action[j].num =="inCase" && bit.sChangeTurn) //нашли, что ход сменился
+                {
+                    k+=1;
+                }
+                if (quest.action[j].num !="inCase" && dan.nextTurn==quest.action[j].num)
+                {
+                    k+=1;
+                }
+            }
+            if (quest.action[j].typpe=="timeMoreThan") //в игре прошло ходов больше, чем...
+            {
+                if (timmer.numOfMoves>=quest.action[j].iii)
+                {
+                    k+=1;
+                }
+            }
+            if (quest.action[j].typpe=="noBuilding") //ни на одной из земель нет строения
+            {
+                //trace("noBuilding="+quest.action[j].tip);
+                for (var f:int=0; f<dan.lands.length; f++)
+                {
+                    //trace("--dan.lands[f].building.landResType="+dan.lands[f].building.landResType);
+                    if (dan.lands[f].building.landResType==quest.action[j].tip)
+                    {
+                        //trace("here");
+                        k-=1;
+                        break;
+                    }
+                }
+                k+=1;
+            }
+            if (quest.action[j].typpe=="randi") //процент от числа, который будет считаться успешным
+            {
+                var ri:int=Math.random()*100;
+                //trace("ri="+ri);
+                if (ri<quest.action[j].num)
                 {
                     k+=1;
                 }
@@ -242,7 +277,7 @@ public class Movie
                     if (dan.heroMenuNum==quest.action[j].iii)
                     {
                         trace("true="+quest.qid);
-                        dan.heroMenuNum=-1;
+                        //dan.heroMenuNum=-1;
                         k += 1;
                     }
                 }
@@ -326,6 +361,16 @@ public class Movie
             {
                 bit.prevRoom=bit.curRoom;
                 bit.curRoom=int(quest[i].effect[j].room);
+            }
+            if (quest[i].effect[j].typpe=="activate") //активируем ивент
+            {
+                for (var kk:int=0; kk<quest.length; kk++)
+                {
+                    if (quest[kk].qid==quest[i].effect[j].qid)
+                    {
+                        quest[kk].activ=true;
+                    }
+                }
             }
             if (quest[i].effect[j].typpe=="flyToPlane") ////переходим на слой
             {
@@ -829,6 +874,7 @@ public class Movie
                 dan.mess.push(new Message());
                 dan.mess[dan.mess.length-1].behMenu=quest[i].effect[j].behMenu;
                 dan.mess[dan.mess.length-1].iii=quest[i].effect[j].iii;
+                dan.mess[dan.mess.length-1].stil=quest[i].effect[j].stil;
                 if (int(quest[i].effect[j].activeShow)==1)
                 {
                     dan.mess[dan.mess.length - 1].activeShow=true;
@@ -867,6 +913,18 @@ public class Movie
             if (quest[i].effect[j].typpe == "categoryWillSave") //сменяем категорию показа истории
             {
                 dan.categoryWillSave=quest[i].effect[j].num;
+            }
+
+            if (quest[i].effect[j].typpe == "heroHistoryChange")//меняем героя при показе истории
+            {
+                if (quest[i].effect[j].iii==1 && dan.willSave[dan.heroHistoryCategory].heroStory.length-1>dan.historyHeroChoose)
+                {
+                    dan.historyHeroChoose++;
+                }
+                if (quest[i].effect[j].iii==0 && dan.historyHeroChoose>0)
+                {
+                    dan.historyHeroChoose--;
+                }
             }
         }
     }

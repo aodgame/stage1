@@ -23,6 +23,9 @@ public class City
     public var government:int; //тип правильтельства, 0 - царство, 1 - тирания, 2 - олигополия, 3 - республика
     public var governmentTxt:int; //номер текстовки в списке текстов
 
+    public var patron:int; //тип покровителя
+    public var patronTxt:int; //номер текстовки в списке текстов
+
     public var army:int; //армия и флот городов
     public var modifArmy:int; //модификаторы успешности использования
     public var fleet:int;
@@ -30,6 +33,12 @@ public class City
 
     public var alliance:int;//альянс, в который входит игрок по его iii, -1 - не входит ни в один
     public var leader:Boolean; //лидер союза или нет
+
+    public var techLevel:int; //уровень технологии
+
+    public var citizenTyppe:Vector.<String>; //типы граждан города, их количество и настроение к правителю
+    public var citizenNum:Vector.<int>;
+    public var citizenRel:Vector.<int>;
 
     public function City()
     {
@@ -41,12 +50,19 @@ public class City
         characterTxt=-1;
         government=-1;
         governmentTxt=-1;
+        patron=-1;
+        patronTxt=-1;
         army=0;
         fleet=0;
         modifArmy=1;
         modifFleet=1;
         alliance=-1;
         leader=false;
+        techLevel=0;
+        citizenTyppe = new Vector.<String>();
+        citizenNum = new Vector.<int>();
+        citizenRel = new Vector.<int>();
+
     }
 }
 }

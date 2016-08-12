@@ -219,10 +219,6 @@ public class SubElementsMenu extends Parent2Subject
     {
         if (vis==1)
         {
-            if (iii==483)
-            {
-                //trace("controlling iii=" + iii);
-            }
             controlling(el);
 
             for (i = 0; i < numOfEl.length; i++)
@@ -239,26 +235,7 @@ public class SubElementsMenu extends Parent2Subject
                 if (numOfEl[i] == bit.mouseDown)
                 {
                     dan.downOfMany = i+1; //ид никогда не начинаются с нуля
-                   // dan.numOfSub=iii;
                 }
-
-                /*if (sx[i]!=baseX[i] || sy[i]!=baseY[i])
-                {
-                    wayCount[i]++;
-                    if (wayCount[i]>500)
-                    {
-                        wayCount[i]=100;
-                    }
-                } else
-                {
-                    if (wayCount[i]>10)
-                    {
-                        wayCount[i]=10;
-                    } else
-                    {
-                        wayCount[i]=0;
-                    }
-                }*/
             }
 
             //для движимых предметов
@@ -284,18 +261,51 @@ public class SubElementsMenu extends Parent2Subject
                 if (specID[j].substr(0,4)=="show")// && fram[j]>=2)
                 { //блок элементов, которые приходится вписывать в игру из-за недостаточной гибкости используемого метапрограммирования на базе xml
                     //show:cRel кадр с отношениями этого города к городу клиента
-                    //trace("her the city");
                     if (specID[j].substr(5,4)=="cRel")
                     {
                         fram[j]=dan.currRelations;
-                        //el[numOfEl[i]].pic.gotoAndStop(fram[i]);
                     }
                     //show:cRel кадр со значением мир/война между городами
                     if (specID[j].substr(5,4)=="cPvW")
                     {
                         fram[j]=dan.currPeaceWar+1;
-                        //el[numOfEl[i]].pic.gotoAndStop(fram[i]);
                     }
+                    //картинка героя в списке при отображении экрана истории
+                    if (specID[j].substr(5,4)=="chh" && dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
+                    {
+                        var tp:String=dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].typpe;
+                        //trace("tp="+tp);
+                        for (var u:int=0; u<dan.availableHeroes.length; u++)
+                        {
+                            if (dan.availableHeroes[u].typpe==tp)
+                            {
+                                fram[j]=u;
+                                break;
+                            }
+                        }
+                    }
+                    //картинка настроения гражданина другого города
+                    if (specID[j].substr(5,2)=="ci" && dan.currentCity!=-1)
+                    {
+                        var stp:int=int(specID[j].substr(7,1))-1;
+                        fram[j]=dan.cities[dan.currentCity].citizenRel[stp];
+                    }
+                    if (specID[j].substr(5,1)=="m") //картинка мессенджера
+                    {
+                        //trace("manager m");
+                        //trace("length="+dan.messFramsOfFramCost.length);
+                        var stp2:int=int(specID[j].substr(6,1))-1;
+                        //trace("stp2="+stp2);
+                        if (dan.messFramsOfFramCost.length<=stp2)
+                        {
+                            fram[j]=1;
+                        } else
+                        {
+                            //trace("dan.messFramsOfFramCost[stp2]="+dan.messFramsOfFramCost[stp2]);
+                            fram[j]=dan.messFramsOfFramCost[stp2];
+                        }
+                    }
+
                 }
                 if (specID[j]=="currHero")
                 {
@@ -383,26 +393,6 @@ public class SubElementsMenu extends Parent2Subject
                 wayCount[num]=0;
             }
         }
-
-
-
-        /*if (sx[i]!=baseX[i] || sy[i]!=baseY[i])
-        {
-            wayCount[i]++;
-            if (wayCount[i]>500)
-            {
-                wayCount[i]=100;
-            }
-        } else
-        {
-            if (wayCount[i]>10)
-            {
-                wayCount[i]=10;
-            } else
-            {
-                wayCount[i]=0;
-            }
-        }*/
     }
 
     private function parentUpd(el):void

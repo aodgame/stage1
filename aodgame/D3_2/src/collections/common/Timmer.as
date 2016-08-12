@@ -13,6 +13,8 @@ public class Timmer
     private var younger:Vector.<String> = new Vector.<String>();
     private var curYoung;
 
+    public var numOfMoves:int; //количество ходов
+
     public function Timmer()
     {
         id=-1;
@@ -30,6 +32,7 @@ public class Timmer
         offText=txt;
         younger=vect;
         curYoung=0;
+        numOfMoves=0;
     }
 
     public function show():String

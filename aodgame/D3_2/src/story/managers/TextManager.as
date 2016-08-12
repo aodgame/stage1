@@ -29,7 +29,7 @@ public class TextManager
     {
         for (i=0; i<el.length; i++)
         {
-            if (el[i].typeOfElement=="txt")
+            if (el[i].typeOfElement=="txt" && el[i].pic.visible)
             {
                 texter(el[i], i, sub);
             }
@@ -172,8 +172,32 @@ public class TextManager
             }
         }
 
-        if (el.tid=="$actInfo" && dan.heroMenuActivity!=-1)
+        if (el.tid.substr(0, 9) == "$username") //ник пользователя
         {
+            //trace("$username");
+            if (bit.userName!="")
+            {
+                if (bit.userName!=el.txt)
+                {
+                    el.txt=bit.userName;
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            } else
+            {
+                //trace("noname");
+                var bb:String=el.tid.substr(10, 2);
+                el.txt=mediumChoicer(el, bb);
+                if (el.txt!=el.pic.text)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            }
+        }
+            if (el.tid=="$actInfo" && dan.heroMenuActivity!=-1)
+        {
+            trace("$actInfo");
             var num:int=0;
             var t:String="";
             num=findBehMenu();
@@ -187,16 +211,18 @@ public class TextManager
             }
             kd+=letCheck(el, t);
         }
+
         if (el.tid.substr(0,5)=="$abtn" && dan.heroMenuActivity!=-1)
         {
             var num:int=0;
             var t:String="";
             var n:int=int(el.tid.substr(5,1))-1;
-            trace("n="+n);
+            trace("n="+n+"; dan.heroMenuNum="+dan.heroMenuNum);
             if (n>=dan.heroMenuNum)
             {
                 return;
             }
+            trace("$abtn next");
             num=findBehMenu();
             //trace("dan.behMenu.length="+dan.behMenu.length);
             for (var j:int = 0; j < bit.texto.length; j++)
@@ -208,6 +234,23 @@ public class TextManager
                 }
             }
             kd+=letCheck(el, t);
+        }
+
+        if (el.tid.substr(0,9)=="$hresneed" && dan.heroMenuActivity!=-1) //количество параметра героя, требуемого для выбора пунтка в сообщении
+        {
+            var num:int=el.tid.substr(9,1);
+            if (dan.messFramsOfNumCost.length<=num || dan.messFramsOfNumCost[num-1]==0)
+            {
+                el.txt="";
+            } else
+            {
+                el.txt=dan.messFramsOfNumCost[num-1];
+            }
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
         }
 
         if (el.tid=="$timer" && el.txt!=String(bit.sTimmer))
@@ -415,7 +458,76 @@ public class TextManager
                 }
             }
         }
-        if (el.tid.substr(0, 13) == "$cityAlliance") //альянс, в который входит текущий город
+        if (el.tid == "$patron") //тип покровителя города
+        {
+            if ( dan.currentCity==-1)
+            {
+                return;
+            }
+            el.txt=mediumChoicer(el, dan.cities[dan.currentCity].patronTxt);
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
+        if (el.tid.substr(0, 8) == "$citizen") //количество жителей отпределённого типа в одном из городов
+        {
+            if (dan.currentCity==-1)
+            {
+                return;
+            }
+            var h:int=int(el.tid.substr(8, 1))-1;
+            el.txt=dan.cities[dan.currentCity].citizenNum[h];
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
+        if (el.tid == "$technology") //количество технологий этого города относительно вас
+        {
+            if (dan.currentCity==-1)
+            {
+                return;
+            }
+            var yourNum:int=0;
+            for (var jj:int=0; jj<dan.updates.length; jj++)
+            {
+                if (dan.updates[jj].isOpened==1)
+                {
+                    yourNum++;
+                }
+            }
+            //trace("yourNum="+yourNum);
+            //trace("dan.cities[dan.currentCity].techLevel="+dan.cities[dan.currentCity].techLevel);
+            if (yourNum<dan.cities[dan.currentCity].techLevel-2)
+            {
+                el.txt=dan.techLevelTxt[2];
+            } else
+            {
+                if(yourNum > dan.cities[dan.currentCity].techLevel + 2)
+                {
+                    el.txt = dan.techLevelTxt[0];
+                } else
+                {
+                    el.txt = dan.techLevelTxt[1];
+                }
+            }
+            //trace("el.txt="+el.txt);
+            el.txt=mediumChoicer(el, el.txt);
+            //trace("el.txt="+el.txt);
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
+
+            if (el.tid.substr(0, 13) == "$cityAlliance") //альянс, в который входит текущий город
         {
             /*trace("==city==");
             trace("dan.cityName="+dan.cityName);
@@ -922,6 +1034,100 @@ public class TextManager
                 kd++;
             }
 
+        }
+        if (el.tid.substr(0, 7) == "$heuNum") //количество ресурса относительно максимального значения
+        {
+            var nn:int=el.tid.substr(7, 1);
+            var ave:int=0;
+            for (var jj:int=0; jj<dan.willSave.length; jj++)
+            {
+                if (dan.willSave[jj].heroStory.length>0)
+                {
+                    ave=jj;
+                    break;
+                }
+            }
+            var nm:int=0;
+            for (var jj:int=0; jj<dan.willSave[ave].heroStory.length; jj++)
+            {
+                if (dan.willSave[ave].heroStory[jj].typpe==dan.availableHeroes[nn].typpe)
+                {
+                    nm++;
+                }
+            }
+            if (el.txt!=String(nm))
+            {
+                el.txt=String(nm);
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
+        if (el.tid.substr(0, 8) == "$hisName") //экран истории: имя героя
+        {
+            if (dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
+            {
+                var tp:String = String(dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].nameID);
+                //trace("tp="+tp);
+                el.txt=mediumChoicer(el,tp);
+                if (el.pic.text!=el.txt)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            }
+        }
+
+        if (el.tid.substr(0, 8) == "$hisRole") //экран истории: роль героя
+        {
+            if (dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
+            {
+                var tp:String = String(dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].txt);
+                //trace("tp="+tp);
+                el.txt="("+mediumChoicer(el,tp)+")";
+                if (el.pic.text!=el.txt)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            }
+        }
+        if (el.tid.substr(0, 8) == "$hisDate") //экран истории: роль героя
+        {
+            if (dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
+            {
+                var s1:String = dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].s1;
+                var s2:String = dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].s2;
+                //trace("tp="+tp);
+                el.txt = s1+ " - "+s2;
+                if (el.pic.text!=el.txt)
+                {
+                    el.pic.text=el.txt;
+                    kd++;
+                }
+            }
+        }
+
+        if (el.tid.substr(0, 8) == "$hisResu") //экран истории: роль героя
+        {
+            if (dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
+            {
+                //_0_0
+                var minmax:int = int(el.tid.substr(9, 1));
+                var res:int = int(el.tid.substr(11, 1));
+                if (minmax == 0)
+                {
+                    el.txt = dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].heroResMin[res];
+                } else
+                {
+                    el.txt = dan.willSave[dan.heroHistoryCategory].heroStory[dan.historyHeroChoose].heroResMax[res];
+                }
+                if (el.pic.text != el.txt)
+                {
+                    el.pic.text = el.txt;
+                    kd++;
+                }
+            }
         }
 
         if (kd==0)

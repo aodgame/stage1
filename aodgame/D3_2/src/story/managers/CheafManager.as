@@ -15,6 +15,7 @@ public class CheafManager
     private var heroManager:HeroManager;
     private var cityManager:CityManager;
     private var activityManager:ActivityManager;
+    private var warManager:WarManager;
 
     private var messanger:Messanger;
 
@@ -25,15 +26,7 @@ public class CheafManager
 
     public function CheafManager()
     {
-        landsManager = new LandsManager();
-        resManager = new ResManager();
-        buildingManager = new BuildingManager();
-        updManager = new UpdatesManager();
-        heroManager = new HeroManager();
-        cityManager = new CityManager();
-        activityManager = new ActivityManager();
-        messanger = new Messanger();
-        infoStory = new InfoStoryManager();
+        reManagers();
 
         dan = Danke.getInstance();
         bit=Bitte.getInstance();
@@ -41,10 +34,15 @@ public class CheafManager
 
     public function work(sub):void
     {
+        if (bit.delParameters)
+        {
+            reManagers();
+        }
         buildingManager.work(sub);
         landsManager.work();
         resManager.work();
         updManager.work();
+        warManager.work();
         cityManager.work(sub);
         activityManager.work(sub);
         heroManager.work(sub);
@@ -59,6 +57,20 @@ public class CheafManager
     public function unwork(sub):void
     {
         resManager.laggy(2);
+    }
+
+    public function reManagers():void
+    {
+        landsManager = new LandsManager();
+        resManager = new ResManager();
+        buildingManager = new BuildingManager();
+        updManager = new UpdatesManager();
+        heroManager = new HeroManager();
+        cityManager = new CityManager();
+        activityManager = new ActivityManager();
+        messanger = new Messanger();
+        infoStory = new InfoStoryManager();
+        warManager= new WarManager();
     }
 }
 }
