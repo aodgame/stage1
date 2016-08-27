@@ -5,13 +5,6 @@ import collections.Room;
 import collections.Stats;
 import collections.Texto;
 
-import avmplus.metadataXml;
-import avmplus.variableXml;
-
-import flash.system.System;
-
-import mx.resources.ResourceManager;
-
 public class Bitte
 {
     private static var instance:Bitte;		//Это будет уникальный экземпляр, созданный классом
@@ -22,12 +15,33 @@ public class Bitte
             //"http://aodgame.16mb.com/game1/";
             //"J://work/gitrep/aodgame/D3_2/";
             //"E://1/D3_2/";//D://7_differ/1/D3/"; //путь к загружаемой папке
+    public var serverAddr:String = "http://aodgame.16mb.com/game1/phpserver1.php";
     public const scenPath0:String="prelScenaries.xml"; //путь к файлу сценария
     public const subPath0:String="prelSubjects.xml"; //путь к файлу граф.информации
     public const textoPath0:String=""; //путь к файлу текстовой информации
         public var scenPath:String="prelScenaries.xml"; //путь к файлу сценария
         public var subPath:String="prelSubjects.xml"; //путь к файлу граф.информации
     public var textoPath:String=""; //путь к файлу текстовой информации
+
+    public var userLogin:String=""; //клиентские данные игрока
+    public var userPass:String="";
+    public var userName:String=""; //ник пользователя
+    public var userEmail:String=""; //почта пользователя
+    public var logged:Boolean=false; //пользователь уже залогинен или нет
+    public var serverCommand:String="";//команда на сервер для исполнения
+    public var serverCode:int=-1; //код, пришедший от сервера,
+    /*
+     -1 - нет кода
+     0 - создан пользователь
+     1 - логин повторяется с уже существующим
+     2 - проблема с подключением к базе данных
+     3 - проблема с чтением xml, приходящей от сервера
+     4 - проблема при обращении к серверу
+     5 - пользователь загружен из базы данных
+     6 - данные изменены успешно
+     7 - пользователь не найден
+     */
+    public var waiting:Boolean=false;
 
     public var nextLevel:uint=Stats.THREE; //начало загрузки нового уровня
         public var wait_subjects:Boolean=false; //грузятся ли предметы в данный момент
@@ -103,8 +117,6 @@ public class Bitte
     public var delSubjects:Boolean=false;
     public var delScenario:Boolean=false;
     public var delParameters:Boolean=false;
-
-    public var userName:String=""; //ник пользователя
 
     public function Bitte()
     {

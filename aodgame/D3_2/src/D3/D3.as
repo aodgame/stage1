@@ -10,6 +10,7 @@ public class D3 extends MovieClip
     internal var control:Control;
     internal var subjects:Subjects;
     internal var scenario:Scenario;
+    internal var client:Client;
     internal var what:Timer = new Timer(1);
 
     public function D3(stage)
@@ -19,6 +20,7 @@ public class D3 extends MovieClip
         addChild(subjects);
         scenario = Scenario.getInstance(stage);
         control = new Control(stage);
+        client = new Client();
     }
 
     public function go()
@@ -32,6 +34,7 @@ public class D3 extends MovieClip
         subjects.workControl();
         scenario.workControl();
         bit.workControl();
+        client.workControl();
     }
 }
 }

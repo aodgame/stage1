@@ -35,6 +35,8 @@ public class Subjects extends MovieClip
     private var i:int;
     private var j:int;
 
+    private var ph1:int=0;
+
     function Subjects(stage)
     {
         trace("We are ok!");
@@ -102,6 +104,7 @@ public class Subjects extends MovieClip
             }
         }
     }
+
 
     public function getSave():String
     {
