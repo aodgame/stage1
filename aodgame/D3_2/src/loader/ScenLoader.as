@@ -14,6 +14,7 @@ import collections.common.HeroActivity;
 import collections.common.HeroRes;
 import collections.common.Message;
 import collections.inCity.Building;
+import collections.inHistory.Win;
 import collections.inWorld.Alliance;
 import collections.inWorld.City;
 import collections.common.GlobalRes;
@@ -101,7 +102,14 @@ public class ScenLoader extends ParentLoader
             dan.globalRes[dan.globalRes.length-1].pic=myXML.globalRes[i].@pic;
             dan.globalRes[dan.globalRes.length-1].sName=myXML.globalRes[i].@name;
             dan.globalRes[dan.globalRes.length-1].sDescription=myXML.globalRes[i].@description;
-            dan.globalRes[dan.globalRes.length-1].amount=myXML.globalRes[i].@startAmount;
+            for (var uu:int=0; uu<myXML.globalRes[i].amount.length(); uu++)
+            {
+                if (uu==dan.difficultyLevel)
+                {
+                    dan.globalRes[dan.globalRes.length - 1].amount = myXML.globalRes[i].amount[uu].@num;
+                }
+            }
+            //dan.globalRes[dan.globalRes.length - 1].amount = myXML.amount[i].@startAmount;
             dan.globalRes[dan.globalRes.length-1].min=myXML.globalRes[i].@min;
             dan.globalRes[dan.globalRes.length-1].max=myXML.globalRes[i].@max;
             if (myXML.globalRes[i].@isFree=="1")
@@ -202,6 +210,7 @@ public class ScenLoader extends ParentLoader
                 dan.lands[dan.lands.length-1].elemPic.push(myXML.land[i].elem[j].@pic);
                 dan.lands[dan.lands.length-1].elemIncome.push(myXML.land[i].elem[j].@income);
             }
+            dan.lands[dan.lands.length-1].description=myXML.land[i].@description;
             //trace("dan.lands[dan.lands.length-1].elemPic.length="+dan.lands[dan.lands.length-1].elemPic.length);
             //trace("myXML.land[i].elem.length()="+myXML.land[i].elem.length());
 
@@ -414,6 +423,11 @@ public class ScenLoader extends ParentLoader
                 dan.cities[dan.cities.length-1].citizenNum.push(String(myXML.city[i].citizen[jj].@num));
                 dan.cities[dan.cities.length-1].citizenRel.push(String(myXML.city[i].citizen[jj].@rel));
             }
+            dan.cities[dan.cities.length-1].xx=int(myXML.city[i].pos.@xx);
+            dan.cities[dan.cities.length-1].yy=int(myXML.city[i].pos.@yy);
+            dan.cities[dan.cities.length-1].ww=int(myXML.city[i].pos.@ww);
+            dan.cities[dan.cities.length-1].hh=int(myXML.city[i].pos.@hh);
+
         }
 
         for (i=0; i<myXML.alliance.length(); i++)
@@ -556,6 +570,7 @@ public class ScenLoader extends ParentLoader
             for (var jj:int=0; jj<myXML.heroActivity[i].relate.length(); jj++)
             {
                 dan.heroActivities[dan.heroActivities.length-1].txt.push(new String(myXML.heroActivity[i].relate[jj].@txt));
+                trace("rel="+myXML.heroActivity[i].relate[jj].@txt);
             }
             for (var jj:int=0; jj<myXML.heroActivity[i].cost.length(); jj++)
             {
@@ -579,10 +594,13 @@ public class ScenLoader extends ParentLoader
             dan.behPos[dan.behPos.length-1].iii=myXML.behPositioning[i].@iii;
             dan.behPos[dan.behPos.length-1].weAre=myXML.behPositioning[i].@weAre;
             dan.behPos[dan.behPos.length-1].where=myXML.behPositioning[i].where.@num;
+            dan.behPos[dan.behPos.length-1].whereParam=myXML.behPositioning[i].where.@num2;
             dan.behPos[dan.behPos.length-1].warning=myXML.behPositioning[i].warning.@res;
             dan.behPos[dan.behPos.length-1].empty=myXML.behPositioning[i].empty.@i;
             dan.behPos[dan.behPos.length-1].resTyppe=myXML.behPositioning[i].res.@typpe;
             dan.behPos[dan.behPos.length-1].resIII=myXML.behPositioning[i].res.@iii;
+            dan.behPos[dan.behPos.length-1].dip = String(myXML.behPositioning[i].dip.@status);
+            dan.behPos[dan.behPos.length-1].war = int(myXML.behPositioning[i].dip.@war);
         }
         //смотрим, какие меню выбора действия героя возможно
         for (i=0; i<myXML.behMenu.length(); i++)
@@ -632,7 +650,6 @@ public class ScenLoader extends ParentLoader
                 dan.behRes[dan.behRes.length-1].resChangeNum.push(new int(myXML.behResult[i].resChange[jj].@num));
                 dan.behRes[dan.behRes.length-1].resChangeNumTyppe.push(new String(myXML.behResult[i].resChange[jj].@numTyppe));
             }
-
            // <behResult iii="1">
                // <resChange typpe="army_hoplite" num="10" numTyppe="abs"/>
             for (var jj:int=0; jj<myXML.behResult[i].warning.length(); jj++)
@@ -722,6 +739,17 @@ public class ScenLoader extends ParentLoader
             {
                 dan.category[dan.category.length-1].col.push(new String(myXML.category[i].col[jj].@clr));
             }
+        }
+
+        //определяем условия выдачи победных очков
+        for (i=0; i<myXML.wins.length(); i++)
+        {
+            dan.wins.push(new Win());
+            dan.wins[dan.wins.length-1].iii=myXML.wins[i].@iii;
+            dan.wins[dan.wins.length-1].code=myXML.wins[i].@code;
+            dan.wins[dan.wins.length-1].status=myXML.wins[i].@status;
+            dan.wins[dan.wins.length-1].txt=myXML.wins[i].@txt;
+            dan.wins[dan.wins.length-1].restxt=myXML.wins[i].@restxt;
         }
     }
 

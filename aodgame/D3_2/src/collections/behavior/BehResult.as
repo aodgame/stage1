@@ -34,6 +34,8 @@ public class BehResult
     public var needRelNumTyppe:Vector.<String>;
     public var needRelRes:Vector.<String>;
 
+
+
     //<cityRel typpe="current" num="10" numTyppe="perc"/>
 
     /*<behResult iii="1">
@@ -70,6 +72,7 @@ public class BehResult
         needRelTyppe = new Vector.<String>();
         needRelNumTyppe = new Vector.<String>();
         needRelRes = new Vector.<String>();
+
     }
 }
 }

@@ -40,6 +40,11 @@ public class City
     public var citizenNum:Vector.<int>;
     public var citizenRel:Vector.<int>;
 
+    public var xx:int; //координаты и размеры города на карте мира
+    public var yy:int;
+    public var ww:int;
+    public var hh:int;
+
     public function City()
     {
         iii=-1;
@@ -62,6 +67,10 @@ public class City
         citizenTyppe = new Vector.<String>();
         citizenNum = new Vector.<int>();
         citizenRel = new Vector.<int>();
+        xx=0;
+        yy=0;
+        ww=0;
+        hh=0;
 
     }
 }

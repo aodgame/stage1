@@ -6,7 +6,6 @@ package subjects
 public class SubButton extends Parent2Subject
 {
     public var fram:uint;
-    //private var neddFram:Boolean=false;
 
     public var goTo:int;
     public var goPosition:int;
@@ -19,6 +18,8 @@ public class SubButton extends Parent2Subject
     private var modificator:String="";
     private var taper:int=0;
 
+    private var smallControll:int=0;//контролирует, чтобы кнопка нечаянно не уменьшилась или не выросла больше, чем надо при модификаторе btn
+
     public function SubButton(myXML, pics, el, ii, moduleName)
     {
         end_load(myXML, ii, pics, el, moduleName);
@@ -30,21 +31,16 @@ public class SubButton extends Parent2Subject
 
         if (bit.curRoom==weAre && unsel)
         {
-            if (bit.cli==1)// && (bit.mouseParClick==-1 || bit.mouseParUp!=-1))
+            if (bit.cli==1)
             {
                 selectIt();
             }
-            /*if (bit.cli==1 && bit.mouseParUp!=-1)
-            {
-                selectIt();
-            }*/
         }
         if (cameraUse==1)
         {
             show();
         }
         framer();
-
     }
 
     private function framer():void
@@ -90,7 +86,7 @@ public class SubButton extends Parent2Subject
         }
     }
 
-    private function selectIt()
+    private function selectIt():void
     {
         var xx:int=0;
         var yy:int=0;
@@ -107,14 +103,10 @@ public class SubButton extends Parent2Subject
                 if (bit.cli==1 && bit.mouseParClick==-1)
                 {
                     bit.mouseParClick = iii;
-                    //trace("new bit.mouseParClick=" + bit.mouseParClick);
-                } else
-                {
-                    //trace("old bit.mouseParUp="+bit.mouseParUp);
+                    bit.underOne=iii;
                 }
                 if (bit.cli==1 && bit.mouseParUp!=-1)
                 {
-                    //trace("new bit.mouseParUp="+bit.mouseParUp);
                     bit.underOne=iii;
                 }
                 break;
@@ -157,13 +149,12 @@ public class SubButton extends Parent2Subject
 
     private function btnModificztor(el)
     {
-        if (bit.mouseParOver==iii && taper==0)
+        if (bit.mouseParOver==iii && taper==0 && smallControll<=0)
         {
             for (i = 0; i < numOfEl.length; i++)
             {
                 if (el[numOfEl[i]].typeOfElement=="txt")
                 {
-                   // el[numOfEl[i]].pic.x-=1;
                     el[numOfEl[i]].size += 2;
                     el[numOfEl[i]].makeFormat();
                 } else
@@ -173,6 +164,7 @@ public class SubButton extends Parent2Subject
                 }
             }
             taper=1;
+            smallControll=1;
         }
         if (bit.mouseParClick==iii && taper==2)
         {
@@ -190,15 +182,13 @@ public class SubButton extends Parent2Subject
             }
             taper=2;
         }
-        //if ((bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
-        if ((bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2))
+        if ((bit.mouseParOver!=iii && bit.mouseParOver!=-1) && (taper==1 || taper==2) && smallControll>=0)
         {
             for (i=0; i<numOfEl.length; i++)
             {
                 if (el[numOfEl[i]].typeOfElement=="txt")
                 {
                     el[numOfEl[i]].size-=2;
-                    //el[numOfEl[i]].pic.x+=1;
                     el[numOfEl[i]].makeFormat();
                 } else
                 {
@@ -211,9 +201,9 @@ public class SubButton extends Parent2Subject
                 }
             }
             taper=0;
+            smallControll=-1;
         }
     }
-
 
     override protected function end_load(myXML, ii, pics, el, moduleName):void //заканчиваем загрузку
     {
@@ -226,6 +216,11 @@ public class SubButton extends Parent2Subject
         if (myXML.camera=="1")
         {
             cameraUse = 1;
+            angle=myXML.camera.@angle;
+            if (angle!=0)
+            {
+                ang=true;
+            }
         }
 
         modificator=myXML.type.@modificator;

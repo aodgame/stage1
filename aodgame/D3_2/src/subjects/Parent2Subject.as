@@ -11,6 +11,9 @@ public class Parent2Subject extends ParentSubject
     public var startX:Vector.<int> = new Vector.<int>();
     public var startY:Vector.<int> = new Vector.<int>();
 
+    protected var angle:int=0;
+    protected var ang:Boolean=false;
+
     override public function work(ii):void
     {
         super.work(ii);
@@ -22,13 +25,25 @@ public class Parent2Subject extends ParentSubject
         if (bit.realX - curX < 1025 + subW && bit.realY - curY < 769 + subH &&
                 bit.realX - curX > -1025 - subW && bit.realY - curY > -769 - subH)
         {
-            subX = bit.centx - (bit.realX - curX);
-            subY = bit.centy - (bit.realY - curY);
-        }
-        else
+            if (!ang)
+            {
+                subX = bit.centx - (bit.realX - curX);
+                subY = bit.centy - (bit.realY - curY);
+            } else
+            {
+                //trace("angle="+angle);
+                subX = bit.centx - (bit.realX - curX);
+                var k:Number = 0.25;
+                var x:Number=512-subX;
+                subY = k*x+curY;
+                //trace(iii+"; x="+x+"; curX="+subX+"; curY="+curY);
+
+            }
+        } else
         {
             resultVis = 0;
         }
+
     }
 
     override public function takeParam(str):int

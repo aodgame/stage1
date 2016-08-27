@@ -5,12 +5,13 @@ package story.managers
 {
 import D3.Bitte;
 
-import collections.behavior.BehPositioning;
 import collections.behavior.BehResult;
 import collections.common.Hero;
 import collections.inWorld.Alliance;
 
 import story.Danke;
+import story.managers.activities.Check;
+import story.managers.activities.Positioning;
 
 public class ActivityManager
 {
@@ -22,7 +23,6 @@ public class ActivityManager
     private var i:int=0;
     private var j:int=0;
 
-    private var numOfRes:int=-1;
     private var lag:int=0;
 
     private var heroChoice:int=-1; //номер героя
@@ -38,77 +38,66 @@ public class ActivityManager
     private var cityIDII:int=-1; //номера в векторе панели города и спец.панели города
     private var specPanel:int=-1;
 
+    private var landNum:int=-1;
+    private var behPos:int=-1;
+
+    private var posit:Positioning; //класс с функциями для позиционирования героев
+    private var check:Check; //класс с функциями, котнролирующими условия исполнения активностей
 
     public function ActivityManager()
     {
         bit = Bitte.getInstance();
         dan = Danke.getInstance();
+        posit = new Positioning();
+        check = new Check();
     }
 
     public function work(sub):void
     {
         if (bit.dm==1 && down==-1 && bit.mouseParDown==dan.heroIII)
         {
-            //trace("downOfMany="+dan.downOfMany);
             down=dan.downOfMany-1;
         }
         if ((bit.dm==0 && down!=-1) || dan.needToMakeMenu) //создаём менюшку сообщения (по крайней мере проверяем возможность создания)
         {
             trace("positioning start");
-            if (positioning(sub) || (dan.needToMakeMenu && posMess())) //перемещение героя либо просьба от системы сообщений
+            if (posit.positioning(bit, dan, sub) || (dan.needToMakeMenu && posit.posMess(dan))) //перемещение героя либо просьба от системы сообщений
             {
+                behPos=posit.return_BehPos();
+                landNum=posit.return_LandNum();
+                curLand=posit.return_CurLand();
+                heroChoice=posit.return_HeroChoice();
+
                 lag=10;
                 dan.needToMakeMenu=false;
-                makeMenu();
+
+                posit.makeMenu(dan);
+                behActChoice=posit.return_behActChoice();
             }
             down=-1;
         }
         if (dan.behChoice!=0) //определяем, куда наведён герой и что
         {
-            trace("hero go");
-            trace("heroChoice="+heroChoice);
-            trace("dan.behChoice="+dan.behChoice);
-            if (choice() && choose() && enoughRes() && enoughRelations())
+            if (check.choice(dan, behActChoice, behCost) &&
+                    check.choose(dan, behRes) &&
+                    check.enoughRes(dan, heroChoice) &&
+                    check.enoughRelations(dan))// &&
+                    //check.dipStatus(dan, behPos, landNum))
             {
-                trace("current behRes="+behRes);
-                trace("behCost="+behCost);
-                var behGo:int=-1;
-                for (i=0; i<dan.behRes.length; i++)
-                {
-                    trace(i+"; dan.behRes[i].iii="+dan.behRes[i].iii);
-                    if (behRes==dan.behRes[i].iii)
-                    {
-                        behGo=i;
-                        trace("true");
-                        break;
-                    }
-                }
+                behCost=check.behCost;
+                behRes=check.behRes;
+                heroChoice=check.heroChoice;
 
-                var bRes:BehResult=dan.behRes[behGo];
-                if (bRes.resChangeTyppe.length>0)
-                {
-                    resChanger(bRes);
-                }
-                if (bRes.warningLand.length>0)
-                {
-                    warningLandChanger(bRes);
-                }
-                if (bRes.changeTyppe.length>0)
-                {
-                    changer(sub, bRes);
-                }
-                if (bRes.cityRelTyppe.length>0)
-                {
-                    cityRel(sub, bRes);
-                }
-
+                actions(sub);
             }
-            trace("dan.behChoice="+dan.behChoice);
-            dan.behChoice=0;
+
             heroChoice=-1;
-            behActChoice=-1;
+            check.clear();
             curLand=-1;
-            numOfRes=-1;
+            posit.clear();
+            dan.behChoice=0;
+            behActChoice=-1;
+
         }
         if (lag>0)
         {
@@ -127,150 +116,61 @@ public class ActivityManager
         {
             activities(sub);
         }
-        cloudOut(sub);
+        cloudOut(sub); //необходимо для обработки видимости городов за облаками
     }
 
-    private function enoughRelations():Boolean //проверяем соответствие отношений городов
+    private function behItGo(analyzVar):int
     {
-        var behGo:int=-1;
+        var bG:int=-1;
         for (i=0; i<dan.behRes.length; i++)
         {
-            trace(i+"; dan.behRes[i].iii="+dan.behRes[i].iii);
-            if (behRes==dan.behRes[i].iii)
+            if (analyzVar==dan.behRes[i].iii)
             {
-                behGo=i;
-                trace("true");
+                bG=i;
                 break;
             }
         }
+        return bG;
+    }
+
+    private function actions(sub):void
+    {
+        trace("current behRes="+behRes);
+        trace("behCost="+behCost);
+        var behGo:int=behItGo(behRes);
         var bRes:BehResult=dan.behRes[behGo];
-        if (bRes.needRelTyppe.length==0) //проверяем, есть ли запросы на проверку взаимоотношений городов
-        {
-            return true;
-        }
 
-        var res:Boolean = false;
-        for (i=0; i<bRes.needRelTyppe.length; i++) //и если они есть - разбираемся
+        if (bRes.resChangeTyppe.length>0)
         {
-            if (bRes.needRelTyppe[i] == "firstAlliance") //игрока принимает лидер альянса, и у игрока нет своего альянса
-            {
-                if (dan.cities[0].alliance==-1 && dan.cities[dan.currentCity].leader)
-                {
-                    res = true;
-                } else
-                {
-                    res = false;
-                    break;
-                }
-            }
-            if (bRes.needRelTyppe[i] == "noAlliance") //проверяем, что у города нет другого альянса
-            {
-                trace("noAlliance")
-                if (dan.cities[dan.currentCity].alliance == -1)
-                {
-                    res = true;
-                } else
-                {
-                    res = false;
-                    break;
-                }
-            }
-            if (bRes.needRelTyppe[i] == "power") //проверяем, что ваши силы как минимум сопоставимы
-            {
-                trace("power");
-                var nm:int = 0;
-                for (j = 0; j < dan.globalRes.length; j++) //находим нужный ресурс
-                {
-                    if (dan.globalRes[j].typpe == bRes.needRelRes[i])
-                    {
-                        nm = j;
-                        break;
-                    }
-                }
-                if (bRes.needRelNumTyppe[i] == "both")
-                {
-                    if (dan.globalRes[nm].amount >= dan.cities[dan.currentCity].army * 0.7)
-                    {
-                        res = true;
-                    } else
-                    {
-                        res = false;
-                        break;
-                    }
-                }
-                if (bRes.needRelNumTyppe[i] == "you")
-                {
-                    if (dan.globalRes[nm].amount >= dan.cities[dan.currentCity].army * 1.2)
-                    {
-                        res = true;
-                    } else
-                    {
-                        res = false;
-                        break;
-                    }
-                }
-            }
-            if (bRes.needRelNumTyppe[i]=="relations") //уровень отношений высокий
-            {
-                if (bRes.needRelNumTyppe[i]=="high")
-                {
-                    if (dan.cities[dan.currentCity].peacewarRelations[0] >= 85)
-                    {
-                        res = true;
-                    } else
-                    {
-                        res = false;
-                        break;
-                    }
-                }
-                if (bRes.needRelNumTyppe[i]=="good")
-                {
-                    if (dan.cities[dan.currentCity].peacewarRelations[0] >= 50)
-                    {
-                        res = true;
-                    } else
-                    {
-                        res = false;
-                        break;
-                    }
-                }
-            }
-            if (bRes.needRelNumTyppe[i]=="noWar")
-            {
-                if (dan.cities[dan.currentCity].peacewar[0]==0)
-                {
-                    res=true;
-                } else
-                {
-                    res=false;
-                    break;
-                }
-            }
+            resChanger(bRes);
         }
-
-        return res;
+        if (bRes.warningLand.length>0)
+        {
+            warningLandChanger(bRes);
+        }
+        if (bRes.changeTyppe.length>0)
+        {
+            changer(sub, bRes);
+        }
+        if (bRes.cityRelTyppe.length>0)
+        {
+            cityRel(sub, bRes);
+        }
     }
 
     private function cityRel(sub, bRes):void //меняем отношение города к вам
     {
         trace("cityRel");
+        i=0;
         for (i=0; i<bRes.cityRelTyppe.length; i++)
         {
             if (bRes.cityRelTyppe[i]=="current") //город текущий открытый
             {
                 if (bRes.cityRelNumTyppe[i]=="abs") //меняем на абсолютное значение
                 {
-                    trace("bRes.cityRelNum[i]="+bRes.cityRelNum[i]);
-                    trace("dan.cities[dan.currentCity].name="+dan.cities[dan.currentCity].name);
-                    trace("rel before="+dan.cities[dan.currentCity].peacewarRelations[0]);
                     dan.cities[dan.currentCity].peacewarRelations[0]+=bRes.cityRelNum[i];
                     dan.cities[0].peacewarRelations[dan.currentCity-1]+=bRes.cityRelNum[i]; //город игрока
-                    trace("rel after="+dan.cities[dan.currentCity].peacewarRelations[0]);
                     dan.currRelations=dan.cities[dan.currentCity].peacewarRelations[0];
-                    trace("dan.cities[dan.currentCity].name="+dan.cities[dan.currentCity].name);
-
-                    //var cityIDII:int=-1;
-                    //var specPanel:int=-1;
 
                     if (cityIDII==-1 || specPanel==-1)
                     {
@@ -313,9 +213,6 @@ public class ActivityManager
                         }
                     }
                     sub[specPanel].neddFram=true;
-
-                    //for (j=0; j<)
-                    //sub[specPanel].fram[dan.numOfElemsCityPanel + i] = dan.cities[j].peacewarRelations[0];
                 }
             }
             if (bRes.cityRelTyppe[i]=="war") //объявляем войну союзу
@@ -344,20 +241,6 @@ public class ActivityManager
                 //находим альянсы
                 trace("dan.cities[dan.currentCity].alliance="+dan.cities[dan.currentCity].alliance);
                 trace("dan.cities[dan.currentCity].peacewar[0]="+dan.cities[dan.currentCity].peacewar[0]);
-               /* for (i=0; i<dan.cities.length; i++)
-                {
-                    trace("dan.cities[i].name="+dan.cities[i].name);
-                    if(dan.cities[i].alliance==dan.cities[dan.currentCity].alliance && dan.cities[i].alliance!=-1)
-                    {
-                        trace("war "+dan.cities[i].iii);
-                        dan.cities[i].peacewar[0]=dan.currPeaceWar;
-                    }
-                    if(dan.cities[i].alliance==dan.cities[0].alliance && dan.cities[i].alliance!=-1)
-                    {
-                        trace("union "+dan.cities[i].iii)
-                        dan.cities[i].peacewar[dan.currentCity-1]=dan.currPeaceWar;
-                    }
-                }*/
                 for (i=0; i<dan.cities.length; i++) //каждый город альянса начинает выяснять отношения с каждым при совпадении альянсов
                 {
                     for (j=0; j<dan.cities[i].peacewarIII.length; j++)
@@ -396,7 +279,7 @@ public class ActivityManager
                 }
             }
 
-            if (bRes.cityRelTyppe[i]=="alliance") //заключаем союз с городом
+            if (i<bRes.cityRelTyppe.length && bRes.cityRelTyppe[i]=="alliance") //заключаем союз с городом
             {
                 trace("Begin alliance working");
                 if (bRes.cityRelNumTyppe=="out" || bRes.cityRelNumTyppe=="meOut")
@@ -523,6 +406,18 @@ public class ActivityManager
                     }
                 }
             }
+            if (i<bRes.cityRelTyppe.length && bRes.cityRelTyppe[i]=="thisCity") //город, над которым был герой
+            {
+                trace("thisCity");
+                if (dan.overCity!=-1)
+                {
+                    if (bRes.cityRelNumTyppe[i]=="abs") //меняем на абсолютное значение
+                    {
+                        dan.cities[dan.overCity].peacewarRelations[0] += bRes.cityRelNum[i];
+                        dan.cities[0].peacewarRelations[dan.overCity - 1] += bRes.cityRelNum[i]; //город игрока
+                    }
+                }
+            }
         }
     }
 
@@ -565,10 +460,10 @@ public class ActivityManager
                 for (var k:int = 0; k < dan.clouds.length; k++)
                 {
                     if (
-                                (sub[cityPic].sx[j] + sub[cityPic].subX > dan.clouds[k].xx - dan.clouds[k].ww/2) &&
-                                (sub[cityPic].sx[j] + sub[cityPic].subX < dan.clouds[k].xx + dan.clouds[k].ww/2) &&
-                                (sub[cityPic].sy[j] + sub[cityPic].subY > dan.clouds[k].yy - dan.clouds[k].hh/2) &&
-                                (sub[cityPic].sy[j] + sub[cityPic].subY < dan.clouds[k].yy + dan.clouds[k].hh/2)
+                            (sub[cityPic].sx[j] + sub[cityPic].subX > dan.clouds[k].xx - dan.clouds[k].ww/2) &&
+                            (sub[cityPic].sx[j] + sub[cityPic].subX < dan.clouds[k].xx + dan.clouds[k].ww/2) &&
+                            (sub[cityPic].sy[j] + sub[cityPic].subY > dan.clouds[k].yy - dan.clouds[k].hh/2) &&
+                            (sub[cityPic].sy[j] + sub[cityPic].subY < dan.clouds[k].yy + dan.clouds[k].hh/2)
                     )
                     {
                         if (!dan.clouds[k].vis)
@@ -598,7 +493,7 @@ public class ActivityManager
 
     private function changer(sub, bRes):void
     {
-        trace("69");
+        trace("changer");
         for (var i=0; i<bRes.changeTyppe.length; i++)
         {
             switch (bRes.changeTyppe[i])
@@ -614,14 +509,21 @@ public class ActivityManager
                             (dan.heroMoveY>dan.clouds[k].yy - dan.clouds[k].hh/2) && (dan.heroMoveY<dan.clouds[k].yy + dan.clouds[k].hh/2)
                         )
                         {
-                            trace("changer dan.heroMoveX="+dan.heroMoveX+"; dan.heroMoveY="+dan.heroMoveY);
-                            trace(" dan.heroChoose="+ dan.heroChoose);
                             dan.heroOnTyppe="shadow";
                             dan.heroStart=false;
-                            //dan.heroChoose=heroChoice;
                             break;
                         }
                     }
+                    break;
+                case "cityRaid":
+                        trace("cityRaid");
+                    dan.heroOnTyppe="cityRaid";
+                    dan.heroStart=false;
+                    break;
+                case "citySiege":
+                        trace("citySiege");
+                    dan.heroOnTyppe="citySiege";
+                    dan.heroStart=false;
                     break;
                 default:
                     break;
@@ -735,158 +637,13 @@ public class ActivityManager
         }
     }
 
-    private function choose():Boolean //находим, по какому варианту развития пойдёт событие после выбора пользователя
-    {
-        trace("choose");
-        var min=0;
-        var r:int=Math.random()*100;
-        trace("r="+r);
-        for (i=0; i<dan.behAct[behCost].resBehRes.length; i++)
-        {
-            trace("behCost="+behCost+"; "+dan.behAct[behCost].resChance[i]);
-            if (r<dan.behAct[behCost].resChance[i]+min)
-            {
-                trace("dan.behAct[behCost].resBehRes="+dan.behAct[behCost].resBehRes[i]);
-                behRes=dan.behAct[behCost].resBehRes[i];//i;
-                trace("behRes="+behRes);
-                return true;
-            } else
-            {
-                min+=dan.behAct[behCost].resChance[i];
-            }
-        }
-        return false;
-    }
-
-    private function choice():Boolean //находим какой пункт выбрал пользователь
-    {
-        trace("choice");
-        trace("dan.behChoice="+dan.behChoice);
-        trace("behActChoice="+behActChoice);
-        if (dan.behChoice==-1 || behActChoice==-1)
-        {
-            return false;
-        }
-        behCost=dan.behMenu[behActChoice].choicerBehActivity[dan.behChoice-1];
-        trace("behCost="+behCost);
-        for (i=0; i<dan.behAct.length; i++)
-        {
-            if (dan.behAct[i].iii==behCost)
-            {
-                trace("i="+i+":"+dan.behAct[i].iii);
-                behCost=i;
-                return true;
-            }
-        }
-        return false;
-
-    }
-
-    private function enoughRes():Boolean
-    {
-        trace("resEnough");
-
-        trace("dan.heroChoose="+dan.heroChoose);
-        var isPossible:Boolean=false;
-
-        var behGo:int=-1;
-        for (i=0; i<dan.behRes.length; i++)
-        {
-            if (behRes==dan.behRes[i].iii)
-            {
-                behGo = i;
-                break;
-            }
-        }
-        var bRes:BehResult=dan.behRes[behGo];//behCost
-        trace("bRes.heroResNum.length="+bRes.heroResNum.length);
-
-
-        if (dan.behRes[behGo].heroResNum.length==0) //behCost
-        {
-            isPossible=true;
-        }
-        if (heroChoice==-1 && dan.heroChooseMemory!=-1)
-        {
-            heroChoice = dan.heroChooseMemory;
-            dan.heroChooseMemory=-1;
-        }
-        if (heroChoice==-1 && dan.currentCity!=-1)
-        {
-            //ищем нашего героя, ответственного за город
-            for (var i:int=0; i<dan.currentHeroes.length; i++)
-            {
-                for (var j:int=0; j<dan.currentHeroes[i].needTyppe.length; j++)
-                {
-                    if (dan.currentHeroes[i].needTyppe[j]=="city" && dan.currentHeroes[i].needNum[j]==dan.currentCity)
-                    {
-                        heroChoice=i+1;
-                        break;
-                    }
-                }
-            }
-        }
-        trace("heroChoice="+heroChoice);
-        if (heroChoice!=-1)
-        {
-            trace("dan.behChoice="+dan.behChoice);
-            isPossible=true;
-            trace("behCost="+behCost);
-            var hero:Hero=dan.currentHeroes[heroChoice-1];
-
-
-            trace("behRes="+behRes);
-            trace("bRes.heroResTyppe.length="+bRes.heroResTyppe.length);
-            for (i=0; i<bRes.heroResNum.length; i++)
-            {
-                for (var j:int=0; j<hero.heroResTyppe.length; j++)
-                {
-                    if (bRes.heroResTyppe[i]==hero.heroResTyppe[j])
-                    {
-                        if (bRes.heroResNumTyppe[i]=="abs")
-                        {
-                            if (hero.heroResMax[j]>=bRes.heroResNum[i])
-                            {
-                                hero.heroResMax[j]-=bRes.heroResNum[i];
-                                isPossible=true;
-                                trace("true");
-                                continue;
-                            } else
-                            {
-                                trace("ffalse");
-                                isPossible=false;
-                                break;
-                            }
-                        }
-                        if (bRes.heroResNumTyppe[i]=="perc")
-                        {
-                            hero.heroResMax[j]-= hero.heroResMax[j]*bRes.heroResNum[i]/100;
-                            isPossible=true;
-                        }
-                    }
-                }
-                if (!isPossible)
-                {
-                    break;
-                }
-            }
-        }
-        trace("isPossible="+isPossible)
-        return isPossible;
-    }
-
     private function resChanger(bRes):void
     {
         trace("res Changer");
-        //var bRes:BehResult=dan.behRes[behRes];
-        trace("bRes.resChangeTyppe.length="+bRes.resChangeTyppe.length);
         for (i=0; i<bRes.resChangeTyppe.length; i++)
         {
-            trace("i="+i);
-            //trace("bRes.resChangeTyppe="+bRes.resChangeTyppe[i]);
             for (var j:int=0; j<dan.globalRes.length; j++)
             {
-                //trace(">>dan.globalRes[j].typpe="+dan.globalRes[j].typpe);
                 if (dan.globalRes[j].typpe==bRes.resChangeTyppe[i])
                 {
                     if (bRes.resChangeNumTyppe[i]=="perc")
@@ -927,7 +684,6 @@ public class ActivityManager
                     {
                         dan.globalRes[j].presenceAmount=dan.globalRes[j].min;
                     }
-
                     if (dan.globalRes[j].amount>dan.globalRes[j].max)
                     {
                         dan.globalRes[j].amount=dan.globalRes[j].max;
@@ -940,7 +696,7 @@ public class ActivityManager
                     {
                         dan.globalRes[j].presenceAmount=dan.globalRes[j].max;
                     }
-                    trace(dan.globalRes[j].typpe+"::"+dan.globalRes[j].amount);
+                    //trace(dan.globalRes[j].typpe+"::"+dan.globalRes[j].amount);
                     break;
                 }
             }
@@ -987,229 +743,6 @@ public class ActivityManager
                     break;
                 }
             }
-        }
-    }
-
-    private function posMess():Boolean
-    {
-        //trace("posMess0");
-        if (dan.behPosFromMess!=-1)
-        {
-            //trace("posMess");
-            //dan.behPosFromMess=-1;
-            numOfRes = -2;//dan.behPosFromMess;
-            return true;
-        }
-        return false;
-    }
-    private function positioning(sub):Boolean
-    {
-        trace(bit.mouseParClick);
-        trace(bit.mouseClick);
-        trace(dan.heroChoose);
-        trace(dan.heroIII);
-        trace("posit prefirst");
-        if (bit.mouseParClick==dan.heroIII && bit.mouseParClick!=-1)
-        {
-            trace("equalisation");
-            var h:int=-1;
-            for (i=0; i<sub.length; i++)
-            {
-                if (sub[i].iii==dan.heroIII)
-                {
-                    h=i;
-                    break;
-                }
-            }
-            trace("h="+h);
-            if (h!=-1)
-            {
-                trace(sub[h].sx[dan.heroChoose-1]+"::"+sub[h].baseX[dan.heroChoose-1]);
-                trace(sub[h].sy[dan.heroChoose-1]+"::"+sub[h].baseY[dan.heroChoose-1]);
-                if (sub[h].wayCount[dan.heroChoose-1]<10)
-                {
-                    trace("false;");
-                    return false;
-                }
-            }
-
-        }
-        trace("posit first");
-        var res:Boolean = false;
-        var bool:Boolean=false;
-        var landNum:int=-1;
-        //trace(dan.heroChoose);
-        heroChoice=dan.heroChoose; //[0]=1, [1]=2...
-        for (i=0; i<dan.behPos.length; i++)
-        {
-            trace("i="+i);
-            var bp:BehPositioning = dan.behPos[i];
-            if (bit.curRoom!=bp.weAre)
-            {
-                continue;
-            }
-            trace("bp.where="+bp.where);
-            switch (bp.where)
-            {
-                case "land":
-                    trace("beh bit.underOne "+bit.underOne);
-                    curLand=bit.underOne;
-                    for (j=0; j<dan.lands.length; j++)
-                    {
-                        if (dan.lands[j].subID==bit.underOne)
-                        {
-                            landNum=j;
-                            bool=true;
-                            break;
-                        }
-                    }
-                    break;
-                case "cloud":
-                        if (dan.currentCity==-1)
-                        {
-                            for (j = 0; j < dan.clouds.length; j++) //проверяем, над туманом ли войны отпустили героя
-                            {
-                                //trace("bit.sx+bit.sy=" + bit.sx + "+" + bit.sy);
-                                //trace("xx+ww=" + dan.clouds[j].xx + "+" + dan.clouds[j].ww);
-                                //trace("yy+hh=" + dan.clouds[j].yy + "+" + dan.clouds[j].hh);
-                                if (
-                                        (dan.clouds[j].vis) &&
-                                        (bit.sx > dan.clouds[j].xx - dan.clouds[j].ww/2) && (bit.sx < dan.clouds[j].xx + dan.clouds[j].ww/2) &&
-                                        (bit.sy > dan.clouds[j].yy - dan.clouds[j].hh/2) && (bit.sy < dan.clouds[j].yy + dan.clouds[j].hh/2))
-                                {
-                                    //trace("cityStart=" + dan.cityStart);
-                                    //trace("currentCity=" + dan.currentCity);
-                                    trace("cloud good");
-                                    landNum = 0;
-                                    bool = true;
-                                    break;
-                                }
-                            }
-                        }
-                    break;
-                case "city": //герой над городом на карте мира
-                        trace("city the positioning "+bit.mouseParClick+"::"+dan.cityStart);
-                    /*if (bit.mouseParClick==dan.cityStart)
-                    {
-                        trace("bit.mouseParClick====="+bit.mouseParClick);
-                        var n:int=0;
-                        for (j=0; j<sub.length; j++)
-                        {
-                            if (sub[j].iii==dan.cityStart)
-                            {
-                                n=j;
-                                break;
-                            }
-                        }
-                        for (j=0; j<sub[n].numOfEl.length; j++)
-                        {
-                            trace("sub[n].numOfEl[j]="+sub[n].numOfEl[j]);
-                        }
-
-                       // dan.cityOver=
-                        //bool=true;
-                    }*/
-                    break;
-                default:
-                    continue;
-            }
-            if (bool)
-            {
-                trace("dan.lands[landNum].building.workStopProblem="+dan.lands[landNum].building.workStopProblem);
-                trace("bp.warning="+bp.warning);
-
-                if (bp.warning != "" && bp.where!="cloud") //bp.warning != "no" &&
-                {
-                    if (landNum != -1 && bp.warning != dan.lands[landNum].building.workStopProblem)
-                    {
-                        trace("continue");
-                        continue;
-                    }
-                }
-                /*if (bp.warning != "" && landNum != -1 && bp.warning != dan.lands[landNum].building.workStopProblem)
-                {
-                    trace("continue");
-                    continue;
-                }*/
-
-                dan.heroMoveX=bit.sx;
-                dan.heroMoveY=bit.sy;
-                trace("bit.sx="+bit.sx+"; bit.sy = "+bit.sy);
-                trace("next one");
-                res = true;
-                numOfRes = i;
-
-                trace("dan.behPos[numOfRes].iii="+dan.behPos[numOfRes].iii);
-                trace("numOfRes="+numOfRes);
-                trace("dan.behPos[numOfRes].resIII="+dan.behPos[numOfRes].resIII);
-                break;
-            }
-        }
-        trace("res="+res);
-        return res;
-    }
-
-    private function makeMenu():void
-    {
-        if (numOfRes==-1)
-        {
-            return;
-        }
-        if (numOfRes>-1)
-        {
-            dan.heroMenuActivity = dan.behPos[numOfRes].resIII;
-        } else
-        {
-        }
-        trace("dan.heroMenuActivity="+dan.heroMenuActivity);
-        numOfRes=-1;
-
-        var z:int=-1;
-        for (var j:int = 0; j < dan.behMenu.length; j++)
-        {
-            trace("dan.behMenu[j]="+dan.behMenu[j].iii);
-            if (dan.behMenu[j].iii==dan.heroMenuActivity)
-            {
-                z=j;
-                break;
-            }
-        }
-        if (z!=-1)
-        {
-            trace("dan.behMenu[z].iii=" + dan.behMenu[z].iii);
-            dan.heroMenuNum = dan.behMenu[z].choicerBehActivity.length;
-            trace("dan.heroMenuNum=" + dan.heroMenuNum);
-            behActChoice = z;
-            trace("behActChoice" + behActChoice);
-            heroCostPanelMaker();
-        }
-    }
-
-    private function heroCostPanelMaker():void
-    {
-        var z:int=0;
-        for (var j:int = 0; j < dan.behMenu.length; j++)
-        {
-            if (dan.behMenu[j].iii==dan.heroMenuActivity)
-            {
-                trace(dan.behMenu[j].iii);
-                z=j;
-                trace("beh menu z=="+z);
-                break;
-            }
-        }
-
-        trace("dan.behMenu[z].fram.length="+dan.behMenu[z].fram.length);
-        while (dan.messFramsOfFramCost.length>0)
-        {
-            dan.messFramsOfFramCost.pop();
-            dan.messFramsOfNumCost.pop();
-        }
-        for (var j:int=0; j<dan.behMenu[z].fram.length; j++)
-        {
-            trace(dan.behMenu[z].fram[j]+"::"+dan.behMenu[z].framNum[j]);
-            dan.messFramsOfFramCost.push(dan.behMenu[z].fram[j]);
-            dan.messFramsOfNumCost.push(dan.behMenu[z].framNum[j]);
         }
     }
 }

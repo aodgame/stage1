@@ -127,7 +127,7 @@ public class TextManager
                     {
                         for (var k:int = 0; k < dan.heroActivities[j].txt.length; k++)
                         {
-                            //trace("dan.heroActivities[j].txt[k]="+dan.heroActivities[j].txt[k]);
+                            trace("(dan.heroActivities[j].txt[k]="+dan.heroActivities[j].txt[k]);
                             if (dan.heroActivities[j].txt[k] == "$curCityName") //имя города
                             {
                                 //trace("!");
@@ -136,7 +136,20 @@ public class TextManager
                                     if (int(hero.needNum[hr])>=0 && int(dan.cities[hero.needNum[hr]].name) == bit.texto[m].tid)
                                     {
                                         el.txt += harderChoiser(el, m)+" ";
-                                        //trace("111="+el.txt);
+                                        break;
+                                    }
+                                }
+                            }
+                            if (dan.heroActivities[j].txt[k] == "$saveCityName") //имя города
+                            {
+                                trace("$saveCityName");
+                                trace("hero.needNum[hr]="+hero.needNum[hr]);
+                                trace (dan.cities[hero.needNum[hr]].name);
+                                for (var m:int = 0; m < bit.texto.length; m++)
+                                {
+                                    if (int(hero.needNum[hr])>=0 && int(dan.cities[hero.needNum[hr]].name) == bit.texto[m].tid)
+                                    {
+                                        el.txt += harderChoiser(el, m)+" ";
                                         break;
                                     }
                                 }
@@ -201,15 +214,39 @@ public class TextManager
             var num:int=0;
             var t:String="";
             num=findBehMenu();
-            for (var j:int = 0; j < bit.texto.length; j++)
+
+            if (dan.behMenu[num].txt.substr(0,1)=="$")
             {
-                if (dan.behMenu[num].txt == String(bit.texto[j].tid))
+                if (dan.behMenu[num].txt=="$goals") //цели на игру
                 {
-                    t += harderChoiser(el, j);
-                    break;
+                    trace("$goals");
+                    el.pic.text="";
+                    for (var gl:int=0; gl<dan.wins.length; gl++)
+                    {
+                        if (dan.wins[gl].status=="disclass" || dan.wins[gl].status=="active")
+                        {
+                            trace("here="+dan.wins[gl].txt);
+                            el.pic.text+=mediumChoicer(el, dan.wins[gl].txt)+"\n";
+                        }
+                    }
+                    kd++;
                 }
+            } else
+            {
+                for (var j:int = 0; j < bit.texto.length; j++)
+                {
+                    if (dan.behMenu[num].txt == String(bit.texto[j].tid))
+                    {
+                        t += harderChoiser(el, j);
+                        break;
+                    }
+                }
+                kd += letCheck(el, t);
             }
-            kd+=letCheck(el, t);
+
+
+
+
         }
 
         if (el.tid.substr(0,5)=="$abtn" && dan.heroMenuActivity!=-1)
@@ -526,8 +563,7 @@ public class TextManager
             }
         }
 
-
-            if (el.tid.substr(0, 13) == "$cityAlliance") //альянс, в который входит текущий город
+        if (el.tid.substr(0, 13) == "$cityAlliance") //альянс, в который входит текущий город
         {
             /*trace("==city==");
             trace("dan.cityName="+dan.cityName);
@@ -906,6 +942,44 @@ public class TextManager
             }
         }
 
+        if (el.tid == "$infr" && el.txt!=dan.updInfo) //окошко с информацией
+        {
+            el.txt = dan.updInfo;
+            if (el.txt == "")
+            {
+                el.pic.text = el.txt;
+                kd++;
+            } else
+            {
+                if (el.txt.length > 3 && el.txt.substr(0, 4) == "$mod") //время строительства
+                {
+                    var upNum:int = 0;
+                    var k:int = 4;
+                    while (k < el.txt.length)
+                    {
+                        upNum = upNum * 10 + int(el.txt.charAt(k));
+                        k++;
+                    }
+                    for (var j:int = 0; j < dan.updates.length; j++)
+                    {
+                        if (dan.updates[j].iii == upNum)
+                        {
+                            var material:String = dan.updates[j].description;
+                            for (var j:int = 0; j < bit.texto.length; j++)
+                            {
+                                if (int(material) == bit.texto[j].tid)
+                                {
+                                    kd += simpleChoiser(el, j);
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
         if (el.tid.length>4 && el.tid.substr(0,4) == "$btm") //время строительства
         {
             var d:int=4;
@@ -921,16 +995,16 @@ public class TextManager
             kd++;
         }
 
-        if (el.tid == "$info" && el.txt!=dan.updInfo) //окошко с информацией
+        if (el.tid == "$info" && el.txt!=dan.landInfoText) //окошко с информацией
         {
-            el.txt = dan.updInfo;
+            el.txt = dan.landInfoText;
             if (el.txt=="")
             {
                 el.pic.text=el.txt;
                 kd++;
             } else
             {
-                if (el.txt.length>3 && el.txt.substr(0,4) == "$mod") //время строительства
+                if (el.txt.length>3 && el.txt.substr(0,4) == "$mod") //время строительства //SubElementsMenu.parentUpd(el)
                 {
                     var upNum:int=0;
                     var k:int=4;
@@ -955,6 +1029,45 @@ public class TextManager
                             break;
                         }
                     }
+                }
+                if (el.txt.length>3 && el.txt.substr(0,4) == "$lan") //текстовка земли //LandsManager.notActive()
+                {
+                    trace(el.txt);
+                    var tIt:int=0;
+                    var landInfo:String="";
+                    var buildingInfo:String="";
+                    for (var rr:int=4; rr< el.txt.length; rr++)
+                    {
+                        if (tIt==1)
+                        {
+                            buildingInfo+=el.txt.substr(rr,1);
+                        }
+                        if (tIt==0 && el.txt.substr(rr,1)!="+")
+                        {
+                            landInfo+=el.txt.substr(rr,1);
+                        }
+                        if (tIt==0 && el.txt.substr(rr,1)=="+")
+                        {
+                            tIt=1;
+                        }
+
+                    }
+                    el.pic.text=mediumChoicer(el, int(buildingInfo));
+                    if (el.pic.text.length>0)
+                    {
+                        el.pic.text += "\n";
+                    }
+                    el.pic.text+=mediumChoicer(el, int(landInfo));
+                    kd++;
+                }
+                if (el.txt.length>3 && el.txt.substr(0,4) == "$bui") //тип апдейта //SubElementsMenu.specTextAnalyze()
+                {
+                    trace(el.txt);
+                    var buiy:String=el.txt.substr(4,el.txt.length-4);
+                    trace("buiy="+buiy);
+                    el.pic.text=mediumChoicer(el, int(buiy));
+                    trace("el.pic.text="+el.pic.text);
+                    kd++;
                 }
             }
         }
@@ -1108,6 +1221,18 @@ public class TextManager
             }
         }
 
+        if (el.tid == "$advice" && dan.advice!=0) //подсказка
+        {
+            //trace("advice");
+            //trace("dan.advice="+dan.advice);
+            el.txt=mediumChoicer(el, dan.advice);
+            if (el.pic.text!=el.txt)
+            {
+                el.pic.text=el.txt;
+                kd++;
+            }
+        }
+
         if (el.tid.substr(0, 8) == "$hisResu") //экран истории: роль героя
         {
             if (dan.historyHeroChoose!=-1 && dan.willSave[dan.heroHistoryCategory].heroStory.length>0)
@@ -1128,6 +1253,102 @@ public class TextManager
                     kd++;
                 }
             }
+        }
+
+        if (el.tid=="$uLogin")
+        {
+            if (!bit.logged)
+            {
+                bit.userLogin=el.pic.text;
+                if (bit.userLogin=="")
+                {
+                    el.pic.text=bit.userLogin;
+                }
+            } else
+            {
+                el.pic.text=bit.userLogin;
+                el.txt=el.pic.text;
+            }
+            kd++;
+        }
+        if (el.tid=="$uPass")
+        {
+            if (!bit.logged)
+            {
+                if (bit.userPass=="//")
+                {
+                    el.pic.text="";
+                }
+                bit.userPass=el.pic.text;
+                el.txt=el.pic.text;
+
+                if (bit.userPass=="")
+                {
+                    el.pic.text=bit.userPass;
+                }
+            } else
+            {
+                el.pic.text="";//bit.userPass;
+            }
+            kd++;
+        }
+        if (el.tid=="$uNick")
+        {
+            if (bit.logged && !bit.waiting)
+            {
+                bit.userName=el.pic.text;
+                el.txt=el.pic.text;
+
+                if (bit.userName=="")
+                {
+                    el.pic.text=bit.userName;
+                }
+            } else
+            {
+                el.pic.text=bit.userName;
+            }
+            kd++;
+        }
+        if (el.tid=="$uMail")
+        {
+            if (bit.logged && !bit.waiting)
+            {
+                bit.userEmail=el.pic.text;
+                el.txt=el.pic.text;
+
+                if (bit.userEmail=="")
+                {
+                    el.pic.text=bit.userEmail;
+                }
+            } else
+            {
+                el.pic.text=bit.userEmail;
+            }
+            kd++;
+        }
+
+        if (el.tid.substr(0, 6)=="$winRe") //выполненные достижения
+        {
+            var rout:Boolean=false;
+            el.pic.text="";
+            for (var gl:int=0; gl<dan.wins.length; gl++)
+            {
+                if (dan.wins[gl].status=="done")
+                {
+                    rout=true;
+                    el.pic.text+=mediumChoicer(el, dan.wins[gl].restxt)+"\n";
+                }
+            }
+            if  (!rout)
+            {
+                el.pic.text+=mediumChoicer(el, el.tid.substr(8, el.tid.length-8));
+            }
+            var m:int=el.tid.substr(6, 1);
+            while (el.pic.numLines<m)
+            {
+                el.pic.text+="\n";
+            }
+            kd++;
         }
 
         if (kd==0)

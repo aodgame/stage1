@@ -18,7 +18,7 @@ public class SubMovement extends Parent2Subject
 
     private var baseX:int;
     private var baseY:int;
-    private var cli:uint=0;
+    private var cli:int=0;
     private var tx:int;
     private var ty:int;
     private var move:Boolean;
@@ -40,9 +40,13 @@ public class SubMovement extends Parent2Subject
             mouseMove();
         }
 
-        if (bit.mouseParUp==iii)
+        if (bit.mouseParUp==iii || cli==-1)
         {
             bit.whatUnderOne=iii;
+            cli=0;
+            trace("|in movement");
+            trace("bit.whatUnderOne="+bit.whatUnderOne);
+            trace("bit.underRes="+bit.underRes);
         }
     }
 
@@ -52,7 +56,8 @@ public class SubMovement extends Parent2Subject
         {
             if (bit.dm==0)
             {
-                cli=0;
+                trace("outs");
+                cli=-1;
                 for (i=0; i<sx.length; i++)
                 {
                     subX=baseX;
@@ -66,6 +71,7 @@ public class SubMovement extends Parent2Subject
                     subY = bit.sy+ty;
                 }
             }
+            return;
         }
         if (bit.mouseParDown==iii)
         {

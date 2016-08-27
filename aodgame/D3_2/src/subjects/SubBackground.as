@@ -5,6 +5,8 @@ package subjects
 {
 public class SubBackground extends Parent2Subject
 {
+    private var camera:Boolean=false;
+
     public function SubBackground(myXML, pics, el, ii, moduleName)
     {
         end_load(myXML, ii, pics, el, moduleName);
@@ -13,6 +15,10 @@ public class SubBackground extends Parent2Subject
     override public function work(ii):void
     {
         super.work(ii);
+        if (camera)
+        {
+            show();
+        }
     }
 
     override public function model(el):void
@@ -65,6 +71,16 @@ public class SubBackground extends Parent2Subject
 
             bit.textoCodes.push(new String());
             bit.textoTexts.push(new String());
+        }
+
+        if (myXML.camera=="1")
+        {
+            camera=true;
+            angle=myXML.camera.@angle;
+            if (angle!=0)
+            {
+                ang=true;
+            }
         }
 
         ready=true;

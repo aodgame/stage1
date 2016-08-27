@@ -19,7 +19,7 @@ public class UpdatesManager
     public function work():void
     {
         //покупка апдейта
-        if (dan.typeOfUpdatePay!=-1)
+        if (dan.typeOfUpdatePay!=-1 && dan.updateTap>=0)
         {
             var s:int=-1;
             for (var j:int=0; j<dan.updates[dan.updateTap].upResName.length; j++)

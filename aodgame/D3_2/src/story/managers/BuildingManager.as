@@ -26,7 +26,7 @@ public class BuildingManager
         if (dan.buildTap==1)
         {
             analyzeTap(subs);
-            dan.buildTap=-1;
+            dan.buildTap=-bit.mouseClick;
         }
     }
 
@@ -57,6 +57,10 @@ public class BuildingManager
                     dan.madeBuilding=dan.landTap;// запоминаем для movie, что здание было изменено
                     dan.globalResChange=true;
                     dan.localResChange=true;
+
+                    //текстовка с подсказкой
+                    dan.landInfoText="$lan"+dan.lands[dan.landTap].description+"+"+dan.lands[dan.landTap].building.description;
+                    trace("Changed info about the land");
                 }
             }
         }
@@ -80,11 +84,13 @@ public class BuildingManager
 
     private function controlOfPossible(z):Boolean
     {
-        if (z==1)
+        if (z==1&&
+                (dan.lands[dan.landTap].building.workStopProblem=="" || dan.lands[dan.landTap].building.workStopProblem=="no"))
         {
             return true;
         }
-        if(z>1 && dan.lands[dan.landTap].building.baseTyppeOfBuilding=="custom")
+        if(z>1 && dan.lands[dan.landTap].building.baseTyppeOfBuilding=="custom" && dan.lands[dan.landTap].building.canBuild &&
+                (dan.lands[dan.landTap].building.workStopProblem=="" || dan.lands[dan.landTap].building.workStopProblem=="no"))
         {
             return true;
         }

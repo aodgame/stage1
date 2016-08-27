@@ -9,12 +9,16 @@ public class BehPositioning
 
     public var weAre:int; //номер комнаты
     public var where:String; //тип объекта над которым находился герой
+    public var whereParam:String;
     public var warning:String;
 
     public var empty:String;
 
     public var resTyppe:String;
     public var resIII:int;
+
+    public var dip:String; //дипломатический статус между городами
+    public var war:int; //то же самое, но кодом 0 -мир, 1 - война
 
     /*<behPositioning iii="1" weAre="3">
      <!-- Позиционирование героя: пложение на картах weAre - 3,
@@ -33,10 +37,13 @@ public class BehPositioning
         iii=0;
         weAre=0;
         where="";
+        whereParam="";
         warning="";
         resTyppe="";
         empty="";
         resIII=0;
+        dip="";
+        war=0;
     }
 }
 }

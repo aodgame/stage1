@@ -33,6 +33,8 @@ public class Land
 
     public var depends:Vector.<int> = new Vector.<int>();
 
+    public var description:String;
+
     public function Land()
     {
         bit = Bitte.getInstance();
@@ -45,6 +47,7 @@ public class Land
         previousNumOfWorkers=-1;
         currentNumOfWorkers=0;
         elemTyppe = new Vector.<String>();
+        description="";
     }
 
     private function workersSumm():int

@@ -117,9 +117,14 @@ public class LandsManager
                     vision(0, 0);
 
                     dan.landTap=i;
+
+                    //текстовка с подсказкой
+                    dan.landInfoText="$lan"+dan.lands[dan.landInWork].description+"+"+dan.lands[dan.landInWork].building.description;
                 }
             }
         }
+
+
 
     }
 
@@ -164,6 +169,8 @@ public class LandsManager
             vision(50, 1);
 
             dan.landTap=-1;
+
+
         }
     }
 }

@@ -71,8 +71,10 @@ public class Messanger
         {
             return;
         }
-        if (visual.length!=dan.mess.length)
+        if (visual.length!=dan.mess.length || dan.messRefram)
         {
+            trace("mess maker");
+            dan.messRefram=false;
             while (visual.length>0)
             {
                 visual.pop();
@@ -101,7 +103,7 @@ public class Messanger
         }
         if (wasShow!=-1)
         {
-            sub[iidi].fram[wasShow] = 4;
+            sub[iidi].fram[wasShow] = (dan.mess[wasShow].stil-1)*2+4;
             wasShow=-1;
             sub[iidi].neddFram=true;
         }

@@ -109,12 +109,21 @@ public class SubElementsMenu extends Parent2Subject
             {
                 neddFram = true;
             }
+
+            if (dan.buildTap<-1)
+            {
+                dan.buildTap=-dan.buildTap;
+                specTextAnalyze();
+                dan.buildTap=-1;
+            }
         }
 
         if (modificator=="standy")
         {
             standardBehavior(el);
         }
+
+
     }
 
     private function controlling(el):void
@@ -395,6 +404,37 @@ public class SubElementsMenu extends Parent2Subject
         }
     }
 
+    private function specTextAnalyze():void //анализ текстовки
+    {
+        trace("specTextAnalyze="+dan.buildTap);
+        //текстовка с подсказкой
+        var s:String="";
+        for (i = 0; i < numOfEl.length; i++)
+        {
+            trace(i+") "+numOfEl[i]+"+"+specID[i]);
+            if (dan.buildTap==numOfEl[i])
+            {
+                trace("find equaling");
+                s=specID[i];
+                if (subs[i]=="txt")
+                {
+                    s=picAddr[i];
+                }
+                break;
+            }
+
+        }
+        trace("s="+s);
+        if (s.substr(0,2)=="ui")
+        {
+            s=s.substr(2,s.length-2);
+            trace("s="+s);
+            dan.landInfoText="$bui"+s;
+            trace("dan.landInfoText="+dan.landInfoText);
+            trace("Changed info about the land");
+        }
+    }
+
     private function parentUpd(el):void
     {
         if (dan.landInWork != -1) //отображаем апдейты над землёй
@@ -445,6 +485,7 @@ public class SubElementsMenu extends Parent2Subject
                             if (dan.updates[k].iii == int(sft[i]))
                             {
                                 dan.updateTap = k; //сохраняем, какой апдейт выделен игроком
+                                dan.landInfoText=String(k);
                             }
                         }
                         //trace(" dan.updInfo=" + dan.updInfo);
@@ -715,7 +756,7 @@ public class SubElementsMenu extends Parent2Subject
             wayCount.push(0);
             var str:String=myXML.txt[i].@id;
             specID.push(str);
-            picAddr.push(new String(""));
+            picAddr.push(new String(myXML.txt[i].@speccy));
 
             move.push(false);
             baseX.push(0);

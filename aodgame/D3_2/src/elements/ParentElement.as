@@ -13,7 +13,7 @@ public class ParentElement extends MovieClip
     public var parntID:int; //индекс предмета-владельца
     public var iii:int; //мой индекс
 
-    public var tid:String;
+    public var tid:String="";
 
     public var atChild:uint; //слой видимости
 

@@ -89,9 +89,8 @@ public class Quest
             if (adv.action[i]=="resEnd")
             {//закончился ресурс
                 action[i].num=adv.action[i].@num;
+                action[i].vectorI=-1;
             }
-
-
 
             if (adv.action[i]=="curDate")
             {//точная дата, в которую должно произойти событие
@@ -140,12 +139,14 @@ public class Quest
                 action[i].tip=adv.action[i].@tip;
                 action[i].level=adv.action[i].@level;
                 action[i].chance=adv.action[i].@chance;
+                action[i].vectorI=-1;
             }
             if (adv.action[i] == "resLevelMoreThan")
             { //уровень ресурса больше, чем
                 action[i].tip=adv.action[i].@tip;
                 action[i].level=adv.action[i].@level;
                 action[i].chance=adv.action[i].@chance;
+                action[i].vectorI=-1;
             }
             if (adv.action[i] == "heroMenuActivity") //данная переменная активна
             {
@@ -175,9 +176,25 @@ public class Quest
             {   //ни на одной из земель нет строения
                 action[i].tip = adv.action[i].@tip;
             }
+            if (adv.action[i] == "haveBuilding")
+            {   //хотя бы на одной из земель есть строение
+                action[i].tip = adv.action[i].@tip;
+            }
             if (adv.action[i] == "randi") //процент от числа, который будет считаться успешным
             {
                 action[i].num = adv.action[i].@num;
+            }
+            if (adv.action[i] == "logged") //залогинены или нет
+            {
+                action[i].iii = adv.action[i].@iii;
+            }
+            if (adv.action[i] == "waiting") //ожидание, экран перекрыт
+            {
+                action[i].iii = adv.action[i].@iii;
+            }
+            if (adv.action[i] == "serverCode") //серверный код
+            {
+                action[i].iii = adv.action[i].@iii;
             }
         }
     }
@@ -193,6 +210,11 @@ public class Quest
             if (adv.effect[i] == "activate")
             {
                 //активируем тот или иной квест
+                effect[i].qid = adv.effect[i].@qid;
+            }
+            if (adv.effect[i] == "deactivate")
+            {
+                //деактивируем тот или иной квест
                 effect[i].qid = adv.effect[i].@qid;
             }
             if (adv.effect[i] == "load")
@@ -459,7 +481,38 @@ public class Quest
                 effect[i].iii=adv.effect[i].@iii;
             }
 
+            if (adv.effect[i]=="serverCommand") //команда на сервер для исполнения
+            {
+                effect[i].com=adv.effect[i].@com;
+            }
+            if (adv.effect[i]=="serverCode") //код-результат выполнения серверной команды
+            {
 
+            }
+            if (adv.effect[i]=="advice") //меняем код текстовки-подсказки
+            {
+                effect[i].iii=adv.effect[i].@iii;
+            }
+            if (adv.effect[i]=="messageOut") //убираем сообщение из списка
+            {
+                effect[i].behMenu=adv.effect[i].@behMenu;
+            }
+            if (adv.effect[i]=="diffLevel") //уровень сложности
+            {
+                effect[i].iii=adv.effect[i].@iii;
+            }
+            if (adv.effect[i]=="wins") //меняем состояние задания
+            {
+                effect[i].iii=adv.effect[i].@iii;
+                effect[i].res=adv.effect[i].@res;
+            }
+            if (adv.effect[i]=="message") //меняем состояние текущего сообщения
+            {
+                effect[i].iii=adv.effect[i].@iii;
+                effect[i].activeShow=adv.effect[i].@activeShow;
+                effect[i].out=adv.effect[i].@out;
+                effect[i].wasShowed=adv.effect[i].@wasShowed;
+            }
         }
     }
 }

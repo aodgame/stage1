@@ -59,6 +59,10 @@ public class SubjPlant
         {
             sub.push(new SubGraph(myXML, pics, el, i, moduleName));
         }
+        if (myXML.type == "inputer" )
+        {
+            sub.push(new SubInputer(myXML, pics, el, i, moduleName));
+        }
     }
 
     public function makeE(sub, el, pics):void

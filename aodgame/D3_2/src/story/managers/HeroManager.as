@@ -104,8 +104,8 @@ public class HeroManager
     }
 
     private function heroCityRelation(subs):void
-
     {
+        trace("dan.heroOnNum="+dan.heroOnNum);
         //кто-то хочет заставить героя что-то сделать. Но что именно?
         if (dan.heroOnTyppe=="city") //ответственность за город
         {
@@ -165,7 +165,27 @@ public class HeroManager
         {
             trace("We are in shadow");
             dan.currentHeroes[dan.heroChoose-1].needTyppe.push("shadow"); //теперь это твоя ноша
-            dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.heroOnNum);
+            dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.overCity); //номер глорода в векторе городов
+            dan.currentHeroes[dan.heroChoose-1].needX.push(dan.heroMoveX);
+            dan.currentHeroes[dan.heroChoose-1].needY.push(dan.heroMoveY);
+            trace("dan.heroMoveX="+dan.heroMoveX+"; dan.heroMoveY="+dan.heroMoveY);
+        }
+        if(dan.heroOnTyppe=="cityRaid") //ответственность за подготовку рейда
+        {
+            trace("We are in cityRaid");
+            dan.currentHeroes[dan.heroChoose-1].needTyppe.push("cityRaid"); //теперь это твоя ноша
+            dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.overCity); //номер глорода в векторе городов
+            trace("dan.overCity="+dan.overCity);
+            dan.currentHeroes[dan.heroChoose-1].needX.push(dan.heroMoveX);
+            dan.currentHeroes[dan.heroChoose-1].needY.push(dan.heroMoveY);
+            trace("dan.heroMoveX="+dan.heroMoveX+"; dan.heroMoveY="+dan.heroMoveY);
+        }
+        if(dan.heroOnTyppe=="citySiege") //ответственность за подготовку осады
+        {
+            trace("We are in citySiege");
+            dan.currentHeroes[dan.heroChoose-1].needTyppe.push("citySiege"); //теперь это твоя ноша
+            dan.currentHeroes[dan.heroChoose-1].needNum.push(dan.overCity);
+            trace("dan.overCity="+dan.overCity);
             dan.currentHeroes[dan.heroChoose-1].needX.push(dan.heroMoveX);
             dan.currentHeroes[dan.heroChoose-1].needY.push(dan.heroMoveY);
             trace("dan.heroMoveX="+dan.heroMoveX+"; dan.heroMoveY="+dan.heroMoveY);
@@ -213,13 +233,23 @@ public class HeroManager
 
     private function makeActivity(hero, ii):void //снимаем очки во время смены даты за выполнение активности персонажа
     {
+        if (hero.needTyppe.length<1)
+        {
+            return;
+        }
         for (var j:int=0; j<hero.needTyppe.length; j++)
         {
             var k:int = 0;
 
             while (k < dan.heroActivities.length)
             {
-                if (hero.needTyppe[j] == dan.heroActivities[k].act)
+                trace("k="+k);
+                trace("j="+j);
+                trace(hero.needTyppe.length);
+                //trace(hero.needTyppe[j]);
+                trace( dan.heroActivities[k].act);
+                if (hero.needTyppe.length>0 && j<hero.needTyppe.length && k<dan.heroActivities.length &&
+                        hero.needTyppe[j] == dan.heroActivities[k].act)
                 {
                     var typp:int = 0;
                     while (typp < hero.heroResTyppe.length)

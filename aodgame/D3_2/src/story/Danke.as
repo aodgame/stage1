@@ -15,6 +15,7 @@ import collections.common.HeroRes;
 import collections.inHistory.MatrixView;
 import collections.common.Message;
 import collections.inCity.Building;
+import collections.inHistory.Win;
 import collections.inWorld.Alliance;
 import collections.inWorld.City;
 import collections.common.GlobalRes;
@@ -49,6 +50,7 @@ public class Danke
     public var updates:Vector.<Modification> = new Vector.<Modification>();
     public var updChange:Boolean=false; //показатель, что надо заново проверить вид элементов/доступно/недоступно/открыто
     public var updInfo:String=""; //подсказка о том, что должно быть отражено в окошке подсказки $info
+    public var landInfoText:String=""; //подсказка, что пора править текстовку, описывающую землю
     public var updIII:int=-1;
     public var updCost:String=""; //стоимость апдейта
     public var update:Boolean=false; //нажата или нет кнопка апдейта
@@ -116,6 +118,8 @@ public class Danke
     public var cityDipPanel:int=-1; //панель дипломатии города
     public var heroFramNumInCity:int=-1;
 
+    public var overCity:int=-1; //над каким городом последний раз был герой при перетягивании его мышкой
+
     public var playerIII:int=-1; //iii города игрока данного клиента
     public var currRelations:int=0;
     public var currPeaceWar:int=0;
@@ -140,6 +144,7 @@ public class Danke
     public var behPosFromMess:int=-1;
     public var messMenuPanel:int=-1; // номер в векторе списка сообщений
     public var messWasTap:int=-1; //номер элемента в предмете МенюСообщений, который был выбран игроком
+    public var messRefram:Boolean=false; //значение обязательного пересмотра сообщений
     //dan.heroMenuActivity=dan.behPos[numOfRes].resIII; numOfRes???
 
     public var clouds:Vector.<Cloud> = new Vector.<Cloud>(); //туман войны
@@ -179,6 +184,12 @@ public class Danke
     public var messFramsOfNumCost:Vector.<int> = new Vector.<int>(); //цифра, которую должно принять текстовое поле
 
     public var cityOver:int=-1;//над каким городом отпустили героя
+
+    public var advice:int=0; //номер подсказки, которую должен увидеть игрок
+
+    public var wins:Vector.<Win> = new Vector.<Win>();//коллекция условий победы
+
+    public var difficultyLevel:int=1;
 
 
     public function Danke()
@@ -265,6 +276,7 @@ public class Danke
         heroMenuNum=-1;
         behChoice=0;
         mess = new Vector.<Message>();
+        messRefram=false;
         needToMakeMenu=false;
         behPosFromMess=-1;
         messMenuPanel=-1;
@@ -301,6 +313,11 @@ public class Danke
         messFramsOfFramCost = new Vector.<int>();
         messFramsOfNumCost = new Vector.<int>();
         cityOver=-1;
+
+        advice=0;
+        overCity=-1;
+
+        wins = new Vector.<Win>();
     }
 
     public static function getInstance():Danke

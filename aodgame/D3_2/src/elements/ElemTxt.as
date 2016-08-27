@@ -6,6 +6,7 @@ package elements
 import flash.events.MouseEvent;
 import flash.filters.GlowFilter;
 import flash.text.TextField;
+import flash.text.TextFieldType;
 import flash.text.TextFormat;
 import flash.ui.Mouse;
 import flash.ui.MouseCursor;
@@ -26,6 +27,8 @@ public class ElemTxt extends ParentElement
 
     private var glowFilter:GlowFilter;
     private var filter:Boolean;
+
+    private var inputer:Boolean=false;
 
     public var format:TextFormat = new TextFormat();
 
@@ -97,11 +100,37 @@ public class ElemTxt extends ParentElement
             }
             else
             {
-                if (currType==7)
+                if (currType==7) //либо обводка, либо ввод текста пользователем
                 {
-                    filter=true;
-                    fColor=uint(color);
-                    color="";
+                    if (color=="i")
+                    {
+                        inputer=true;
+                        pic.multiline=false;
+                        pic.selectable=true;
+                        pic.wordWrap=false;
+                        pic.type=TextFieldType.INPUT;
+                        pic.border=true;
+                        pic.backgroundColor=0xFFFFFF;
+                    } else
+                    {
+                        if (color == "s")
+                        {
+                            inputer = true;
+                            pic.multiline = false;
+                            pic.selectable = true;
+                            pic.wordWrap = false;
+                            pic.type = TextFieldType.INPUT;
+                            pic.border = true;
+                            pic.backgroundColor = 0xFFFFFF;
+                            pic.displayAsPassword=true;
+                        } else
+                        {
+                            filter = true;
+                            fColor = uint(color);
+
+                        }
+                    }
+                    color = "";
                 }
                 if (currType==3)
                 {

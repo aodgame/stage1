@@ -4,10 +4,7 @@
 package story
 {
 import D3.*;
-
 import collections.common.Message;
-
-import subjects.*;
 import collections.Stats;
 
 public class Movie
@@ -55,19 +52,21 @@ public class Movie
     {
         k=0;
         j=0;
-       // trace("qid="+quest.qid);
         while (j<quest.action.length && quest.rready==0)
         {
             if (quest.action[j].typpe=="no") //действие не требуется
             {
-                //trace("hi! "+quest.qid);
                 k+=1;
             }
             if (quest.action[j].typpe=="tap") //нажата кнопка
             {
-                if (bit.mouseParClick==quest.action[j].iii)
+                if (quest.action[j].iii=="any" && bit.mouseParClick!=-1)
                 {
-                    trace("qid="+quest.qid+";bit.mouseParClick="+bit.mouseParClick+"; "+quest.action[j].iii);
+                    k+= 1;
+                }
+                if (quest.action[j].iii!="any" && bit.mouseParClick==quest.action[j].iii)
+                {
+                    //trace("qid="+quest.qid+";bit.mouseParClick="+bit.mouseParClick+"; "+quest.action[j].iii);
                     k += 1;
                 }
             }
@@ -98,23 +97,30 @@ public class Movie
             }
             if (quest.action[j].typpe=="noBuilding") //ни на одной из земель нет строения
             {
-                //trace("noBuilding="+quest.action[j].tip);
                 for (var f:int=0; f<dan.lands.length; f++)
                 {
-                    //trace("--dan.lands[f].building.landResType="+dan.lands[f].building.landResType);
                     if (dan.lands[f].building.landResType==quest.action[j].tip)
                     {
-                        //trace("here");
                         k-=1;
                         break;
                     }
                 }
                 k+=1;
             }
+            if (quest.action[j].typpe=="haveBuilding") //хотя бы на одной из земель есть строение
+            {
+                for (var f:int=0; f<dan.lands.length; f++)
+                {
+                    if (dan.lands[f].building.landResType==quest.action[j].tip)
+                    {
+                        k+=1;
+                        break;
+                    }
+                }
+            }
             if (quest.action[j].typpe=="randi") //процент от числа, который будет считаться успешным
             {
                 var ri:int=Math.random()*100;
-                //trace("ri="+ri);
                 if (ri<quest.action[j].num)
                 {
                     k+=1;
@@ -123,23 +129,30 @@ public class Movie
 
             if (quest.action[j].typpe=="resEnd") //закончился ресурс
             {
-                for (var y:int=0; y<dan.globalRes.length; y++)
+                if (quest.action[j].vectorI==-1)
                 {
-                    if (dan.globalRes[y].typpe==quest.action[j].num)
+                    for (var y:int = 0; y < dan.globalRes.length; y++)
                     {
-                        if (dan.globalRes[y].amount==dan.globalRes[y].min)
+                        if (dan.globalRes[y].typpe == quest.action[j].num)
                         {
-                            k += 1;
+                            if (dan.globalRes[y].amount == dan.globalRes[y].min)
+                            {
+                                quest.action[j].vectorI=y;
+                            }
+                            break;
                         }
-                        break;
+                    }
+                } else
+                {
+                    if (dan.globalRes[quest.action[j].vectorI].amount == dan.globalRes[quest.action[j].vectorI].min)
+                    {
+                        k += 1;
                     }
                 }
             }
 
             if (quest.action[j].typpe=="curDate") //точная дата, в которую должно произойти событие
             {
-                //trace("timmer.curElder()="+timmer.curElder());
-                //trace("timmer.curYounger()="+timmer.curYounger());
                 if (
                         timmer.curElder()==int(quest.action[j].first)
                         &&
@@ -152,10 +165,9 @@ public class Movie
 
             if (quest.action[j].typpe=="positionIt") //спозиционировать предметы
             {
-                //trace("bit.positionIt.length="+bit.positionIt.length);
                 if (bit.positionIt.length>0)
                 {
-                    trace("posit it!");
+                    //trace("posit it!");
                     k+=1;
                 }
             }
@@ -163,7 +175,7 @@ public class Movie
             {
                 if (bit.visIt.length>0)
                 {
-                    trace("vis it!");
+                    //trace("vis it!");
                     k+=1;
                 }
             }
@@ -178,10 +190,13 @@ public class Movie
 
             if (quest.action[j].typpe=="workActivity") //передвинут человек
             {
+                //trace("workActivity");
+                //trace("bit.whatUnderOne="+bit.whatUnderOne);
+                //trace("bit.underRes="+bit.underRes);
                 if (bit.underOne!=-1 && bit.whatUnderOne!=-1)
                 {
                     dan.reIncome=true;
-                    trace("workActivity");
+                    //trace("true");
                     k += 1;
                 }
             }
@@ -215,38 +230,49 @@ public class Movie
 
             if (quest.action[j].typpe=="resLevelLowerThan") //уровень ресурса меньше, чем
             {
-                for (var y:int=0; y<dan.globalRes.length; y++)
+                if (quest.action[j].vectorI == -1)
                 {
-                    if (dan.globalRes[y].typpe==String(quest.action[j].tip))
+                    for (var y:int = 0; y < dan.globalRes.length; y++)
                     {
-                        if (dan.globalRes[y].amount<quest.action[j].level)
+                        if (dan.globalRes[y].typpe == String(quest.action[j].tip))
                         {
-                            var r:Number=Math.random()*1;
-                            if (r<Number(quest.action[j].chance))
-                            {
-                                k += 1;
-                            }
+                            quest.action[j].vectorI = y;
+                            break;
                         }
-                        break;
+                    }
+                } else
+                {
+                    if (dan.globalRes[quest.action[j].vectorI].amount < quest.action[j].level)
+                    {
+                        var r:Number = Math.random(); // * 1;
+                        if (r < Number(quest.action[j].chance))
+                        {
+                            k += 1;
+                        }
                     }
                 }
             }
             if (quest.action[j].typpe=="resLevelMoreThan") //уровень ресурса больше, чем
             {
-
-                for (var y:int=0; y<dan.globalRes.length; y++)
+                if (quest.action[j].vectorI == -1)
                 {
-                    if (dan.globalRes[y].typpe==String(quest.action[j].tip))
+                    for (var y:int = 0; y < dan.globalRes.length; y++)
                     {
-                        if (dan.globalRes[y].amount>quest.action[j].level)
+                        if (dan.globalRes[y].typpe == String(quest.action[j].tip))
                         {
-                            var r:Number=Math.random()*1;
-                            if (r<Number(quest.action[j].chance))
-                            {
-                                k += 1;
-                            }
+                            quest.action[j].vectorI = y;
+                            break;
                         }
-                        break;
+                    }
+                } else
+                {
+                    if (dan.globalRes[quest.action[j].vectorI].amount>quest.action[j].level)
+                    {
+                        var r:Number=Math.random(); //*1
+                        if (r<Number(quest.action[j].chance))
+                        {
+                            k += 1;
+                        }
                     }
                 }
             }
@@ -255,7 +281,6 @@ public class Movie
             {
                 if (dan.numOfMany==quest.action[j].iii)
                 {
-                    //trace("dan.numOfMany="+dan.numOfMany);
                     k += 1;
                 }
             }
@@ -316,8 +341,37 @@ public class Movie
             {
                 if (dan.heroPanelClose)
                 {
-                    trace("dan.heroPanelClose = close");
                     dan.heroPanelClose=false;
+                    k += 1;
+                }
+            }
+
+            if (quest.action[j].typpe == "logged")//залогинены или нет
+            {
+                if (bit.logged && quest.action[j].iii==1)
+                {
+                    k += 1;
+                }
+                if (!bit.logged && quest.action[j].iii==0)
+                {
+                    k += 1;
+                }
+            }
+            if (quest.action[j].typpe == "waiting")//ожидание, экран перекрыт
+            {
+                if (bit.waiting && quest.action[j].iii==1)
+                {
+                    k += 1;
+                }
+                if (!bit.waiting && quest.action[j].iii==0)
+                {
+                    k += 1;
+                }
+            }
+            if (quest.action[j].typpe == "serverCode")//серверный код
+            {
+                if (bit.serverCode==quest.action[j].iii)
+                {
                     k += 1;
                 }
             }
@@ -369,6 +423,16 @@ public class Movie
                     if (quest[kk].qid==quest[i].effect[j].qid)
                     {
                         quest[kk].activ=true;
+                    }
+                }
+            }
+            if (quest[i].effect[j].typpe=="deactivate") //активируем ивент
+            {
+                for (var kk:int=0; kk<quest.length; kk++)
+                {
+                    if (quest[kk].qid==quest[i].effect[j].qid)
+                    {
+                        quest[kk].activ=false;
                     }
                 }
             }
@@ -520,14 +584,11 @@ public class Movie
             }
             if (quest[i].effect[j].typpe == "visOff")
             {
-                //trace("Vis Off!");
-                //trace("quest[i].effect[j].iii="+quest[i].effect[j].iii);
                 //сделать видимым определённый предмет
                 for (find_id=0; find_id<subs.sub.length; find_id++)
                 {
                     if (subs.sub[find_id].iii==quest[i].effect[j].iii)
                     {
-                        //trace("find");
                         subs.sub[find_id].vis = 0;
                         break;
                     }
@@ -536,7 +597,6 @@ public class Movie
 
             if (quest[i].effect[j].typpe == "vis")
             {
-                //trace("quest[i].effect[j].iii="+quest[i].effect[j].iii);
                 var res:int=quest[i].effect[j].iii;
                 for (k=0; k<subs.sub.length; k++ )
                 {
@@ -604,7 +664,7 @@ public class Movie
                         while(nn<0 && t>0)
                         {
                             nn = Math.random() * dan.lands.length;
-                            if (dan.lands[nn].building.workStopProblem=="")
+                            if (dan.lands[nn].building.workStopProblem=="" || dan.lands[nn].building.workStopProblem=="no")
                             {
                                 dan.lands[nn].building.workStopProblem=String(quest[i].effect[j].tip);
                             } else
@@ -671,6 +731,10 @@ public class Movie
                             dan.globalRes[zz].amount > dan.globalRes[zz].min + int(quest[i].effect[j].num))
                     {
                         dan.globalRes[zz].amount += int(quest[i].effect[j].num);
+                    }
+                    if (dan.globalRes[zz].amount < dan.globalRes[zz].min)
+                    {
+                        dan.globalRes[zz].amount = dan.globalRes[zz].min;
                     }
                 }
             }
@@ -924,6 +988,86 @@ public class Movie
                 if (quest[i].effect[j].iii==0 && dan.historyHeroChoose>0)
                 {
                     dan.historyHeroChoose--;
+                }
+            }
+            if (quest[i].effect[j].typpe == "serverCommand")//команда на сервер для исполнения
+            {
+                //trace("serverCommand in Movie");
+                //trace("quest[i].effect[j].com="+quest[i].effect[j].com);
+                bit.serverCommand=quest[i].effect[j].com;
+            }
+            if (quest[i].effect[j].typpe=="serverCode") //код-результат выполнения серверной команды
+            {
+                bit.serverCode=-1;
+                bit.waiting=false;
+            }
+            if (quest[i].effect[j].typpe=="advice") //меняем код текстовки-подсказки
+            {
+                trace("movie advice");
+                dan.advice=quest[i].effect[j].iii;
+                trace("dan.advice="+dan.advice);
+            }
+            if (quest[i].effect[j].typpe=="messageOut") //убираем сообщение из списка
+            {
+                trace("message out");
+                var ndm:int=0;
+                while (ndm<dan.mess.length)
+                {
+                    if (dan.mess[ndm].behMenu==quest[i].effect[j].behMenu)
+                    {
+                        trace("delete");
+                        dan.mess.splice(ndm,1);
+                        dan.messRefram=true;
+                        break;
+                    }
+                    ndm++;
+                }
+            }
+            if (quest[i].effect[j].typpe=="diffLevel")  //уровень сложности
+            {
+                dan.difficultyLevel=quest[i].effect[j].iii;
+            }
+            if (quest[i].effect[j].typpe=="wins")  //меняем состояние задания
+            {
+                //dan.difficultyLevel=quest[i].effect[j].iii;
+                for (var ndm:int=0; ndm<dan.wins.length; ndm++)
+                {
+                    if (dan.wins[ndm].iii==quest[i].effect[j].iii)
+                    {
+                        dan.wins[ndm].status=quest[i].effect[j].res;
+                        break;
+                    }
+                }
+            }
+            if (quest[i].effect[j].typpe=="message")  //меняем состояние задания
+            {
+                for (var ndm:int=0; ndm<dan.mess.length; ndm++)
+                {
+                    if (dan.mess[ndm].iii==quest[i].effect[j].iii)
+                    {
+                        if (quest[i].effect[j].activeShow=="1")
+                        {
+                            dan.mess[ndm].activeShow=true;
+                        } else
+                        {
+                            dan.mess[ndm].activeShow=false;
+                        }
+                        if (quest[i].effect[j].out=="1")
+                        {
+                            dan.mess[ndm].out=true;
+                        } else
+                        {
+                            dan.mess[ndm].out=false;
+                        }
+                        if (quest[i].effect[j].wasShowed=="1")
+                        {
+                            dan.mess[ndm].wasShowed=true;
+                        } else
+                        {
+                            dan.mess[ndm].wasShowed=false;
+                        }
+                        break;
+                    }
                 }
             }
         }
