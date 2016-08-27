@@ -17,6 +17,14 @@
 		<effect iii="105">visOff</effect>
 		<effect iii="106">visOff</effect>
 		<effect iii="107">visOff</effect>
+
+		<effect iii="155">visOff</effect>
+		<effect iii="156">visOff</effect>
+		<effect iii="157">visOff</effect>
+		<effect iii="158">visOff</effect>
+		<effect iii="159">visOff</effect>
+		<effect iii="160">visOff</effect>
+		<effect iii="161">visOff</effect>
 		<effect sub="game1Subjects.xml" scen="game1Scenaries.xml" texto="game1Texto.xml">load</effect>
 	</mmotion>
 
@@ -28,6 +36,40 @@
 		<effect iii="105">visOn</effect>
 		<effect iii="106">visOn</effect>
 		<effect iii="107">visOn</effect>
+
+		<effect iii="155">visOn</effect>
+		<effect iii="156">visOn</effect>
+		<effect iii="157">visOn</effect>
+		<effect iii="158">visOn</effect>
+		<effect iii="160">visOn</effect>
+	</mmotion>
+
+	<!-- лёгкий уровень-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">23</qid>
+		<action iii="155">tap</action>
+		<effect iii="159">visOn</effect>
+		<effect iii="160">visOff</effect>
+		<effect iii="161">visOff</effect>
+		<effect iii="2">diffLevel</effect>
+	</mmotion>
+	<!-- средний уровень-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">23</qid>
+		<action iii="156">tap</action>
+		<effect iii="160">visOn</effect>
+		<effect iii="159">visOff</effect>
+		<effect iii="161">visOff</effect>
+		<effect iii="1">diffLevel</effect>
+	</mmotion>
+	<!-- сложный уровень-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">23</qid>
+		<action iii="157">tap</action>
+		<effect iii="161">visOn</effect>
+		<effect iii="160">visOff</effect>
+		<effect iii="159">visOff</effect>
+		<effect iii="0">diffLevel</effect>
 	</mmotion>
 
 	<!-- назад к летописи-->
@@ -38,6 +80,14 @@
 		<effect iii="105">visOff</effect>
 		<effect iii="106">visOff</effect>
 		<effect iii="107">visOff</effect>
+
+		<effect iii="155">visOff</effect>
+		<effect iii="156">visOff</effect>
+		<effect iii="157">visOff</effect>
+		<effect iii="158">visOff</effect>
+		<effect iii="159">visOff</effect>
+		<effect iii="160">visOff</effect>
+		<effect iii="161">visOff</effect>
 	</mmotion>
 
 	<!-- показать панель профиля героя-->
@@ -51,11 +101,51 @@
 		<effect iii="126">visOn</effect>
 		<effect iii="127">visOn</effect>
 		<effect iii="128">visOn</effect>
+		<effect iii="130">visOn</effect>
+		<effect iii="131">visOn</effect>
+		<effect iii="132">visOn</effect>
+		<effect iii="137">visOn</effect>
+		<effect iii="138">visOn</effect>
+		<effect iii="139">visOn</effect>
+		<effect iii="140">visOn</effect>
+		<effect iii="141">visOn</effect>
 	</mmotion>
+
+	<!-- показать кнопки залогиненого игрока-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">27</qid>
+		<action iii="120">tap</action>
+		<action iii="1">logged</action>
+		<effect iii="135">visOn</effect>
+		<effect iii="136">visOn</effect>
+		<effect iii="139">visOn</effect>
+		<effect iii="140">visOn</effect>
+		<effect iii="141">visOn</effect>
+		<effect iii="132">visOff</effect>
+		<effect iii="133">visOff</effect>
+		<effect iii="134">visOff</effect>
+		<effect iii="137">visOff</effect>
+		<effect iii="138">visOff</effect>
+	</mmotion>
+	<!-- показать кнопки незалогиненого игрока-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">28</qid>
+		<action iii="120">tap</action>
+		<action iii="0">logged</action>
+		<effect iii="132">visOn</effect>
+		<effect iii="133">visOn</effect>
+		<effect iii="134">visOn</effect>
+		<effect iii="137">visOn</effect>
+		<effect iii="138">visOn</effect>
+		<effect iii="135">visOff</effect>
+		<effect iii="136">visOff</effect>
+		<effect iii="141">visOff</effect>
+	</mmotion>
+
 
 	<!-- назад к летописи-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="10" willSave="0">28</qid>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">32</qid>
 		<action iii="122">tap</action>
 		<effect iii="122">visOff</effect>
 		<effect iii="123">visOff</effect>
@@ -64,19 +154,300 @@
 		<effect iii="126">visOff</effect>
 		<effect iii="127">visOff</effect>
 		<effect iii="128">visOff</effect>
+		<effect iii="130">visOff</effect>
+		<effect iii="131">visOff</effect>
+		<effect iii="132">visOff</effect>
+		<effect iii="133">visOff</effect>
+		<effect iii="134">visOff</effect>
+		<effect iii="135">visOff</effect>
+		<effect iii="136">visOff</effect>
+		<effect iii="137">visOff</effect>
+		<effect iii="138">visOff</effect>
+		<effect iii="139">visOff</effect>
+		<effect iii="140">visOff</effect>
+		<effect iii="141">visOff</effect>
+	</mmotion>
+
+	<!-- назад к летописи по нажатию кнопки-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">34</qid>
+		<action iii="130">tap</action>
+		<effect iii="122">visOff</effect>
+		<effect iii="123">visOff</effect>
+		<effect iii="124">visOff</effect>
+		<effect iii="125">visOff</effect>
+		<effect iii="126">visOff</effect>
+		<effect iii="127">visOff</effect>
+		<effect iii="128">visOff</effect>
+		<effect iii="130">visOff</effect>
+		<effect iii="131">visOff</effect>
+		<effect iii="132">visOff</effect>
+		<effect iii="133">visOff</effect>
+		<effect iii="134">visOff</effect>
+		<effect iii="135">visOff</effect>
+		<effect iii="136">visOff</effect>
+		<effect iii="137">visOff</effect>
+		<effect iii="138">visOff</effect>
+		<effect iii="139">visOff</effect>
+		<effect iii="140">visOff</effect>
+		<effect iii="141">visOff</effect>
 	</mmotion>
 
 	<!--смена языка: русский-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="10" willSave="0">30</qid>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">36</qid>
 		<action iii="127">tap</action>
 		<effect txt="ru">changeLanguage</effect>
 	</mmotion>
 	<!--смена языка: английский-->
 	<mmotion>
-		<qid activ="1" after_work="1" screenWork="10" willSave="0">32</qid>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">38</qid>
 		<action iii="128">tap</action>
 		<effect txt="en">changeLanguage</effect>
+	</mmotion>
+
+	<!-- команда на сервер, создать нового игрока-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">40</qid>
+		<action iii="133">tap</action>
+		<effect com="regNew">serverCommand</effect>
+	</mmotion>
+	<!-- команда на сервер, подгрузить профиль существующего игрока-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">41</qid>
+		<action iii="134">tap</action>
+		<effect com="comeIn">serverCommand</effect>
+	</mmotion>
+
+	<!-- затемнение для серверного сообщения-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="10" willSave="0">42</qid>
+		<action iii="1">waiting</action>
+		<effect iii="142">visOn</effect>
+	</mmotion>
+
+	<!-- серверный код 0-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">44</qid>
+		<action iii="0">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="146">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+		<effect iii="132">visOff</effect>
+		<effect iii="133">visOff</effect>
+		<effect iii="134">visOff</effect>
+		<effect iii="137">visOff</effect>
+		<effect iii="138">visOff</effect>
+		<effect iii="135">visOn</effect>
+		<effect iii="136">visOn</effect>
+		<effect iii="141">visOn</effect>
+	</mmotion>
+	<!-- серверный код 1-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">45</qid>
+		<action iii="1">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="147">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+
+	</mmotion>
+	<!-- серверный код 2-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">46</qid>
+		<action iii="2">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="148">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+	</mmotion>
+	<!-- серверный код 3-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">47</qid>
+		<action iii="3">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="149">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+	</mmotion>
+	<!-- серверный код 4-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">48</qid>
+		<action iii="4">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="150">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+	</mmotion>
+	<!-- серверный код 5-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">49</qid>
+		<action iii="5">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="151">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+
+		<effect iii="132">visOff</effect>
+		<effect iii="133">visOff</effect>
+		<effect iii="134">visOff</effect>
+		<effect iii="137">visOff</effect>
+		<effect iii="138">visOff</effect>
+		<effect iii="135">visOn</effect>
+		<effect iii="136">visOn</effect>
+		<effect iii="141">visOn</effect>
+	</mmotion>
+	<!-- серверный код 6-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">49</qid>
+		<action iii="6">serverCode</action>
+		<effect iii="144">visOn</effect>
+		<effect iii="152">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+	</mmotion>
+	<!-- серверный код 7-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">50</qid>
+		<action iii="7">serverCode</action>
+		<effect iii="142">visOn</effect>
+		<effect iii="144">visOn</effect>
+		<effect iii="153">visOn</effect>
+		<effect qid="56">activate</effect>
+		<effect>serverCode</effect>
+	</mmotion>
+
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="0" after_work="0" screenWork="10" willSave="0">56</qid>
+		<action iii="142">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="146">visOff</effect>
+		<effect iii="147">visOff</effect>
+		<effect iii="148">visOff</effect>
+		<effect iii="149">visOff</effect>
+		<effect iii="150">visOff</effect>
+		<effect iii="151">visOff</effect>
+		<effect iii="152">visOff</effect>
+		<effect iii="153">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+
+	<!-- разлогиниваемся-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">58</qid>
+		<action iii="135">tap</action>
+		<effect com="logOff">serverCommand</effect>
+
+		<effect iii="132">visOn</effect>
+		<effect iii="133">visOn</effect>
+		<effect iii="134">visOn</effect>
+		<effect iii="137">visOn</effect>
+		<effect iii="138">visOn</effect>
+		<effect iii="135">visOff</effect>
+		<effect iii="136">visOff</effect>
+		<effect iii="141">visOff</effect>
+	</mmotion>
+
+	<!-- поправить свои данные-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">60</qid>
+		<action iii="136">tap</action>
+		<effect com="correct">serverCommand</effect>
+	</mmotion>
+
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="144">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="146">visOff</effect>
+		<effect iii="147">visOff</effect>
+		<effect iii="148">visOff</effect>
+		<effect iii="149">visOff</effect>
+		<effect iii="150">visOff</effect>
+		<effect iii="151">visOff</effect>
+		<effect iii="152">visOff</effect>
+		<effect iii="153">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">64</qid>
+		<action iii="146">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="146">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="147">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="147">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="148">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="148">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="149">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="149">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="150">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="150">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="151">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="151">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="152">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="152">visOff</effect>
+		<effect qid="42">activate</effect>
+	</mmotion>
+	<!-- убираем сообщение-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="10" willSave="0">62</qid>
+		<action iii="153">tap</action>
+		<effect iii="142">visOff</effect>
+		<effect iii="144">visOff</effect>
+		<effect iii="153">visOff</effect>
+		<effect qid="42">activate</effect>
 	</mmotion>
 
 

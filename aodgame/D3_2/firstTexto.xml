@@ -15,8 +15,8 @@
 	</texto>
 
 	<texto tid="24">
-		<txt mode="ru">Цивилизации не возникают из пустоты. Вокруг них всегда кипит жизнь, дикая, порой древняя и неорганизованная, способная разом уничтожить все усилия, но из которой и возникают первые культуры, первые народы, первые цивилизации. Ваш город - одним из первых в Греции вышел из мрака истории, и теперь в ваших руках, станет ли он настоящим городом или сгинет, не оставив по себе памяти.</txt>
-		<txt mode="en">Civilizations did not arise out of nothing. Around them is always full of life, a wild and sometimes early and disorganized, capable of destroying all the efforts of time, but of which arise the first cultures, the first nations, the first civilizations. Your city - one of the first in Greece emerged from the darkness of history, and is now in your hands, whether it will be a real city, or disappear, leaving no memory itself.</txt>
+		<txt mode="ru">Цивилизации не возникают из пустоты. Вокруг них всегда кипит жизнь, дикая и неорганизованная, способная разом уничтожить все усилия, но из которой и возникают первые культуры, первые народы, первые цивилизации. Ваш город - одним из первых в Греции вышел из мрака истории, и теперь только от вас зависит его дальнейшая судьба.</txt>
+		<txt mode="en">Civilizations did not arise out of nothing. Around them is always full of life, a wild and disorganized, capable of destroying all the efforts of time, but of which arise the first cultures, the first nations, the first civilizations. Your city - one of the first in Greece emerged from the darkness of history, and now it fate depend only on you.</txt>
 	</texto>
 
 	<texto tid="26">
@@ -42,6 +42,98 @@
 		<txt mode="ru">english</txt>
 		<txt mode="en">english</txt>
 	</texto>
+
+	<texto tid="36">
+		<txt mode="ru">логин</txt>
+		<txt mode="en">login</txt>
+	</texto>
+	<texto tid="37">
+		<txt mode="ru">пароль</txt>
+		<txt mode="en">password</txt>
+	</texto>
+	<texto tid="38">
+		<txt mode="ru">создать нового игрока</txt>
+		<txt mode="en">create new player</txt>
+	</texto>
+	<texto tid="39">
+		<txt mode="ru">загрузить своего игрока</txt>
+		<txt mode="en">load your own player</txt>
+	</texto>
+	<texto tid="40">
+		<txt mode="ru">играть как гость</txt>
+		<txt mode="en">play as a guest</txt>
+	</texto>
+	<texto tid="41">
+		<txt mode="ru">имя в игре</txt>
+		<txt mode="en">name in game</txt>
+	</texto>
+	<texto tid="42">
+		<txt mode="ru">e-mail</txt>
+		<txt mode="en">e-mail</txt>
+	</texto>
+	<texto tid="43">
+		<txt mode="ru">поправить свои данные</txt>
+		<txt mode="en">correct your info</txt>
+	</texto>
+	<texto tid="44">
+		<txt mode="ru">игрок</txt>
+		<txt mode="en">player</txt>
+	</texto>
+	<texto tid="45">
+		<txt mode="ru">назад к Линии Времени</txt>
+		<txt mode="en">back to the TimeLine</txt>
+	</texto>
+
+	<texto tid="48">
+		<txt mode="ru">Игрок успешно создан. Теперь вы сможете сохранять свои настройки для будущих игр.</txt>
+		<txt mode="en">Player has been successfully created. Now you can save your settings for future games.</txt>
+	</texto>
+	<texto tid="50">
+		<txt mode="ru">Игрок с таким логином уже существует. Пожалуйста, попробуйте что-то ещё.</txt>
+		<txt mode="en">A player with this login already exists. Please try something else.</txt>
+	</texto>
+	<texto tid="52">
+		<txt mode="ru">Проблема с подключением к базе данных. Попробуйте перезапустить игру или, если это не поможет, предупредите нашу техническую поддержку.</txt>
+		<txt mode="en">The problem with the connection to the database. Try restarting the game, or if it does not help, notify our technical support.</txt>
+	</texto>
+	<texto tid="54">
+		<txt mode="ru">Проблема с чтением информации, приходящей от сервера. Попробуйте перезапустить игру или, если это не поможет, предупредите нашу техническую поддержку.</txt>
+		<txt mode="en">The problem with reading the information coming from the server. Try restarting the game, or if it does not help, notify our technical support.</txt>
+	</texto>
+	<texto tid="56">
+		<txt mode="ru">Не удаётся установить соединение с сервером. Попробуйте перезапустить игру или, если это не поможет, предупредите нашу техническую поддержку.</txt>
+		<txt mode="en">Unable to connect to the server. Try restarting the game, or if it does not help, notify our technical support.</txt>
+	</texto>
+	<texto tid="58">
+		<txt mode="ru">Добро пожаловать в игру.</txt>
+		<txt mode="en">Welcome to the game.</txt>
+	</texto>
+	<texto tid="60">
+		<txt mode="ru">Данные изменены успешно.</txt>
+		<txt mode="en">Information modified successfully.</txt>
+	</texto>
+	<texto tid="62">
+		<txt mode="ru">Такой игрок с такими данными не найден. Попробуйте ещё раз.</txt>
+		<txt mode="en">Such a player with such login-password information can not be found. Try again.</txt>
+	</texto>
+
+	<texto tid="64">
+		<txt mode="ru">Уровень сложности:</txt>
+		<txt mode="en">Difficulty level:</txt>
+	</texto>
+	<texto tid="65">
+		<txt mode="ru">лёгкий</txt>
+		<txt mode="en">easy</txt>
+	</texto>
+	<texto tid="66">
+		<txt mode="ru">обычный</txt>
+		<txt mode="en">normal</txt>
+	</texto>
+	<texto tid="67">
+		<txt mode="ru">сложный</txt>
+		<txt mode="en">hard</txt>
+	</texto>
+
 
 
 

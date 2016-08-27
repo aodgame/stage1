@@ -153,8 +153,8 @@
 		<txt mode="en">holding</txt>
 	</texto>
 	<texto tid="247">
-		<txt mode="ru">описание локации</txt>
-		<txt mode="en">description of building</txt>
+		<txt mode="ru"></txt>
+		<txt mode="en"></txt>
 	</texto>
 
 	<texto tid="248">
@@ -173,8 +173,8 @@
 	</texto>
 
 	<texto tid="251">
-		<txt mode="ru"></txt>
-		<txt mode="en"></txt>
+		<txt mode="ru">Очистить землю под первоначальный вид.</txt>
+		<txt mode="en">Clear the ground under the original form.</txt>
 	</texto>
 
 	<texto tid="252">
@@ -647,8 +647,8 @@
 	</texto>
 
 	<texto tid="702">
-		<txt mode="ru">Это ваше первое сообщение в игре.</txt>
-		<txt mode="en">It's your first message in the game.</txt>
+		<txt mode="ru">Добро пожаловать в новый мир!                                            Поиски места для пристанища вашего народа завершены. Здесь, у побережья залива начинается судьба славного города Калидон, города чьим правителем являетесь вы. Ваши люди надеются, что они не зря последовали за вами. Удачи!</txt>
+		<txt mode="en">Welcome to the new World!                                                Finding a place to shelter your people completed. Here, near the coast of the Gulf, begins the fate of the glorious city Calydon, the city whose governor is you. Your people hope that they don't knowingly followed you. Good luck!</txt>
 	</texto>
 
 	<texto tid="703">
@@ -927,7 +927,7 @@
 	</texto>
 
 	<texto tid="908">
-		<txt mode="ru">Хотя формально любой из городов союза может пригласить вас присоединиться, однако в действительности только лидер союза решает судьбу нового участника.</txt>
+		<txt mode="ru">Хотя формально любой из городов союза может пригласить вас присоединиться, в действительности только лидер союза решает судьбу нового участника.</txt>
 		<txt mode="en">Although technically any of the cities of the Union may invite you to join, but in reality only the leader of the union decides the fate of a new member.</txt>
 	</texto>
 
@@ -1009,8 +1009,8 @@
 	</texto>
 
 	<texto tid="942">
-		<txt mode="ru">Набег на земли противника весьма выгодное, но и крайне опасное дело. Кроме того, как они поступят, если узнают, что это наших рук дело?</txt>
-		<txt mode="en">The raid on the enemy land is very favorable, but also extremely dangerous thing. In addition, what they will do if they find out that it is our own doing?</txt>
+		<txt mode="ru">Набег на земли противника весьма выгодное, но и крайне опасное дело. Как они поступят, если узнают, что это наших рук дело?</txt>
+		<txt mode="en">The raid on the enemy land is very favorable, but also extremely dangerous thing. What they will do if they find out that it is our own doing?</txt>
 	</texto>
 	<texto tid="944">
 		<txt mode="ru">быстрый набег</txt>
@@ -1020,6 +1020,173 @@
 		<txt mode="ru">подготовиться получше</txt>
 		<txt mode="en">prepare better</txt>
 	</texto>
+
+	<texto tid="948">
+		<txt mode="ru">Это центр вашего поселения. В этом месте можно добывать глину. Удобный выход к заливу.</txt>
+		<txt mode="en">It's the center of your settlement. The clay may be produced here. Easy access to the Gulf.</txt>
+	</texto>
+	<texto tid="949">
+		<txt mode="ru">Небольшой луг вокруг озера. Идеальное место для пшеницы.</txt>
+		<txt mode="en">A small meadow around the lake. An ideal place for wheat.</txt>
+	</texto>
+	<texto tid="950">
+		<txt mode="ru">Лес, расположившийся вокруг невысоких гор. Отсюда можно добывать древесину.</txt>
+		<txt mode="en">Forest, located around the low mountains. It is possible to extract timber.</txt>
+	</texto>
+	<texto tid="951">
+		<txt mode="ru">Дальняя земля, дремучий лес, много диких животных на которых можно охотиться.</txt>
+		<txt mode="en">Distant land, dense forest, a lot of wild animals which can be hunted.</txt>
+	</texto>
+	<texto tid="952">
+		<txt mode="ru">Бухта, в которой удобно заниматься рыбной ловлей. Удобный выход к заливу.</txt>
+		<txt mode="en">The bay, which is convenient to fish. Easy access to the Gulf.</txt>
+	</texto>
+	<texto tid="953">
+		<txt mode="ru">Холмистая равнина недалеко от озера. Подходящее место для выпаса овец.</txt>
+		<txt mode="en">The rolling plain near the lake. Suitable place for grazing sheep.</txt>
+	</texto>
+	<texto tid="954">
+		<txt mode="ru">Луг, по которому течёт река. Идеальное место для пшеницы. Удобный выход к заливу.</txt>
+		<txt mode="en">Meadow on which the river flows. An ideal place for wheat. Easy access to the Gulf.</txt>
+	</texto>
+	<texto tid="955">
+		<txt mode="ru">Открытая холмистая местность, подходящая для того, чтобы разбить оливковый сад.</txt>
+		<txt mode="en">Open hilly area, suitable for split olive garden.</txt>
+	</texto>
+	<texto tid="956">
+		<txt mode="ru">Каменистая местность, есть открытые жилы медной руды. Есть выход к заливу.</txt>
+		<txt mode="en">Rocky terrain, has open conductors of copper ore. There is access to the Gulf.</txt>
+	</texto>
+	<texto tid="957">
+		<txt mode="ru">Возвышенность, много скал и леса. Возможна добыча древесины. Есть выход к заливу.</txt>
+		<txt mode="en">Hill, a lot of rocks and woods. Timber extraction possible. There is access to the Gulf.</txt>
+	</texto>
+	<texto tid="958">
+		<txt mode="ru">Горная гряда, в которой обнаружены залежи серебра. Спуск к морю затруднён.</txt>
+		<txt mode="en">Mountain range, which discovered deposits of silver. The descent to the sea difficult.</txt>
+	</texto>
+	<texto tid="959">
+		<txt mode="ru">Горная гряда, в которой можно добывать гранит и обычный камень. Спуск к морю затруднён.</txt>
+		<txt mode="en">Mountain range, where you can get the usual granite and stone. The descent to the sea difficult.</txt>
+	</texto>
+
+	<texto tid="960">
+		<txt mode="ru"></txt>
+		<txt mode="en"></txt>
+	</texto>
+
+	<texto tid="962">
+		<txt mode="ru">Возле города заметили следы пещерного льва. Люди боятся выходить из домов. С этим надо что-то делать.</txt>
+		<txt mode="en">Signs of a cave lion noticed near the town. People are afraid to leave their houses. We need to do something whis this.</txt>
+	</texto>
+	<texto tid="964">
+		<txt mode="ru">Стая львов пришла на наши земли. Они разоряют скот и совершенно не боятся среди белого дня заходить в город.</txt>
+		<txt mode="en">A flock of lions came to our lands. They ravage livestock and are not afraid to enter the city in broad daylight.</txt>
+	</texto>
+
+	<texto tid="966">
+		<txt mode="ru">Львы очень опасные противники, и в одиночку редкий человек способен бороться с ними. К счастью, на вашей стороне герои, боги и сильная армия.</txt>
+		<txt mode="en">Lions are very dangerous opponents, and in the rare person is able to deal with them alone. Fortunately, on your side of the heroes, gods and a strong army.</txt>
+	</texto>
+	<texto tid="968">
+		<txt mode="ru">пусть герой придумает решение</txt>
+		<txt mode="en">let the hero decides</txt>
+	</texto>
+	<texto tid="970">
+		<txt mode="ru">Боги должны помочь нам</txt>
+		<txt mode="en">the gods must help us</txt>
+	</texto>
+	<texto tid="972">
+		<txt mode="ru">львам не справиться с войском</txt>
+		<txt mode="en">lions unable to cope with the army</txt>
+	</texto>
+
+	<texto tid="974">
+		<txt mode="ru">В город пришла чума! Людям остаётся надеяться на милость богов. Работы останавливаются и люди сидят дома, надеясь, что чума обойдёт их стороной.</txt>
+		<txt mode="en">The city came the plague! People can only hope only on the mercy of the gods. Work stopped and people are sitting in their houses, hoping that the plague will pass them by.</txt>
+	</texto>
+	<texto tid="975">
+		<txt mode="ru">Чума не щадит Калидон, унося новые жизни. Торговцы и путешественники обходят ваш город стороной. Возможно, это и есть бесславный конец прекрасного города?</txt>
+		<txt mode="en">Plague spares Calydon, carrying new life. Traders and travelers bypass your city side. Perhaps this is the inglorious end of the beautiful city?</txt>
+	</texto>
+	<texto tid="976">
+		<txt mode="ru">Чума отступает! Конечно, придётся ещё очистить земли от трупов людей и животных, чтобы можно было снова трудиться, но кажется мы смогли пережить эту напасть!</txt>
+		<txt mode="en">Plague retreats! Of course, still have to clear the land from the corpses of people and animals, to be able to work again, but think we were able to survive this issue!</txt>
+	</texto>
+
+	<texto tid="977">
+		<txt mode="ru">Нечистоты, горы трупов, снующие туда-сюда крысы - в такое зрелище превращается любая земля, до которой добирается чума.</txt>
+		<txt mode="en">Sewage, mountains of corpses, scurrying to and fro rat - in such a spectacle turns any land to which gets the plague.</txt>
+	</texto>
+	<texto tid="978">
+		<txt mode="ru">молить богов о спасении</txt>
+		<txt mode="en">pray to the gods for salvation</txt>
+	</texto>
+	<texto tid="979">
+		<txt mode="ru">сжечь здесь всё</txt>
+		<txt mode="en">burn everything here</txt>
+	</texto>
+
+	<texto tid="982">
+		<txt mode="ru">Ваш герой привёл армию к стенам вражеского города. Как поступить дальше?</txt>
+		<txt mode="en">Your hero led army to the walls of the enemy city. What to do next?</txt>
+	</texto>
+	<texto tid="984">
+		<txt mode="ru">вступить в сражение при первой возможности</txt>
+		<txt mode="en">start the battle as soon as possible</txt>
+	</texto>
+	<texto tid="986">
+		<txt mode="ru">начать осаду</txt>
+		<txt mode="en">to lay siege</txt>
+	</texto>
+
+	<texto tid="988">
+		<txt mode="ru">Готовит набег на город</txt>
+		<txt mode="en">Preparing a raid on the town</txt>
+	</texto>
+	<texto tid="990">
+		<txt mode="ru">Ведёт осаду города</txt>
+		<txt mode="en">Leads siege</txt>
+	</texto>
+
+	<texto tid="992">
+		<txt mode="ru">Цели:</txt>
+		<txt mode="en">Goals:</txt>
+	</texto>
+	<texto tid="994">
+		<txt mode="ru">- доберитесь до 2100 года </txt>
+		<txt mode="en">- get up to 2100</txt>
+	</texto>
+	<texto tid="996">
+		<txt mode="ru">- постройте храм</txt>
+		<txt mode="en">- build the Temple</txt>
+	</texto>
+
+	<texto tid="998">
+		<txt mode="ru">Новое чудовище! Чей злой умысел ведёт их в наши земли? Нам нужна защита, возможно, стоит построить храм? Ведь боги не любят конкуренции.</txt>
+		<txt mode="en">The new monster! Whose malice leads them in our land? We need protection and you may want to build a temple? After all, the gods do not like competition.</txt>
+	</texto>
+
+	<texto tid="1000">
+		<txt mode="ru">результаты</txt>
+		<txt mode="en">results</txt>
+	</texto>
+
+	<texto tid="1002">
+		<txt mode="ru">город существует к 2100 году</txt>
+		<txt mode="en">city there by 2100</txt>
+	</texto>
+	<texto tid="1004">
+		<txt mode="ru">построен храм</txt>
+		<txt mode="en">temple built</txt>
+	</texto>
+
+	<texto tid="1006">
+		<txt mode="ru">ничего не достигнуто</txt>
+		<txt mode="en">nothing achieved</txt>
+	</texto>
+
+
 
 
 

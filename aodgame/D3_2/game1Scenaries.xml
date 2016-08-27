@@ -2,7 +2,7 @@
 <chronicle>
 	<cid>game1module</cid>
 
-	<land xx="543" yy="602" id="1" subID="310" landID="330" res="clay">
+	<land xx="543" yy="602" id="1" subID="310" landID="330" res="clay" description="948">
 		<!-- стартовые состояния элементов: сначала ресы (3 поля), потом обозначение реса локации,
 		***	потом места под людей/здания, в конце - место под warning местности -->
 		<elem id="0" pic="4" income="1"/>
@@ -20,7 +20,7 @@
 			<des>yes</des>
 		</building>
 	</land>
-	<land xx="615" yy="679" id="2" subID="311" landID="331" res="wheat">
+	<land xx="615" yy="679" id="2" subID="311" landID="331" res="wheat" description="949">
 		<elem id="0" pic="3" income="2"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -36,7 +36,7 @@
 			<des>yes</des>
 		</building>
 	</land>
-	<land xx="792" yy="649" id="3" subID="312" landID="332" res="wood">
+	<land xx="792" yy="649" id="3" subID="312" landID="332" res="wood" description="950">
 		<elem id="0" pic="4" income="1"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -54,7 +54,7 @@
 		<depends from="2"/>
 		<depends from="1"/>
 	</land>
-	<land xx="908" yy="549" id="4" subID="313" landID="333" res="deer">
+	<land xx="908" yy="549" id="4" subID="313" landID="333" res="deer" description="951">
 		<elem id="0" pic="3" income="1"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -72,7 +72,7 @@
 		<depends from="3"/>
 		<depends from="5"/>
 	</land>
-	<land xx="775" yy="473" id="5" subID="314" landID="334" res="fish">
+	<land xx="775" yy="473" id="5" subID="314" landID="334" res="fish" description="952">
 		<elem id="0" pic="3" income="1"/>
 		<elem id="1" pic="4" income="1"/>
 		<elem id="2" pic="1" income="0"/>
@@ -90,7 +90,7 @@
 		<depends from="1"/>
 		<depends from="3"/>
 	</land>
-	<land xx="367" yy="682" id="6" subID="315" landID="335" res="sheep">
+	<land xx="367" yy="682" id="6" subID="315" landID="335" res="sheep" description="953">
 		<elem id="0" pic="3" income="2"/>
 		<elem id="1" pic="4" income="1"/>
 		<elem id="2" pic="1" income="0"/>
@@ -106,7 +106,7 @@
 			<des>yes</des>
 		</building>
 	</land>
-	<land xx="245" yy="568" id="7" subID="316" landID="336" res="wheat">
+	<land xx="245" yy="568" id="7" subID="316" landID="336" res="wheat" description="954">
 		<elem id="0" pic="3" income="2"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -122,7 +122,7 @@
 			<des>yes</des>
 		</building>
 	</land>
-	<land xx="172" yy="684" id="8" subID="317" landID="337" res="olive">
+	<land xx="172" yy="684" id="8" subID="317" landID="337" res="olive" description="955">
 		<elem id="0" pic="3" income="1"/>
 		<elem id="1" pic="4" income="1"/>
 		<elem id="2" pic="1" income="0"/>
@@ -138,7 +138,7 @@
 			<des>yes</des>
 		</building>
 	</land>
-	<land xx="128" yy="461" id="9" subID="318" landID="338" res="copper">
+	<land xx="128" yy="461" id="9" subID="318" landID="338" res="copper" description="956">
 		<elem id="0" pic="4" income="2"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -156,7 +156,7 @@
 		<depends from="7"/>
 		<depends from="8"/>
 	</land>
-	<land xx="179" yy="248" id="10" subID="319" landID="339" res="wood">
+	<land xx="179" yy="248" id="10" subID="319" landID="339" res="wood" description="957">
 		<elem id="0" pic="4" income="1"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -173,7 +173,7 @@
 		</building>
 		<depends from="9"/>
 	</land>
-	<land xx="300" yy="182" id="11" subID="320" landID="340" res="silver">
+	<land xx="300" yy="182" id="11" subID="320" landID="340" res="silver" description="958">
 		<elem id="0" pic="2" income="1"/>
 		<elem id="1" pic="4" income="1"/>
 		<elem id="2" pic="1" income="0"/>
@@ -190,7 +190,7 @@
 		</building>
 		<depends from="10"/>
 	</land>
-	<land xx="594" yy="175" id="12" subID="321" landID="341" res="stone">
+	<land xx="594" yy="175" id="12" subID="321" landID="341" res="stone" description="959">
 		<elem id="0" pic="4" income="1"/>
 		<elem id="1" pic="1" income="0"/>
 		<elem id="2" pic="1" income="0"/>
@@ -226,40 +226,111 @@
 		</younger>-->
 	</timmer>
 
-	<globalRes iii="1" typpe="gold" pic="2" name="200" description="201" startAmount="4" isFree="0" min="0" max="10000" spec="0">1</globalRes> <!-- золото -->
-	<globalRes iii="2" typpe="food" pic="3" name="202" description="203" startAmount="50" isFree="0" min="0" max="10000" spec="0">2</globalRes> <!-- пиша -->
-	<globalRes iii="3" typpe="mine" pic="4" name="204" description="205" startAmount="8" isFree="0" min="0" max="10000" spec="0">3</globalRes> <!-- материалы -->
-	<globalRes iii="4" typpe="craft" pic="5" name="206" description="207" startAmount="7" isFree="0" min="0" max="10000" spec="0">4</globalRes> <!-- товары -->
+	<globalRes iii="1" typpe="gold" pic="2" name="200" description="201" startAmount="50" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="2"/>
+		<amount num="6"/>
+	</globalRes> <!-- золото -->
+	<globalRes iii="2" typpe="food" pic="3" name="202" description="203" startAmount="900" isFree="0" min="0" max="10000" spec="0">
+		<amount num="7"/>
+		<amount num="12"/>
+		<amount num="12"/>
+	</globalRes> <!-- пиша -->
+	<globalRes iii="3" typpe="mine" pic="4" name="204" description="205" startAmount="50" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="2"/>
+		<amount num="4"/>
+	</globalRes> <!-- материалы -->
+	<globalRes iii="4" typpe="craft" pic="5" name="206" description="207" startAmount="50" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="2"/>
+		<amount num="4"/>
+	</globalRes><!-- товары -->
 	<globalRes iii="5" typpe="ilot" pic="6" name="240" description="241" startAmount="0" isFree="1" min="0" max="10000" spec="need">
 		<need every="2" need="-1" from="food" income="decrease"/>
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
 	</globalRes> <!-- люди:илоты -->
 	<globalRes iii="6" typpe="metek" pic="7" name="242" description="243" startAmount="0" isFree="1" min="0" max="10000" spec="need">
 		<need every="2" need="-1" from="food" income="decrease"/>
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
 	</globalRes> <!-- люди:метэки -->
-	<globalRes iii="7" typpe="human" pic="8" name="244" description="245" startAmount="5" isFree="1" min="0" max="10000" spec="need">
+	<globalRes iii="7" typpe="human" pic="8" name="244" description="245" startAmount="3" isFree="1" min="0" max="10000" spec="need">
 		<need every="1" need="-1" from="food" income="decrease"/>
 		<need every="1" need="1" from="house" income="grow"/>
 		<need every="1" need="1" from="food" income="grow"/>
 		<need every="3" need="1" from="food" income="wane"/>
+		<amount num="3"/>
+		<amount num="3"/>
+		<amount num="4"/>
 		<!--<need every="1" need="-1" from="house" income="presence"/>-->
 	</globalRes> <!-- товары:граждане -->
-	<globalRes iii="8" typpe="mind" pic="9" name="261" description="261" startAmount="20" isFree="0" min="0" max="10000" spec="0">8</globalRes> <!-- опыт -->
-	<globalRes iii="9" typpe="favor" pic="10" name="262" description="262" startAmount="2" isFree="0" min="0" max="10000" spec="0">9</globalRes> <!-- благосклонность -->
-	<globalRes iii="10" typpe="house" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">10</globalRes><!-- дома для горожан -->
-	<globalRes iii="11" typpe="house_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">11</globalRes><!-- дома для метеков -->
-	<globalRes iii="12" typpe="house_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">12</globalRes><!-- дома для илотов -->
+	<globalRes iii="8" typpe="mind" pic="9" name="261" description="261" startAmount="4" isFree="0" min="0" max="10000" spec="0">
+		<amount num="4"/>
+		<amount num="6"/>
+		<amount num="8"/>
+	</globalRes> <!-- опыт -->
+	<globalRes iii="9" typpe="favor" pic="10" name="262" description="262" startAmount="0" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="2"/>
+		<amount num="4"/>
+	</globalRes> <!-- благосклонность -->
+	<globalRes iii="10" typpe="house" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- дома для горожан -->
+	<globalRes iii="11" typpe="house_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- дома для метеков -->
+	<globalRes iii="12" typpe="house_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="0" max="10000" spec="owner">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- дома для илотов -->
 	<globalRes iii="13" typpe="respect" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">
 		<need every="1" need="-1" from="human" income="house"/>
 		<need every="1" need="0" from="human" income="food"/>
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
 	</globalRes><!-- отношение к вам горожан -->
-	<globalRes iii="14" typpe="respect_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">14</globalRes><!-- отношение к вам метеков -->
-	<globalRes iii="15" typpe="respect_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">15</globalRes><!-- отношение к вам илотов -->
+	<globalRes iii="14" typpe="respect_metek" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- отношение к вам метеков -->
+	<globalRes iii="15" typpe="respect_ilot" pic="1" name="252" description="253" startAmount="0" isFree="0" min="-10" max="10" spec="filler">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- отношение к вам илотов -->
 	<globalRes iii="16" typpe="army_hoplite" pic="11" name="300" description="302" startAmount="3" isFree="0" min="0" max="3" spec="need">
 		<need every="3" need="0.5" from="human" income="control"/>
+		<amount num="3"/>
+		<amount num="6"/>
+		<amount num="9"/>
 	</globalRes><!-- армия: гоплиты -->
-	<globalRes iii="17" typpe="army_archer" pic="12" name="304" description="306" startAmount="0" isFree="0" min="0" max="10000" spec="0">17</globalRes><!-- армия: стрелки -->
-	<globalRes iii="18" typpe="army_mercenaries" pic="13" name="308" description="310" startAmount="0" isFree="0" min="0" max="10000" spec="0">18</globalRes><!-- армия: наёмники -->
-	<globalRes iii="19" typpe="army_trireme" pic="14" name="312" description="314" startAmount="0" isFree="0" min="0" max="10000" spec="0">19</globalRes><!-- армия: триремы -->
+	<globalRes iii="17" typpe="army_archer" pic="12" name="304" description="306" startAmount="0" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- армия: стрелки -->
+	<globalRes iii="18" typpe="army_mercenaries" pic="13" name="308" description="310" startAmount="0" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- армия: наёмники -->
+	<globalRes iii="19" typpe="army_trireme" pic="14" name="312" description="314" startAmount="0" isFree="0" min="0" max="10000" spec="0">
+		<amount num="0"/>
+		<amount num="0"/>
+		<amount num="0"/>
+	</globalRes><!-- армия: триремы -->
 
 
 	<landRes typpe="no" pic="0" name="220" description="221"> <!-- no -->
@@ -390,6 +461,7 @@
 		<notBuildLand>4</notBuildLand>
 		<notBuildLand>6</notBuildLand>
 		<notBuildLand>8</notBuildLand>
+		<notBuildLand>11</notBuildLand>
 		<notBuildLand>12</notBuildLand>
 	</building>
 	<building iii="7" landResType="temple" name="258" description="259"> <!-- храм -->
@@ -426,6 +498,7 @@
 	<problemSituation typpe="wildLion"/>
 	<problemSituation typpe="wildMonster"/>
 	<problemSituation typpe="wildPeople"/>
+	<problemSituation typpe="plague"/>
 
 
 	<!-- исследование: возможность строить здания (ergasteriaWeapon)-->
@@ -555,6 +628,7 @@
 
 	<!-- город игрока Калидон-->
 	<city iii="1" name="322" sub="820" elem="1">
+		<pos xx="0" yy="0" ww="0" hh="0"/>
 		<peacewar iii="2" war="0" relation="50" status="0"/>
 		<peacewar iii="3" war="0" relation="50" status="-1"/>
 		<peacewar iii="4" war="0" relation="50" status="0"/>
@@ -568,6 +642,7 @@
 		<citizen typpe="ilot" num="0" rel="50"/>
 	</city>
 	<city iii="2" name="317" sub="820" elem="2"> <!-- Дельфы -->
+		<pos xx="465" yy="420" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- 0..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- 0..100-->
 		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- 0..100-->
@@ -581,6 +656,7 @@
 		<citizen typpe="ilot" num="4" rel="50"/>
 	</city>
 	<city iii="3" name="318" sub="820" elem="3"> <!-- Фарсала -->
+		<pos xx="520" yy="302" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="50" status="2"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="4" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -594,6 +670,7 @@
 		<citizen typpe="ilot" num="1" rel="50"/>
 	</city>
 	<city iii="4" name="316" sub="820" elem="4"> <!-- Фивы -->
+		<pos xx="559" yy="414" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -607,6 +684,7 @@
 		<citizen typpe="ilot" num="1" rel="10"/>
 	</city>
 	<city iii="5" name="319" sub="820" elem="5"> <!-- Афины -->
+		<pos xx="659" yy="470" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="100" status="0"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -620,6 +698,7 @@
 		<citizen typpe="ilot" num="3" rel="80"/>
 	</city>
 	<city iii="6" name="320" sub="820" elem="6"> <!-- Тиринф -->
+		<pos xx="568" yy="538" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -633,6 +712,7 @@
 		<citizen typpe="ilot" num="2" rel="10"/>
 	</city>
 	<city iii="7" name="321" sub="820" elem="7"> <!-- Амиклы -->
+		<pos xx="429" yy="577" ww="63" hh="53"/>
 		<peacewar iii="1" war="0" relation="50" status="-1"/> <!-- -100..100-->
 		<peacewar iii="2" war="0" relation="50" status="0"/> <!-- -100..100-->
 		<peacewar iii="3" war="0" relation="50" status="0"/> <!-- -100..100-->
@@ -692,6 +772,23 @@
 		<timme n="1"/>
 	</heroActivity>
 
+	<heroActivity> <!-- тип активности: Герой совершает набег на чужой город-->
+		<activity act="cityRaid"/>
+		<relate txt="988"/>
+		<relate txt="$curCityName"/>
+		<cost typpe="leadership" num="3"/>
+		<cost typpe="dexterity" num="3"/>
+		<timme n="0"/>
+	</heroActivity>
+	<heroActivity> <!-- тип активности: Герой ведёт осаду чужого города-->
+		<activity act="citySiege"/>
+		<relate txt="990"/>
+		<relate txt="$curCityName"/>
+		<cost typpe="leadership" num="3"/>
+		<cost typpe="dexterity" num="3"/>
+		<timme n="0"/>
+	</heroActivity>
+
 
 
 
@@ -744,7 +841,7 @@
 		<heroRes typpe="leadership" num="2" numTyppe="abs" need="1" from="1"/>
 		<resChange typpe="army_hoplite" num="-10" numTyppe="perc"/>
 		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
-		<message txt=""/>
+		<message iii="35" behMenu="125" activeShow="1" out="1" stil="5"/>
 	</behResult>
 	<behResult iii="2">
 		<!-- треб рес героя,
@@ -773,7 +870,7 @@
 		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
 	</behResult>
 	<behResult iii="23">
-	<behResult typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
 		<resChange typpe="respect" num="-4" numTyppe="abs"/>
 		<warning typpe="wildMonster" land="currland" timeToBuild="-2" canWork="0"/>
 	</behResult>
@@ -816,7 +913,7 @@
 		а также с текстовкой, которую надо отобрюазить по каждому пункту.
 		 В самом behMebu общая текстовка на меню для пояснения окошка игроку-->
 	</behMenu>
-	<behMenu iii="101" txt="703">
+	<behMenu iii="101" txt="$goals">
 	</behMenu>
 	<behMenu iii="102" txt="704">
 	</behMenu>
@@ -1076,15 +1173,15 @@
 
 	<!-- герой над городом на карте мира, готовится совершить набег-->
 	<behPositioning iii="5" weAre="50">
-		<where num="city"/>
+		<where num="city" num2="peace"/>
 		<res typpe="menu" iii="120"/>
-		<dip status="peace"/>
+		<dip status="peace" war="0"/>
 	</behPositioning>
 	<behMenu iii="120" txt="942">
 		<choicer behActivity="23" txt="944">
-			<fram fr="1" num="0"/>
-			<fram fr="1" num="0"/>
-			<fram fr="1" num="0"/>
+			<fram fr="2" num="3"/>
+			<fram fr="3" num="1"/>
+			<fram fr="4" num="1"/>
 		</choicer>
 		<choicer behActivity="24" txt="946">
 			<fram fr="1" num="0"/>
@@ -1092,11 +1189,241 @@
 			<fram fr="1" num="0"/>
 		</choicer>
 	</behMenu>
+	<behActivity iii="23"> <!-- успешно не узнал, неуспешно не узнали, успешно узнали, неуспешно узнали-->
+		<res chance="25" behRes="121"/>
+		<res chance="25" behRes="122"/>
+		<res chance="25" behRes="123"/>
+		<res chance="25" behRes="124"/>
+	</behActivity>
+	<behResult iii="121">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-10" numTyppe="perc"/>
+		<resChange typpe="gold" num="2" numTyppe="abs"/>
+		<resChange typpe="craft" num="2" numTyppe="abs"/>
+		<resChange typpe="food" num="2" numTyppe="abs"/>
+		<resChange typpe="ilot" num="1" numTyppe="abs"/>
+	</behResult>
+	<behResult iii="122">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-50" numTyppe="perc"/>
+	</behResult>
+	<behResult iii="123">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-15" numTyppe="perc"/>
+		<resChange typpe="gold" num="2" numTyppe="abs"/>
+		<resChange typpe="craft" num="2" numTyppe="abs"/>
+		<resChange typpe="food" num="2" numTyppe="abs"/>
+		<cityRel typpe="thisCity" num="-15" numTyppe="abs"/>
+	</behResult>
+	<behResult iii="124">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-50" numTyppe="perc"/>
+		<cityRel typpe="thisCity" num="-15" numTyppe="abs"/>
+	</behResult>
+
+	<behActivity iii="24"> <!-- -->
+		<res chance="100" behRes="125"/>
+	</behActivity>
+	<behResult iii="125">
+		<change typpe="cityRaid"/>
+	</behResult>
 
 
+	<!-- появление льва-->
+	<behMenu iii="121" txt="962">
+	</behMenu>
+	<!-- появление стаи львов-->
+	<behMenu iii="122" txt="964">
+	</behMenu>
 
-	<mess iii="1" behMenu="100" activeShow="0" out="0" stil="1"/>
-	<mess iii="2" behMenu="101" activeShow="0" out="0" stil="1"/>
+	<!--герой над львом на карте города -->
+	<behPositioning iii="6" weAre="30">
+		<where num="land"/>
+		<warning res="wildLion"/>
+		<res typpe="menu" iii="123"/>
+	</behPositioning>
+	<behMenu iii="123" txt="966">
+		<choicer behActivity="25" txt="968">
+			<fram fr="1" num="0"/>
+			<fram fr="3" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="26" txt="970">
+			<fram fr="1" num="0"/>
+			<fram fr="4" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="27" txt="972">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="2"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="25">
+		<res chance="70" behRes="110"/>
+		<res chance="30" behRes="111"/>
+	</behActivity>
+	<behResult iii="110">
+		<heroRes typpe="dexterity" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="111">
+		<heroRes typpe="dexterity" num="2" numTyppe="abs" need="1" from="1"/>
+	</behResult>
+	<behActivity iii="26">
+		<res chance="70" behRes="112"/>
+		<res chance="30" behRes="113"/>
+	</behActivity>
+	<behResult iii="112">
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="113">
+		<heroRes typpe="learning" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="wildMonster" land="currland" timeToBuild="-2" canWork="0"/>
+	</behResult>
+	<behActivity iii="27">
+		<res chance="70" behRes="114"/>
+		<res chance="30" behRes="115"/>
+	</behActivity>
+	<behResult iii="114">
+		<heroRes typpe="leadership" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+		<resChange typpe="army_hoplite" num="-15" numTyppe="perc"/>
+	</behResult>
+	<behResult iii="115">
+		<heroRes typpe="leadership" num="2" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+		<resChange typpe="army_hoplite" num="-50" numTyppe="perc"/>
+	</behResult>
+
+	<behMenu iii="124" txt="974">
+	</behMenu>
+	<behMenu iii="125" txt="975">
+	</behMenu>
+	<behMenu iii="126" txt="976">
+	</behMenu>
+
+	<!--герой над землёй с чумой на карте города -->
+	<behPositioning iii="7" weAre="30">
+		<where num="land"/>
+		<warning res="plague"/>
+		<res typpe="menu" iii="127"/>
+	</behPositioning>
+	<behMenu iii="127" txt="977">
+		<choicer behActivity="28" txt="978">
+			<fram fr="1" num="0"/>
+			<fram fr="4" num="3"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="29" txt="979">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="3"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="28">
+		<res chance="70" behRes="116"/>
+		<res chance="30" behRes="117"/>
+	</behActivity>
+	<behResult iii="116">
+		<heroRes typpe="learning" num="3" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="wildMonster" land="currland" timeToBuild="-2" canWork="0"/>
+	</behResult>
+	<behResult iii="117">
+		<heroRes typpe="learning" num="3" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behActivity iii="29">
+		<res chance="75" behRes="118"/>
+		<res chance="25" behRes="119"/>
+	</behActivity>
+	<behResult iii="118">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+	</behResult>
+	<behResult iii="119">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<warning typpe="no" land="currland" timeToBuild="0" canWork="1"/>
+		<resChange typpe="human" num="-1" numTyppe="abs"/>
+	</behResult>
+
+	<!-- герой над городом на карте мира, война-->
+	<behPositioning iii="8" weAre="50">
+		<where num="city" num2="war"/>
+		<dip status="peace" war="1"/>
+		<res typpe="menu" iii="128"/>
+	</behPositioning>
+	<behMenu iii="128" txt="982">
+		<choicer behActivity="30" txt="984">
+			<fram fr="1" num="0"/>
+			<fram fr="2" num="4"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+		<choicer behActivity="31" txt="986">
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+			<fram fr="1" num="0"/>
+		</choicer>
+	</behMenu>
+	<behActivity iii="30"> <!-- успешно не узнал, неуспешно не узнали, успешно узнали, неуспешно узнали-->
+		<res chance="25" behRes="130"/>
+		<res chance="25" behRes="131"/>
+		<res chance="25" behRes="132"/>
+		<res chance="25" behRes="133"/>
+	</behActivity>
+	<behResult iii="130">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-10" numTyppe="perc"/>
+		<resChange typpe="gold" num="2" numTyppe="abs"/>
+		<resChange typpe="craft" num="2" numTyppe="abs"/>
+		<resChange typpe="food" num="2" numTyppe="abs"/>
+		<resChange typpe="ilot" num="1" numTyppe="abs"/>
+	</behResult>
+	<behResult iii="131">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-50" numTyppe="perc"/>
+	</behResult>
+	<behResult iii="132">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-15" numTyppe="perc"/>
+		<resChange typpe="gold" num="2" numTyppe="abs"/>
+		<resChange typpe="craft" num="2" numTyppe="abs"/>
+		<resChange typpe="food" num="2" numTyppe="abs"/>
+		<cityRel typpe="thisCity" num="-15" numTyppe="abs"/>
+	</behResult>
+	<behResult iii="133">
+		<heroRes typpe="leadership" num="3" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="dexterity" num="1" numTyppe="abs" need="1" from="1"/>
+		<heroRes typpe="learning" num="1" numTyppe="abs" need="1" from="1"/>
+		<resChange typpe="army_hoplite" num="-50" numTyppe="perc"/>
+		<cityRel typpe="thisCity" num="-15" numTyppe="abs"/>
+	</behResult>
+	<behActivity iii="31"> <!-- -->
+		<res chance="100" behRes="134"/>
+	</behActivity>
+	<behResult iii="134">
+		<change typpe="citySiege"/>
+	</behResult>
+
+	<behMenu iii="129" txt="998"/>
+
+	<mess iii="1" behMenu="100" activeShow="1" out="1" stil="6"/>
+	<mess iii="2" behMenu="101" activeShow="1" out="0" stil="4"/>
 
 	<cloud iii="1" xx="128" yy="260" ww="142" hh="129"/>
 	<cloud iii="2" xx="314" yy="280" ww="142" hh="129"/>
@@ -1170,22 +1497,26 @@
 	<technology txt="896"/>
 	<technology txt="898"/>
 
+	<wins iii="0" code="main" txt="992" restxt="" status="disclass"/>
+	<wins iii="1" code="longLife" txt="994"  restxt="1002" status="active"/>
+	<wins iii="2" code="temple" txt="996"  restxt="1004" status="hideActive"/>
+
 
 	<!--перенос края папируса при переходе на экран мира-->
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="50" willSave="0">455</qid>
 		<action iii="502">tap</action>
-		<effect iii="377" xx="632" yy="-1">setCoords</effect>
+		<effect iii="377" xx="632" yy="1">setCoords</effect>
 	</mmotion>
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="30" willSave="0">456</qid>
 		<action iii="504">tap</action>
-		<effect iii="377" xx="554" yy="-1">setCoords</effect>
+		<effect iii="377" xx="554" yy="1">setCoords</effect>
 	</mmotion>
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="40" willSave="0">457</qid>
 		<action iii="500">tap</action>
-		<effect iii="377" xx="554" yy="-1">setCoords</effect>
+		<effect iii="377" xx="554" yy="1">setCoords</effect>
 	</mmotion>
 
 	<!--присваиваем ряд переменных при начале уровня-->
@@ -1836,6 +2167,16 @@
 		<effect iii="-1">behPosFromMess</effect>
 	</mmotion>
 
+	<!--необходимо убрать меню выбора героем-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">455</qid>
+		<action iii="484">tap</action>
+		<effect iii="478">visOff</effect>
+		<effect iii="484">visOff</effect>
+		<effect iii="-1">behPosFromMess</effect>
+	</mmotion>
+
+
 	<mmotion>
 		<qid activ="1" after_work="1" screenWork="0" willSave="0">498</qid>
 		<action iii="652">tap</action>
@@ -1923,7 +2264,8 @@
 		<effect iii="1026">visOff</effect>
 		<effect iii="1022">visOn</effect>
 		<effect iii="1023">visOn</effect>
-
+		<effect iii="1020">visOn</effect>
+		<effect iii="1028">visOff</effect>
 	</mmotion>
 	<!--показ графика ресурсов-->
 	<mmotion>
@@ -1938,6 +2280,7 @@
 		<effect iii="1024">visOff</effect>
 		<effect iii="1025">visOff</effect>
 		<effect iii="1026">visOff</effect>
+		<effect iii="1028">visOff</effect>
 	</mmotion>
 
 	<!--показ графика ресурсов-->
@@ -1950,6 +2293,7 @@
 		<effect iii="1021">visOff</effect>
 		<effect iii="1022">visOff</effect>
 		<effect iii="1023">visOff</effect>
+		<effect iii="1028">visOff</effect>
 		<effect iii="1024">visOn</effect>
 		<effect iii="1025">visOn</effect>
 		<effect iii="1026">visOn</effect>
@@ -1971,6 +2315,22 @@
 		<action iii="5">numOfMany</action>
 		<effect iii="0">heroHistoryChange</effect>
 		<!--<effect res="1">relationChange</effect>-->
+	</mmotion>
+
+	<!--показ результата игры-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="70" willSave="0">621</qid>
+		<action iii="1019">tap</action>
+		<effect num="3">categoryWillSave</effect>
+		<effect iii="1012">visOff</effect>
+		<effect iii="1020">visOff</effect>
+		<effect iii="1021">visOff</effect>
+		<effect iii="1022">visOff</effect>
+		<effect iii="1023">visOff</effect>
+		<effect iii="1024">visOff</effect>
+		<effect iii="1025">visOff</effect>
+		<effect iii="1026">visOff</effect>
+		<effect iii="1028">visOn</effect>
 	</mmotion>
 
 
@@ -2014,14 +2374,119 @@
 		<!--<effect res="1">relationChange</effect>-->
 	</mmotion>
 
+	<!--убрать подсказку-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">632</qid>
+		<action iii="any">tap</action>
+		<effect iii="560">visOff</effect>
+	</mmotion>
+	<!--подсказка на таланты-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="370">tap</action>
+		<effect iii="866">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="60" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на пищу-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="371">tap</action>
+		<effect iii="202">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="142" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на добыча-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="372">tap</action>
+		<effect iii="204">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="218" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на производство-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="373">tap</action>
+		<effect iii="206">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="294" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на опыт-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="374">tap</action>
+		<effect iii="261">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="376" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на благосклонность-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="375">tap</action>
+		<effect iii="262">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="456" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на илоты-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="806">tap</action>
+		<effect iii="240">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="532" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на гоплиты-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="540">tap</action>
+		<effect iii="300">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="664" yy="68">setCoords</effect>
+	</mmotion>
+	<!--подсказка на Триремы-->
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="0" willSave="0">633</qid>
+		<action iii="543">tap</action>
+		<effect iii="312">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="742" yy="68">setCoords</effect>
+	</mmotion>
+
+	<!--подсказка на илоты
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">633</qid>
+		<action iii="386">tap</action>
+		<effect iii="240">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="8" yy="650">setCoords</effect>
+	</mmotion>-->
+	<!--подсказка на метэки
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">633</qid>
+		<action iii="387">tap</action>
+		<effect iii="242">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="128" yy="650">setCoords</effect>
+	</mmotion>-->
+	<!--подсказка на граждане
+	<mmotion>
+		<qid activ="1" after_work="1" screenWork="30" willSave="0">633</qid>
+		<action iii="388">tap</action>
+		<effect iii="244">advice</effect>
+		<effect iii="560">visOn</effect>
+		<effect iii="560" xx="256" yy="650">setCoords</effect>
+	</mmotion>-->
+
+
 
 	<!--сценарий-->
-	<!-- сообщение появляется в 2980 году-->
+	<!-- сообщение появляется в 2980 году
 	<mmotion>
 		<qid activ="1" after_work="0" screenWork="0" willSave="0">800</qid>
 		<action first="2980" second="no">curDate</action>
 		<effect iii="3" behMenu="102" activeShow="1" out="0" stil="1">makeMessage</effect>
-	</mmotion>
+	</mmotion>-->
 
 
 	<!-- конец игры в 2960 году-->
@@ -2049,27 +2514,144 @@
 		<effect txt="game1module" cmd="game">deleteModule</effect>
 	</mmotion>
 
+
 	<!--появление монстров, если в городе отсутствует храм-->
 	<mmotion>
-		<qid activ="1" after_work="0" screenWork="0" willSave="0">1210</qid>
+		<qid activ="0" after_work="1" screenWork="0" willSave="0">1210</qid>
 		<action num="inCase">nextTurn</action>
 		<action iii="3">timeMoreThan</action>
 		<action tip="temple">noBuilding</action>
 		<action num="30">randi</action>
 		<effect tip="wildMonster" where="any" timme="-1">problemSituation</effect>
-		<effect qid="1212">activate</effect>
-		<effect iii="14" behMenu="110" activeShow="1" out="1" stil="3">makeMessage</effect>
+	</mmotion>
+	<!--появление монстров, если в городе отсутствует храм-->
+	<mmotion>
+		<qid activ="0" after_work="0" screenWork="0" willSave="0">1211</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="5">timeMoreThan</action>
+		<action tip="temple">noBuilding</action>
+		<action num="30">randi</action>
+		<effect tip="wildMonster" where="any" timme="-1">problemSituation</effect>
+		<effect qid="1210">activate</effect>
+		<effect iii="14" behMenu="129" activeShow="1" out="1" stil="7">makeMessage</effect>
+		<effect iii="2" res="active">wins</effect>
+		<effect iii="2" activeShow="0" out="0" wasShowed="0">message</effect>
 	</mmotion>
 
 	<!--появление монстров, если в городе отсутствует храм-->
 	<mmotion>
-		<qid activ="0" after_work="1" screenWork="0" willSave="0">1212</qid>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1212</qid>
 		<action num="inCase">nextTurn</action>
-		<action iii="3">timeMoreThan</action>
+		<action iii="5">timeMoreThan</action>
 		<action tip="temple">noBuilding</action>
 		<action num="30">randi</action>
 		<effect tip="wildMonster" where="any" timme="-1">problemSituation</effect>
+		<effect qid="1211">activate</effect>
+		<effect iii="14" behMenu="110" activeShow="1" out="1" stil="7">makeMessage</effect>
 	</mmotion>
+
+	<!--появление хищника в городе-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1214</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="2">timeMoreThan</action>
+		<effect tip="wildLion" where="any" timme="-1">problemSituation</effect>
+		<effect iii="15" behMenu="121" activeShow="1" out="1" stil="3">makeMessage</effect>
+	</mmotion>
+	<!--появление стаи хищников в городе-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1216</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="35">timeMoreThan</action>
+		<effect tip="wildLion" where="any" timme="-1">problemSituation</effect>
+		<effect tip="wildLion" where="any" timme="-1">problemSituation</effect>
+		<effect tip="wildLion" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-1">resChange</effect>
+		<effect tip="ilot" num="-2">resChange</effect>
+		<effect tip="metek" num="-1">resChange</effect>
+		<effect iii="16" behMenu="122" activeShow="1" out="1" stil="3">makeMessage</effect>
+	</mmotion>
+
+	<!--появление чумы в городе-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1218</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="21">timeMoreThan</action>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-2">resChange</effect>
+		<effect tip="ilot" num="-2">resChange</effect>
+		<effect tip="metek" num="-2">resChange</effect>
+		<effect iii="18" behMenu="124" activeShow="1" out="0" stil="5">makeMessage</effect>
+	</mmotion>
+	<!--чума свирепствует дальше-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1219</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="22">timeMoreThan</action>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-1">resChange</effect>
+		<effect tip="ilot" num="-1">resChange</effect>
+		<effect tip="metek" num="-1">resChange</effect>
+	</mmotion>
+	<!--пик чумы-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1220</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="23">timeMoreThan</action>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-2">resChange</effect>
+		<effect tip="ilot" num="-6">resChange</effect>
+		<effect tip="metek" num="-6">resChange</effect>
+		<effect iii="19" behMenu="125" activeShow="1" out="1" stil="5">makeMessage</effect>
+	</mmotion>
+	<!--последний ход чумы-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1221</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="24">timeMoreThan</action>
+		<effect tip="plague" where="any" timme="-1">problemSituation</effect>
+		<effect tip="human" num="-1">resChange</effect>
+		<effect tip="ilot" num="-1">resChange</effect>
+		<effect tip="metek" num="-1">resChange</effect>
+	</mmotion>
+	<!--убираем сообщение про чуму-->
+	<mmotion>
+		<qid activ="0" after_work="0" screenWork="0" willSave="0">1222</qid>
+		<action>no</action>
+		<effect behMenu="124">messageOut</effect>
+	</mmotion>
+	<!--чума уходит-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1223</qid>
+		<action num="inCase">nextTurn</action>
+		<action iii="25">timeMoreThan</action>
+		<effect tip="human" num="-1">resChange</effect>
+		<effect iii="20" behMenu="126" activeShow="1" out="1" stil="5">makeMessage</effect>
+		<effect qid="1222">activate</effect>
+	</mmotion>
+
+
+	<!--достижение дожили до 2100 года-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1230</qid>
+		<action iii="45">timeMoreThan</action>
+		<effect iii="1" res="done">wins</effect>
+	</mmotion>
+
+	<!--храм построен-->
+	<mmotion>
+		<qid activ="1" after_work="0" screenWork="0" willSave="0">1230</qid>
+		<action tip="temple">haveBuilding</action>
+		<effect iii="2" res="done">wins</effect>
+	</mmotion>
+
+
 
 <!--пропускаем диалог
 	<mmotion>
